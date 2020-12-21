@@ -11,6 +11,10 @@ export class MeteoriteListComponent implements OnInit {
   constructor(private meteoriteService: MeteoriteService) {  }
 
   ngOnInit() {
-    this.meteorites = this.meteoriteService.getMeteorites()
+    // this.meteorites = this.meteoriteService.getMeteorites()
+    // api request returns Observable, must subscribe
+    this.meteoriteService.getMeteorites().subscribe(meteorites => {
+      this.meteorites = meteorites;
+    });
   }
 }
