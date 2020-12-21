@@ -7,7 +7,10 @@ import { MeteoriteService } from './shared/index';
   styleUrls: ['./meteorite-list.component.css']
 })
 export class MeteoriteListComponent implements OnInit {
-  meteorites:any[]
+  meteorites:any[];
+  sortBy: string = 'name';
+  filterBy: string = 'all';
+
   constructor(private meteoriteService: MeteoriteService) {  }
 
   ngOnInit() {

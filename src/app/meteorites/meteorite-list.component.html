@@ -3,8 +3,8 @@
   <div class="sorting-wrapper">
     <h5 class="sorting-btn-heading text-center">Sort Meteorites</h5>
     <div class="sorting-btn-wrapper">
-      <button class="btn btn-primary btn-sm sorting-btn">All</button>
-      <button class="btn btn-primary btn-sm sorting-btn">Mass</button>
+      <button class="btn btn-primary btn-sm sorting-btn" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
+      <button class="btn btn-primary btn-sm sorting-btn" [class.active]="filterBy==='all'" (click)="filterBy='all'">Mass</button>
     </div>
   </div>
 </div>
