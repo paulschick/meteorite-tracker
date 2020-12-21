@@ -26,3 +26,7 @@ The session-list component handles that logic, but again, that handles the entir
 This logic either needs to be moved to the meteorite-list component, or to a separate component.
 Potentially the logic could be moved to the meteorite service.
 I will have to spend some time going through the course application, and consider exactly what it is that I have to do.
+
+## Notes for branch filteringTakeTwo
+
+Okay, this time I'm going to implement everything from the meteorite-list component and just see what happens

@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
   `]
 })
 export class MeteoriteDetailComponent {
-  @Input() meteorite:any
+  @Input() meteorite:any;
+  @Input() filterBy: string;
 }
