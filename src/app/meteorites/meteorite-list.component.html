@@ -1,4 +1,13 @@
 <h2 id="list-title" class="text-center">Meteorite List</h2>
+<div class="container">
+  <div class="sorting-wrapper">
+    <h5 class="sorting-btn-heading text-center">Sort Meteorites</h5>
+    <div class="sorting-btn-wrapper">
+      <button class="btn btn-primary btn-sm sorting-btn">All</button>
+      <button class="btn btn-primary btn-sm sorting-btn">Mass</button>
+    </div>
+  </div>
+</div>
 <div class="container meteorite-list-wrapper">
   <mt-detail *ngFor="let meteorite of meteorites" [meteorite]="meteorite"></mt-detail>
 </div>
