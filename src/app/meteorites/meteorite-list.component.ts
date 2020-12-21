@@ -4,7 +4,7 @@ import { MeteoriteService } from './shared/index';
 @Component({
   selector: 'mt-list',
   templateUrl: './meteorite-list.component.html',
-  styles: [``]
+  styleUrls: ['./meteorite-list.component.css']
 })
 export class MeteoriteListComponent implements OnInit {
   meteorites:any[]
