@@ -29,4 +29,16 @@ I will have to spend some time going through the course application, and conside
 
 ## Notes for branch filteringTakeTwo
 
-Okay, this time I'm going to implement everything from the meteorite-list component and just see what happens
+Okay, this time I'm going to implement everything from the meteorite-list component and just see what happens.  
+
+So, this isn't working either. It's actually working less than it was before. So, there's a few things that I noticed:
+
+- my ngFor looping through meteorites is in the selector within the meteorite-list template
+- his ngFor looping through sessions is on the sessions component itself  
+
+From this, I can extrapolate that I may want to refactor the html templates. I'll have simply the mt-detail selector in the meteorite-list template.
+The meteorite-detail template will have the ngFor. This way, the meteorite-detail component will loop through the visibleMeteorites display.
+I wonder if the differences come from the fact that I have an Http request to an external API, and he is using hard-coded data.  
+
+I am dealing with an observable, so technically, the ngOnChanges should work for each Observable as it comes in.
+It's supposed to handle one or more, now or in the future.

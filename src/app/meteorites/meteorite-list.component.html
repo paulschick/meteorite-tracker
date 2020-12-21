@@ -9,5 +9,5 @@
   </div>
 </div>
 <div class="container meteorite-list-wrapper">
-  <mt-detail *ngFor="let meteorite of meteorites" [filterBy]="filterBy" [meteorite]="meteorite"></mt-detail>
+  <mt-detail *ngFor="let meteorite of visibleMeteorites" [filterBy]="filterBy" [meteorite]="meteorite"></mt-detail>
 </div>
