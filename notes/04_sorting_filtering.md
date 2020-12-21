@@ -3,6 +3,7 @@
 - [Sorting & Filtering](#sorting--filtering)
   - [Overview](#overview)
     - [Looking at the Steps](#looking-at-the-steps)
+  - [12/21](#1221)
 
 ## Overview
 
@@ -28,4 +29,10 @@ I would benefit from going through those notes.
 Everything else up until this point, I have and had a good enough understanding of.
 The form stuff and the methods involved with them I do need to study more.
 So I should study, go through the notes, make them concise, and show an understanding.
-This is better than just copying the code, again, but applying it to meteors instead.
+This is better than just copying the code, again, but applying it to meteors instead.  
+
+## 12/21
+
+- I would like to be able to sort by year, better than name
+- Also sort by mass,
+  - With that, mass needs pipe-formatted
