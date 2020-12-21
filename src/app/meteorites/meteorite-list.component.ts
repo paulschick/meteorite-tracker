@@ -17,4 +17,12 @@ export class MeteoriteListComponent implements OnInit {
       this.meteorites = meteorites;
     });
   }
+
+  filterFunction(meteoriteArray) {
+    console.log(meteoriteArray);
+  }
+
+  sortFunction(meteoriteArray) {
+    console.log(meteoriteArray);
+  }
 }
