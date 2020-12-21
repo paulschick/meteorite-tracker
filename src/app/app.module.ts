@@ -10,6 +10,11 @@ import {
   MeteoriteDetailComponent
 } from './meteorites/index';
 
+// meteorites/shared imports
+import {
+  MeteoriteService
+} from './meteorites/shared/index';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,7 @@ import {
     BrowserModule,
     NgbModule
   ],
-  providers: [],
+  providers: [MeteoriteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
