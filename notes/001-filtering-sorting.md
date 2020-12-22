@@ -151,4 +151,19 @@ Then conversions are done to work with the data, particularly converting mass an
 So, I can create a model for the response, and for the useable data, or I can have one model and apply it to the data that gets used in the component.
 But, then I won't have a model to apply to the incoming data.
 
+### Todo
+
+- Meteorite Servive: set up error handling like in Pluralsight HTTP course.
+  - Create interface to use for the handleErrors method (or whatever new method)
+- Create interface for API Observable response
+- Create interface for meteorite data used in meteorite-detail component  
+
+So there are 3 models that need to be made:
+
+1. A get request error handler model
+2. A successful get request data model (shape of the initial Meteorite data that is returned from REST endpoint)
+3. Meteorite data that is displayed in the UI in the meteorite-list component.
+
+### Done
+
 - Set filtering functions to type boolean.
