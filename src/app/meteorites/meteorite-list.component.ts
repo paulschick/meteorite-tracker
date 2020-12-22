@@ -15,20 +15,14 @@ export class MeteoriteListComponent implements OnInit {
     // this.meteorites = this.meteoriteService.getMeteorites()
     // api request returns Observable, must subscribe
     this.meteoriteService.getMeteorites().subscribe(meteorites => {
-      this.meteorites = meteorites;
+      this.meteorites = meteorites.filter(meteorite => {
+        return +meteorite.mass > 75000;
+      });
     });
   }
 
   filterFunction(meteoriteArray) {
     console.log(meteoriteArray);
-  }
-
-  initialFilter(meteoriteArray) {
-    this.visibleMeteorites = meteoriteArray.filter(
-      meteorite => {
-        return +meteorite.mass > 75000;
-      }
-    )
   }
 
   sortFunction(meteoriteArray) {
