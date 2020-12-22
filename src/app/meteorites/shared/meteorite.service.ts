@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { map, filter, catchError } from 'rxjs/operators';
+import { IMeteorite } from '../models/index';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,11 @@ export class MeteoriteService {
   constructor(private http:HttpClient) {}
 
   // make <Meteorite[]> after model/interface is created
-  getMeteorites():Observable<any[]> {
+  getMeteorites():Observable<IMeteorite[]> {
     // this.http.get<Meteorite[]>();
     // returns Observable
     // since the url is a property in the class, we access it with 'this'
-    return this.http.get<any[]>(this.meteoritesUrl)
+    return this.http.get<IMeteorite[]>(this.meteoritesUrl)
       .pipe(catchError(this.handleError<any[]>('getMeteorites', [])))
 
   }

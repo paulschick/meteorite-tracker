@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, Input } from '@angular/core';
 import { MeteoriteService } from './shared/index';
+import { IMeteorite } from './models/index';
 
 @Component({
   selector: 'mt-list',
@@ -7,8 +8,8 @@ import { MeteoriteService } from './shared/index';
   styleUrls: ['./meteorite-list.component.css']
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {
-  meteorites:any[];
-  visibleMeteorites:any[];
+  meteorites:IMeteorite[];
+  visibleMeteorites:IMeteorite[];
   @Input() filterBy:string;
   meteoriteDate:Date;
   meteoriteYear:number;
