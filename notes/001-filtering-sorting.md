@@ -17,3 +17,22 @@ Each will bind to a different property:
 3. sortedArray -> contains sorted meteorites  
 
 That should be it. I might just be making it too complicated.
+
+## Filter Function
+
+The following function successfully filters to the console.
+Still having trouble displaying the visibleMeteorite array through property binding.
+
+```ts
+filterFunction(meteoriteArray) {
+  console.log(typeof(+meteoriteArray[0].mass));
+  let visibleMeteorites = meteoriteArray.slice(0);
+  visibleMeteorites = meteoriteArray.filter(meteorite => {
+    return +meteorite.mass > 100000;
+  })
+  console.log(visibleMeteorites);
+}
+
+// this filters by mass
+// current iteration prints to console meteorites over 100,000
+```
