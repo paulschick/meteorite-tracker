@@ -85,4 +85,10 @@ The other ones will have to be in an ngOnChanges call.
 
 - Current logic works in terms of using an if statement to pass differing logic into the filter method
 - Right now it's all going through ngOnInit, I need to get that into ngOnChanges.
-- So, I'll need to use visibleMeteorites, and I'll need to have visibleMeteorites being in the *ngFor (should not need to change the other property binding.)
+- So, I'll need to use visibleMeteorites, and I'll need to have visibleMeteorites being in the *ngFor (should not need to change the other property binding.)  
+
+## 010 Filtering Event
+
+The logic for ngOnChanges is all in place, the filtering logic should be solid.
+To truly test, I need to have an event in place with the button.
+When the button is pressed the value of filterBy needs to change to 'new', then this will set off the filter, and save the changes to the instance of visibleMeteorites.

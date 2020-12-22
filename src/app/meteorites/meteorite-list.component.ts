@@ -44,6 +44,10 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
     return this.meteoriteYear >= 1950;
   }
 
+  changeFilter() {
+    console.log('change filter button clicked')
+  }
+
   sortFunction(meteoriteArray) {
     console.log(meteoriteArray);
   }
