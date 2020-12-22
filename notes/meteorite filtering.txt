@@ -1,0 +1,11 @@
+filterFunction(meteoriteArray) {
+  console.log(typeof(+meteoriteArray[0].mass));
+  let visibleMeteorites = meteoriteArray.slice(0);
+  visibleMeteorites = meteoriteArray.filter(meteorite => {
+    return +meteorite.mass > 100000;
+  })
+  console.log(visibleMeteorites);
+}
+
+// this filters by mass
+// current iteration prints to console meteorites over 100,000
