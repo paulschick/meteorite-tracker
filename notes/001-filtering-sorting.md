@@ -58,3 +58,13 @@ Since the iterator in the for loop is still meteorite, refering to a single mete
 ```html
 <mt-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></mt-detail>
 ```
+
+## Current State
+
+Right now, this is filtering by default onInit. It's pulling meteorites with mass over 75000.
+That's fine, at least it's working.
+This could be improved by buttons having a different filtering option.
+Then we'd have ngOnChanges, and that is applied when a button is pressed, else, there's the default filter.  
+
+So, should ngOnInit take in a filtering function, and does that work?
+I should put the current filtering logic in a function (just like whats in the filter(), not the whole thing) and make sure that this isn't a gotcha.
