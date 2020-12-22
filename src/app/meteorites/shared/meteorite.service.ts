@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
+import { map, filter, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs';
 export class MeteoriteService {
 
   meteoritesUrl:string = 'https://data.nasa.gov/resource/y77d-th95.json';
+  private meteorites: Observable<any[]>;
 
   constructor(private http:HttpClient) {}
 
@@ -17,45 +19,16 @@ export class MeteoriteService {
     // returns Observable
     // since the url is a property in the class, we access it with 'this'
     return this.http.get<any[]>(this.meteoritesUrl);
+
+  }
+
+  // Handle Errors
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    }
   }
 
 
-
-  // getMeteorites() {
-  //   return METEORITES
-  // }
 }
-
-// const METEORITES = [
-//   {
-//     id: 1,
-//     name: 'Aachen',
-//     mass: 21,
-//     year: 1880
-//   },
-//   {
-//     id: 2,
-//     name: 'Aarhus',
-//     mass: 720,
-//     year: 1951
-//   },
-//   {
-//     id: 3,
-//     name: 'Abee',
-//     mass: 107000,
-//     year: 1952
-//   },
-//   {
-//     id: 4,
-//     name: 'Acapulco',
-//     mass: 1914,
-//     year: 1976
-//   },
-//   {
-//     id: 5,
-//     name: 'Achiras',
-//     mass: 780,
-//     year: 1902
-//   },
-
-// ]

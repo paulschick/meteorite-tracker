@@ -16,7 +16,13 @@ Each will bind to a different property:
 2. filteredArray -> contains filtered meteorites
 3. sortedArray -> contains sorted meteorites  
 
-That should be it. I might just be making it too complicated.
+That should be it. I might just be making it too complicated.  
+
+These will be in the Service. Then, we can have three different elements that are either loaded or not in the DOM if their property is there.
+Filtered by mass over 100000, etc.  
+
+Maybe the reason in Pluralsight that the session filtering and stuff is in the component is because it's part of an Event, and the event service wouldn't deal with that.
+I'm filtering the data being returned, so that should be in ther service.
 
 ## Filter Function
 
@@ -36,3 +42,12 @@ filterFunction(meteoriteArray) {
 // this filters by mass
 // current iteration prints to console meteorites over 100,000
 ```
+
+## Pluralsight Notes
+
+Taking notes on the search functionality. My implementation is different, but he has to pass search results to a modal component.
+Therefore, this may be more similar to my particular situation with this app.
+
+## Load Server
+
+I want to load the Observable from the server, and then have the Get public function that can be called to use the results. The load server function will be a private function.
