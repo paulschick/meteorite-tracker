@@ -164,8 +164,23 @@ So there are 3 models that need to be made:
 
 1. A get request error handler model
 2. A successful get request data model (shape of the initial Meteorite data that is returned from REST endpoint)
-3. Meteorite data that is displayed in the UI in the meteorite-list component.
+3. Meteorite data that is displayed in the UI in the meteorite-list component.  
+
+**Consideration**:  
+
+Since I am not using a lot of the data that comes with the meteorite at the moment, would it be worth slimming this down?
+That might mean less memory taken up while holding onto the array.
+Now for scalability, this could possible be done in the future.  
+
+Therefore, for the current function, perhaps the full IMeteorite could be stored as one instance, and then another array that contains only the parts that I care about to display it would conform to the shape of another model.
+This model could have the mass and date already converted so that those actions don't need to be performed by the component.
 
 ### Done
 
 - Set filtering functions to type boolean.
+- Created IMeteorite interface for API data
+  - Since the shape of the object doesn't change as the array is manipulated, IMeteorite was applied to
+    - get request
+    - meteorites array
+    - visibleMeteorites array
+- Where this would be different is the data that is interpolated in the meteorite-details component.
