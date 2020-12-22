@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 // meteorite imports
 import {
   MeteoriteListComponent,
-  MeteoriteDetailComponent
+  MeteoriteDetailComponent,
+  MeteoriteDisplayComponent
 } from './meteorites/index';
 
 // meteorites/shared imports
@@ -22,7 +23,8 @@ import {
   declarations: [
     AppComponent,
     MeteoriteListComponent,
-    MeteoriteDetailComponent
+    MeteoriteDetailComponent,
+    MeteoriteDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -105,3 +105,8 @@ meteorite-list can then have an @Input() property of filterBy, and this way, the
 Seems that it will have to be this way.  
 
 Merge to keep the notes, go into a new branch to develop the new component. That solution really won't take as long as it sounds.
+
+## 011 Meteorite Display Component
+
+This is the name I came up with. All that needs to be here is the markup for the div and button for "Filter Meteorites".
+Pass meteorite-list selector into its template. Start there.
