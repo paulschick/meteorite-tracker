@@ -18,7 +18,8 @@ export class MeteoriteService {
     // this.http.get<Meteorite[]>();
     // returns Observable
     // since the url is a property in the class, we access it with 'this'
-    return this.http.get<any[]>(this.meteoritesUrl);
+    return this.http.get<any[]>(this.meteoritesUrl)
+      .pipe(catchError(this.handleError<any[]>('getMeteorites', [])))
 
   }
 

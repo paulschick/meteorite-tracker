@@ -43,11 +43,18 @@ filterFunction(meteoriteArray) {
 // current iteration prints to console meteorites over 100,000
 ```
 
-## Pluralsight Notes
+I don't need to have visibleSessions as an input property.
+That's a property only for the meteorites-list component. For the detail component, it only knows about 'meteorite'.
 
-Taking notes on the search functionality. My implementation is different, but he has to pass search results to a modal component.
-Therefore, this may be more similar to my particular situation with this app.
+*ngFor -> this refers to the parent. The first word is the iterator.
+So if visibleMeteorites is the array that is to be displayed, it*should* be:
 
-## Load Server
+```html
+<mt-detail *ngFor="let meteorite of visibleMeteorites"></mt-detail>
+```
 
-I want to load the Observable from the server, and then have the Get public function that can be called to use the results. The load server function will be a private function.
+Since the iterator in the for loop is still meteorite, refering to a single meteorite in visibleMeteorites, the property binding expression might be able to stay as is.
+
+```html
+<mt-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></mt-detail>
+```
