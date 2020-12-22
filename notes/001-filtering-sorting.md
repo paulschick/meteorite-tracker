@@ -122,3 +122,33 @@ One way that I know is for the button to toggle a class... However I don't think
 Add another button for default view.
 
 ## 012 Meteorite Default Filter
+
+Alright that was super simple. Just added else if to ngOnChanges and set it back to this.meteorites.slice(0).
+Just went back to the same functionality as the initial sorting.
+I knew that this.meteorites property was still there with that initial data. So that's good to be able to have that on hand.  
+
+I like that the array is cloned and then displayed. This gives a lot of options for displaying different sets of data.  
+
+Okay what's next?  
+
+How about implementing a model interface. This application isn't very strongly typed. Could have some challenges with the data coming in vs. the data that I'm working with in the components.
+
+## 013 01 Meteorite Model
+
+Heres the shape that's displayed:
+
+```ts
+export interface Meteorite = {
+  name: string
+  mass: string
+  year: string
+}
+```
+
+I believe that coming in, it's all strings.
+Then conversions are done to work with the data, particularly converting mass and year (which is really a full date) to numbers.  
+
+So, I can create a model for the response, and for the useable data, or I can have one model and apply it to the data that gets used in the component.
+But, then I won't have a model to apply to the incoming data.
+
+- Set filtering functions to type boolean.

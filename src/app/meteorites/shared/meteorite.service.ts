@@ -8,8 +8,7 @@ import { map, filter, catchError } from 'rxjs/operators';
 })
 export class MeteoriteService {
 
-  meteoritesUrl:string = 'https://data.nasa.gov/resource/y77d-th95.json';
-  private meteorites: Observable<any[]>;
+  private meteoritesUrl:string = 'https://data.nasa.gov/resource/y77d-th95.json';
 
   constructor(private http:HttpClient) {}
 

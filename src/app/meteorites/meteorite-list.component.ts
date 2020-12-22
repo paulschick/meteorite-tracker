@@ -34,11 +34,11 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
     // sort func -> default no sort, one option button for sort
   }
 
-  initFilter(e) {
+  initFilter(e):boolean {
     return +e.mass > 25000;
   }
 
-  filterNew(e) {
+  filterNew(e):boolean {
     // get full date from meteorite
     this.meteoriteDate = new Date(e.year);
     // get full year from meteorite date
