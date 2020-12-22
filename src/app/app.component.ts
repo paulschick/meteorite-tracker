@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   // replace Bootstrap classes where appropriate
   // after creating meteor-list component, probably move this to separate template file.
   template: `
-    <mt-list></mt-list>
+    <mt-display></mt-display>
   `,
   styleUrls: ['./app.component.css']
 })
