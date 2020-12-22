@@ -68,3 +68,15 @@ Then we'd have ngOnChanges, and that is applied when a button is pressed, else, 
 
 So, should ngOnInit take in a filtering function, and does that work?
 I should put the current filtering logic in a function (just like whats in the filter(), not the whole thing) and make sure that this isn't a gotcha.
+
+## Next Step
+
+Okay, so now I can follow back along with some of the things done in PluralSight.
+I want to have three cases for filtering:
+
+1. Default (over 75000 mass)
+2. Button 1
+3. Button 2  
+
+So there's three cases. Init filter will be over 75000, that's the default, that goes in ngOnInit.
+The other ones will have to be in an ngOnChanges call.  
