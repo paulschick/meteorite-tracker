@@ -122,3 +122,48 @@ One way that I know is for the button to toggle a class... However I don't think
 Add another button for default view.
 
 ## 012 Meteorite Default Filter
+
+Alright that was super simple. Just added else if to ngOnChanges and set it back to this.meteorites.slice(0).
+Just went back to the same functionality as the initial sorting.
+I knew that this.meteorites property was still there with that initial data. So that's good to be able to have that on hand.  
+
+I like that the array is cloned and then displayed. This gives a lot of options for displaying different sets of data.  
+
+Okay what's next?  
+
+How about implementing a model interface. This application isn't very strongly typed. Could have some challenges with the data coming in vs. the data that I'm working with in the components.
+
+## 013 01 Meteorite Model
+
+Heres the shape that's displayed:
+
+```ts
+export interface Meteorite = {
+  name: string
+  mass: string
+  year: string
+}
+```
+
+I believe that coming in, it's all strings.
+Then conversions are done to work with the data, particularly converting mass and year (which is really a full date) to numbers.  
+
+So, I can create a model for the response, and for the useable data, or I can have one model and apply it to the data that gets used in the component.
+But, then I won't have a model to apply to the incoming data.
+
+### Todo
+
+- Meteorite Servive: set up error handling like in Pluralsight HTTP course.
+  - Create interface to use for the handleErrors method (or whatever new method)
+- Create interface for API Observable response
+- Create interface for meteorite data used in meteorite-detail component  
+
+So there are 3 models that need to be made:
+
+1. A get request error handler model
+2. A successful get request data model (shape of the initial Meteorite data that is returned from REST endpoint)
+3. Meteorite data that is displayed in the UI in the meteorite-list component.
+
+### Done
+
+- Set filtering functions to type boolean.
