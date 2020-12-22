@@ -25,7 +25,7 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   }
 
   initFilter(e) {
-    return +e.mass > 75000;
+    return +e.mass > 25000;
   }
 
   filterFunction(meteoriteArray) {

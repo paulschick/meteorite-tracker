@@ -80,3 +80,5 @@ I want to have three cases for filtering:
 
 So there's three cases. Init filter will be over 75000, that's the default, that goes in ngOnInit.
 The other ones will have to be in an ngOnChanges call.  
+
+1 Filtering Option: after 1950 (not much else that is very interesting to filter by, unless it was another date range, like pre-1950 instead)
