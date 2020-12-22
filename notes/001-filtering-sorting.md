@@ -109,4 +109,16 @@ Merge to keep the notes, go into a new branch to develop the new component. That
 ## 011 Meteorite Display Component
 
 This is the name I came up with. All that needs to be here is the markup for the div and button for "Filter Meteorites".
-Pass meteorite-list selector into its template. Start there.
+Pass meteorite-list selector into its template. Start there.  
+
+And this worked exactly as planned. With filterBy changing through the Input property, ngOnChanges is initiated and the data is sorted.  
+
+NEXT  
+
+I need to be able to toggle it back and remove the filter. Is there a way to have a button as a toggle?  
+
+One way that I know is for the button to toggle a class... However I don't think I need to change everything again to implement a class toggle.  
+
+Add another button for default view.
+
+## 012 Meteorite Default Filter

@@ -28,6 +28,8 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
     // filter func if this then that
     if (this.filterBy === 'new') {
       this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
+    } else if (this.filterBy === 'default') {
+      this.visibleMeteorites = this.meteorites.slice(0)
     }
     // sort func -> default no sort, one option button for sort
   }
