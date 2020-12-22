@@ -9,7 +9,7 @@ import { MeteoriteService } from './shared/index';
 export class MeteoriteListComponent implements OnInit, OnChanges {
   meteorites:any[];
   visibleMeteorites:any[];
-  filterBy:string = 'mass';
+  filterBy:string = 'default';
   constructor(private meteoriteService: MeteoriteService) {  }
 
   ngOnInit() {
@@ -17,6 +17,7 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
     // api request returns Observable, must subscribe
     this.meteoriteService.getMeteorites().subscribe(meteorites => {
       this.meteorites = meteorites.filter(e => this.initFilter(e))
+      this.visibleMeteorites = this.meteorites.slice(0)
     });
   }
 
