@@ -10,6 +10,9 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   meteorites:any[];
   visibleMeteorites:any[];
   filterBy:string = 'default';
+  meteoriteDate:Date;
+  meteoriteYear:number;
+
   constructor(private meteoriteService: MeteoriteService) {  }
 
   ngOnInit() {
@@ -24,13 +27,22 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   ngOnChanges() {
     // filter func if this then that
     // sort func -> default no sort, one option button for sort
-    if (this.filterBy !== 'default') {
-
+    if (this.filterBy === 'new') {
+      this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
     }
   }
 
   initFilter(e) {
-    return +e.mass > 25000 && this.filterFunction(e);
+    // return +e.mass > 25000 && this.filterFunction(e);
+    return +e.mass > 25000;
+  }
+
+  filterNew(e) {
+    // get full date from meteorite
+    this.meteoriteDate = new Date(e.year);
+    // get full year from meteorite date
+    this.meteoriteYear = this.meteoriteDate.getFullYear();
+    return this.meteoriteYear >= 1950;
   }
 
   filterFunction(e) {
