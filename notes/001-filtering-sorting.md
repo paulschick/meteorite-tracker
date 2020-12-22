@@ -92,3 +92,16 @@ The other ones will have to be in an ngOnChanges call.
 The logic for ngOnChanges is all in place, the filtering logic should be solid.
 To truly test, I need to have an event in place with the button.
 When the button is pressed the value of filterBy needs to change to 'new', then this will set off the filter, and save the changes to the instance of visibleMeteorites.
+
+ngOnChanges is not working coming from the same component. The button may need to be an Input parameter to meteorite-list, or I'll need to find a different solution.  
+
+I could create a component to deal with the button. This would have the property filterBy, and set the default value.
+The problem is that the meteorite-list component would need to be passed into this component, as it needs to be the parent.  
+
+so the new parent class could be the main page, and the only real content is the div with the button.
+Then, the meteorite-list component can be nested in it as it's child.
+meteorite-list can then have an @Input() property of filterBy, and this way, the ngOnChanges will fire when the change in the filterBy property comes from pressing a button that is on its parent.  
+
+Seems that it will have to be this way.  
+
+Merge to keep the notes, go into a new branch to develop the new component. That solution really won't take as long as it sounds.
