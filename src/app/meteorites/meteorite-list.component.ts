@@ -7,8 +7,9 @@ import { MeteoriteService } from './shared/index';
   styleUrls: ['./meteorite-list.component.css']
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {
-  meteorites:any[]
-  visibleMeteorites:any[]
+  meteorites:any[];
+  visibleMeteorites:any[];
+  filterBy:string = 'mass';
   constructor(private meteoriteService: MeteoriteService) {  }
 
   ngOnInit() {
@@ -22,14 +23,21 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   ngOnChanges() {
     // filter func if this then that
     // sort func -> default no sort, one option button for sort
+    if (this.filterBy !== 'default') {
+
+    }
   }
 
   initFilter(e) {
-    return +e.mass > 25000;
+    return +e.mass > 25000 && this.filterFunction(e);
   }
 
-  filterFunction(meteoriteArray) {
-    console.log(meteoriteArray);
+  filterFunction(e) {
+    if (this.filterBy === 'default') {
+      return e
+    } else {
+      return +e.mass > 100000
+    }
   }
 
   sortFunction(meteoriteArray) {

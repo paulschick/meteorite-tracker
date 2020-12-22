@@ -82,3 +82,7 @@ So there's three cases. Init filter will be over 75000, that's the default, that
 The other ones will have to be in an ngOnChanges call.  
 
 1 Filtering Option: after 1950 (not much else that is very interesting to filter by, unless it was another date range, like pre-1950 instead)
+
+- Current logic works in terms of using an if statement to pass differing logic into the filter method
+- Right now it's all going through ngOnInit, I need to get that into ngOnChanges.
+- So, I'll need to use visibleMeteorites, and I'll need to have visibleMeteorites being in the *ngFor (should not need to change the other property binding.)
