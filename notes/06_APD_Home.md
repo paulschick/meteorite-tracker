@@ -48,3 +48,6 @@ I'll have to address these, the app has not broken yet.
 ## 003 apd
 
 Next step is to get an image to display by having the image through property binding.
+
+- property bound apd.url to image src property
+- styled image with apd component css
