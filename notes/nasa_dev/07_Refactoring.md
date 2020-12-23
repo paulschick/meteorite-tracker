@@ -208,3 +208,5 @@ It was before just in app component template. I guess I could do that too?
 
 - Added apd selector into meteorite-display component.
 - Refactored app module with updated imports, removed things not needed in there.
+
+## 07 Refactor
