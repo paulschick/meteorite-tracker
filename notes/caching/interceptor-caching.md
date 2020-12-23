@@ -109,4 +109,11 @@ IF we did not get a valid response, we need to send the request to the server an
 
 ### Provide in a Module
 
-This will be imported and added to the providers array of the Core Module.
+This will be imported and added to the providers array of the Core Module.  
+
+That's it, the app is functioning. I think it seems faster, but it's hard to tell.  
+
+What I'll have to figure out is whether or not this will serve a cached version, say tomorrow, when the astronomy image of the day changes.  
+
+IF this is a problem that I have to handle, there is probably a way to force invalidating the cache after a certain period of time, or when it's a new day.
+I'm just not sure if this is stored in localstorage until the program invalidates the cache or they clear their cookies.
