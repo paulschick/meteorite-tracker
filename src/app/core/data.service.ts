@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, tap, catchError } from 'rxjs/operators';
-import { IMeteorite } from '../meteorites/models/meteorite.model';
-import { IApd } from '../APD/models/apd.model';
+import { catchError } from 'rxjs/operators';
+import { IMeteorite } from '../models/meteorite.model';
+import { IApd } from '../models/apd.model';
 import { NASA_API_KEY } from '../nasa-config';
 import { NasaError } from '../models/nasaErrors';
-import { NgbDateISOParserFormatter } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date-parser-formatter';
 
 @Injectable()
 export class DataService {

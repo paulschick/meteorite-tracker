@@ -216,4 +216,11 @@ It was before just in app component template. I guess I could do that too?
 
 At this point, I think all of the modules are ready to go.
 
-- added styles from main styles.css to meteorite-details component
+- added styles from main styles.css to meteorite-details component  
+
+Alright, ready to test it out.
+
+- imports need to be updated in data service
+- updated, removed unused.  
+
+It works! Only problem is the styling for the meteorite details isn't working!
