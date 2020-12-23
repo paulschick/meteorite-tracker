@@ -85,3 +85,35 @@ For this branch, I'll test to make sure the app hasn't broken, and then merge an
 And we're still good.  
 
 One other thing I'll need to do is to deal with the partial loading of the component.
+
+## 03 Refactor
+
+Right now I have two services to use -> one of them is the data service for making HTTP requests, and the other is an error handler service. I also have a guard defined as an import guard.
+These are all in the core directory and are imported and used by the core module.  
+
+I have not hooked up the core module to the app module.
+I have not connected any components to this either, or tested the HTTP requests and error methods used.
+I should want to do this before moving on to more intense refactoring.
+
+### Files with Logic to Keep
+
+I word it this way because I'll need the logic, but not necessarily the same file or file structure...
+
+- apd.model.ts
+- apd.component.ts -> consider having style & template inline for this
+- apd.component.html
+- apd.component.css
+- meteorite-list.component.ts/.html/.css -> same here with inlining
+- meteorite-detail.component.ts/.html/.css -> same here with inlining
+- meteorite-display.component.ts/.html/.css -> same here with inlining
+- meteorite.model.ts
+- app.component.ts/.css
+- app.module.ts
+- nasa-config.ts  
+
+It's not all that much.
+The main thing is going to be hooking it up with core, adding routing and a routing module, and then moving logic out of components where possible.
+Honestly probably not too much need for that, but I will need some more checks/error handling in the meteorite components where the data is manipulated
+
+- Deal with the errors around the .slice() being called on a null value.
+  - This will need a decent look
