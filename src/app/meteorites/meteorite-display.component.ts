@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
     </div>
     <mt-list [filterBy]="filterBy"></mt-list>
   `,
-  styleUrls: ['./meteorite-display.component.css']
+  styleUrls: ['./meteorite-display.component.scss']
 })
 export class MeteoriteDisplayComponent {
   filterBy:string = 'default';

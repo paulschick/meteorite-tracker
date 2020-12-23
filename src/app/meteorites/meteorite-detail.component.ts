@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
       <div>Year: {{ meteorite?.year | date: 'mediumDate' }}</div>
     </div>
   `,
-  styleUrls: ['./meteorite-detail.component.css']
+  styleUrls: ['./meteorite-detail.component.scss']
 })
 export class MeteoriteDetailComponent {
   @Input() meteorite:any

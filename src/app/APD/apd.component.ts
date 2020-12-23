@@ -16,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
       </div>
     </div>
   `,
-  styleUrls: ['./apd.component.css']
+  styleUrls: ['./apd.component.scss']
 })
 export class ApdComponent implements OnInit {
   apd:IApd;
