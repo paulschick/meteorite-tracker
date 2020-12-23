@@ -65,3 +65,21 @@ So, these are custom methods
 ### cache.interceptor.ts  
 
 In core folder, create cache.interceptor.ts
+
+- Need some Http packages, rxjs, and HttpCacheService that was created previously.
+- HttpCacheService is injected in the constructor to use it in this class.  
+
+If the request is anything other than a GET, then the interceptor will ignore it, and pass it along to the `next`.
+It will go to the handle method.  
+
+So first method, pass along non-cacheable requests:
+
+- Interceptor finds a request that is `!=='GET'`
+- log to console
+- call the invalidateCache method from http-cache.service.ts
+- pass it on to the handle method: `return next.handle(req)`  
+
+The first method therefore does two distinct things:
+
+1. Pass along non-cacheable requests
+2. Invalidate the cache
