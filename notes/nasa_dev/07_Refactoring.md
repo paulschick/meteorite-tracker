@@ -53,3 +53,25 @@ This should be the next step. Getting this all linked up.
 Then I want to start focusing on components, and reducing the logic that they handle as much as possible.  
 
 I'm going to run the server, and if the app is still working just file I'll go ahead and merge the branches to push the new stuff.
+
+## 02 Refactor
+
+Changes merged and pushed.  
+
+Next should be the core module, let's see how his is set up in the course...  
+
+### Core Module
+
+The providers in the module are the DataService, LoggerService, and the interceptors.
+I'd like to add some interceptors later to better understand what they do.
+I can skip the log response and add headers, as they don't actually do anything...
+Or just do it for practice.  
+
+Anyway, he has a CacheInterceptor which I would like to apply.  
+
+What I don't understand in this module is the @Optional() and @SkipSelf decorators, as well as the parentmodule: CoreModule declaration in the constructor.  
+
+This stuff applies if the module is already loaded. So you set the parent module to the module that it is.
+I think I should just use this, and then come back and understand it later on.  
+
+Seems just to help with lazy loading?
