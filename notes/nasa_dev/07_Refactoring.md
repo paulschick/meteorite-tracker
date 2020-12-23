@@ -210,3 +210,10 @@ It was before just in app component template. I guess I could do that too?
 - Refactored app module with updated imports, removed things not needed in there.
 
 ## 07 Refactor
+
+- Checked out app-routing module, it's good to go.
+- Added dummy HTTP_INTERCEPTOR imports, ready for interceptors when created  
+
+At this point, I think all of the modules are ready to go.
+
+- added styles from main styles.css to meteorite-details component
