@@ -6,6 +6,7 @@
   - [001 apd](#001-apd)
   - [002 apd](#002-apd)
   - [003 apd](#003-apd)
+  - [12/23/2020](#12232020)
 
 ## Cleanup and Home Component
 
@@ -51,3 +52,11 @@ Next step is to get an image to display by having the image through property bin
 
 - property bound apd.url to image src property
 - styled image with apd component css
+
+## 12/23/2020
+
+This endpoint has a good picture:  
+<https://images-api.nasa.gov/asset/as11-40-5874>  
+
+The images are all the same but different sizes, the thumb one is a good size.
+It's an astronaut on the moon.
