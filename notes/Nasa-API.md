@@ -15,3 +15,8 @@ Pass in the key to the url to make a request, like this:
 
 And this looks like the picture of the day.  
 Anyone can register for one of these keys, and now they have my info :)
+
+## BIG NOTE
+
+My api key is in a config file, *which I am pushing to GitHub so that I can get it*.
+The repo is private, if it is to be published for production, or made public, this needs to be put in a file with a new name that is added to the gitignore.
