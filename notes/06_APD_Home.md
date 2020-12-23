@@ -31,3 +31,15 @@ new git branch for the service.
 - added styling to apd component  
 
 ## 002 apd
+
+- Hooked up the service to the component
+- store image url to property that can now be displayed in template with property binding to an image  
+
+Issues: I'm getting circular dependency warnings in the console.
+Also, my meteorite component is now returning errors for the .slice method.
+This is all still working, probably something to do with either:
+
+- loading order
+- asynchronous issues  
+
+I'll have to address these, the app has not broken yet.
