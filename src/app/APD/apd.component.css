@@ -1,0 +1,8 @@
+.apd-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.apd-wrapper h2 {
+  margin: 1.5em 0 1em 0;
+}
