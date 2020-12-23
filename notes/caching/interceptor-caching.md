@@ -62,4 +62,6 @@ So, these are custom methods
 **invalidateUrl** -> Created to allow for removal of a single item from the cache  
 **invalidateCache** -> Invalidate the entire cache with one method call.  
 
+### cache.interceptor.ts  
 
+In core folder, create cache.interceptor.ts
