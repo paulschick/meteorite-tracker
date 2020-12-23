@@ -127,4 +127,11 @@ This module will handle all of the routing, so it takes forRoot, and app module 
 
 Added all of the routes here and exported RouterModule.  
 
-Imported this module into the AppModule, removed selector from app.component.ts template, and replaced it with router-outlet. The application is still functional
+Imported this module into the AppModule, removed selector from app.component.ts template, and replaced it with router-outlet. The application is still functional  
+
+PROBLEM  
+
+Now my div with the filtering buttons does not show up in the UI...  
+
+Okay, I needed to use MeteoriteDisplayComponent, not MeteoriteListComponent, so now it is working.
+Yeah, will definitely need to refactor.
