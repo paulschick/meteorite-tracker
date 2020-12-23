@@ -116,4 +116,15 @@ The main thing is going to be hooking it up with core, adding routing and a rout
 Honestly probably not too much need for that, but I will need some more checks/error handling in the meteorite components where the data is manipulated
 
 - Deal with the errors around the .slice() being called on a null value.
-  - This will need a decent look
+  - This will need a decent look  
+
+Created app-routing module
+
+### app-router.module.ts
+
+From booktracker project. This project does it how I want it set up.
+This module will handle all of the routing, so it takes forRoot, and app module does not.  
+
+Added all of the routes here and exported RouterModule.  
+
+Imported this module into the AppModule, removed selector from app.component.ts template, and replaced it with router-outlet. The application is still functional

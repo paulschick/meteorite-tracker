@@ -24,6 +24,7 @@ import {
   ApdComponent,
   ApdService
 } from './APD/index';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NgbModule,
     HttpClientModule
   ],
