@@ -82,4 +82,26 @@ So first method, pass along non-cacheable requests:
 The first method therefore does two distinct things:
 
 1. Pass along non-cacheable requests
-2. Invalidate the cache
+2. Invalidate the cache  
+
+So, this if statement only executes if it is not a GET request.
+If the request makes it passed that validation check, then we know that we're dealing with a GET request.
+The first thing we need to do after that is retrieved any cached response associated with the url.
+
+- create variable cachedResponse of type `HttpResponse<any>`
+- set that equal to the instance of the cacheService.get method for the url in that request  
+
+If a valid response is retrieved, log the cached response and return the cachedResponse.  
+
+***Return cachedResponse as an Observable***  
+
+How?
+By wrapping it in the rxjs `of` method.  
+
+IF we did not get a valid response, we need to send the request to the server and get the response from there.
+
+- use next.handle(req) for the response to be passed to this method
+- use rxjs pipe method to chain on rxjs operations to the observable
+- use tap to get access to the observable
+- pass into an if statement
+  - if the response is an instance of HttpResponse, then log to console and add the response to the cache with the cacheService's put method

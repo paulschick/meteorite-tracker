@@ -19,6 +19,25 @@ export class CacheInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    //
+    // attempt to get a cached response
+    const cachedResponse: HttpResponse<any> = this.cacheService.get(req.url);
+
+    // return cached response
+    if (cachedResponse) {
+      console.log(`Returning a cached response: ${cachedResponse.url}`);
+      console.log(cachedResponse);
+      return of(cachedResponse);
+    }
+
+    // send request to server and add the response to the cache
+    return next.handle(req)
+      .pipe(
+        tap(event => {
+          if (event instanceof HttpResponse) {
+            console.log(`Adding item to cache: ${req.url}`);
+            this.cacheService.put(req.url, event);
+          }
+        })
+      );
   }
 }
