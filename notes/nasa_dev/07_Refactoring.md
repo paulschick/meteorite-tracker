@@ -188,3 +188,7 @@ So now I need to do the same thing with the apd component.
 Apd components are all up to date now as well.
 Now to change the file folder for old apd, and change the new one up.
 After that, I need to go through and redo all of the imports and everything.
+
+## 06 Refactor
+
+The first thing that I'll do here is change the directory names.
