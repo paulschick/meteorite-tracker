@@ -1,27 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ApdService,
-  IApd
-} from './index';
+import { IApd } from '../models/apd.model';
+import { DataService } from '../core/data.service';
+import { NasaError } from '../models/nasaErrors';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'astronomy-picture-of-the-day',
-  templateUrl: './apd.component.html',
+  selector: 'apd',
+  template: `
+    <div class="container apd-container">
+      <div class="apd-wrapper">
+        <h2 class="text-primary">Astronomy Picture of the Day</h2>
+      </div>
+      <div class="apd-img-wrapper">
+        <img [src]="apdUrl" alt="Astronomy Picture of the Day">
+      </div>
+    </div>
+  `,
   styleUrls: ['./apd.component.css']
 })
 export class ApdComponent implements OnInit {
   apd:IApd;
   apdUrl:string;
 
-  constructor(private apdService:ApdService) {  }
+  constructor(private dataService: DataService,
+              private route: ActivatedRoute) {  }
 
   ngOnInit() {
 
-    this.apdService.getApd().subscribe(image => {
-      this.apd = image;
-      this.apdUrl = image.url;
-      console.log(this.apdUrl)
-    })
+    let resolvedApd: IApd | NasaError = this.route.snapshot.data['resolvedApd'];
 
+    if (resolvedApd instanceof NasaError) {
+      console.log(`Apd Component error: ${resolvedApd.additionalMessage}`);
+    } else {
+      this.apd = resolvedApd;
+      this.apdUrl = this.apd.url;
+    }
   }
 }

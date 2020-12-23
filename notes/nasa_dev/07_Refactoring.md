@@ -191,4 +191,11 @@ After that, I need to go through and redo all of the imports and everything.
 
 ## 06 Refactor
 
-The first thing that I'll do here is change the directory names.
+The first thing that I'll do here is change the directory names.  
+
+Already, this application is looking a lot cleaner.
+I was really able to condense this down. I also need to condense the app component stuff.
+
+- removed apd selector from app component template
+- removed app component css import
+- deleted app component css
