@@ -180,4 +180,11 @@ So, when I get something to work, switch to a new branch and keep going.
 When it is functional enough to merge with main, first, merge main into the furthest branch, make sure it works.
 Then merge main with the furthest branch.
 If, for example, that is like, 08-refactor, after the merge, push to github, keep an older clone, make sure it works again.
-Then, delete 03-07-refactor branches and start again like that.
+Then, delete 03-07-refactor branches and start again like that.  
+
+The meteorite stuff is all up to date.
+So now I need to do the same thing with the apd component.  
+
+Apd components are all up to date now as well.
+Now to change the file folder for old apd, and change the new one up.
+After that, I need to go through and redo all of the imports and everything.
