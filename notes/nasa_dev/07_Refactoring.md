@@ -234,4 +234,11 @@ Next just need the button function.
 
 ## 08 Refactor
 
-Moving branch to get the buttons going.
+Moving branch to get the buttons going.  
+
+Got the buttons working.  
+
+- removed else if, just using else statement
+- removed this.meteorites.slice(0) from the else statement
+- Now set just to this.meteorites
+- Button is fully functional, and the slice error no longer shows up in the console

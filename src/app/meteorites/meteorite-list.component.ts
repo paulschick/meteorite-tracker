@@ -37,10 +37,8 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.filterBy === 'new') {
       this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
-    } else if (this.filterBy === 'default') {
-      this.visibleMeteorites
     } else {
-      this.visibleMeteorites
+      this.visibleMeteorites = this.meteorites
     }
   }
 
