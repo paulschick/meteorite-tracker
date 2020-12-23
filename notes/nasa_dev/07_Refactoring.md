@@ -168,3 +168,16 @@ So, the next immediate step is to have all of the meteorite components refactore
 Then, I rename the meteorites folder so that it won't be referenced, change meteorites2 to meteorites, hook all of that up and see if it will work.  
 
 Until I'm at that point, I can't really debug any problems with the requests, etc.
+
+## 05 Refactor
+
+So, I still have branch 04-refactor. Main has not been merged to it.
+I just want to save my changes right here before I break this to make sure that I have something to go back to.  
+
+### branching Protocol
+
+So, when I get something to work, switch to a new branch and keep going.
+When it is functional enough to merge with main, first, merge main into the furthest branch, make sure it works.
+Then merge main with the furthest branch.
+If, for example, that is like, 08-refactor, after the merge, push to github, keep an older clone, make sure it works again.
+Then, delete 03-07-refactor branches and start again like that.

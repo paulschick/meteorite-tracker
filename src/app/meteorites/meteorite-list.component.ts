@@ -1,11 +1,16 @@
 import { Component, OnChanges, OnInit, Input } from '@angular/core';
-import { MeteoriteService } from './shared/index';
-import { IMeteorite } from './models/index';
+import { DataService } from '../core/data.service';
+import { IMeteorite } from '../models/meteorite.model';
+import { NasaError } from '../models/nasaErrors';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-list',
-  templateUrl: './meteorite-list.component.html',
-  styleUrls: ['./meteorite-list.component.css']
+  template: `
+    <div class="container meteorite-list-wrapper">
+      <mt-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></mt-detail>
+    </div>
+  `
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {
   meteorites:IMeteorite[];
@@ -14,40 +19,34 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   meteoriteDate:Date;
   meteoriteYear:number;
 
-  constructor(private meteoriteService: MeteoriteService) {  }
+  constructor(private dataService: DataService,
+              private route: ActivatedRoute) {  }
 
   ngOnInit() {
-    // this.meteorites = this.meteoriteService.getMeteorites()
-    // api request returns Observable, must subscribe
-    this.meteoriteService.getMeteorites().subscribe(meteorites => {
-      this.meteorites = meteorites.filter(e => this.initFilter(e))
+
+    let resolvedMeteorites: IMeteorite[] | NasaError = this.route.snapshot.data['resolvedMeteorites'];
+
+    if (resolvedMeteorites instanceof NasaError) {
+      console.log(`Meteorite List component error: ${resolvedMeteorites.additionalMessage}`);
+    } else {
+      this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
       this.visibleMeteorites = this.meteorites.slice(0)
-    });
+    }
   }
 
   ngOnChanges() {
-    // filter func if this then that
     if (this.filterBy === 'new') {
       this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
     } else if (this.filterBy === 'default') {
-      this.visibleMeteorites = this.meteorites.slice(0)
+      this.visibleMeteorites
+    } else {
+      this.visibleMeteorites
     }
-    // sort func -> default no sort, one option button for sort
   }
 
-  initFilter(e):boolean {
-    return +e.mass > 25000;
-  }
-
-  filterNew(e):boolean {
-    // get full date from meteorite
+  private filterNew(e):boolean {
     this.meteoriteDate = new Date(e.year);
-    // get full year from meteorite date
     this.meteoriteYear = this.meteoriteDate.getFullYear();
     return this.meteoriteYear >= 1950;
-  }
-
-  sortFunction(meteoriteArray) {
-    console.log(meteoriteArray);
   }
 }
