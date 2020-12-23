@@ -152,4 +152,19 @@ I'll need to watch through these videos again, they are in a few course:
 
 Application is still working well. Need to try again to hook up the get request with the resolver. If I can get that to not yell at me from TypeScript, I should be able to try it out and merge.
 
-- added both resolvers to app-routing module
+- added both resolvers to app-routing module  
+
+Okay so, I have this stuff set up, and I have the Meteorite List component refactored, but doesn't have the filtering functionality.
+Somehow, the app is still working, it really should break while doing all of this.
+Guaranteed it's still just using the old components, and actually the resolver is using the old components as well.  
+
+Here is what it is...
+app-routing module imports MeteoriteDisplayComponent.
+This is the original one.
+That original component is importing the original MeteoriteListComponent, I would have to have it importing the new one.
+The new one is not refactored enough to work, so I need to complete this first.  
+
+So, the next immediate step is to have all of the meteorite components refactored into the folder meteorites2.
+Then, I rename the meteorites folder so that it won't be referenced, change meteorites2 to meteorites, hook all of that up and see if it will work.  
+
+Until I'm at that point, I can't really debug any problems with the requests, etc.
