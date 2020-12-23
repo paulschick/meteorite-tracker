@@ -1,2 +1,3 @@
 export * from './apd.component';
-export * from './models/apd.model';
+export * from './shared/apd.service';
+export * from './models/index';

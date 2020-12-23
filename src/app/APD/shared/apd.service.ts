@@ -15,9 +15,9 @@ export class ApdService {
 
   constructor(private http:HttpClient) {}
 
-  getApd():Observable<IApd[]>{
-    return this.http.get<IApd[]>(`${this.apdUrl}${this.key}`)
-      .pipe(catchError(this.handleError<any[]>('getApd', [])))
+  getApd():Observable<IApd>{
+    return this.http.get<IApd>(`${this.apdUrl}${this.key}`)
+      .pipe(catchError(this.handleError<any>('getApd', [])))
 
   }
 

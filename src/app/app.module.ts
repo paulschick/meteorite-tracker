@@ -21,7 +21,8 @@ import {
 
 // APD Imports
 import {
-  ApdComponent
+  ApdComponent,
+  ApdService
 } from './APD/index';
 
 @NgModule({
@@ -37,7 +38,7 @@ import {
     NgbModule,
     HttpClientModule
   ],
-  providers: [MeteoriteService],
+  providers: [MeteoriteService, ApdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
