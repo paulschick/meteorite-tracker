@@ -44,4 +44,22 @@ So the *service* stores the cached HTTP requests and the *interceptor* does the 
 
 Step 1: create services folder in app/services, create file http-cache.service.ts
 
-- Created this file. I would like to go over what's happening in the file.
+- Created this file. I would like to go over what's happening in the file.  
+
+### http-cache.service.ts
+
+The private property *requests* is an object created to store the cached requests. That's why it's initialized with an empty object.  
+
+The different methods are used to interact with the cache.  
+
+**put** -> Adds to the cache, url used as property name, added to response cache object  
+**get** -> get items from the cache. Takes url as param, returns either HTTP response object if something was found, or undefined if nothing was cached for that url.  
+
+the next methods are used to invalidate items in the cash.
+When something is added to the server, modified, or deleted, the cache becomes invalid. That's the concept here.
+So, these are custom methods
+
+**invalidateUrl** -> Created to allow for removal of a single item from the cache  
+**invalidateCache** -> Invalidate the entire cache with one method call.  
+
+
