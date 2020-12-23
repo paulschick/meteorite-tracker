@@ -19,12 +19,18 @@ import {
   MeteoriteService
 } from './meteorites/shared/index';
 
+// APD Imports
+import {
+  ApdComponent
+} from './APD/index';
+
 @NgModule({
   declarations: [
     AppComponent,
     MeteoriteListComponent,
     MeteoriteDetailComponent,
-    MeteoriteDisplayComponent
+    MeteoriteDisplayComponent,
+    ApdComponent
   ],
   imports: [
     BrowserModule,
