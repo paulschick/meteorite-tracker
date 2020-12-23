@@ -104,4 +104,9 @@ IF we did not get a valid response, we need to send the request to the server an
 - use rxjs pipe method to chain on rxjs operations to the observable
 - use tap to get access to the observable
 - pass into an if statement
-  - if the response is an instance of HttpResponse, then log to console and add the response to the cache with the cacheService's put method
+  - See if the response was passed in as an HttpResponse
+  - If so, add to the cache with the put method on the cacheService
+
+### Provide in a Module
+
+This will be imported and added to the providers array of the Core Module.
