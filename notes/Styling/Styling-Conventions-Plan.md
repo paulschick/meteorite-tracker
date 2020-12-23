@@ -1,5 +1,11 @@
 # Applying Proper Styling Conventions
 
+- [Applying Proper Styling Conventions](#applying-proper-styling-conventions)
+  - [Global Styles](#global-styles)
+  - [The Plan](#the-plan)
+  - [Bootstrap and On](#bootstrap-and-on)
+    - [Uninstalling Bootstrap](#uninstalling-bootstrap)
+
 Based on the Styling Angular Apps Pluralsight course.
 There are a good few things that need to be implemented here.  
 
