@@ -148,4 +148,8 @@ I am going to have to understand some basics of Resolvers before I can use it su
 I'll need to watch through these videos again, they are in a few course:  
 
 - Created meteorites-resolver.service.ts as well as apd-resolver.service.ts
-- Added IApd model to app/models folder (this will be its new home)
+- Added IApd model to app/models folder (this will be its new home)  
+
+Application is still working well. Need to try again to hook up the get request with the resolver. If I can get that to not yell at me from TypeScript, I should be able to try it out and merge.
+
+- added both resolvers to app-routing module
