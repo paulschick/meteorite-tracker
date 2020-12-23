@@ -135,3 +135,5 @@ Now my div with the filtering buttons does not show up in the UI...
 
 Okay, I needed to use MeteoriteDisplayComponent, not MeteoriteListComponent, so now it is working.
 Yeah, will definitely need to refactor.
+
+## 04 Refactor
