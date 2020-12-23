@@ -34,3 +34,7 @@ Just import the variable with the key to the file, and concatenate it to the end
 So for this, I want to have this display on a home page. Which means, the meteorites might be moved to a feature module, or at least act as a feature.  
 
 So home page component. Will also have picture of the day service. star-image.service.ts?
+
+- Created apd service  
+
+Just handling error the same as for the meteorites for now. Will adjust in the future here.

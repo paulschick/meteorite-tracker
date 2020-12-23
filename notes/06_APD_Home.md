@@ -4,6 +4,7 @@
   - [Cleanup and Home Component](#cleanup-and-home-component)
   - [APD](#apd)
   - [001 apd](#001-apd)
+  - [002 apd](#002-apd)
 
 ## Cleanup and Home Component
 
@@ -25,3 +26,8 @@ I want to get the service and content hooked up and served first.
 ## 001 apd
 
 new git branch for the service.
+
+- created apd model
+- added styling to apd component  
+
+## 002 apd
