@@ -5,6 +5,7 @@
   - [APD](#apd)
   - [001 apd](#001-apd)
   - [002 apd](#002-apd)
+  - [003 apd](#003-apd)
 
 ## Cleanup and Home Component
 
@@ -43,3 +44,7 @@ This is all still working, probably something to do with either:
 - asynchronous issues  
 
 I'll have to address these, the app has not broken yet.
+
+## 003 apd
+
+Next step is to get an image to display by having the image through property binding.
