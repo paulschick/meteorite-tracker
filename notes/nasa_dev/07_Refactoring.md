@@ -223,4 +223,15 @@ Alright, ready to test it out.
 - imports need to be updated in data service
 - updated, removed unused.  
 
-It works! Only problem is the styling for the meteorite details isn't working!
+It works! Only problem is the styling for the meteorite details isn't working!  
+
+- meteorite-detail styling needs to be fixed
+- filtering buttons are not working either
+  - The new one is working, default is not owrking.  
+
+Meteorite detail styling has been moved to its own stylesheet, styling is now up to date.
+Next just need the button function.
+
+## 08 Refactor
+
+Moving branch to get the buttons going.
