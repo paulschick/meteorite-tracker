@@ -75,3 +75,7 @@ This stuff applies if the module is already loaded. So you set the parent module
 I think I should just use this, and then come back and understand it later on.  
 
 Seems just to help with lazy loading?
+
+- created nasa-error-handler.service.ts for use in core module
+- Created throwIfAlreadyLoaded error handler for core module
+- Created Core Module
