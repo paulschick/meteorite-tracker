@@ -9,10 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 // meteorite imports
 import {
-  MeteoriteListComponent,
+  // MeteoriteListComponent,
   MeteoriteDetailComponent,
   MeteoriteDisplayComponent
 } from './meteorites/index';
+import {
+  MeteoriteListComponent
+} from './meteorites2/meteorite-list.component';
 
 // meteorites/shared imports
 import {
@@ -25,6 +28,7 @@ import {
   ApdService
 } from './APD/index';
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    CoreModule,
     HttpClientModule
   ],
   providers: [MeteoriteService, ApdService],
