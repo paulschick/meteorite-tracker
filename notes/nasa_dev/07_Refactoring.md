@@ -137,3 +137,15 @@ Okay, I needed to use MeteoriteDisplayComponent, not MeteoriteListComponent, so 
 Yeah, will definitely need to refactor.
 
 ## 04 Refactor
+
+So, I cannot get the dataService to not have TypeScript get mad at me when using subscribe.
+I believe that the point of the error handling that was implemented with the get request is to resolve it with a resolver.
+So, I actually don't think that I can move forward with completing these requests in the new components without creating the resolvers.  
+
+This introduces some new steps...  
+
+I am going to have to understand some basics of Resolvers before I can use it suited to my app's individual case.
+I'll need to watch through these videos again, they are in a few course:  
+
+- Created meteorites-resolver.service.ts as well as apd-resolver.service.ts
+- Added IApd model to app/models folder (this will be its new home)
