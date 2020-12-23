@@ -198,4 +198,13 @@ I was really able to condense this down. I also need to condense the app compone
 
 - removed apd selector from app component template
 - removed app component css import
-- deleted app component css
+- deleted app component css  
+
+At this point, the app should definitely be broken.
+I have quite a bit to re-connect before this will even work.
+Also, I need a new way of getting apd selector into the application.
+Should probably be hooked into some kind of home page...
+It was before just in app component template. I guess I could do that too?  
+
+- Added apd selector into meteorite-display component.
+- Refactored app module with updated imports, removed things not needed in there.

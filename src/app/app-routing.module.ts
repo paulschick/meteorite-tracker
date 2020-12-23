@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApdResolverService } from './core/apd-resolver.service';
 import { MeteoritesResolverService } from './core/meteorites-resolver.service';
 
-import { MeteoriteDisplayComponent } from './meteorites/meteorite-display/meteorite-display.component';
-// import ResolverService
+import { MeteoriteDisplayComponent } from './meteorites/meteorite-display.component';
 
 const routes: Routes = [
   { path: 'meteorites', component: MeteoriteDisplayComponent, resolve: {

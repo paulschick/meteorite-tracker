@@ -4,34 +4,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-
-
-
-// ng-bootstrap
-// Http
-
-// meteorite imports
-import {
-  // MeteoriteListComponent,
-  MeteoriteDetailComponent,
-  MeteoriteDisplayComponent
-} from './meteorites/index';
-import {
-  MeteoriteListComponent
-} from './meteorites2/meteorite-list.component';
-
-// meteorites/shared imports
-import {
-  MeteoriteService
-} from './meteorites/shared/index';
-
-// APD Imports
-import {
-  ApdComponent,
-  ApdService
-} from './APD/index';
+import { MeteoriteListComponent } from './meteorites/meteorite-list.component';
+import { MeteoriteDetailComponent } from './meteorites/meteorite-detail.component';
+import { MeteoriteDisplayComponent } from './meteorites/meteorite-display.component';
+import { ApdComponent } from './apd/apd.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +27,6 @@ import {
     CoreModule,
     HttpClientModule
   ],
-  providers: [MeteoriteService, ApdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
