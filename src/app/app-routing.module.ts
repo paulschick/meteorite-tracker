@@ -5,11 +5,11 @@ import { MeteoritesResolverService } from './core/meteorites-resolver.service';
 import { MeteoriteDisplayComponent } from './meteorites/meteorite-display.component';
 
 const routes: Routes = [
-  { path: 'meteorites', component: MeteoriteDisplayComponent, resolve: {
+  { path: '', component: MeteoriteDisplayComponent, resolve: {
     resolvedMeteorites: MeteoritesResolverService,
     resolvedApd: ApdResolverService
   } },
-  { path: '', redirectTo: 'meteorites', pathMatch: 'full' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
