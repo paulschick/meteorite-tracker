@@ -241,4 +241,9 @@ Got the buttons working.
 - removed else if, just using else statement
 - removed this.meteorites.slice(0) from the else statement
 - Now set just to this.meteorites
-- Button is fully functional, and the slice error no longer shows up in the console
+- Button is fully functional, and the slice error no longer shows up in the console  
+
+## 09 Cleanup
+
+The final thing now is just to remove all of the old file folders.
+I don't know if I want to keep these at all, not really any reason to, it works perfectly.
