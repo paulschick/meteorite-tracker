@@ -78,4 +78,10 @@ Seems just to help with lazy loading?
 
 - created nasa-error-handler.service.ts for use in core module
 - Created throwIfAlreadyLoaded error handler for core module
-- Created Core Module
+- Created Core Module  
+
+For this branch, I'll test to make sure the app hasn't broken, and then merge and move on.  
+
+And we're still good.  
+
+One other thing I'll need to do is to deal with the partial loading of the component.
