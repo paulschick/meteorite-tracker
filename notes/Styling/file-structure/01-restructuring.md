@@ -1,5 +1,7 @@
 # Restructuring the File Format
 
+## [Follow this Resource](https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7)
+
 Right now, right in app/ I have meteorites and apd. These are component folders.
 To expand this, I would like it more structured.  
 
