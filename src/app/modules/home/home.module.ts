@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../../shared/material.module';
 
 import { MeteoriteDetailComponent } from './components/meteorite-detail/meteorite-detail.component';
 import { MeteoriteListComponent } from './components/meteorite-list/meteorite-list.component';
@@ -9,7 +10,8 @@ import { HomePage } from './pages/home/home.page';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   declarations: [
     MeteoriteDetailComponent,

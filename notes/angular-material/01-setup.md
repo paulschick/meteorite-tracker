@@ -57,3 +57,6 @@ Even in the main branch, this change needs to be made.
 
 The reason for this is because my core module is basically taking the place of the app module.
 So all services should go through here.
+
+- Okay, so now I'm going to import this to HomeModule.
+  - It's a module not a service, so it can be imported where needed, I believe.
