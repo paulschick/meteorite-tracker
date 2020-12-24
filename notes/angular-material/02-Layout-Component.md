@@ -13,3 +13,7 @@ I will add this to the application, might be helpful to use.
 ```ps1
 npm i -s @angular/flex-layout
 ```
+
+Ran through the installation, was very quick.  
+
+***I am importing & exporting this in the shared module***

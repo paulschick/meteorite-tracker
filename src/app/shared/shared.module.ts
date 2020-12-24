@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Angular FlexBox
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -38,6 +41,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   exports: [
+    FlexLayoutModule,
     FormsModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
