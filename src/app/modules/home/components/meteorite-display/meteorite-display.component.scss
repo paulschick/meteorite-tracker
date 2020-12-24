@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;1,700&display=swap');
+
+#list-title {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 700;
+  margin: 1em 0;
+}
+
+.sorting-wrapper {
+  background-color: #26c6d1;
+  color: #fff;
+  margin: 1em 6em;
+  padding: 2em 0;
+  -webkit-box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
+  box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
+}
+
+.sorting-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.sorting-btn {
+  margin: .5em;
+  width: 10em;
+  height: 3em;
+}
