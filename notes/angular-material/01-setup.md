@@ -41,3 +41,19 @@ This module has an import of CommonModule, but it was not imported into any othe
 - This module will not import CommonModule, it won't import anything, it serves only to export the Material stuff.  
 
 **CHANGE**: I am actually going to get rid of this and just move it to the shared folder for better access.
+
+- This module has no imports, it only exports material modules  
+
+NEXT in app.module.ts, add Material modules to imports (should be globally available now, might still need to import this into any module that's going to use it.  
+
+NOTE: Since I will be using this right now in the Home module, and this is the module which holds the components in the Home page, I am going to import it to this module.
+May change in the future when I create a Shared Module.  
+
+BIG NOTE ON SERVICES  
+
+Services are only supposed to be imported once. I had the home service in the Home and the Core module.
+I removed the import from the Home module, and it still works.
+Even in the main branch, this change needs to be made.  
+
+The reason for this is because my core module is basically taking the place of the app module.
+So all services should go through here.

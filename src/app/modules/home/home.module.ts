@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeService } from './home.service';
 
 import { MeteoriteDetailComponent } from './components/meteorite-detail/meteorite-detail.component';
 import { MeteoriteListComponent } from './components/meteorite-list/meteorite-list.component';
@@ -18,9 +17,6 @@ import { HomePage } from './pages/home/home.page';
     ApdComponent,
     MeteoriteDisplayComponent,
     HomePage
-  ],
-  providers: [
-    HomeService
   ]
 })
 export class HomeModule {
