@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
     <div class="container meteorite-list-wrapper">
       <mt-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></mt-detail>
     </div>
-  `
+  `,
+  styleUrls: ['./meteorite-list.component.scss']
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {
   meteorites:IMeteorite[];

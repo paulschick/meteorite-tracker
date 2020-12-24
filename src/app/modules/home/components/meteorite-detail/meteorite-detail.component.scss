@@ -1,3 +1,16 @@
+// Global Styles
+@import '../../../../shared/scss/styles.scss';
+
+// Partial Imports
+// @import './scss/partial1';
+// @import './scss/partial2';
+
+
+// All of this styling needs to go into partials!
+// this file is for imports only.
+
+
+
 .bold {
   font-weight: bold;
 }
