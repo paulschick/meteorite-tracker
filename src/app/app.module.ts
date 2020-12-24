@@ -6,24 +6,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { MeteoriteListComponent } from './meteorites/meteorite-list.component';
-import { MeteoriteDetailComponent } from './meteorites/meteorite-detail.component';
-import { MeteoriteDisplayComponent } from './meteorites/meteorite-display.component';
-import { ApdComponent } from './apd/apd.component';
+import { CoreModule } from './modules/core/core.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MeteoriteListComponent,
-    MeteoriteDetailComponent,
-    MeteoriteDisplayComponent,
-    ApdComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HomeModule,
     CoreModule,
     HttpClientModule
   ],

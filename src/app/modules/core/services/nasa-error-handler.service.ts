@@ -1,5 +1,5 @@
 import { Injectable, ErrorHandler } from '@angular/core';
-import { NasaError } from '../models/nasaErrors';
+import { NasaError } from '../../../shared/models/nasaErrors';
 
 @Injectable()
 export class NasaErrorHandlerService implements ErrorHandler {

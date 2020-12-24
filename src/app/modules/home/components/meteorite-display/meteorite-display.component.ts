@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'mt-display',
   template: `
-    <apd></apd>
     <h2 id="list-title" class="text-center">Meteorite List</h2>
     <div class = "container">
       <div class="sorting-wrapper">

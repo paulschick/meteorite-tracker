@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApdResolverService } from './core/apd-resolver.service';
-import { MeteoritesResolverService } from './core/meteorites-resolver.service';
-import { MeteoriteDisplayComponent } from './meteorites/meteorite-display.component';
+import { ApdResolverService } from './modules/home/apd-resolver.service';
+import { MeteoritesResolverService } from './modules/home/meteorite-resolver.service';
+import { HomePage } from './modules/home/pages/home/home.page';
 
 const routes: Routes = [
-  { path: '', component: MeteoriteDisplayComponent, resolve: {
+  { path: '', component: HomePage, resolve: {
     resolvedMeteorites: MeteoritesResolverService,
     resolvedApd: ApdResolverService
   } },
@@ -13,7 +13,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {  }
