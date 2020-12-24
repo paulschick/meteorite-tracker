@@ -38,3 +38,6 @@ This module has an import of CommonModule, but it was not imported into any othe
 ### Creating a Material Master Module
 
 - Added imports to material.module.ts
+- This module will not import CommonModule, it won't import anything, it serves only to export the Material stuff.  
+
+**CHANGE**: I am actually going to get rid of this and just move it to the shared folder for better access.
