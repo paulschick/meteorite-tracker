@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IApd } from '../models/apd.model';
-import { DataService } from '../core/data.service';
-import { NasaError } from '../models/nasaErrors';
+import { IApd } from '../../../../shared/models/apd.model';
+import { HomeService } from '../../home.service';
+import { NasaError } from '../../../../shared/models/nasaErrors';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -22,7 +22,7 @@ export class ApdComponent implements OnInit {
   apd:IApd;
   apdUrl:string;
 
-  constructor(private dataService: DataService,
+  constructor(private homeService: HomeService,
               private route: ActivatedRoute) {  }
 
   ngOnInit() {

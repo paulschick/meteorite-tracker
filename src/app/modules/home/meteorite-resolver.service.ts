@@ -3,19 +3,19 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { IMeteorite } from '../models/meteorite.model';
-import { NasaError } from '../models/nasaErrors';
-import { DataService } from './data.service';
+import { IMeteorite } from '../../shared/models/meteorite.model';
+import { NasaError } from '../../shared/models/nasaErrors';
+import { HomeService } from './home.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeteoritesResolverService implements Resolve<IMeteorite[] | NasaError> {
 
-  constructor(private dataService: DataService) {  }
+  constructor(private homeService: HomeService) {  }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IMeteorite[] | NasaError> {
-    return this.dataService.getAllMeteorites()
+    return this.homeService.getAllMeteorites()
       .pipe(
         catchError(err => of(err))
       );

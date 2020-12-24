@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IMeteorite } from '../models/meteorite.model';
-import { IApd } from '../models/apd.model';
-import { NASA_API_KEY } from '../nasa-config';
-import { NasaError } from '../models/nasaErrors';
+import { IMeteorite } from '../../shared/models/meteorite.model';
+import { IApd } from '../../shared/models/apd.model';
+import { NASA_API_KEY } from '../core/configs/nasa-config';
+import { NasaError } from '../../shared/models/nasaErrors';
 
 @Injectable()
 export class HomeService {
