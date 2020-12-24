@@ -59,4 +59,22 @@ The reason for this is because my core module is basically taking the place of t
 So all services should go through here.
 
 - Okay, so now I'm going to import this to HomeModule.
-  - It's a module not a service, so it can be imported where needed, I believe.
+  - It's a module not a service, so it can be imported where needed, I believe.  
+
+### Dependencies
+
+Material has some forms that will be used.
+So, import `FormsModule` to HomeModule as well, so that I can make use of all of the `MaterialModule` dependencies on this module.  
+
+Change Up  
+
+I should have a shared module that exports these things, so I can just import the shared module.
+That way any other module that wants to use Material, can just import the shared module.  
+
+With that said, maybe instead of having a Material Module, I can have a shared module that will handle all of the imports that the Material Module was doing.  
+
+### Shared Module Steps
+
+- Renamed Material Module to Shared Module
+- Imported and exported FormsModule as well as the Material Modules
+- Updated import in Home Module to Shared Module
