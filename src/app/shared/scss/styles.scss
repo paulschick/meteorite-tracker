@@ -1,0 +1,20 @@
+// Main Global Styles Sheet
+// ----------------------------------------------
+// ---------- IMPORTS ---------------------------
+
+// Layout
+@import './layout/app-footer';
+@import './layout/app-header';
+@import './layout/layout';
+
+// Root
+@import './root/colors';
+@import './root/links';
+@import './root/root';
+
+// Typography
+@import './typography/headers';
+@import './typography/paragraph';
+
+// ----------------------------------------------
+// ----------------------------------------------
