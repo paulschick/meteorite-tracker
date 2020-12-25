@@ -26,3 +26,9 @@ Shouldn't be too difficult.
 
 This is based on the course project.
 May get some ideas from this.
+
+## Sidenav and Toolbar
+
+Created sidenav and toolbar components.
+The router outlet is within the sidenav so that the sidenav opens into the page content.
+Took some work, but the current setup is how this should be setup to work properly.
