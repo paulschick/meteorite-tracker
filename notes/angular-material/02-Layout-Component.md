@@ -16,4 +16,13 @@ npm i -s @angular/flex-layout
 
 Ran through the installation, was very quick.  
 
-***I am importing & exporting this in the shared module***
+***I am importing & exporting this in the shared module***  
+
+FlexLayoutModule was added to imports/exports of SharedModule.
+I will need to learn how to use this in order to create layouts for the application.
+Shouldn't be too difficult.
+
+## Scaffolding the App
+
+This is based on the course project.
+May get some ideas from this.
