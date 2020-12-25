@@ -1,0 +1,15 @@
+[33m223cb8c[m[33m ([m[1;36mHEAD -> [m[1;32mmaterial[m[33m)[m notes/todos
+[33m3306d41[m screen size state observation added to sidenav component
+[33md549362[m default values temp on sidenav component
+[33m7eab5fa[m toolbar/sidenav components in proper flow
+[33m24e0e02[m notes/todos
+[33m0c10868[m added sidenav/toolbar components
+[33me4da04e[m[33m ([m[1;31morigin/material[m[33m)[m final push to switch workstations
+[33m5071513[m added FlexLayoutModule to imports/exports of SharedModule
+[33m34de1ff[m installed @angular/flex-layout
+[33m29413b8[m added imports for all Material components to shared module
+[33mb3337fe[m changed material module to shared module, added export of forms module
+[33m68cb3bb[m MaterialModule imported to HomeModule
+[33m8c418e3[m removed HomService import from Home Module. ONly imported into Core Module
+[33m0865f23[m moved material module to shared, exporting Material modules from exports array
+[33m6fef39f[m added imports to material module for basic education setup
