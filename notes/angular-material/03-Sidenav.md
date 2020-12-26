@@ -47,4 +47,17 @@ Effectively, this takes the place of the button below the toolbar that we have b
 
 1. Add Output property `toggleSidenav` as new EventEmitter  
 
-***IMPORTANT*** this wouldn't initially compile because vs code with smart import, imported EventEmitter from 'Events' instead of @angular/core, where it is supposed to come from.
+***IMPORTANT*** this wouldn't initially compile because vs code with smart import, imported EventEmitter from 'Events' instead of @angular/core, where it is supposed to come from.  
+
+- Added styling in comment to hide the button
+- I always want the toggle button to be there
+- Added additional styling to the toggle, as well as mat-icon within that class  
+
+Now, I am going to use a card to display the text "Astronomy Picture of the Day"  
+
+Component: apd.component.ts  
+
+Todos:
+
+1. Create apd template, move html to there
+2. Add the markup for the card as well as any SASS
