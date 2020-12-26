@@ -11,7 +11,10 @@
   </mat-sidenav>
 
   <div class="app-sidenav-content">
-    <mt-toolbar (toggleSidenav)="sidenav.toggle()"></mt-toolbar>
+    <mt-toolbar></mt-toolbar>
+    <button type="button" mat-button (click)="sidenav.toggle()">
+      Open sidenav
+    </button>
     <router-outlet></router-outlet>
   </div>
 </mat-sidenav-container>
