@@ -54,4 +54,6 @@ Just create full new module for APD module, with its own service and resolver an
 
 These images should be able to be clicked to open up an expanded view, which will have other details about the image from the API.
 That will be my demonstration of clicking to go to a detail view.
-I can get the information on how to construct this from the Angular Fundamentals Pluralsight course.
+I can get the information on how to construct this from the Angular Fundamentals Pluralsight course.  
+
+[Here is the relevant webpage](https://api.nasa.gov/) that shows the query parameters for the API.  
