@@ -7,6 +7,8 @@ I'll follow along, should be able to get some ideas on how to display the meteor
     - [Steps that he's taking as I follow along](#steps-that-hes-taking-as-i-follow-along)
     - [What I'm going to do](#what-im-going-to-do)
   - [Extended Astronomy Picture of the Day](#extended-astronomy-picture-of-the-day)
+    - [Implementation](#implementation)
+  - [setting up the Scaffolding for the APD module](#setting-up-the-scaffolding-for-the-apd-module)
 
 ## Data Service & Fetching Data
 
@@ -57,3 +59,35 @@ That will be my demonstration of clicking to go to a detail view.
 I can get the information on how to construct this from the Angular Fundamentals Pluralsight course.  
 
 [Here is the relevant webpage](https://api.nasa.gov/) that shows the query parameters for the API.  
+
+This method returns the December 1st image:  
+<https://api.nasa.gov/planetary/apod?api_key=wj7jAdpeOnwUhXeUR40W9Ll02P7hiJ2N0j5Rv0uY&date=2020-12-01>  
+
+And it works just like that.  
+
+### Implementation
+
+- I'll need to programmatically create the query urls
+- The dates will be based on x number of days before today
+- Should go in descending order, so today's image will be top left, then it will decend to the right, then down.  
+
+So top left, top middle, top right, down 1 row and left, then middle, then right, and so on.  
+
+So say I want to display 10 images on the page.
+Today's image will be first, then it will have to go back 1 day for every image.  
+
+I just need to create a date, subtract 1 for each, then add to the query url using template strings and inputting the date parameter.  
+
+This will all have to be a loop. I can probably use ngFor, but I'll also need to have logic in the service.  
+
+The service will make 10 requests, each with a different date, and then save each response object in an array.
+If there is an error, it should make another request with another date to try and get the proper response.
+The goal is to have an array of 10 objects.  
+
+Then the component can just take in that Observable object, and the ngFor just outputs a template for each object in the array.  
+
+So this is going to be a bit complex, but I'll start with the scaffolding.  
+
+## setting up the Scaffolding for the APD module
+
+Next notes file.
