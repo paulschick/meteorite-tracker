@@ -60,4 +60,11 @@ Component: apd.component.ts
 Todos:
 
 1. Create apd template, move html to there
-2. Add the markup for the card as well as any SASS
+2. Add the markup for the card as well as any SASS  
+
+- Added wrapper div around router-outlet in sidenav with 50px of margin all around content
+- Added styling to apd scss file for image and image wrapper
+- added styling for card and image and test
+  - Utilized scss mixins
+  - THESE MUST GO into partial scss files to be imported to the main file
+    - Just putting some in the main while working through and learning

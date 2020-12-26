@@ -12,6 +12,8 @@
 
   <div class="app-sidenav-content">
     <mt-toolbar (toggleSidenav)="sidenav.toggle()"></mt-toolbar>
-    <router-outlet></router-outlet>
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </mat-sidenav-container>
