@@ -5,6 +5,7 @@ I'll follow along, should be able to get some ideas on how to display the meteor
 - [Section 06 - Displaying Real Data](#section-06---displaying-real-data)
   - [Data Service & Fetching Data](#data-service--fetching-data)
     - [Steps that he's taking as I follow along](#steps-that-hes-taking-as-i-follow-along)
+    - [What I'm going to do](#what-im-going-to-do)
 
 ## Data Service & Fetching Data
 
@@ -23,17 +24,16 @@ I will just use another piece of content from the Nasa API.
 - create service through CLI
 - Create user model (contact manager), create note model
 - Service is using subscription within the service.
-  - Interesting, so he actually has a method in the service class that handles the subscribe. This is a good idea.
-  - What I can do is take the logic out of my components by having a separate service that takes the data from the resolver and handles the filtering logic.
-  - The components would just take the already built arrays and just display them
-  - This might cut down on how many components I'm using for the meteorite section. Could go from 3 to maybe two, one for the main data, one to display each individually
-  - Then I can have the meteorite-detail component for displaying a detail view of one of the meteorites.  
+  - Interesting, so he actually has a method in the service class that handles the subscribe. This is a good idea.  
 
-Let's try this with another piece of data from Nasa:  
+### What I'm going to do
 
-- Find another API to use
-- Create service to call the api
-- Create resolver for the service
-- Create the page component and hook this up to routing with the resolver in the route
-- Create another service to take the data from the resolver and perform any logic needed
-- Have a component to display the data, or two components with one for the detailed or individual object display in template.
+Find another API to subscribe to from Nasa.
+Create a view for that API, and then create service, resolver, components, and page for that view.
+Add to router, add this view and the home view to the sidenav.  
+
+Then the final thing will be to style, and try to add some detail view either to the meteorite list, or to the new component.  
+
+For the new API: Find something that can be clicked for a detail view.
+This is something that I should be demonstrating in the application.
+Then we're pretty much done with it all except for final style changes and refactoring the sass files.
