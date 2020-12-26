@@ -38,12 +38,12 @@ Effectively, this takes the place of the button below the toolbar that we have b
 
 ### toolbar component
 
-**html template**
+### html template
 
 1. Added button
 2. event emitter -> click event, toggleSidenav.emit()  
 
-**ts component file**  
+### ts component file
 
 1. Add Output property `toggleSidenav` as new EventEmitter  
 
