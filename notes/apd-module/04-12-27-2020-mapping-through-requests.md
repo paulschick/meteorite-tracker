@@ -14,6 +14,8 @@
     - [Behavior Subject](#behavior-subject)
     - [Operators](#operators)
   - [Moving Forward](#moving-forward)
+    - [Short Aside](#short-aside)
+    - [Hooking up the live data](#hooking-up-the-live-data)
 
 Currently going through the RxJS Pluralsight course to work with observables.
 I'm working with a few ways to handle the Http response.
@@ -303,4 +305,34 @@ Now, some todos:
 
 Before merging, I need to hook up the live API data to the astronomy-pics view.
 Then a little bit of cleanup could work.
-Could even merge it right now, truthfully.
+Could even merge it right now, truthfully.  
+
+### Short Aside
+
+This should be pretty quick.
+All of the cleanup should be quick to.
+Once this is done, definitely would like to refactor the meteorite-list/module because I know I can do it a lot better now.  
+
+I really would like to handle the resolvers better.
+It is kind of a complicated thing, but to get that down would be great moving forward.  
+
+For now, however, I may also remove it from the meteorite view, just because I know that I can do more with RxJS now, and it would be better to take it one piece at a time.
+Resolvers can be a good addition down the road, but I want functionality, proper use of RxJS, good organization, nice styling, and an overall clean application.
+Lack of resolvers are a very small con, especially in a small application like this.  
+
+When it's all said and done, I'm sure learning how to implement them for an hour or two will shed some light.
+From what I understand resolvers can get complicated in their use.
+
+### Hooking up the live data
+
+- Removed astro-pic resolver service and imports from application  
+
+**NOTE** I'm going to save the commented up astronomy-pics-list component in code_snippets, because it does have some good stuff in it.
+Same with the astro-pics.service file as is.
+
+- astronomy-pics-thumbnail component:
+  - Added IAdp as type to `astronomyPic` `@Input()` property (not as array)
+  - Added optional `copyright` member to `IApd` interface
+    - `copyright?:string;`
+- Hooked up the Observables to the meteorite-thumbnail component just by switching the ngFor to refer to the array in astronomy-pics-list.component.  
+- Cleaned up the files, ready to merge

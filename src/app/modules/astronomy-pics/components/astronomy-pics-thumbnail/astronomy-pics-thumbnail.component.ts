@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IApd } from '../../../../shared/models/apd.model';
 
 @Component({
   selector: 'mt-astronomy-pics-thumbnail',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AstronomyPicsThumbnailComponent implements OnInit {
 
-  @Input() astronomyPic:any;
+  @Input() astronomyPic:IApd;
 
   constructor() { }
 

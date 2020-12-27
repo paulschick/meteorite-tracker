@@ -1,4 +1,5 @@
 export interface IApd {
+  copyright?:string;
   date: string;
   explanation: string;
   hdurl: string;
