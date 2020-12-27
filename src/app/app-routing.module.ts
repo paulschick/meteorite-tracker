@@ -5,10 +5,11 @@ import { MeteoritesResolverService } from './modules/home/meteorite-resolver.ser
 import { HomePage } from './modules/home/pages/home/home.page';
 
 const routes: Routes = [
+  { path: 'astronomy-pics', loadChildren: () => import('./modules/astronomy-pics/astronomy-pics.module').then(m => m.AstronomyPicsModule) },
   { path: '', component: HomePage, resolve: {
     resolvedMeteorites: MeteoritesResolverService,
     resolvedApd: ApdResolverService
-  } },
+  }, pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];
 

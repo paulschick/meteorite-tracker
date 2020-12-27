@@ -9,6 +9,8 @@ import { ApdComponent } from './components/apd/apd.component';
 import { MeteoriteDisplayComponent } from './components/meteorite-display/meteorite-display.component';
 import { HomePage } from './pages/home/home.page';
 
+import { HomeService } from './home.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { HomePage } from './pages/home/home.page';
     ApdComponent,
     MeteoriteDisplayComponent,
     HomePage
-  ]
+  ],
+  providers: [HomeService]
 })
 export class HomeModule {
 

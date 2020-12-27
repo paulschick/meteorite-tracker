@@ -25,6 +25,7 @@ Pretty big piece of the project, but good learning experience.
 
 - [Scaffolding the APD Module](#scaffolding-the-apd-module)
   - [Creating the Pieces](#creating-the-pieces)
+  - [12-26-2020](#12-26-2020)
 
 ## Creating the Pieces
 
@@ -37,3 +38,8 @@ Pretty big piece of the project, but good learning experience.
 If this works well with the apd page componenet being the top parent, I will refactor the meteorite view to mirror this.
 I know that that group of components can be cleaned up.
 Do this first to gain an understanding before going and trying to break that!
+
+## 12-26-2020
+
+This is current dev branch.
+Moving all notes for the evening into the note file named after this with preceding number.

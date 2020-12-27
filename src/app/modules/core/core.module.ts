@@ -2,18 +2,24 @@ import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { HomeService } from '../home/home.service';
+import { HomeModule } from '../home/home.module';
+
 import { throwIfAlreadyLoaded } from './guards/module-import-guard';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { CacheInterceptor } from './interceptors/cache.interceptor';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HomeModule,
+    BrowserAnimationsModule,
+    BrowserModule
   ],
   declarations: [],
   providers: [
-    HomeService,
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ]
