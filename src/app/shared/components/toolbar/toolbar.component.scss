@@ -1,0 +1,30 @@
+
+
+// This styling hides the button on all but small screens
+// I don't want this, I always want the option of closing the sidenav.
+// .sidenav-toggle {
+//   display: flex;
+
+//   @media (max-width: 720px) {
+//     display: flex;
+//   }
+// }
+
+$iconWidth: 56px;
+
+.sidenav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 8px;
+  min-width: $iconWidth;
+
+  mat-icon {
+    font-size: 30px;
+    height: $iconWidth;
+    width: $iconWidth;
+    line-height: $iconWidth;
+    color: #fff;
+  }
+}

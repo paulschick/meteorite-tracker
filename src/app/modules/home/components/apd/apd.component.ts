@@ -6,16 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'apd',
-  template: `
-    <div class="container apd-container">
-      <div class="apd-wrapper">
-        <h2 class="text-primary">Astronomy Picture of the Day</h2>
-      </div>
-      <div class="apd-img-wrapper">
-        <img [src]="apdUrl" alt="Astronomy Picture of the Day">
-      </div>
-    </div>
-  `,
+  templateUrl: './apd.component.html',
   styleUrls: ['./apd.component.scss']
 })
 export class ApdComponent implements OnInit {
