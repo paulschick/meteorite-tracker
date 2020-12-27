@@ -49,7 +49,14 @@ export class AstronomyPicsListComponent implements OnInit {
     // console.log(this.astroPicsService.datesArray)
 
 
-    console.log(this.astroPicsService.getDates())
+    console.log(this.astroPicsService.getDates()[0])
+    let oneDate = this.astroPicsService.getDates()[0]
+    let month = oneDate.getMonth() + 1;
+    let day = oneDate.getDate();
+    let year = oneDate.getFullYear();
+    let dateStr = `${year}-${month}-${day}`;
+    console.log(dateStr);
+    console.log(typeof(dateStr));
 
 
 

@@ -123,3 +123,17 @@ Pretty obvious, but this is called with
 ```ts
 console.log(this.astroPicsService.getDates())
 ```
+
+### Formatting the dates
+
+So this is a few too many lines of code for my liking, but this does the job:
+
+```ts
+let oneDate = this.astroPicsService.getDates()[0]
+let month = oneDate.getMonth() + 1;
+let day = oneDate.getDate();
+let year = oneDate.getFullYear();
+let dateStr = `${year}-${month}-${day}`;
+console.log(dateStr);
+console.log(typeof(dateStr));
+```
