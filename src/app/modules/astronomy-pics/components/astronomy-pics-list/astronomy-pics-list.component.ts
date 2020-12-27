@@ -25,8 +25,13 @@ export class AstronomyPicsListComponent implements OnInit {
     //   }
     // );
 
-    this.astroPicsService.astroPics.subscribe(console.log)
-    console.log(this.astroPicsService.astroPicArray)
+    // this.astroPicsService.astroPics.subscribe(console.log);
+    this.astroPics = this.astroPicsService.astroPicArray;
+    of(this.astroPics).subscribe(pic => console.log(pic))
+    // of(this.astroPics).subscribe(pics => pics.map(pic => console.log(pic.url)))
+
+    this.astroPicsService.exampleConcatMap.subscribe(console.log)
+
   }
 
 
