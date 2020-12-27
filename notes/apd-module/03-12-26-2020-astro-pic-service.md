@@ -12,3 +12,6 @@
 ### NOTE ON SERVICES SCAFFOLDING
 
 In home module, create services folder to move all of that extra service and resolvers into
+
+- Created astro-pics.service.ts
+- Added service to providers array of astronomy-pics.module.ts
