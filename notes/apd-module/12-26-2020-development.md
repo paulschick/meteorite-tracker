@@ -77,3 +77,11 @@ So here are my steps:
 
 1. Add link to home and astronomy pics in the sidenav -> routerLink and they should be hooked up so I can go back and forth
 2. Build the astronomy-pics page out
+
+### Video -> Navigation Lists
+
+`[routerLinks]` added with proper routing. Very easy.
+Merging with main because these modules are
+
+1. Working Properly
+2. Now have proper single import of Modules
