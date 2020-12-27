@@ -61,4 +61,19 @@ Then create page component in modules/astronomy-pics/pages/astronomy-pics.page.t
 I got the astronomy pics lazy-loading module to work.
 I was having a problem with BrowserModule being imported twice.
 BrowserAnimations Module was in App and Shared module.
-It didn't work with those just in AppModule, but when I put the two only in CoreModule, it works, and the lazy-loading also works.
+It didn't work with those just in AppModule, but when I put the two only in CoreModule, it works, and the lazy-loading also works.  
+
+Wild how this all works. So, I can have the detail pages in this module as well.
+The root is `/astronomy-pics`  
+The detail pages will be `/astronomy-pics:id`  
+
+## Hooking up Routes, Styling the Home View
+
+Couple of options. I can style, or I can move forth.  
+
+I think I'll actually come up with better logic by just moving into the next view, and will be better off coming back to the home page after doing this next view well.  
+
+So here are my steps:
+
+1. Add link to home and astronomy pics in the sidenav -> routerLink and they should be hooked up so I can go back and forth
+2. Build the astronomy-pics page out
