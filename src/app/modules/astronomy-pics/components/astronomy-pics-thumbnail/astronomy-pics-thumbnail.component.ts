@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'mt-astronomy-pics-thumbnail',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./astronomy-pics-thumbnail.component.scss']
 })
 export class AstronomyPicsThumbnailComponent implements OnInit {
+
+  @Input() astronomyPic:any;
 
   constructor() { }
 

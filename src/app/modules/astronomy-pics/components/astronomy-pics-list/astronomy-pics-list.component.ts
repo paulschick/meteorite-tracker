@@ -13,7 +13,7 @@ export class AstronomyPicsListComponent implements OnInit {
   }
 
 
-  public ASTRONOMY_PICS = [
+  public ASTRONOMY_PICS:any[] = [
     {
       "copyright":"Miguel Claro",
       "date":"2020-12-26",
