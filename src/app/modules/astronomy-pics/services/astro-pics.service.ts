@@ -63,7 +63,8 @@ export class AstroPicsService {
   getDates = function() {
     for (let i=0;i<this.daysPrior;i++) {
       let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
-      this.datesArray.push(myDate)
+      let myDateStr = `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
+      this.datesArray.push(myDateStr)
     }
     return this.datesArray
   }

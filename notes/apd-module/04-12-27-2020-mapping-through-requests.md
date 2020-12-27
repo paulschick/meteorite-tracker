@@ -137,3 +137,32 @@ let dateStr = `${year}-${month}-${day}`;
 console.log(dateStr);
 console.log(typeof(dateStr));
 ```
+
+Here it is in one (two total) lines of code:
+
+```ts
+let dateStr2 = `${oneDate.getFullYear()}-${oneDate.getMonth() + 1}-${oneDate.getDate()}`;
+```
+
+And that's all I need to do for each of the items in the array, which is the next step.
+
+### Formatting the Entire Array
+
+Okay, so here it is:
+
+```ts
+datesArray:Date[] = [];
+daysPrior:number = 10;
+
+getDates = function() {
+  for (let i=0;i<this.daysPrior;i++) {
+    let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
+    let myDateStr = `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
+    this.datesArray.push(myDateStr)
+  }
+  return this.datesArray
+}
+```
+
+This logic does exactly what I want.
+Might be able to condense it a little bit, but this returns an array of 10 days formatted how I need them to be.
