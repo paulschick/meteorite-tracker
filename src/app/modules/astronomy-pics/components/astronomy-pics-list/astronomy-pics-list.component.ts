@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AstroPicsService } from '../../services/astro-pics.service';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'mt-astronomy-pics-list',
@@ -13,15 +15,18 @@ export class AstronomyPicsListComponent implements OnInit {
   constructor(private astroPicsService: AstroPicsService) { }
 
   ngOnInit(): void {
-    this.astroPicsService.getAstroPic().subscribe(
-      data => {
-        this.astroPics = data;
-        console.log(this.astroPics);
-      }, error => {
-        console.log('Failed to fetch images');
-      }
-    );
+    // this.astroPicsService.getAstroPic().subscribe(
+    //   data => {
+    //     this.astroPics = data;
+    //     of(this.astroPics).subscribe(console.log) // rxjs function for observables
+    //     of(this.astroPics).subscribe(pic => console.log(pic.url)) // map, console log specific property
+    //   }, error => {
+    //     console.log('Failed to fetch images');
+    //   }
+    // );
 
+    this.astroPicsService.astroPics.subscribe(console.log)
+    console.log(this.astroPicsService.astroPicArray)
   }
 
 
