@@ -31,3 +31,6 @@ The only import property that *should* be needed in the thumbnail component is t
 So in this case, I'll make is `ap` for astronomy pics.
 
 - Got the ngFor hooked up with the title displaying for the astronomy-pic-thum and list components
+- Images displaying through interpolation
+  - Will be switched to property binding when the service is serving the data
+  - Can have the service grab static data, and then put it as an API if I want to, probably don't need to
