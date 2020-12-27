@@ -6,16 +6,21 @@ import { AstronomyPicsRoutingModule } from './astronomy-pics-routing.module';
 
 import { AstroPicsService } from './services/astro-pics.service';
 
-import { AstronomyPicsPage } from './pages/astronomy-pics.page';
 import { AstronomyPicsListComponent } from './components/astronomy-pics-list/astronomy-pics-list.component';
+import { AstronomyPicsPage } from './pages/astronomy-pics.page';
 import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thumbnail/astronomy-pics-thumbnail.component';
+
+import { AstronomyPicDetailPage } from './pages/astronomy-pic-detail.page';
+import { AstronomyPicDetailComponent } from './components/astronomy-pic-detail/astronomy-pic-detail.component';
 
 
 @NgModule({
   declarations: [
     AstronomyPicsPage,
     AstronomyPicsListComponent,
-    AstronomyPicsThumbnailComponent
+    AstronomyPicsThumbnailComponent,
+    AstronomyPicDetailPage,
+    AstronomyPicDetailComponent
   ],
   imports: [
     CommonModule,
