@@ -5,11 +5,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { AstronomyPicsRoutingModule } from './astronomy-pics-routing.module';
 
 import { AstronomyPicsPage } from './pages/astronomy-pics.page';
+import { AstronomyPicsListComponent } from './components/astronomy-pics-list/astronomy-pics-list.component';
+import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thumbnail/astronomy-pics-thumbnail.component';
 
 
 @NgModule({
   declarations: [
-    AstronomyPicsPage
+    AstronomyPicsPage,
+    AstronomyPicsListComponent,
+    AstronomyPicsThumbnailComponent
   ],
   imports: [
     CommonModule,

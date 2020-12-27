@@ -8,7 +8,7 @@ import { throwIfAlreadyLoaded } from './guards/module-import-guard';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { CacheInterceptor } from './interceptors/cache.interceptor';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({

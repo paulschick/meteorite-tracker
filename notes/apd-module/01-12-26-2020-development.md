@@ -84,4 +84,10 @@ So here are my steps:
 Merging with main because these modules are
 
 1. Working Properly
-2. Now have proper single import of Modules
+2. Now have proper single import of Modules  
+
+Merged, deleted dev branch, checkout new dev branch same name.  
+
+## Building the Astronomy Pics Page
+
+Look in next notes page -> 02-12-26-2020-astronomy-pics-page
