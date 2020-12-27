@@ -16,6 +16,7 @@ export class AstronomyPicsListComponent implements OnInit {
     this.astroPicsService.getAstroPic().subscribe(
       data => {
         this.astroPics = data;
+        console.log(this.astroPics);
       }, error => {
         console.log('Failed to fetch images');
       }
