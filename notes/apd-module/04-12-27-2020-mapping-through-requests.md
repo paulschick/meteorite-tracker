@@ -186,3 +186,100 @@ So I'm looking at concatMap vs. concatMapTo.
 It's a bit to understand for the first time, but I'm getting somewhere.  
 
 I think that the problem and solution lie in the service, the resolver's job is just to call the function in the service when the route is resolved.
+
+## Video on RxJS
+
+[source here](https://www.youtube.com/watch?v=ewcoEYS85Co)
+
+- observable is a class
+- Observable.create is a callback that can be used to notify a subscriber of some data
+- Reactive => subscription means reacting to changes in the Observable data
+- Observables can and should be completed
+  - They'll be shut off and no longer emit data
+- Can create observables from events in the dom with `fromEvent`
+- Can set one up based on time interval
+- Can control async/sync by modifying asyncScheduler
+- Define observable with `of` (I wonder if this is hwere my problem is?)  
+
+### Hot v Cold Observables
+
+Hot can have multiple subscriptions, cold can only have one.
+Cold Observables don't create the underlying value until they are subscribed to.
+Often, you want to share a value between multiple subscribers, and so you would want to use a hot Observables.
+You can make a cold Observable hot.  
+
+`const hot = cold.pipe(share());` is one way for Observable `cold`.
+Use `shareReplay` to cache the last value.
+
+### Subjects
+
+A hot Observable with the benefit of being able to have new values pushed to it.
+I think this is in the ballpark of what I am looking for.
+I might be working with an Observable that is not able to have new values pushed to it, and this would also explain why I'm only getting one object in my final array of objects from `concatMap`.  
+
+- use `new Subject() and subscribe
+- use `next:` method to add new values to the stream  
+
+**Gotcha with this**: You need to have a subsciption set up before you start adding values to it.  
+
+```ts
+import { Subject, BehaviorSubject } from 'rxjs';
+
+const subject = new Subject();
+
+subject.subscribe(print);
+
+subject.next('Hello');
+subject.next('World');
+
+```
+
+### Behavior Subject
+
+Similar to subject, but with the concept of a current value.
+Last emitted value will be cached, like with shareReplay.
+Every subscription will always receive a value.
+
+### Operators
+
+Control the flow of data through Observables.
+
+- Use pipe to chain Operators, data "flows through the pipe"  
+
+You can accumulate values as they flow through the operators, similar to using `reduce` with arrays
+
+- Filter is used to keep certain values from being emitted in the stream
+- Tap -> trigger side effects from inside the Observable stream  
+
+***subscribe only gives access to the value at the end of the pipe***  
+
+So that would explain a lot.
+
+- An example that he gives is using `tap` to save the data to a backend database.  
+
+I assume that this would be similar to using `tap` to store the data in an array.
+Maybe I do do this in the resolver then? Or component?  
+
+What I think is happening is that the service is really only emitting the last value in the Observable to the resolver.
+When I console log in a tap after the concatMap, I get all of the responses.
+I need to call this function and tap there.
+I need to be able to return this property to my component.  
+
+FINALLY got it.
+Am not using resolver.
+Added an argument to the method in the service, push to that array in `tap()`, and then pass in the empty array in the component and tack on subscribe at the end.  
+
+Next, I want to make sure I end the subscription so that it doesn't keep going.  
+
+Alright, so I added `ngOnDestroy`, and created a new subject.
+Then added pipe, called takeUntil, and the ngOnDestroy calls `next` and `complete` when it is done.
+This all still gets the data that I need.  
+
+Now, some todos:
+
+- commit this
+- get rid of the resolver
+- clean up all of the files
+- put better names in there
+- then get this into the UI.
+- Then it's all styling from there.

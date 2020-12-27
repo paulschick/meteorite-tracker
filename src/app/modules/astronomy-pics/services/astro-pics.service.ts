@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { map, tap, catchError, concatMap } from 'rxjs/operators';
+import { map, tap, catchError, concatMap, mergeMap } from 'rxjs/operators';
 import { NASA_API_KEY } from '../../core/configs/nasa-config';
 import { NasaError } from '../../../shared/models/nasaErrors';
 import { IApd } from '../../../shared/models/apd.model';
@@ -82,11 +82,12 @@ export class AstroPicsService {
     return this.datesArray
   }
 
-  returnedAstroPics() {
+  returnedAstroPics(emptyArray) {
     return of(...this.getDates())
       .pipe(
-        tap(date => console.log('concatMap source Observable', date)),
+        // tap(date => console.log('concatMap source Observable', date)),
         concatMap(date => this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${date}`)),
+        tap(data => emptyArray.push(data)),
         catchError(err => this.handleHttpError(err))
       );
   }
