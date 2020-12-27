@@ -58,6 +58,18 @@ export class AstroPicsService {
   // next, without converting anything yet, just programatically get yesterday and 10 days before that
   // I'm not going to use today's since there are some issues with it calling tomorrow when it is in the evening
   // plus today's is shown on the home page.
+
+
+
+
+
+
+
+
+  // -------------------------
+  // --- Trying this stuff in Resolver -------
+
+
   datesArray:Date[] = [];
   daysPrior:number = 10;
 
@@ -78,6 +90,8 @@ export class AstroPicsService {
         catchError(err => this.handleHttpError(err))
       );
   }
+
+  // -------------------------------------
 
   private handleHttpError(error: HttpErrorResponse): Observable<NasaError> {
     let dataError = new NasaError();

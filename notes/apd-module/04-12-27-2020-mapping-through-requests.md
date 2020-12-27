@@ -171,4 +171,18 @@ Now, bringing it together with concatMap.
 Using the spread operator and passing in the function returns the observables properly  
 
 I think I will use a resolver here.
-Apparently there are problems with failing to unsubscribe, so why not handle this like I did the other module
+Apparently there are problems with failing to unsubscribe, so why not handle this like I did the other module  
+
+[This is good](https://www.joshuacolvin.net/angular-resolver/)  
+
+So the resolver is fine, the request is fine.
+By console logging in different places, you can see that when the route is resolved, each HTTP request is indeed made.  
+
+The problem is, that I can only get the last object to be pushed to the array property in the component.  
+
+So, it might be that the most recent observable is just replacing whatever was there before, which would explain why I can only see all of the responses when console logging at that specific point in the function.  
+
+So I'm looking at concatMap vs. concatMapTo.
+It's a bit to understand for the first time, but I'm getting somewhere.  
+
+I think that the problem and solution lie in the service, the resolver's job is just to call the function in the service when the route is resolved.

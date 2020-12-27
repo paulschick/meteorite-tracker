@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AstronomyPicsListComponent implements OnInit {
 
-  astroPics:IApd[];
+  astroPics:IApd[] = [];
 
   constructor(private astroPicsService: AstroPicsService,
               private route: ActivatedRoute) { }
@@ -78,8 +78,11 @@ export class AstronomyPicsListComponent implements OnInit {
     if (resolvedAstroPics instanceof NasaError) {
       console.log(`Astronomy Pics List Component Error: ${resolvedAstroPics.additionalMessage}`);
     } else {
-      this.astroPics = resolvedAstroPics
+      this.route.data.subscribe(data => {
+        this.astroPics.push(data.resolvedAstroPics)
+      })
     }
+    console.log(this.astroPics)
 
 
 
