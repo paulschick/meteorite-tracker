@@ -165,4 +165,10 @@ getDates = function() {
 ```
 
 This logic does exactly what I want.
-Might be able to condense it a little bit, but this returns an array of 10 days formatted how I need them to be.
+Might be able to condense it a little bit, but this returns an array of 10 days formatted how I need them to be.  
+
+Now, bringing it together with concatMap.
+Using the spread operator and passing in the function returns the observables properly  
+
+I think I will use a resolver here.
+Apparently there are problems with failing to unsubscribe, so why not handle this like I did the other module

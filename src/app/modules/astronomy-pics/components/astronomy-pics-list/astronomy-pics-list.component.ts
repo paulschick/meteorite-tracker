@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AstroPicsService } from '../../services/astro-pics.service';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IApd } from '../../../../shared/models/apd.model';
+import { NasaError } from 'src/app/shared/models/nasaErrors';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-astronomy-pics-list',
@@ -10,9 +13,10 @@ import { map } from 'rxjs/operators';
 })
 export class AstronomyPicsListComponent implements OnInit {
 
-  astroPics:any[];
+  astroPics:IApd[];
 
-  constructor(private astroPicsService: AstroPicsService) { }
+  constructor(private astroPicsService: AstroPicsService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.astroPicsService.getAstroPic().subscribe(
@@ -63,9 +67,19 @@ export class AstronomyPicsListComponent implements OnInit {
 
 
     // print out the formatted date array
-    console.log(this.astroPicsService.getDates())
+    // console.log(this.astroPicsService.getDates())
 
 
+    // this.astroPicsService.exampleConcatMap.subscribe(pics => this.astroPics = pics);
+    // console.log(this.astroPics)
+
+    let resolvedAstroPics: IApd[] | NasaError = this.route.snapshot.data['resolvedAstroPics'];
+
+    if (resolvedAstroPics instanceof NasaError) {
+      console.log(`Astronomy Pics List Component Error: ${resolvedAstroPics.additionalMessage}`);
+    } else {
+      this.astroPics = resolvedAstroPics
+    }
 
 
 
