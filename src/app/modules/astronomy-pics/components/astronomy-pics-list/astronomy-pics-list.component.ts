@@ -26,11 +26,40 @@ export class AstronomyPicsListComponent implements OnInit {
     // );
 
     // this.astroPicsService.astroPics.subscribe(console.log);
-    this.astroPics = this.astroPicsService.astroPicArray;
-    of(this.astroPics).subscribe(pic => console.log(pic))
+    // this.astroPics = this.astroPicsService.astroPicArray;
+    // of(this.astroPics).subscribe(pic => console.log(pic))
     // of(this.astroPics).subscribe(pics => pics.map(pic => console.log(pic.url)))
 
-    this.astroPicsService.exampleConcatMap.subscribe(console.log)
+    // WILL BE USING THIS FOR CONCATMAP
+    // ----------------------------------------------------------------------
+
+    // this.astroPicsService.exampleConcatMap.subscribe(console.log)
+
+    // ------------------------------------------
+
+
+    // console.log(this.astroPicsService.fiveDaysPrior)
+
+    // these two are the same:
+
+    // console.log(new Date(Date.now()))
+    // console.log(new Date())
+
+    // this works fine with type-checking for array of dates (will be array of strings though, so pointless)
+    // console.log(this.astroPicsService.datesArray)
+
+
+    console.log(this.astroPicsService.getDates())
+
+
+
+
+
+
+
+
+
+
 
   }
 

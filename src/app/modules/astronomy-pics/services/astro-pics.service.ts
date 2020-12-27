@@ -37,4 +37,44 @@ export class AstroPicsService {
         tap(date => console.log('concatMap source Observable', date)),
         concatMap(date => this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${date}`))
       );
+
+
+
+
+  // WORKING WITH DATES
+  // -------------------------------------------------------------------
+  // -------------------------------------------------------------------
+  // example functionality
+
+
+
+
+  // one-liner
+  // this returns the date as a date, so I have a way to calculate
+  public fiveDaysPrior = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000)
+
+
+  // next, without converting anything yet, just programatically get yesterday and 10 days before that
+  // I'm not going to use today's since there are some issues with it calling tomorrow when it is in the evening
+  // plus today's is shown on the home page.
+  datesArray:Date[] = [];
+  daysPrior:number = 10;
+
+  getDates = function() {
+    for (let i=0;i<this.daysPrior;i++) {
+      let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
+      this.datesArray.push(myDate)
+    }
+    return this.datesArray
+  }
+
+
+
+
+
+
+
+
+
+
 }

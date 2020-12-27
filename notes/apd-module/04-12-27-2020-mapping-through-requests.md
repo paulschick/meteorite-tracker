@@ -79,3 +79,47 @@ astronomy-pics-list.component.ts
 ```ts
 this.astroPicsService.exampleConcatMap.subscribe(console.log)
 ```
+
+## The easy part, creating the date strings
+
+So truly this is the easy part.
+It's just vanilla JavaScript.
+Concepts:
+
+- get current date
+- subtract from a date
+- return 10 date strings  
+
+Then another potentially tricky part is entering these as arguments to the `of` function.
+Might be able to do something like, store these in an array and pass that array into the `of` function using spread:  
+
+`dateStrings = [str1, str2, str3, ...]`  
+`of(...dateStrings)`  
+
+That might work. First things first.  
+
+### 10 Days Prior to Array
+
+This is how it works.
+The following function returns an array with 10 days starting yesterday, and going back.  
+
+Next step is to convert them to strings in the format `yyyy-mm-dd`.
+
+```ts
+datesArray:Date[] = [];
+daysPrior:number = 10;
+
+getDates = function() {
+  for (let i=0;i<this.daysPrior;i++) {
+    let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
+    this.datesArray.push(myDate)
+  }
+  return this.datesArray
+}
+```
+
+Pretty obvious, but this is called with
+
+```ts
+console.log(this.astroPicsService.getDates())
+```
