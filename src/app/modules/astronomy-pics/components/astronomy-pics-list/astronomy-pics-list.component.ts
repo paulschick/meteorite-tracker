@@ -1,10 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AstroPicsService } from '../../services/astro-pics.service';
-import { of, Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { IApd } from '../../../../shared/models/apd.model';
-import { NasaError } from 'src/app/shared/models/nasaErrors';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-astronomy-pics-list',
@@ -17,8 +15,7 @@ export class AstronomyPicsListComponent implements OnInit, OnDestroy {
 
   private astronomyPicsObs = new Subject()
 
-  constructor(private astroPicsService: AstroPicsService,
-              private route: ActivatedRoute) { }
+  constructor(private astroPicsService: AstroPicsService) { }
 
   ngOnInit(): void {
     // this.astroPicsService.getAstroPic().subscribe(

@@ -1,5 +1,20 @@
 # 12-27
 
+- [12-27](#12-27)
+  - [concatMap](#concatmap)
+    - [Service Implementation of concatMap](#service-implementation-of-concatmap)
+    - [Component Example Implementation of Subscribing and Displaying](#component-example-implementation-of-subscribing-and-displaying)
+  - [The easy part, creating the date strings](#the-easy-part-creating-the-date-strings)
+    - [10 Days Prior to Array](#10-days-prior-to-array)
+    - [Formatting the dates](#formatting-the-dates)
+    - [Formatting the Entire Array](#formatting-the-entire-array)
+  - [Video on RxJS](#video-on-rxjs)
+    - [Hot v Cold Observables](#hot-v-cold-observables)
+    - [Subjects](#subjects)
+    - [Behavior Subject](#behavior-subject)
+    - [Operators](#operators)
+  - [Moving Forward](#moving-forward)
+
 Currently going through the RxJS Pluralsight course to work with observables.
 I'm working with a few ways to handle the Http response.
 Nothing totally notable yet.  
@@ -283,3 +298,9 @@ Now, some todos:
 - put better names in there
 - then get this into the UI.
 - Then it's all styling from there.
+
+## Moving Forward
+
+Before merging, I need to hook up the live API data to the astronomy-pics view.
+Then a little bit of cleanup could work.
+Could even merge it right now, truthfully.
