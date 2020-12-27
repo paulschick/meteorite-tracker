@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AstroPicsService } from '../../services/astro-pics.service';
 
 @Component({
   selector: 'mt-astronomy-pics-list',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AstronomyPicsListComponent implements OnInit {
 
-  constructor() { }
+  astroPics:any[];
+
+  constructor(private astroPicsService: AstroPicsService) { }
 
   ngOnInit(): void {
+    this.astroPicsService.getAstroPic().subscribe(
+      data => {
+        this.astroPics = data;
+      }, error => {
+        console.log('Failed to fetch images');
+      }
+    );
+
   }
 
 
