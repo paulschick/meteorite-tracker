@@ -16,6 +16,7 @@
   - [Moving Forward](#moving-forward)
     - [Short Aside](#short-aside)
     - [Hooking up the live data](#hooking-up-the-live-data)
+    - [End of this note section](#end-of-this-note-section)
 
 Currently going through the RxJS Pluralsight course to work with observables.
 I'm working with a few ways to handle the Http response.
@@ -335,4 +336,13 @@ Same with the astro-pics.service file as is.
   - Added optional `copyright` member to `IApd` interface
     - `copyright?:string;`
 - Hooked up the Observables to the meteorite-thumbnail component just by switching the ngFor to refer to the array in astronomy-pics-list.component.  
-- Cleaned up the files, ready to merge
+- Cleaned up the files, ready to merge  
+
+Alright, merged, pushed, deleted temp branches, deleted current development branch, re-created dev branch and currently active for next steps.  
+
+### End of this note section
+
+folder org -> notes  
+
+notes/apd-module/01-main-functionality -> holds 01-04 (up to current)  
+notes/apd-module/02-astronomy-pics-detail-view -> 05 (next) - *n*  
