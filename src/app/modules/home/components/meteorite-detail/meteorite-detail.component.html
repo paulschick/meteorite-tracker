@@ -1,5 +1,13 @@
-<div class="meteorite-details">
-  <h2 class="bold">{{ meteorite?.name }}</h2>
-  <div>Mass: {{ meteorite?.mass }}</div>
-  <div>Year: {{ meteorite?.year | date: 'mediumDate' }}</div>
+<div class="meteorite--card-wrapper">
+  <mat-card>
+    <mat-card-title>
+      <h2 class="meteorite--card-heading">
+        {{ meteorite?.name }}
+      </h2>
+    </mat-card-title>
+    <mat-card-content>
+      <div><span>Mass:</span> {{ meteorite?.mass }}</div>
+      <div><span>Year:</span> {{ meteorite?.year | date: 'mediumDate' }}</div>
+    </mat-card-content>
+  </mat-card>
 </div>

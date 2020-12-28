@@ -7,6 +7,7 @@
     - [On Styling and Angular Material](#on-styling-and-angular-material)
     - [Sidenav](#sidenav)
     - [Home](#home)
+    - [meteorite-detail](#meteorite-detail)
 
 ## Initial Todos
 
@@ -72,4 +73,8 @@ I want a background color on the card heading -> will have to do with custom scs
 - Added BEM classes to meteorite-display component template, made equivalent changes to main scss file (will all be in partials)  
 
 **QUICK NOTE** changes are being made in main scss files right now.
-Will be moved to partials after initial class changes are made throughout the application.
+Will be moved to partials after initial class changes are made throughout the application.  
+
+### meteorite-detail
+
+- converted to Material cards with some custom scss
