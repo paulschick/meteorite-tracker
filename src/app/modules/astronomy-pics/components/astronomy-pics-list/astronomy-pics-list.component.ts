@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AstroPicsService } from '../../services/astro-pics.service';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { IApd } from '../../../../shared/models/apd.model';
 
@@ -11,7 +11,6 @@ import { IApd } from '../../../../shared/models/apd.model';
 })
 export class AstronomyPicsListComponent implements OnInit, OnDestroy {
   astroPics: IApd[] = [];
-  astroPicsClone: IApd[];
 
   private astronomyPicsObs = new Subject();
 
@@ -19,10 +18,10 @@ export class AstronomyPicsListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     var observable1 = this.astroPicsService.returnedAstroPics(this.astroPics);
-    observable1.pipe(takeUntil(this.astronomyPicsObs), tap()).subscribe();
+    observable1.pipe(takeUntil(this.astronomyPicsObs)).subscribe();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.astronomyPicsObs.next();
     this.astronomyPicsObs.complete();
   }
