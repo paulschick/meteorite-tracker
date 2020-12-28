@@ -69,3 +69,7 @@ Replace home text with circular home button from Material
 I want a background color on the card heading -> will have to do with custom scss  
 
 - Added template pages for all of the meteorite components & page.
+- Added BEM classes to meteorite-display component template, made equivalent changes to main scss file (will all be in partials)  
+
+**QUICK NOTE** changes are being made in main scss files right now.
+Will be moved to partials after initial class changes are made throughout the application.
