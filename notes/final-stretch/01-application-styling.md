@@ -15,6 +15,7 @@ Primary Dark Accent: rgb(44, 23, 80)
     - [Sidenav](#sidenav)
     - [Home](#home)
     - [meteorite-detail](#meteorite-detail)
+    - [Meteorite Mass Custom Pipe Opportunity](#meteorite-mass-custom-pipe-opportunity)
 
 ## Initial Todos
 
@@ -84,4 +85,9 @@ Will be moved to partials after initial class changes are made throughout the ap
 
 ### meteorite-detail
 
-- converted to Material cards with some custom scss
+- converted to Material cards with some custom scss  
+
+### Meteorite Mass Custom Pipe Opportunity
+
+Meteorite mass is in grams.
+Converting to kilograms would be better UX
