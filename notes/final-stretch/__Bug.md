@@ -29,3 +29,10 @@ getDates = function() {
   return this.datesArray
 }
 ```
+
+Commit log:  
+
+problem: astronomy-pics would load another 10 images every time you navigate back to the page  
+>> Solution: added an if statement to check the length of the dates array. Only add a date if the length is less than 10  
+>> Explanation: because the application wasn't re-compiling, the datesArray was not reset, instead, it continued to store the dates that were pushed to it.  
+>> Everytime the astronomy-pics page was navigated to, the ngOnInit function ran again, executing this code, and pushing another 10 dates to the array. This triggered the service to make 10, 20, 30 API calls.  
