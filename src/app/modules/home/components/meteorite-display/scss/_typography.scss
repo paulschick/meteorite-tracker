@@ -1,3 +1,5 @@
+@import '../../../../../shared/scss/styles.scss';
+
 .display--heading {
-  font-weight: 300;
+  @include header-h2;
 }

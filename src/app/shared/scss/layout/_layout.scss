@@ -1,1 +1,6 @@
 // Global layout styles
+@mixin center-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

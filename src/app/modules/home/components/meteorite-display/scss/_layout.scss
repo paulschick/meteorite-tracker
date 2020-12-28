@@ -1,3 +1,9 @@
+@import '../../../../../shared/scss/styles.scss';
+
+.display--heading-wrapper {
+  @include center-child;
+}
+
 .display--heading {
   margin: 1em 0;
 }
