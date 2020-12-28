@@ -6,8 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-list',
-  templateUrl: './meteorite-list.component.html',
-  styleUrls: ['./meteorite-list.component.scss']
+  templateUrl: './meteorite-list.component.html'
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {
   meteorites:IMeteorite[];
