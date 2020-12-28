@@ -1,0 +1,9 @@
+@import '../../../scss/styles.scss';
+
+.sidenav--list-item-btn {
+  @include btn-dark;
+}
+
+.sidenav--list-item-btn:hover {
+  @include btn-dark-hover;
+}
