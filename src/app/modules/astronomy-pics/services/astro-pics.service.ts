@@ -5,6 +5,7 @@ import { map, tap, catchError, concatMap, mergeMap } from 'rxjs/operators';
 import { NASA_API_KEY } from '../../core/configs/nasa-config';
 import { NasaError } from '../../../shared/models/nasaErrors';
 import { IApd } from '../../../shared/models/apd.model';
+import { newArray } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root',

@@ -2,6 +2,8 @@
   <h2 class="astronomy-pics-thumbnail--title">{{ astronomyPic.title }}</h2>
   <div>{{ astronomyPic.copyright }}</div>
   <div>
-    <img src="{{ astronomyPic.url }}" alt="{{ astronomyPic.title }}" >
+    <a [routerLink]="['image', astronomyPic.date]">
+      <img src="{{ astronomyPic.url }}" alt="{{ astronomyPic.title }}" >
+    </a>
   </div>
 </div>
