@@ -4,11 +4,11 @@
         [mode]="isScreenSmall ? 'over' : 'side'">
     <mat-toolbar color="primary">Meteorite Tracker</mat-toolbar>
     <mat-list>
-      <mat-list-item class="sidenav--list-item" [routerLink]="['']"><button class="sidenav--list-item-btn" mat-fab color="warn">
+      <mat-list-item class="sidenav--list-item" [routerLink]="['']"><button class="sidenav--list-item-btn" mat-raised-button>
         <mat-icon class="sidenav--list-item-btn-icon">home</mat-icon>
       </button></mat-list-item>
       <!-- <mat-list-item [routerLink]="['/astronomy-pics']">Daily Astronomy Pictures</mat-list-item> -->
-      <mat-list-item class="sidenav--list-item" [routerLink]="['/astronomy-pics']"><button class="sidenav--list-item-btn" mat-raised-button color="accent">
+      <mat-list-item class="sidenav--list-item" [routerLink]="['/astronomy-pics']"><button class="sidenav--list-item-btn" mat-raised-button>
         <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon> Astronomy
       </button></mat-list-item>
     </mat-list>

@@ -18,3 +18,15 @@
 
 // ----------------------------------------------
 // ----------------------------------------------
+
+// Component Mixins
+
+@mixin btn-dark {
+  background-color: $primary-dark;
+  color: #fff;
+  @include normal-text;
+}
+
+@mixin btn-dark-hover {
+  background-color: $primary-dark-hover;
+}

@@ -1,1 +1,6 @@
 // Global paragraph typography styles
+
+@mixin normal-text {
+  font-weight: 300;
+  font-size: 16px
+}
