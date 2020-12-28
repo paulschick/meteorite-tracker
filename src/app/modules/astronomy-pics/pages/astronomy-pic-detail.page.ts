@@ -6,7 +6,8 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './astronomy-pic-detail.page.html'
+  templateUrl: './astronomy-pic-detail.page.html',
+  styleUrls: ['./astronomy-pic-detail.page.scss']
 })
 export class AstronomyPicDetailPage implements OnInit, OnDestroy {
 

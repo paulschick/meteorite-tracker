@@ -1,0 +1,7 @@
+.astro--page__heading--wrapper {
+  @include center-child;
+}
+
+.astro--page__heading {
+  margin: 0.25em 0 1em 0;
+}

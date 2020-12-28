@@ -1,9 +1,13 @@
-<div class="astronomy-pics-thumbnail--wrapper">
-  <h2 class="astronomy-pics-thumbnail--title">{{ astronomyPic.title }}</h2>
-  <div>{{ astronomyPic.copyright }}</div>
-  <div>
-    <a [routerLink]="['image', astronomyPic.date]">
-      <img src="{{ astronomyPic.url }}" alt="{{ astronomyPic.title }}" >
-    </a>
-  </div>
+<div class="thumb--cards__wrapper">
+  <mat-card class="thumb--card">
+    <mat-card-header>
+      <mat-card-title>{{ astronomyPic.title }}</mat-card-title>
+      <mat-card-subtitle>{{ astronomyPic.copyright }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <a [routerLink]="['image', astronomyPic.date]">
+        <img mat-card-image src="{{ astronomyPic.url }}" alt="{{ astronomyPic.title }}">
+      </a>
+    </mat-card-content>
+  </mat-card>
 </div>

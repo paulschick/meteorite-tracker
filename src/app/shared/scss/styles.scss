@@ -24,6 +24,7 @@
 @mixin btn-dark {
   background-color: $primary-dark;
   color: #fff;
+  text-transform: uppercase;
   @include normal-text;
 }
 
