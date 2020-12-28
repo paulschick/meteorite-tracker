@@ -1,0 +1,11 @@
+.detail--heading {
+  @include header-h2;
+}
+
+.detail--subtitle {
+  @include header-h4;
+}
+
+.detail--explanation {
+  @include normal-text;
+}

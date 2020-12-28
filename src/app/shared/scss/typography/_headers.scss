@@ -26,3 +26,9 @@
   font-size: 2em;
   line-height: 1em;
 }
+
+@mixin header-h4 {
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 1em;
+}
