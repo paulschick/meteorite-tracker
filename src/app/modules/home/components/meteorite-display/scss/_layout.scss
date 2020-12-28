@@ -1,5 +1,3 @@
-@import '../../../../../shared/scss/styles.scss';
-
 .display--heading-wrapper {
   @include center-child;
 }
@@ -16,6 +14,10 @@
 .display--btns-div-heading {
   display: flex;
   justify-content: center;
+}
+
+.display--btns-div {
+  @include center-child;
 }
 
 .display--btns {

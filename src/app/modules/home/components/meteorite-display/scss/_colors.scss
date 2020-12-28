@@ -1,7 +1,5 @@
-@import '../../../../../shared/scss/styles.scss';
-
 .display--btns-div-wrapper {
-  background-color: #26c6d1;
+  background-color: $primary-rgb;
   color: #fff;
   @include box-shadow;
 }

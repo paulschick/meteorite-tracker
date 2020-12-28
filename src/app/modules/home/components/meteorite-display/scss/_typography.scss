@@ -1,5 +1,7 @@
-@import '../../../../../shared/scss/styles.scss';
-
 .display--heading {
   @include header-h2;
+}
+
+.display--btns-div-heading {
+  @include header-h3;
 }
