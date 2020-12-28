@@ -1,0 +1,7 @@
+.meteorite--card-wrapper {
+  @include box-shadow;
+}
+
+mat-card {
+  background-color: rgba(219, 213, 213, 0.212);
+}

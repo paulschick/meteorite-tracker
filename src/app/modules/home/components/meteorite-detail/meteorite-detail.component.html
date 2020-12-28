@@ -6,8 +6,12 @@
       </h2>
     </mat-card-title>
     <mat-card-content>
-      <div><span>Mass (Grams):</span> {{ meteorite?.mass }}</div>
-      <div><span>Landing Date:</span> {{ meteorite?.year | date: 'mediumDate' }}</div>
+      <div class="meteorite--card-content-wrapper">
+        <span>Mass (Grams):</span><p> {{ meteorite?.mass }}</p>
+      </div>
+      <div class="meteorite--card-content-wrapper">
+        <span>Landing Date:</span><p> {{ meteorite?.year | date: 'mediumDate' }}</p>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

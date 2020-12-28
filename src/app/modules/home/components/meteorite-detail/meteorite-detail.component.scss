@@ -1,28 +1,4 @@
-// Global Styles
 @import '../../../../shared/scss/styles.scss';
-
-.mat-card {
-  margin: 1em 6em;
-  // original blue-ish
-  // background-color: rgb(139, 166, 196);
-  background-color: $primary-dark;
-  -webkit-box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
-  box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
-  color: #fff;
-}
-
-.mat-card:hover {
-  // background-color: #26c6d1;
-
-  // primary color
-  // background-color: #673AB7;
-  background-color: $primary-rgb;
-}
-
-mat-card-title h2 {
-  @include card-h2
-}
-
-mat-card-content span {
-  @include card-content-span
-}
+@import './scss/colors';
+@import './scss/layout';
+@import './scss/typography';
