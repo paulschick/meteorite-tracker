@@ -5,6 +5,8 @@
 **Accent Hex**: #FFD740  
 **Accent rgb**: rgb(255,215,64)  
 
+Primary Dark Accent: rgb(44, 23, 80)  
+
 - [Final Stretch -> Application Styling](#final-stretch---application-styling)
   - [Initial Todos](#initial-todos)
     - [Styling Components](#styling-components)
