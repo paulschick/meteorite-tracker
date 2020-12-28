@@ -6,11 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mt-list',
-  template: `
-    <div class="container meteorite-list-wrapper">
-      <mt-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></mt-detail>
-    </div>
-  `,
+  templateUrl: './meteorite-list.component.html',
   styleUrls: ['./meteorite-list.component.scss']
 })
 export class MeteoriteListComponent implements OnInit, OnChanges {

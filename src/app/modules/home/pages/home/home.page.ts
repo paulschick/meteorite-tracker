@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: `
-    <apd></apd>
-    <mt-display></mt-display>
-  `,
+  templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss']
 })
 export class HomePage {

@@ -6,6 +6,7 @@
   - [Home Module](#home-module)
     - [On Styling and Angular Material](#on-styling-and-angular-material)
     - [Sidenav](#sidenav)
+    - [Home](#home)
 
 ## Initial Todos
 
@@ -62,3 +63,9 @@ Replace home text with circular home button from Material
 
 - Added material buttons to sidenav
   - Will need to be styled
+
+### Home
+
+I want a background color on the card heading -> will have to do with custom scss  
+
+- Added template pages for all of the meteorite components & page.
