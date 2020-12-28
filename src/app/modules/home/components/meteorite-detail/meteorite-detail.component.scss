@@ -3,14 +3,19 @@
 
 .mat-card {
   margin: 1em 6em;
-  background-color: rgb(139, 166, 196);
+  // original blue-ish
+  // background-color: rgb(139, 166, 196);
+  background-color: rgb(44, 23, 80) ;
   -webkit-box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
   box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
   color: #fff;
 }
 
 .mat-card:hover {
-  background-color: #26c6d1;
+  // background-color: #26c6d1;
+
+  // primary color
+  background-color: #673AB7;
 }
 
 mat-card-title h2 {

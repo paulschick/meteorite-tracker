@@ -1,5 +1,10 @@
 # Final Stretch -> Application Styling
 
+**Primary Color Hex**: #673AB7  
+**Primary Color rgb**: rgb(103,58,183)  
+**Accent Hex**: #FFD740  
+**Accent rgb**: rgb(255,215,64)  
+
 - [Final Stretch -> Application Styling](#final-stretch---application-styling)
   - [Initial Todos](#initial-todos)
     - [Styling Components](#styling-components)
