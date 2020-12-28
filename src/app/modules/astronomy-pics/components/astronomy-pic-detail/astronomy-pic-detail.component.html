@@ -1,1 +1,19 @@
-<h2>{{ astroDetailImage.title }}</h2>
+<div class="detail--wrapper">
+  <div class="detail--back-btn-wrapper">
+    <button class="detail--back-btn" [routerLink]="['/astronomy-pics']">
+      <mat-icon>arrow_back_ios_new</mat-icon> BACK TO IMAGES
+    </button>
+  </div>
+  <div class="detail--image-top-wrapper">
+    <img [src]="astroDetailImage.url" [alt]="astroDetailImage.title" class="detail--image-top">
+  </div>
+  <div class="detail--heading-wrapper">
+    <h2 class="detail--heading">{{ astroDetailImage.title }}</h2>
+    <h4 class="detail--subtitle">{{ astroDetailImage.date }}</h4>
+  </div>
+  <div class="detail--explanation-wrapper">
+    <p class="detail--explanation">
+      {{ astroDetailImage.explanation }}
+    </p>
+  </div>
+</div>
