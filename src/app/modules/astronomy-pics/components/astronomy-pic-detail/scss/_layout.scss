@@ -1,0 +1,15 @@
+.detail--image__container {
+  width: 100%;
+  @include center-child;
+}
+
+.detail--image-top-wrapper {
+  margin: 0;
+  padding: 0;
+  max-width: 75em;
+}
+
+.detail--image-top {
+  max-width: 100%;
+  max-height: 100%;
+}
