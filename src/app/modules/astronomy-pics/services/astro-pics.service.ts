@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { map, tap, catchError, concatMap, mergeMap } from 'rxjs/operators';
+import { tap, catchError, concatMap } from 'rxjs/operators';
 import { NASA_API_KEY } from '../../core/configs/nasa-config';
 import { NasaError } from '../../../shared/models/nasaErrors';
 import { IApd } from '../../../shared/models/apd.model';
-import { newArray } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root',
