@@ -13,4 +13,7 @@ Besides just cleaning up, need to end the subscribe. I think the completed part 
 - this component is done too.
 - astronomy-pic-detail is done too
   - Still have to push to array to be able to use ngFor, but have a good workaround
-  - Set to `IApd` instead of `IApd[]` in the service call.
+  - Set to `IApd` instead of `IApd[]` in the service call.  
+
+Alright, so this module is fully cleaned up and refactored.
+Before merging, I'm going to move the astro-pics service to the core module.
