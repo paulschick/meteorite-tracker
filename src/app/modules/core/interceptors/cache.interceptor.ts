@@ -34,7 +34,7 @@ export class CacheInterceptor implements HttpInterceptor {
       .pipe(
         tap(event => {
           if (event instanceof HttpResponse) {
-            console.log(`Adding item to cache: ${req.url}`);
+            // console.log(`Adding item to cache: ${req.url}`);
             this.cacheService.put(req.url, event);
           }
         })

@@ -14,39 +14,39 @@ export class AstroPicsService {
   private astroPicsUrl: string = 'https://api.nasa.gov/planetary/apod?api_key=';
   private key: string = NASA_API_KEY;
   private queryDate: string = '&date=';
-  public astroPicArray = [];
+  // public astroPicArray = [];
 
   constructor(private http: HttpClient) {}
 
   // ----------------------------------
   // Set up endpoints for gallery view
 
-  datesArray:Date[] = [];
-  daysPrior:number = 10;
+  // datesArray:Date[] = [];
+  // daysPrior:number = 10;
 
-  getDates = function() {
-    for (let i=0;i<this.daysPrior;i++) {
-      let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
-      let myDateStr = `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
-      if (this.datesArray.length < 10) {
-        this.datesArray.push(myDateStr)
-      }
-    }
-    return this.datesArray
-  }
+  // getDates = function() {
+  //   for (let i=0;i<this.daysPrior;i++) {
+  //     let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
+  //     let myDateStr = `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
+  //     if (this.datesArray.length < 10) {
+  //       this.datesArray.push(myDateStr)
+  //     }
+  //   }
+  //   return this.datesArray
+  // }
 
   // ----------------------------------------
   // Get all gallery images
 
-  returnedAstroPics(emptyArray) {
-    return of(...this.getDates())
-      .pipe(
-        // tap(date => console.log('concatMap source Observable', date)),
-        concatMap(date => this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${date}`)),
-        tap(data => emptyArray.push(data)),
-        catchError(err => this.handleHttpError(err))
-      );
-  }
+  // returnedAstroPics(emptyArray) {
+  //   return of(...this.getDates())
+  //     .pipe(
+  //       // tap(date => console.log('concatMap source Observable', date)),
+  //       concatMap(date => this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${date}`)),
+  //       tap(data => emptyArray.push(data)),
+  //       catchError(err => this.handleHttpError(err))
+  //     );
+  // }
 
   // -------------------------------------------
   // Get single image based on date from url param
@@ -59,6 +59,45 @@ export class AstroPicsService {
         catchError(err => this.handleHttpError(err))
       );
   }
+
+  // -----------------
+
+  // Find the correct start_date
+
+  private myDate = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
+  formattedDate = `${this.myDate.getFullYear()}-${this.myDate.getMonth() + 1}-${this.myDate.getDate()}`;
+
+  getFromDateRange() {
+    return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}&start_date=${this.formattedDate}`)
+      .pipe(
+        catchError(err => this.handleHttpError(err))
+      );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ----------------------
 
   // -------------------------------------
   // Error Handling for all requests
