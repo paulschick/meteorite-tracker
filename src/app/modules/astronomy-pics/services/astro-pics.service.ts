@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { tap, catchError, concatMap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { NASA_API_KEY } from '../../core/configs/nasa-config';
 import { NasaError } from '../../../shared/models/nasaErrors';
 import { IApd } from '../../../shared/models/apd.model';
@@ -14,65 +14,26 @@ export class AstroPicsService {
   private astroPicsUrl: string = 'https://api.nasa.gov/planetary/apod?api_key=';
   private key: string = NASA_API_KEY;
   private queryDate: string = '&date=';
-  // public astroPicArray = [];
+  private myDate: Date = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
+  public formattedDate: string = `${this.myDate.getFullYear()}-${this.myDate.getMonth() + 1}-${this.myDate.getDate()}`;
 
   constructor(private http: HttpClient) {}
 
-  // ----------------------------------
-  // Set up endpoints for gallery view
 
-  // datesArray:Date[] = [];
-  // daysPrior:number = 10;
-
-  // getDates = function() {
-  //   for (let i=0;i<this.daysPrior;i++) {
-  //     let myDate = new Date(Date.now() - (i+1) * 24 * 60 * 60 * 1000)
-  //     let myDateStr = `${myDate.getFullYear()}-${myDate.getMonth() + 1}-${myDate.getDate()}`
-  //     if (this.datesArray.length < 10) {
-  //       this.datesArray.push(myDateStr)
-  //     }
-  //   }
-  //   return this.datesArray
-  // }
-
-  // ----------------------------------------
-  // Get all gallery images
-
-  // returnedAstroPics(emptyArray) {
-  //   return of(...this.getDates())
-  //     .pipe(
-  //       // tap(date => console.log('concatMap source Observable', date)),
-  //       concatMap(date => this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${date}`)),
-  //       tap(data => emptyArray.push(data)),
-  //       catchError(err => this.handleHttpError(err))
-  //     );
-  // }
-
-  // -------------------------------------------
-  // Get single image based on date from url param
-  // pass dateString as 'yyyy-mm-dd'
-
-  getDetailImage(dateString, emptyArray) {
-    return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.queryDate}${dateString}`)
-      .pipe(
-        tap(data => emptyArray.push(data)),
-        catchError(err => this.handleHttpError(err))
-      );
-  }
-
-  // -----------------
-
-  // Find the correct start_date
-
-  private myDate = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
-  formattedDate = `${this.myDate.getFullYear()}-${this.myDate.getMonth() + 1}-${this.myDate.getDate()}`;
-
-  getFromDateRange() {
+  getFromDateRange():Observable<IApd[] | NasaError> {
     return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}&start_date=${this.formattedDate}`)
       .pipe(
         catchError(err => this.handleHttpError(err))
       );
   }
+
+  getDetailImage(dateString):Observable<IApd | NasaError> {
+    return this.http.get<IApd>(`${this.astroPicsUrl}${this.key}${this.queryDate}${dateString}`)
+      .pipe(
+        catchError(err => this.handleHttpError(err))
+      );
+  }
+
 
 
 
