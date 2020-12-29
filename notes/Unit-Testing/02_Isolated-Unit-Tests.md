@@ -8,6 +8,8 @@
     - [Demo Test](#demo-test)
   - [Testing a Component](#testing-a-component)
   - [Mocking to Isolate Code](#mocking-to-isolate-code)
+    - [Note on This Test](#note-on-this-test)
+  - [Testing Interactions](#testing-interactions)
 
 ## Testing a Pipe
 
@@ -238,6 +240,7 @@ Here is this test so far:
 
 ```ts
 import { HeroesComponent } from './heroes.component';
+import { of } from 'rxjs';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -255,5 +258,54 @@ describe('HeroesComponent', () => {
 
     component = new HeroesComponent(mockHeroService);
   })
+
+  describe('delete', () => {
+    // this method is supposed to remove the passed in hero from the heros array
+    it('should remove indicated hero from the heroes list', () => {
+
+      // tell it to return an Observable
+      // and property is Jasmine
+      mockHeroService.deleteHero.and.returnValue(of(true))
+
+      component.heros = HEROES;
+
+      component.delete(HEROES[2]);
+
+      expect(component.heroes.length).toBe(2);
+    })
+  })
+})
+```
+
+This code above returns an erro: cannot call subscribe to undefined.
+The delete hero method is called in the component and then subscribed to the Observable.
+We need the mock object to return an observable when deleteHero is called.  
+
+It doesn't matter for the test what the Observable returns.
+The code above will not return an error with the Observable added.
+Use the `of` method to make observable.  
+
+Now, subscribe will work because the service returns an Observable with one value of `true`.  
+
+### Note on This Test
+
+This particular example is only checking that *a* hero was removed.
+It doesn't check to make sure that the particular hero was removed.
+A better test could be written to test this method.
+You would check that it still contains the heroes from index 0 and 1, and doesn't contain the hero from index 2.
+
+## Testing Interactions
+
+The previous test doesn't check to see that the method called on the service for deleteHero().subscribe is working.
+We just tested that the state of the component has changed.
+We need to check that deleteHero was called with the correct parameter.
+
+```ts
+it('should call deleteHero', () => {
+  mockHeroService.deleteHero.and.returnValue(of(true))
+  component.heros = HEROES;
+
+  component.delete(HEROES[2]);
+
 })
 ```
