@@ -7,9 +7,13 @@ export class FormatMassPipe implements PipeTransform {
     if (value === 0) {
       return 0;
     }
-    if (!value) {
-      return;
+    if (!value || isNaN(+value) === true) {
+      return 'No Mass';
     }
-    return (+value/(1000)).toFixed(2) + 'Kg';
+    if ((+value/(1000)) < 0.01) {
+      return value.toFixed(4) + 'g';
+    } else {
+      return (+value/(1000)).toFixed(2) + 'Kg';
+    }
   }
 }
