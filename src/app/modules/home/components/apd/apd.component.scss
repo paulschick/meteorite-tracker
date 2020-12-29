@@ -1,34 +1,6 @@
 // Global Styles
 @import '../../../../shared/scss/styles.scss';
 
-// Partial Imports
-// @import './scss/partial1';
-// @import './scss/partial2';
-
-
-// All of this styling needs to go into partials!
-// this file is for imports only.
-
-// .apd-wrapper {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .apd-wrapper h2 {
-//   margin: 1.5em 0 1em 0;
-// }
-
-// .apd-img-wrapper {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .apd-img-wrapper img {
-//   width: 100%;
-//   max-width: 900px;
-//   height: auto;
-// }
-
 @mixin main-heading {
   text-align: center;
   font-size: 35px;
