@@ -23,7 +23,7 @@ export class ApdComponent implements OnInit {
     if (resolvedApd instanceof NasaError) {
       console.log(`Apd Component error: ${resolvedApd.additionalMessage}`);
     } else {
-      this.apd = resolvedApd;
+      this.apd = resolvedApd[0];
       this.apdUrl = this.apd.url;
     }
   }

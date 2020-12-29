@@ -12,6 +12,7 @@ export class HomeService {
 
   private meteoritesUrl:string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
   private apdUrl:string = 'https://api.nasa.gov/planetary/apod?api_key=';
+  private randomQuery:string = '&count=1';
   private key:string = NASA_API_KEY;
 
   constructor(private http: HttpClient) {  }
@@ -24,7 +25,7 @@ export class HomeService {
   }
 
   getApd():Observable<IApd | NasaError>{
-    return this.http.get<IApd>(`${this.apdUrl}${this.key}`)
+    return this.http.get<IApd>(`${this.apdUrl}${this.key}${this.randomQuery}`)
       .pipe(
         catchError(err => this.handleHttpError(err))
       );

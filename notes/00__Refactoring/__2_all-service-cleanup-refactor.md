@@ -17,3 +17,13 @@ Besides just cleaning up, need to end the subscribe. I think the completed part 
 
 Alright, so this module is fully cleaned up and refactored.
 Before merging, I'm going to move the astro-pics service to the core module.
+
+## Home Module
+
+Okay, so now to refactor that main image and stuff.
+All of the code looks pretty good over here, I'm not worried about it.
+I should be able to use the apd resolver for the new implementation just the same.
+In fact, I might just be able to add the random url and then just change the heading make it easy.
+
+Done, just changed it to a featured image.
+Resolver works the same, but in the component just set the component property equal to the 0 index of the returned Observable.
