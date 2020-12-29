@@ -4,6 +4,7 @@
   - [Testing a Pipe](#testing-a-pipe)
     - [Pipe Idea](#pipe-idea)
     - [Testing format-mass.pipe.ts](#testing-format-masspipets)
+  - [Testing a Service](#testing-a-service)
 
 ## Testing a Pipe
 
@@ -52,4 +53,110 @@ describe('FormatMassPipe', () => {
 
 I'd like to add more cases.
 Like when I pass in the number `5000`, when I pass in 0, when I pass in a word, etc.
-I'm pretty sure it would fail if I pass in a word, but I should test for that too!.
+I'm pretty sure it would fail if I pass in a word, but I should test for that too!.  
+
+So, I have 10 tests for the format-mass pipe.
+Running and developing the tests forced me to optimize the pipe for all different scenarios.
+This is pretty awesome, this pipe is way more robust, and deals with grams, kilograms, tons, and values that are not valid.  
+
+Here's the Pipe:
+
+```ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'formatMass' })
+export class FormatMassPipe implements PipeTransform {
+  transform(value: any): any {
+    switch(true) {
+      case +value === 0:
+        return 0;
+        break;
+      case !value || isNaN(+value):
+        return 'No Mass';
+        break;
+      case +value < 1000:
+        return value.toFixed(2) + 'g'
+      case +value < 1000000:
+        return (+value/(1000)).toFixed(2) + 'Kg';
+        break;
+      case + value >= 1000000:
+        return (+value/(1000000)).toFixed(2) + ' Metric Tons';
+      default:
+        return value;
+    }
+  }
+}
+```
+
+Heres the test:
+
+```ts
+import { FormatMassPipe } from "./format-mass.pipe";
+
+describe('FormatMassPipe', () => {
+  it("should display 5.00Kg if mass is '5000'", () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform('5000')).toEqual('5.00Kg');
+  })
+
+  it('should display 5.00kg if mass is 5000', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(5000)).toEqual('5.00Kg');
+  })
+
+  it('should display 0 if mass is 0', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(0)).toEqual(0);
+  })
+
+  it("should display 0 if mass is ''", () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform('')).toEqual(0);
+  })
+
+  it('should display No Mass if mass is hello', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform('hello')).toEqual('No Mass');
+  })
+
+  it("should display No Mass is mass is '2020/12/23'", () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform('2020/12/23')).toEqual('No Mass');
+  })
+
+  it('should display 500.00g if mass is 500', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(500)).toEqual('500.00g');
+  })
+
+  it('should display 0.12g if mass is 0.12', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(0.12)).toEqual('0.12g');
+  })
+
+  it('should display 1.00 Metric Tons if mass is 1000000', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(1000000)).toEqual('1.00 Metric Tons');
+  })
+
+  it('should display 2.34 Metric Tons if mass is 2340000', () => {
+    let pipe = new FormatMassPipe();
+
+    expect(pipe.transform(2340000)).toEqual('2.34 Metric Tons');
+  })
+})
+```
+
+## Testing a Service
+
+So I'm going to test the Astronomy-pics module service first.
+This is a complicated service, so it may be tough, but to get through the lesson that's what I'll do.
