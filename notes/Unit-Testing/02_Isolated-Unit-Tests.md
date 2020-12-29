@@ -7,6 +7,7 @@
   - [Testing a Service](#testing-a-service)
     - [Demo Test](#demo-test)
   - [Testing a Component](#testing-a-component)
+  - [Mocking to Isolate Code](#mocking-to-isolate-code)
 
 ## Testing a Pipe
 
@@ -192,4 +193,67 @@ Do I have anything similar?
 meteorite-detail -> takes in meteorites, but the functionality is through the template.
 So I would need to do integrated testing for this component.  
 
-His component uses a service in the constructor, and then it has the heroes array, where the response of the get request is stored. This is some functionality that I definitely use, although I don't have the delete method in any of my methods.
+His component uses a service in the constructor, and then it has the heroes array, where the response of the get request is stored. This is some functionality that I definitely use, although I don't have the delete method in any of my methods.  
+
+Maybes:
+
+- astronomy-pics-list component
+- meteorite-list-component
+- sidenav  
+
+sidenav calculates breakpoints, that could work.  
+
+Course Work:
+
+- initialized the component with
+
+```ts
+let component: HeroesComponent;
+// this is the array
+let HEROES;
+// then defined an array of objects for the test data
+
+component = new HeroesComponent();
+```
+
+the HeroesComponent instance expects the HeroService.
+This makes an HTTP call. You don't want to make an HTTP call in a unit test.
+Also, don't want to test two units, so we need a fake Heroe service.  
+
+In this case, his delete method calls a method on the service.
+So this does need to have a dummy service in order to work.  
+
+## Mocking to Isolate Code
+
+Needs to pass in an object that looks like the Heros service.
+*Jasmine* is used to create a mock object.  
+
+`jasmine.createSpyObj()` creates a mock object that can be controlled.
+Tell what methods it has, what they should return, and can ask what methods were called in a test.
+Need to pass in an array of method names, if no methods then pass in a blank.  
+Use a string value with that method name.  
+
+Then pass this into the HeroesComponent constructor.
+Here is this test so far:
+
+```ts
+import { HeroesComponent } from './heroes.component';
+
+describe('HeroesComponent', () => {
+  let component: HeroesComponent;
+  let HEROES;
+  let mockHeroService;
+
+  beforeEach(() => {
+    HEROES = [
+      { ... },
+      { ... },
+      // imagine these have data in them
+    ]
+
+    mockHeroService = jasmine.createSpyObj(['getHeroes', 'addHero', 'deleteHero'])
+
+    component = new HeroesComponent(mockHeroService);
+  })
+})
+```
