@@ -5,6 +5,8 @@
     - [Pipe Idea](#pipe-idea)
     - [Testing format-mass.pipe.ts](#testing-format-masspipets)
   - [Testing a Service](#testing-a-service)
+    - [Demo Test](#demo-test)
+  - [Testing a Component](#testing-a-component)
 
 ## Testing a Pipe
 
@@ -159,4 +161,35 @@ describe('FormatMassPipe', () => {
 ## Testing a Service
 
 So I'm going to test the Astronomy-pics module service first.
-This is a complicated service, so it may be tough, but to get through the lesson that's what I'll do.
+This is a complicated service, so it may be tough, but to get through the lesson that's what I'll do.  
+
+Actually, this has dependencies, so I'm going to wait to learn about mocking.
+I'll follow along and then test a component when he gets to that.  
+
+### Demo Test
+
+This one is simple, it has no dependencies so he doesn't have to worry about a constructor method (like all of mine have with Http requests.).
+The test in the example doesn't explicitly hve an arrange.
+So he moves the init from the beforeEach and into the tests.  
+
+So it looks just as simple to test a service with no dependencies.
+I need to know how to do it with dependencies, since that's the majority of the services that are going to run into problems in production...  
+
+## Testing a Component
+
+Demo  
+
+Has one dependency, and has some methods including an OnInit.
+He's just testing the delete method.
+So you can actually isolate methods.  
+
+The class here has a property that is an array.
+So to test, you would need some data to work with in the test, in this case an array.
+Especially if you're going to delete data.  
+
+Do I have anything similar?  
+
+meteorite-detail -> takes in meteorites, but the functionality is through the template.
+So I would need to do integrated testing for this component.  
+
+His component uses a service in the constructor, and then it has the heroes array, where the response of the get request is stored. This is some functionality that I definitely use, although I don't have the delete method in any of my methods.
