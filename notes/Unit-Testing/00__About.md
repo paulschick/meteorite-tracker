@@ -19,6 +19,10 @@ I will follow along with this course, and run tests on my code.
   - [Tools](#tools)
   - [Installing and Running the Demo](#installing-and-running-the-demo)
   - [Writing Our First Unit Test](#writing-our-first-unit-test)
+  - [Running the Unit Test](#running-the-unit-test)
+    - [package.json -> scripts](#packagejson---scripts)
+  - [Writing Good Unit Tests](#writing-good-unit-tests)
+    - [Techniques](#techniques)
 
 ## Section 02 - Course Introduction
 
@@ -132,4 +136,48 @@ I'm installing this to so that I can follow along where it's difficult to do so 
 My goal is to do this with my application.
 I think I'll learn how it actually works by applying it to a real application that I've built and that I understand.  
 
-src/app/first-app.spec.ts -> must have spec so that Karma knows that this file is a test.
+src/app/first-app.spec.ts -> must have spec so that Karma knows that this file is a test.  
+
+Describe function: Jasmine function. Allows us to group tests together. Takes string and callback function (for describing the test)  
+
+The first test is really not testing anything.
+But it shows the structure of a test.  
+
+Arrange the initial state, change that state, and then assert that the new state is what we expect it to be.
+
+## Running the Unit Test
+
+### package.json -> scripts
+
+The scripts show what is being run when you test the application.
+`ng test` is what is run when you do `npm test`.
+
+```ps1
+npm test
+```
+
+This should run a test with Karma, and open up a browser showing the test.
+Looks like it needs to build, at least for running the first test.
+The output was `Executed 1 of 1 SUCCESS` and then it tells how long this took and some other details.
+The browser is controlled by the automated test software.  
+
+Keep the browser open with the console to keep running tests.  
+
+The initial test is going to be deleted, so look at 01_first-test_example.md  
+
+## Writing Good Unit Tests
+
+Arrange: All necessary preconditions and inputs  
+
+Act: on the object or class under test  
+
+Assert: that the expected results have occured  
+
+a test should be a complete story, all inside the `it()`.
+It should be fairly obvious in how the test works.  
+
+### Techniques
+
+- Move less interesting setup into `beforeEach()`
+- Keep critical setup within the `it()`
+- Include Arrange, Act, and Assert inside the `it()`
