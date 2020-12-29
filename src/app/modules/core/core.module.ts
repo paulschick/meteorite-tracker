@@ -7,6 +7,7 @@ import { HomeModule } from '../home/home.module';
 import { throwIfAlreadyLoaded } from './guards/module-import-guard';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { CacheInterceptor } from './interceptors/cache.interceptor';
+import { AstroPicsService } from './services/astro-pics.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   declarations: [],
   providers: [
+    AstroPicsService,
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ]

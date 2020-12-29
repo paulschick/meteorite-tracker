@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
 import { AstronomyPicsRoutingModule } from './astronomy-pics-routing.module';
 
-import { AstroPicsService } from './services/astro-pics.service';
-
 import { AstronomyPicsListComponent } from './components/astronomy-pics-list/astronomy-pics-list.component';
 import { AstronomyPicsPage } from './pages/astronomy-pics.page';
 import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thumbnail/astronomy-pics-thumbnail.component';
@@ -26,9 +24,6 @@ import { AstronomyPicDetailComponent } from './components/astronomy-pic-detail/a
     CommonModule,
     SharedModule,
     AstronomyPicsRoutingModule
-  ],
-  providers: [
-    AstroPicsService
   ]
 })
 export class AstronomyPicsModule { }
