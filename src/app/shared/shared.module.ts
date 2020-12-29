@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { FormatMassPipe } from './pipes/format-mass.pipe';
+
 // Angular FlexBox
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -40,7 +42,9 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
+  declarations: [FormatMassPipe],
   exports: [
+    FormatMassPipe,
     // FlexLayoutModule,
     FormsModule,
     // MatCheckboxModule,
