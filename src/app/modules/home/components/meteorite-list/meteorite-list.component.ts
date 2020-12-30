@@ -1,5 +1,4 @@
 import { Component, OnChanges, OnInit, Input } from '@angular/core';
-import { HomeService } from '../../home.service';
 import { IMeteorite } from '../../../../shared/models/meteorite.model';
 import { NasaError } from '../../../../shared/models/nasaErrors';
 import { ActivatedRoute } from '@angular/router';
@@ -15,8 +14,7 @@ export class MeteoriteListComponent implements OnInit, OnChanges {
   meteoriteDate:Date;
   meteoriteYear:number;
 
-  constructor(private homeService: HomeService,
-              private route: ActivatedRoute) {  }
+  constructor(private route: ActivatedRoute) {  }
 
   ngOnInit() {
 
