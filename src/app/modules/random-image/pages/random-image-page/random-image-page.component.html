@@ -1,9 +1,8 @@
 <div class="rand--container">
   <h1 class="rand--header">Click to Generate Random Images from Nasa!</h1>
-  <mt-random-image (notify)="receiveNotification($event)"></mt-random-image>
-  <div *ngFor="let n of randImages">
-    {{n}}
-  </div>
+  <mt-random-image
+    (postImg)="postImage($event)"
+  ></mt-random-image>
   <div *ngFor="let x of astronomyImgArr">
     <img src="{{x.url}}" alt="">
   </div>
