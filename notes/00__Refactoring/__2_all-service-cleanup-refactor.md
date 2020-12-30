@@ -27,3 +27,19 @@ In fact, I might just be able to add the random url and then just change the hea
 
 Done, just changed it to a featured image.
 Resolver works the same, but in the component just set the component property equal to the 0 index of the returned Observable.
+
+## More Content
+
+So when you get to the website, you don't really know what's going on.
+It would be good to have some written content that just tells you about the site and how to use it.  
+
+Like the heading "Astronomy Images" doesn't tell you much of anything.
+It would be good to have a paragraph that says that these are 10 images, each being the featured image of that day.
+Why only one per day? Well that's because of how Nasa's API works, and why not have something to say about that?  
+
+### Layout
+
+And on the Astronomy-pic detail pages, some more space in there would be good.
+For one, wouldn't be bad to further control the size of that image.
+I don't think it needs to take up the whole screen.
+Also, the heading is too close to the image.
