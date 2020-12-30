@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AstroPicsService } from '../../../core/services/astro-pics.service';
 import { IApd } from '../../../../shared/models/apd.model';
 import { NasaError } from 'src/app/shared/models/nasaErrors';
 
@@ -12,15 +11,17 @@ import { NasaError } from 'src/app/shared/models/nasaErrors';
 export class AstronomyPicsListComponent implements OnInit {
   AstroPics: IApd[];
 
-  constructor(private astroPicsService: AstroPicsService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
 
-    this.astroPicsService.getFromDateRange().subscribe(
-      (data: IApd[]) => (this.AstroPics = data),
-      (err: NasaError) => console.log(err),
-      () => console.log('finished retrieving Astronomy Pictures of the Day')
-    );
+    let resolvedAstroPics: IApd[] | NasaError = this.route.snapshot.data['resolvedAstronomyPics'];
 
+    if (resolvedAstroPics instanceof NasaError) {
+      console.log(`Astronomy Pics List component error: ${resolvedAstroPics.additionalMessage}`);
+    } else {
+      this.AstroPics = resolvedAstroPics;
+      console.log('Successfully retrieved Astronomy Images from Nasa API')
+    }
   }
 }
