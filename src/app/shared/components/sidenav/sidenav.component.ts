@@ -1,8 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
-const SMALL_WIDTH_BREAKPOINT = 720;
-
 @Component({
   selector: 'mt-sidenav',
   templateUrl: './sidenav.component.html',
