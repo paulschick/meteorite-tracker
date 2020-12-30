@@ -10,55 +10,37 @@ import { IApd } from '../../../shared/models/apd.model';
   providedIn: 'root',
 })
 export class AstroPicsService {
-
   private astroPicsUrl: string = 'https://api.nasa.gov/planetary/apod?api_key=';
   private key: string = NASA_API_KEY;
   private queryDate: string = '&date=';
   private myDate: Date = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
-  public formattedDate: string = `${this.myDate.getFullYear()}-${this.myDate.getMonth() + 1}-${this.myDate.getDate()}`;
+  public formattedDate: string = `${this.myDate.getFullYear()}-${
+    this.myDate.getMonth() + 1
+  }-${this.myDate.getDate()}`;
 
   constructor(private http: HttpClient) {}
 
-
-  getFromDateRange():Observable<IApd[] | NasaError> {
-    return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}&start_date=${this.formattedDate}`)
+  getFromDateRange(): Observable<IApd[] | NasaError> {
+    return this.http
+      .get<IApd[]>(
+        `${this.astroPicsUrl}${this.key}&start_date=${this.formattedDate}`
+      )
       .pipe(
         take(1),
-        catchError(err => this.handleHttpError(err))
+        catchError((err) => this.handleHttpError(err))
       );
   }
 
-  getDetailImage(dateString):Observable<IApd | NasaError> {
-    return this.http.get<IApd>(`${this.astroPicsUrl}${this.key}${this.queryDate}${dateString}`)
+  getDetailImage(dateString): Observable<IApd | NasaError> {
+    return this.http
+      .get<IApd>(
+        `${this.astroPicsUrl}${this.key}${this.queryDate}${dateString}`
+      )
       .pipe(
         take(1),
-        catchError(err => this.handleHttpError(err))
+        catchError((err) => this.handleHttpError(err))
       );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // ----------------------
 
@@ -69,16 +51,8 @@ export class AstroPicsService {
     let dataError = new NasaError();
     dataError.errorNumber = 100;
     dataError.message = error.statusText;
-    dataError.additionalMessage = 'An error occurred retrieving data from Nasa.';
+    dataError.additionalMessage =
+      'An error occurred retrieving data from Nasa.';
     return throwError(dataError);
   }
-
-
-
-
-
-
-
-
-
 }
