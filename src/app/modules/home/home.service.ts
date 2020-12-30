@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, take } from 'rxjs/operators';
 import { IMeteorite } from '../../shared/models/meteorite.model';
 import { IApd } from '../../shared/models/apd.model';
 import { NASA_API_KEY } from '../core/configs/nasa-config';
@@ -20,6 +20,7 @@ export class HomeService {
   getAllMeteorites():Observable<IMeteorite[] | NasaError>{
     return this.http.get<IMeteorite[]>(this.meteoritesUrl)
       .pipe(
+        take(1),
         catchError(err => this.handleHttpError(err))
       );
   }
@@ -27,6 +28,7 @@ export class HomeService {
   getApd():Observable<IApd | NasaError>{
     return this.http.get<IApd>(`${this.apdUrl}${this.key}${this.randomQuery}`)
       .pipe(
+        take(1),
         catchError(err => this.handleHttpError(err))
       );
   }

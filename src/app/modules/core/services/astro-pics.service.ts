@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { catchError, take } from 'rxjs/operators';
 import { NASA_API_KEY } from '../../core/configs/nasa-config';
 import { NasaError } from '../../../shared/models/nasaErrors';
 import { IApd } from '../../../shared/models/apd.model';
@@ -23,6 +23,7 @@ export class AstroPicsService {
   getFromDateRange():Observable<IApd[] | NasaError> {
     return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}&start_date=${this.formattedDate}`)
       .pipe(
+        take(1),
         catchError(err => this.handleHttpError(err))
       );
   }
@@ -30,6 +31,7 @@ export class AstroPicsService {
   getDetailImage(dateString):Observable<IApd | NasaError> {
     return this.http.get<IApd>(`${this.astroPicsUrl}${this.key}${this.queryDate}${dateString}`)
       .pipe(
+        take(1),
         catchError(err => this.handleHttpError(err))
       );
   }
