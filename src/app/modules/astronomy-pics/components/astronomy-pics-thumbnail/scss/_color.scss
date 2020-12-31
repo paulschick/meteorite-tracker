@@ -1,3 +1,3 @@
 mat-card {
-  background-color: rgba(196, 188, 204, 0.288);
+  @include elevation-9;
 }
