@@ -2,22 +2,33 @@
   <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10">
     <mat-toolbar color="primary">Meteorite Tracker</mat-toolbar>
     <mat-list>
-      <mat-list-item class="sidenav--list-item" [routerLink]="['']"><button class="sidenav--list-item-btn" mat-raised-button>
-        <mat-icon class="sidenav--list-item-btn-icon">home</mat-icon>
-      </button></mat-list-item>
-      <mat-list-item class="sidenav--list-item" [routerLink]="['/astronomy-pics']"><button class="sidenav--list-item-btn" mat-raised-button>
-        <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon> Astronomy
-      </button></mat-list-item>
-      <mat-list-item class="sidenav--list-item" [routerLink]="['/random-image']"><button class="sidenav--list-item-btn" mat-raised-button>
-        <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon> Random Image
-      </button></mat-list-item>
+      <mat-list-item class="sidenav--list-item" [routerLink]="['']"
+        ><button class="sidenav--list-item-btn" mat-raised-button>
+          <mat-icon class="sidenav--list-item-btn-icon">home</mat-icon>
+        </button></mat-list-item
+      >
+      <mat-list-item
+        class="sidenav--list-item"
+        [routerLink]="['/astronomy-pics']"
+        ><button class="sidenav--list-item-btn" mat-raised-button>
+          <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon>
+          Astronomy
+        </button></mat-list-item
+      >
+      <mat-list-item class="sidenav--list-item" [routerLink]="['/random-image']"
+        ><button class="sidenav--list-item-btn" mat-raised-button>
+          <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon>
+          Random Image
+        </button></mat-list-item
+      >
     </mat-list>
   </mat-sidenav>
-
-  <div class="app-sidenav-content">
-    <mt-toolbar (toggleSidenav)="sidenav.toggle()"></mt-toolbar>
-    <div class="wrapper">
-      <router-outlet></router-outlet>
+  <div class="full-application--container">
+    <div class="app-sidenav-content">
+      <mt-toolbar (toggleSidenav)="sidenav.toggle()"></mt-toolbar>
+      <div class="wrapper">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </mat-sidenav-container>

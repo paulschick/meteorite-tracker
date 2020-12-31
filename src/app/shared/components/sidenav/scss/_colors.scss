@@ -7,3 +7,9 @@
 .sidenav--list-item-btn:hover {
   @include btn-dark-hover;
 }
+
+.full-application--container,
+.app-sidenav,
+.wrapper {
+  background-color: #121212;
+}

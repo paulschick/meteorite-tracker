@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'mt-root',
@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
     <mt-sidenav></mt-sidenav>
   `
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
+  constructor( private elementRef: ElementRef ) {}
+
+  ngAfterViewInit() {
+    // set dark mode for whole document
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#121212';
+  }
 }
