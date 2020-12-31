@@ -6,6 +6,14 @@
   background-color: $darkmode-primary-hover;
 }
 
+.display--btns-fab {
+  @include darkmode-btn-primary;
+}
+
+.display--btns-fab:hover {
+  background-color: $darkmode-primary-hover;
+}
+
 .show {
   @include darkmode-btn-accent;
 }
