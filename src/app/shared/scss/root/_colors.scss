@@ -13,3 +13,93 @@ $accent-rgb: rgb(255,215,64);
   -webkit-box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
   box-shadow: 1px 2px 12px -2px rgba(0,0,0,0.55);
 }
+
+// ---------------------------------------------------------
+// ------------- DARK MODE -------------------------
+
+// Component Colors
+
+$darkmode-primary: #b39ddb;
+// $darkmode-primary-hover: ;
+// $darkmode-accent: ;
+// $darkmode-accent-hover: ;
+
+$darkmode-toolbar: #000;
+$darkmode-background: #121212;
+
+// -----------------------------
+// ------ WHITE OVERLAYS ----------
+// add as background: linear gradient and put the rgba value twice
+// lightness adds elevation, the number here describes the opacity of the white overlay as a percent (elevation-5 is 5% opacity)
+
+@mixin elevation-5 {
+  background: linear-gradient(
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.05)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-7 {
+  background: linear-gradient(
+    rgba(255,255,255,0.07),
+    rgba(255,255,255,0.07)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-8 {
+  background: linear-gradient(
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.08)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-9 {
+  background: linear-gradient(
+    rgba(255,255,255,0.09),
+    rgba(255,255,255,0.09)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-11 {
+  background: linear-gradient(
+    rgba(255,255,255,0.11),
+    rgba(255,255,255,0.11)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-12 {
+  background: linear-gradient(
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.12)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-14 {
+  background: linear-gradient(
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.14)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-15 {
+  background: linear-gradient(
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.15)
+  );
+  background-color: $darkmode-background;
+}
+@mixin elevation-16 {
+  background: linear-gradient(
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.16)
+  );
+  background-color: $darkmode-background;
+}
+
+// --------------------------------
+// ----- FONT COLORS -------------
+
+$darkmode-font-heading: rgba(255,255,255,0.87);
+$darkmode-font-medium: rgba(255,255,255,0.60);
+$darkmode-font-body: rgba(255,255,255,0.55);
+$darkmode-font-disabled: rgba(255,255,255,0.38);
