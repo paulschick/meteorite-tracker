@@ -19,3 +19,10 @@ mat-card-content p {
   text-align: center;
   margin: 0 1em 0 1em;
 }
+
+@media only screen and (max-width: 768px) {
+  .meteorite--card-wrapper {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+}
