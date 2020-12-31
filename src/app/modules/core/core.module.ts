@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HomeModule } from '../home/home.module';
 
@@ -17,7 +18,8 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     HomeModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    FlexLayoutModule
   ],
   declarations: [],
   providers: [
