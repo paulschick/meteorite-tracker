@@ -19,6 +19,7 @@ mat-card-content mat-card-image {
 
 @media only screen and (max-width: 768px) {
   mat-card {
-    margin: 1em .1em;
+    margin: 1em 2em;
+    max-width: fit-content;
   }
 }

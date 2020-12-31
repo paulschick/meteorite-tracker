@@ -24,6 +24,7 @@
   margin: 0 0 2.5em 0;
 
   mat-card {
+    margin: 2.5em 0 1em 0;
     @include elevation-14;
     color: $darkmode-font-heading;
     display: flex;
@@ -36,6 +37,7 @@
 }
 
 .apd-img-wrapper {
+  margin: 0 2em;
   @include wrapper-centered;
 
   .apd-img {
