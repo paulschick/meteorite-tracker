@@ -1,8 +1,7 @@
 .detail--back-btn {
-  background-color: $primary-dark;
-  color: #fff;
+  @include darkmode-btn-accent;
 }
 
 .detail--back-btn:hover {
-  background-color: $primary-dark-hover;
+  background-color: $darkmode-accent-hover;
 }

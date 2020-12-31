@@ -1,7 +1,23 @@
 .display--btns {
-  @include btn-dark;
+  @include darkmode-btn-primary;
 }
 
 .display--btns:hover {
-  @include btn-dark-hover;
+  background-color: $darkmode-primary-hover;
+}
+
+.display--btns-fab {
+  @include darkmode-btn-primary;
+}
+
+.display--btns-fab:hover {
+  background-color: $darkmode-primary-hover;
+}
+
+.show {
+  @include darkmode-btn-accent;
+}
+
+.show:hover {
+  background-color: $darkmode-accent-hover;
 }

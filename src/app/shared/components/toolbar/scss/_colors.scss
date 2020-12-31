@@ -1,0 +1,8 @@
+mat-toolbar {
+  @include elevation-5;
+  color: $darkmode-font-medium;
+}
+
+mat-icon {
+  color: $darkmode-font-medium;
+}
