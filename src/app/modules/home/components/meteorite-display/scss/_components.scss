@@ -1,7 +1,7 @@
 .display--btns {
-  @include btn-dark;
+  @include darkmode-btn-primary;
 }
 
 .display--btns:hover {
-  @include btn-dark-hover;
+  background-color: $darkmode-primary-hover;
 }

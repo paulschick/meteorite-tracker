@@ -2,6 +2,14 @@
   @include box-shadow;
 }
 
+.meteorite--card-heading {
+  color: $darkmode-primary;
+}
+
 mat-card {
-  background-color: rgba(219, 213, 213, 0.212);
+  @include elevation-14;
+  color: $darkmode-font-medium;
+  span {
+    color: $darkmode-accent;
+  }
 }

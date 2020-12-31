@@ -1,15 +1,20 @@
 @import '../../../scss/styles.scss';
 
 .sidenav--list-item-btn {
-  @include btn-dark;
+  @include darkmode-btn-primary;
 }
 
 .sidenav--list-item-btn:hover {
-  @include btn-dark-hover;
+  background-color: $darkmode-primary-hover;
 }
 
 .full-application--container,
 .app-sidenav,
 .wrapper {
   background-color: #121212;
+}
+
+mat-toolbar {
+  @include elevation-7;
+  color: $darkmode-font-heading;
 }

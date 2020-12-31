@@ -24,6 +24,8 @@
   margin: 0 0 2.5em 0;
 
   mat-card {
+    @include elevation-14;
+    color: $darkmode-font-heading;
     display: flex;
     justify-content: center;
   }
