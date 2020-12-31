@@ -1,8 +1,3 @@
-// .detail--wrapper {
-//   border: 1px solid green;
-//   max-width: 75em;
-// }
-
 .detail--back-btn-wrapper {
   display: flex;
   justify-content: center;
@@ -26,6 +21,12 @@
 }
 
 .detail--text-content__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail--heading-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
