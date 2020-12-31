@@ -1,0 +1,24 @@
+@mixin btn-dark {
+  background-color: $primary-dark;
+  color: #fff;
+  text-transform: uppercase;
+  @include normal-text;
+}
+
+@mixin btn-dark-hover {
+  background-color: $primary-dark-hover;
+}
+
+@mixin darkmode-btn-primary {
+  background-color: $darkmode-primary;
+  color: $darkmode-background;
+  text-transform: uppercase;
+  @include button-text;
+}
+
+@mixin darkmode-btn-accent {
+  background-color: $darkmode-accent;
+  color: $darkmode-background;
+  text-transform: uppercase;
+  @include button-text;
+}
