@@ -1,0 +1,6 @@
+button {
+  @include darkmode-btn-primary;
+}
+button:hover {
+  background-color: $darkmode-primary-hover;
+}
