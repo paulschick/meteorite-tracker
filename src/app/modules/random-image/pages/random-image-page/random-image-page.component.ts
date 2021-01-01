@@ -13,6 +13,9 @@ export class RandomImagePageComponent implements OnInit {
   screenWidth:number;
   screenHeight:number;
 
+  // test
+  cols:number = 3;
+
   constructor() {}
 
   postImage(imageObservable:Observable<any>) {
@@ -32,6 +35,7 @@ export class RandomImagePageComponent implements OnInit {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     console.log(this.screenHeight, this.screenWidth)
+    this.cols = this.screenWidth/250
   }
 }
 
