@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IApd } from '../../../../shared/models/apd.model';
 
@@ -7,9 +7,11 @@ import { IApd } from '../../../../shared/models/apd.model';
   templateUrl: './random-image-page.component.html',
   styleUrls: ['./random-image-page.component.scss']
 })
-export class RandomImagePageComponent implements OnDestroy {
+export class RandomImagePageComponent implements OnInit {
 
   astronomyImgArr:IApd[] = [];
+  screenWidth:number;
+  screenHeight:number;
 
   constructor() {}
 
@@ -19,11 +21,18 @@ export class RandomImagePageComponent implements OnDestroy {
     )
   }
 
-
-  ngOnDestroy() {
-
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+    // console.log(this.screenHeight, this.screenWidth)
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+    console.log(this.screenHeight, this.screenWidth)
+  }
 }
 
 

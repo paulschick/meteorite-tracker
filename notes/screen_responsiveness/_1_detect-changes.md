@@ -41,3 +41,11 @@ Okay, so these both will return a value that I can compare to breakpoints.
 So there's the first part of the functionality.
 Getting the breakpoints and comparing them isn't the hard part.
 Will this always watch, and will it notify a method of the change and re-evaluate?  
+
+## Trying it Out
+
+I tried out the second solution.
+This actually works perfectly.
+You resize the screen, and when it settles, it outputs the new screen size (when there's a console.log)  
+
+Wild, so I just need to take these values, and evaluate them/compoare the the breakpoints that I want to use.
