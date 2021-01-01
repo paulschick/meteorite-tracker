@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IApd } from '../../../../shared/models/apd.model';
 
@@ -7,11 +7,11 @@ import { IApd } from '../../../../shared/models/apd.model';
   templateUrl: './random-image-page.component.html',
   styleUrls: ['./random-image-page.component.scss']
 })
-export class RandomImagePageComponent implements OnInit {
+export class RandomImagePageComponent implements OnDestroy {
 
   astronomyImgArr:IApd[] = [];
 
-  constructor() { }
+  constructor() {}
 
   postImage(imageObservable:Observable<any>) {
     imageObservable.subscribe(
@@ -20,7 +20,8 @@ export class RandomImagePageComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+  ngOnDestroy() {
+
   }
 
 }
