@@ -114,3 +114,4 @@ I just need to do the same thing onInIt too.
 
 Now this will work, but it isn't reusable.
 So I would still need to make a directive for it to be reusable, which I can do pretty much the same way I am sure.
+/[]
