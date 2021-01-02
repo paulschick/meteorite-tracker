@@ -30,8 +30,8 @@ export class RandomImagePageComponent implements OnInit {
     // console.log(this.screenHeight, this.screenWidth)
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  @HostListener('window:resize', [])
+  onResize() {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     console.log(this.screenHeight, this.screenWidth)
