@@ -55,12 +55,15 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
       this.randomImageArray.push(resolvedRandomImage);
       // this line creates a clone of that array to keep the original immutable
       this.randomImageArrayClone = this.randomImageArray.map((x) => x);
-      console.log(this.randomImageArrayClone);
+      // console.log(this.randomImageArrayClone);
 
       // Next Steps:
       // The first time the button is pressed, the 0 index object image url should be displayed
       // each successive press after that will display the next object in the array
       // when the end of the array is reached, the user will be prompted to reload the page to continue displaying images
+
+      // use Array.shift() on the array, or on the copy of the array.
+      // or property:number = 0, then property+1
 
     }
 

@@ -28,3 +28,32 @@ Once displayed, this object will be removed from the index.
 Now each press of the button will just use the 0 index again, and that object will be removed after it's displayed.  
 
 So, this also makes the reload prompt easier too, because once the array is empty, this can trigger the action to make that notification happen.
+
+### Removing the first item from an array
+
+```js
+// Array.shift() removes the first item
+var nums = [1,2,3,4,5];
+nums.shift();
+console.log(nums) // -> returns [2,3,4,5]
+
+// NOTE
+// if you do this:
+var nums = [1,2,3,4,5];
+var nums2 = nums.shift();
+console.log(nums2); // -> this returns 1
+```
+
+## Another Method
+
+This might be a nicer method that doesn't involve continually mutating the array.
+Have a class property that is equal to the current index.
+So default value is 0, and the first button click returns the 0 index.  
+
+On click, it will display the image at `Array[index]`.
+Also on click, the value of the index property will increase by 1, thus moving to the next instance in the array.
+
+This will need to check the array to make sure that the index exists that it is trying to get.
+It it doesn't exist, and the user is at the end of the array, then display the message to reload.  
+
+Instead of reloading also, there could be a button that will say 'get more' or something.
