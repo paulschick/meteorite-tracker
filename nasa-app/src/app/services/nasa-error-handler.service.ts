@@ -1,9 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ErrorHandler } from '@angular/core';
+import { NasaError } from '../models/nasaErrors.model';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class NasaErrorHandlerService {
+@Injectable()
+export class NasaErrorHandlerService implements ErrorHandler {
 
-  constructor() { }
+  handleError(error: any): void {
+    let customError: NasaError = new NasaError();
+    customError.errorNumber = 200;
+    customError.message = (<Error>error).message;
+    customError.additionalMessage = 'An error occurred. Please try again.';
+
+    console.log(customError);
+  }
+
+  constructor() {  }
 }

@@ -1,0 +1,42 @@
+@mixin normal-text {
+  font-weight: 400;
+  font-size: 16px
+}
+
+@mixin button-text {
+  font-weight: 500;
+  font-size: 16px;
+}
+@mixin card-h2 {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+@mixin card-content-span {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+@mixin header-h1 {
+  font-weight: 300;
+  font-size: 4em;
+  line-height: 1em;
+}
+
+@mixin header-h2 {
+  font-weight: 300;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+
+@mixin header-h3 {
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+@mixin header-h4 {
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 1em;
+}

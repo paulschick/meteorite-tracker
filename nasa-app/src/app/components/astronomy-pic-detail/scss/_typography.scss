@@ -1,0 +1,17 @@
+.detail--heading {
+  @include header-h2;
+  margin: 0.75em 0 0.5em 0;
+  color: $darkmode-font-heading;
+}
+
+.detail--subtitle {
+  margin: 0.5em 0 0.5em 0;
+  @include header-h4;
+  color: $darkmode-font-medium;
+}
+
+.detail--explanation {
+  margin: 0.5em 0 1em 0;
+  @include normal-text;
+  color: $darkmode-font-body;
+}

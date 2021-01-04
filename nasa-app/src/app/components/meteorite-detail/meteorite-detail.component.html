@@ -1,1 +1,17 @@
-<p>meteorite-detail works!</p>
+<div class="meteorite--card-wrapper">
+  <mat-card>
+    <mat-card-title>
+      <h2 class="meteorite--card-heading">
+        {{ meteorite?.name }}
+      </h2>
+    </mat-card-title>
+    <mat-card-content>
+      <div class="meteorite--card-content-wrapper">
+        <span>Mass (Grams):</span><p> {{ meteorite?.mass | formatMass:meteorite.mass }}</p>
+      </div>
+      <div class="meteorite--card-content-wrapper">
+        <span>Landing Date:</span><p> {{ meteorite?.year | date: 'mediumDate' }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

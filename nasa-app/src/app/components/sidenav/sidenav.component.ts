@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
+  @ViewChild('sidenav') sidenav: MatSidenav;
 
-  constructor() { }
+  public isScreenSmall: boolean;
 
-  ngOnInit(): void {
+  close() {
+    this.sidenav.close();
   }
 
 }

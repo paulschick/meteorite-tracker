@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { IApd } from '../models/apd.model';
+import { NasaError } from '../models/nasaErrors.model';
+import { HomeService } from './home.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApdResolverService {
+export class ApdResolverService implements Resolve<IApd | NasaError> {
 
-  constructor() { }
+  constructor(private homeService: HomeService) {  }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IApd | NasaError> {
+    return this.homeService.getApd()
+      .pipe(
+        catchError(err => of(err))
+      );
+  }
 }

@@ -1,1 +1,3 @@
-<p>meteorite-list works!</p>
+<div class="meteorite--list">
+  <app-meteorite-detail *ngFor="let meteorite of visibleMeteorites" [meteorite]="meteorite"></app-meteorite-detail>
+</div>

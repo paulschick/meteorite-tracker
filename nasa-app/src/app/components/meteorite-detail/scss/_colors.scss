@@ -1,0 +1,15 @@
+.meteorite--card-wrapper {
+  @include box-shadow;
+}
+
+.meteorite--card-heading {
+  color: $darkmode-primary;
+}
+
+mat-card {
+  @include elevation-14;
+  color: $darkmode-font-medium;
+  span {
+    color: $darkmode-accent;
+  }
+}

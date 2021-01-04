@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IApd } from '../../models/apd.model';
+
 
 @Component({
-  selector: 'app-astronomy-pic-detail',
+  selector: 'mt-astronomy-pic-detail',
   templateUrl: './astronomy-pic-detail.component.html',
   styleUrls: ['./astronomy-pic-detail.component.scss']
 })
-export class AstronomyPicDetailComponent implements OnInit {
+export class AstronomyPicDetailComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() astroDetailImage:IApd;
 
 }

@@ -1,0 +1,11 @@
+mat-card-title h2 {
+  @include card-h2;
+}
+
+mat-card-content p {
+  font-size: 1em;
+}
+
+mat-card-content span {
+  @include card-content-span;
+}

@@ -1,0 +1,43 @@
+@mixin main-heading {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+@mixin display-image {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  max-height: 500px;
+}
+
+@mixin wrapper-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apd-wrapper {
+  margin: 0 0 2.5em 0;
+
+  mat-card {
+    margin: 2.5em 0 1em 0;
+    @include elevation-14;
+    color: $darkmode-font-heading;
+    display: flex;
+    justify-content: center;
+  }
+
+  h1 {
+    @include main-heading;
+  }
+}
+
+.apd-img-wrapper {
+  margin: 0 2em;
+  @include wrapper-centered;
+
+  .apd-img {
+    @include display-image;
+  }
+}
