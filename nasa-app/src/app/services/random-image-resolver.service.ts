@@ -15,7 +15,7 @@ export class RandomImageResolverService implements Resolve<IApd | NasaError> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
   Observable<IApd | NasaError> {
-    return this.astroPicsService.getRandomImage()
+    return this.astroPicsService.getRandomImages()
       .pipe(
         catchError(err => of(err))
       );
