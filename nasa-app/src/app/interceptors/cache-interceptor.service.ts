@@ -30,6 +30,7 @@ export class CacheInterceptorService implements HttpInterceptor {
     }
 
     // send request to server and add the response to the cache
+
     return next.handle(req)
       .pipe(
         tap(event => {
@@ -39,5 +40,6 @@ export class CacheInterceptorService implements HttpInterceptor {
           }
         })
       );
+
   }
 }
