@@ -27,6 +27,12 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
     imageObservable.subscribe((data) => this.astronomyImgArr.push(data));
   }
 
+
+  // Get this from resolver service
+  getRandomImage() {
+
+  }
+
   ngOnInit() {
     this.sub = this.evaluateBreakpoint.screenSize
       .pipe(distinctUntilChanged())
