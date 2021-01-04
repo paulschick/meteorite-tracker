@@ -28,15 +28,10 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // this.screenWidth = window.innerWidth;
-    // this.screenHeight = window.innerHeight;
-    // console.log(this.screenHeight, this.screenWidth)
-
     this.sub = this.evaluateBreakpoint.screenSize
       .pipe(distinctUntilChanged())
       .subscribe((size) => {
         this.cols = this.matService.breakpointGrid[size];
-        // console.log(this.cols);
       });
   }
 

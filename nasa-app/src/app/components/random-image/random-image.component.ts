@@ -1,21 +1,12 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  OnDestroy,
-} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { of, Subscription, Observable } from 'rxjs';
-import { distinctUntilChanged } from 'rxjs/operators';
-import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.service';
-import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 
 @Component({
   selector: 'app-random-image',
   templateUrl: './random-image.component.html',
   styleUrls: ['./random-image.component.scss'],
 })
-export class RandomImageComponent implements OnInit, OnDestroy {
+export class RandomImageComponent {
   @Output() postImg = new EventEmitter<any>();
   sub: Subscription;
   colNumber: number;
@@ -35,21 +26,4 @@ export class RandomImageComponent implements OnInit, OnDestroy {
   };
 
   imgObservable: Observable<any> = of(this.IMG_DATA);
-
-  constructor(
-    private evaluateBreakpoint: EvaluateBreakpointService,
-    private matService: MaterialBreakpointsService
-  ) {}
-
-  ngOnInit(): void {
-    this.sub = this.evaluateBreakpoint.screenSize
-      .pipe(distinctUntilChanged())
-      .subscribe((size) => {
-        this.colNumber = this.matService.breakpointGrid[size];
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe;
-  }
 }
