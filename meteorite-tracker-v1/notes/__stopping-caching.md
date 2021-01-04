@@ -44,3 +44,15 @@ It's just continuing to push the same image into the array over and over again, 
 
 Now, I know that this comes in as a cached response when the component loads.
 I need to do something with either the service or the component function (which I should probably make a new service for anyway).
+
+I think my direction is fundamentally incorrect right now.
+Although the way that the page component is dealing with the data should be fine, the functionality is now different.
+The function of the original setup was just to display the same thing over and over again, and this works.
+I now need the button click to result in a unique http call on each click.
+This then needs to be pushed to the array in the parent, and the latest addition should be displayed on the dom.  
+
+So, I'll have to get another way around this problem.  
+
+Basically start from the beginning on this.  
+
+In a new branch, I'm going to clear out the old logic and pretty much just start over there.
