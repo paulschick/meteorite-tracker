@@ -21,6 +21,14 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   cols: number;
   // -------------------
 
+  // Random Images
+  // --------------------
+  private randomImageArray: IApd[] = [];
+  private randomImageArrayClone: IApd[];
+
+
+  // ----------------
+
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
     private matService: MaterialBreakpointsService,
@@ -33,7 +41,33 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    // with multiple images in the &count
+    // ---------------
 
+
+    // This code will return an array of 50 image objects
+    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
+
+    if (resolvedRandomImage instanceof NasaError) {
+      console.log(`Random Image Component Error: ${resolvedRandomImage.additionalMessage}]`);
+    } else {
+      // this line pushes the response object onto the empty array
+      this.randomImageArray.push(resolvedRandomImage);
+      // this line creates a clone of that array to keep the original immutable
+      this.randomImageArrayClone = this.randomImageArray.map((x) => x);
+      console.log(this.randomImageArrayClone);
+
+      // Next Steps:
+      // The first time the button is pressed, the 0 index object image url should be displayed
+      // each successive press after that will display the next object in the array
+      // when the end of the array is reached, the user will be prompted to reload the page to continue displaying images
+    }
+
+
+
+
+
+    // -----------------
 
 
     // this is all breakpoint stuff
