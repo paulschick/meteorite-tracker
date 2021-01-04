@@ -11,6 +11,7 @@ import { CacheInterceptor } from './interceptors/cache.interceptor';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { ObserveBreakpointsDirective } from './directives/observe-breakpoints.directive';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     FlexLayoutModule
   ],
-  declarations: [],
+  declarations: [ObserveBreakpointsDirective],
   providers: [
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
