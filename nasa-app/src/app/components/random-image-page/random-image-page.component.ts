@@ -61,6 +61,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
       // The first time the button is pressed, the 0 index object image url should be displayed
       // each successive press after that will display the next object in the array
       // when the end of the array is reached, the user will be prompted to reload the page to continue displaying images
+
     }
 
 
