@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,9 +52,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
 
 // Additional
-import { HttpCacheService } from './services/http-cache.service';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { ObserveBreakpointsDirective } from './directives/observe-breakpoints.directive';
+import { CacheInterceptorService } from './interceptors/cache-interceptor.service';
 
 const materialModules = [
   CdkTreeModule,
@@ -106,6 +107,7 @@ const materialModules = [
     ObserveBreakpointsDirective
   ],
   imports: [
+    HttpClientModule,
     materialModules,
     BrowserModule,
     AppRoutingModule,
@@ -113,7 +115,7 @@ const materialModules = [
   ],
   providers: [
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpCacheService }
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true }
   ],
   exports: [],
   bootstrap: [AppComponent]
