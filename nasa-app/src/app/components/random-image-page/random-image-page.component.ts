@@ -14,15 +14,12 @@ import { NasaError } from 'src/app/models/nasaErrors.model';
   styleUrls: ['./random-image-page.component.scss'],
 })
 export class RandomImagePageComponent implements OnInit, OnDestroy {
-  astronomyImgArr: IApd[] = [];
-  screenWidth: number;
-  screenHeight: number;
+
+  // breakpoint stuff
+  // ------------------
   sub: Subscription;
   cols: number;
-
-  // from http
-  randImg:IApd;
-  randImgUrl:string;
+  // -------------------
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
@@ -31,22 +28,6 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   ) {}
 
   postImage(imageObservable: Observable<any>) {
-    // imageObservable.subscribe((data) => this.astronomyImgArr.push(data));
-
-    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
-
-    if (resolvedRandomImage instanceof NasaError) {
-      console.log(`Random Image Component error: ${resolvedRandomImage.additionalMessage}`);
-    } else {
-      this.randImg = resolvedRandomImage[0];
-      // this.randImgUrl = this.randImg.url;
-      this.astronomyImgArr.push(this.randImg);
-    }
-  }
-
-
-  // Get this from resolver service
-  getRandomImage() {
 
   }
 
@@ -55,14 +36,23 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
 
 
+    // this is all breakpoint stuff
+    // --------------
     this.sub = this.evaluateBreakpoint.screenSize
       .pipe(distinctUntilChanged())
       .subscribe((size) => {
         this.cols = this.matService.breakpointGrid[size];
+        console.log(`Columns: ${this.cols}`)
       });
+    // ----------------
+
   }
 
   ngOnDestroy() {
+
+    // breakpoint
+    // -------------------
     this.sub.unsubscribe;
+    // -------------------
   }
 }
