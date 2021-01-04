@@ -31,7 +31,17 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   ) {}
 
   postImage(imageObservable: Observable<any>) {
-    imageObservable.subscribe((data) => this.astronomyImgArr.push(data));
+    // imageObservable.subscribe((data) => this.astronomyImgArr.push(data));
+
+    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
+
+    if (resolvedRandomImage instanceof NasaError) {
+      console.log(`Random Image Component error: ${resolvedRandomImage.additionalMessage}`);
+    } else {
+      this.randImg = resolvedRandomImage[0];
+      // this.randImgUrl = this.randImg.url;
+      this.astronomyImgArr.push(this.randImg);
+    }
   }
 
 
@@ -42,14 +52,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
 
-    if (resolvedRandomImage instanceof NasaError) {
-      console.log(`Random Image Component error: ${resolvedRandomImage.additionalMessage}`);
-    } else {
-      this.randImg = resolvedRandomImage[0];
-      this.randImgUrl = this.randImg.url;
-    }
 
 
     this.sub = this.evaluateBreakpoint.screenSize
