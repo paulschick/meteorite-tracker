@@ -6,8 +6,7 @@ import { NasaError } from '../../models/nasaErrors.model';
 
 @Component({
   selector: 'app-astronomy-pic-detail-page',
-  templateUrl: './astronomy-pic-detail-page.component.html',
-  styleUrls: ['./astronomy-pic-detail-page.component.scss']
+  templateUrl: './astronomy-pic-detail-page.component.html'
 })
 export class AstronomyPicDetailPageComponent implements OnInit {
 

@@ -5,8 +5,7 @@ import { NasaError } from '../../models/nasaErrors.model';
 
 @Component({
   selector: 'app-astronomy-pics-list',
-  templateUrl: './astronomy-pics-list.component.html',
-  styleUrls: ['./astronomy-pics-list.component.scss'],
+  templateUrl: './astronomy-pics-list.component.html'
 })
 export class AstronomyPicsListComponent implements OnInit {
   AstroPics: IApd[];
