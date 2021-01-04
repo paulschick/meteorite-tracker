@@ -4,6 +4,8 @@ import { distinctUntilChanged } from 'rxjs/operators';
 import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.service';
 import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 import { IApd } from '../../models/apd.model';
+import { ActivatedRoute } from '@angular/router';
+import { NasaError } from 'src/app/models/nasaErrors.model';
 
 
 @Component({
@@ -18,9 +20,14 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   sub: Subscription;
   cols: number;
 
+  // from http
+  randImg:IApd;
+  randImgUrl:string;
+
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
-    private matService: MaterialBreakpointsService
+    private matService: MaterialBreakpointsService,
+    private route: ActivatedRoute
   ) {}
 
   postImage(imageObservable: Observable<any>) {
@@ -34,6 +41,17 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
+    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
+
+    if (resolvedRandomImage instanceof NasaError) {
+      console.log(`Random Image Component error: ${resolvedRandomImage.additionalMessage}`);
+    } else {
+      this.randImg = resolvedRandomImage[0];
+      this.randImgUrl = this.randImg.url;
+    }
+
+
     this.sub = this.evaluateBreakpoint.screenSize
       .pipe(distinctUntilChanged())
       .subscribe((size) => {

@@ -7,11 +7,12 @@ import { RandomImagePageComponent } from './components/random-image-page/random-
 import { ApdResolverService } from './services/apd-resolver.service';
 import { AstronomyPicsResolverService } from './services/astronomy-pics-resolver.service';
 import { MeteoriteResolverService } from './services/meteorite-resolver.service';
+import { RandomImageResolverService } from './services/random-image-resolver.service';
 
 const routes: Routes = [
   { path: 'astronomy-pics/image/:date', component: AstronomyPicDetailPageComponent },
   { path: 'astronomy-pics', component: AstronomyPicsPageComponent, resolve: { resolvedAstronomyPics: AstronomyPicsResolverService } },
-  { path: 'random-image', component: RandomImagePageComponent },
+  { path: 'random-image', component: RandomImagePageComponent, resolve: { resolvedRandomImage: RandomImageResolverService } },
   { path: '', component: HomePageComponent, resolve: {
     resolvedMeteorites: MeteoriteResolverService,
     resolvedApd: ApdResolverService
