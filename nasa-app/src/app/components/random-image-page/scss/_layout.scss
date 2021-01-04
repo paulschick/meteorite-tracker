@@ -1,0 +1,28 @@
+.rand--container {
+  min-height: 100vh;
+}
+
+.rand--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rand--flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.rand--flex-item {
+  width: 25rem;
+  height: auto;
+  margin: 1em 0 0 0;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
