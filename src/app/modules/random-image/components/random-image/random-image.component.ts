@@ -1,14 +1,19 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { of } from 'rxjs';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { of, Subscription, Observable } from 'rxjs';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { EvaluateBreakpointService } from '../../../core/services/evaluate-breakpoint.service';
+import { MaterialBreakpointsService } from '../../../core/services/material-breakpoints.service';
 
 @Component({
   selector: 'mt-random-image',
   templateUrl: './random-image.component.html',
   styleUrls: ['./random-image.component.scss']
 })
-export class RandomImageComponent implements OnInit {
+export class RandomImageComponent implements OnInit, OnDestroy {
 
   @Output() postImg = new EventEmitter<any>();
+  sub:Subscription;
+  colNumber:number;
 
 
   IMG_DATA = {
@@ -22,11 +27,20 @@ export class RandomImageComponent implements OnInit {
     "url":"https://apod.nasa.gov/apod/image/1402/LH8056_MobiusArchMoonrise_1024x683.jpg"
   }
 
-  imgObservable = of(this.IMG_DATA)
+  imgObservable:Observable<any> = of(this.IMG_DATA);
 
-  constructor() { }
+  constructor(private evaluateBreakpoint: EvaluateBreakpointService, private matService: MaterialBreakpointsService) { }
 
   ngOnInit(): void {
+    this.sub = this.evaluateBreakpoint.screenSize
+      .pipe(distinctUntilChanged())
+      .subscribe((size) => {
+        this.colNumber = this.matService.breakpointGrid[size];
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe;
   }
 
 }

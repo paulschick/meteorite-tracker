@@ -8,7 +8,7 @@
       </div>
     </div>
   </div> -->
-  <mat-grid-list [cols]="cols">
+  <mat-grid-list mtObserveBreakpoints [cols]="cols">
     <mat-grid-tile *ngFor="let x of astronomyImgArr">
       <img src="{{x.url}}" alt="{{x.copyright}}" />
     </mat-grid-tile>
