@@ -73,4 +73,6 @@ Next, I need to replace the dummy data with the response data.
 - Add an `@Input()` property to the directive called `images`
   - Make type `any` and then make it more selective once it's setup and working
     - Set to `string|number` and passed into the method with `+this.images` so that a string would be converted to an integer
-      - Also, takes in `+this.images || 5` so it defaults to 5 if no arg is passed in.
+      - Also, takes in `+this.images || 5` so it defaults to 5 if no arg is passed in.  
+
+This is now wired upwith the `RandomImagePageComponent` template, as `[appClickHandler]="3"` and this functions as expected.

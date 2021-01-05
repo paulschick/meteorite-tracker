@@ -10,7 +10,7 @@ import { NasaError } from '../models/nasaErrors.model';
 })
 export class ClickHandlerDirective implements OnInit, OnDestroy {
 
-  @Input() images:string|number;
+  @Input('appClickHandler') images:string|number;
 
   clickNumber:number;
   sub:Subscription;
