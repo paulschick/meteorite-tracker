@@ -47,3 +47,10 @@ Thus, this would check for using Material.
 If I want it to be independent of Material, I need to select by something other than those elements.
 There is only one image tag in the whole template, so I can just test for the image.
 This is only supposed to have one image per output, so this holds.
+
+## Components with Pipes
+
+Meteorite-Detail Component uses a pipe.
+So in order to test anything with integration with the template, there needs to be a pipe mocked.  
+
+[Some answers here](https://stackoverflow.com/questions/39293258/how-to-mock-pipe-when-testing-component/45081671) might be a help.
