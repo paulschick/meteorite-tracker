@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
+import { IApd } from '../models/apd.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClickHandlerService {
 
+  public responseObject:IApd[];
+
+  receiveResponseObject(response:IApd[]):void {
+    this.responseObject = response;
+  }
+
   // Experimental Methods
   getClick(clickNumber:number):void {
-    if (clickNumber >= this.dummyResponse.length) {
+    // if (clickNumber >= this.dummyResponse.length) {
+    if (clickNumber >= this.responseObject.length) {
       return console.log('end of array');
     } else {
       console.log(`Received Click: ${clickNumber}`);
       const dummyObj = this.dummyResponse[clickNumber];
-      console.log(dummyObj.c);
+      const withResponseObj = this.responseObject[clickNumber];
+      // console.log(dummyObj.c);
+      console.log(withResponseObj);
     }
   }
+
+
 
 
 

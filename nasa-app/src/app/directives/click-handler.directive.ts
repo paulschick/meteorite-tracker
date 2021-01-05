@@ -29,7 +29,8 @@ export class ClickHandlerDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.randomImageService.getRandomImages(5).subscribe(
-      (data:IApd[]) => this.randomImageArray = data,
+      // (data:IApd[]) => this.randomImageArray = data,
+      (data:IApd[]) => this.clickHandlerService.receiveResponseObject(data),
       (err:NasaError) => console.log(`Click-Handler HTTP error: ${err}`),
       () => console.log('Click-handler request completed',this.randomImageArray)
     );

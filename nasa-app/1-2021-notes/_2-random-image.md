@@ -7,6 +7,8 @@
 
 - [Back To The Random Images](#back-to-the-random-images)
   - [RandomImagePageComponent Functionality](#randomimagepagecomponent-functionality)
+  - [Current State](#current-state)
+    - [Next Step](#next-step)
 
 ## RandomImagePageComponent Functionality
 
@@ -34,3 +36,28 @@ I am going to try and keep this to one component if possible, though, or have al
 - Then save to instance and start working on outputing to the DOM  
 
 Remember, the click is being handled by `ClickHandlerService`. So I don't need a child component to `Output` the event to a parent.
+
+## Current State
+
+- `RandomImagePageComponent` is using the `appClickHandler` and `mtObserveBreakpoints` directives on the button element. Both are currently functioning as expected
+- `ClickHandlerDirective` implements `ClickHandlerService` and `RandomImageService`
+  - `@HostListener` listens for the click event, passes on the current click number to the `ClickHandlerService`
+  - Subscribes to the get request observable from `RandomImageService`, needs to pass this data to the `ClickHandlerService`
+- `ClickHandlerService` receives the click number from the `ClickHandlerDirective`.
+  - With each click, currently iterates through a dummy response to output the needed data. This will be outputting the url from the object at the current index in the response array  
+
+### Next Step
+
+The next step is to get the response object from the `ngOnInit` in the `ClickHandlerDirective` into the `ClickHandlerService`.
+The directive should either pass this in as an argument to a function or a class instance.  
+
+- Try to pass into a function that exists in the service and just console log.
+  - Make sure it's passing the right data, and theirs no weirdness from it being async.  
+
+This works just by passing the data from the subscription directly into the method in the service.
+I won't need to store this in an array within the directive.
+The service is now able to deal with this data.  
+
+Next, I need to replace the dummy data with the response data.
+
+- Got this wired up, the `getClick()` method is iterating through this array with each click as expected.
