@@ -19,7 +19,7 @@ import { MeteoriteDisplayComponent } from './components/meteorite-display/meteor
 import { MeteoriteDetailComponent } from './components/meteorite-detail/meteorite-detail.component';
 import { MeteoriteListComponent } from './components/meteorite-list/meteorite-list.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { RandomImageComponent } from './components/random-image/random-image.component';
+// import { RandomImageComponent } from './components/random-image/random-image.component';
 import { RandomImagePageComponent } from './components/random-image-page/random-image-page.component';
 
 // Material
@@ -105,7 +105,7 @@ const materialModules = [
     MeteoriteDetailComponent,
     MeteoriteListComponent,
     HomePageComponent,
-    RandomImageComponent,
+    // RandomImageComponent,
     RandomImagePageComponent,
     ObserveBreakpointsDirective,
     ClickHandlerDirective
