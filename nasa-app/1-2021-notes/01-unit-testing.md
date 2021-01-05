@@ -6,4 +6,9 @@ Going to run through some unit tests, my goal is to write unit tests for:
 
 - material-breakpoints service
 - evaluate-breakpoints service
-- click-handler service (test driven development, currently unfinished)
+- click-handler service (test driven development, currently unfinished)  
+
+## MaterialBreakpointsService
+
+All this service does is inject an object instance through its class.
+I put it in a service to reduce the amount of code used so that it can be accessed through the constructor.
