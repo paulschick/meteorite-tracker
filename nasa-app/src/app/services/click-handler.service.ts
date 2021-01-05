@@ -8,7 +8,13 @@ export class ClickHandlerService {
 
   // Experimental Methods
   getClick(clickNumber:number):void {
-    console.log(`Received Click: ${clickNumber}`);
+    if (clickNumber >= this.dummyResponse.length) {
+      return console.log('end of array');
+    } else {
+      console.log(`Received Click: ${clickNumber}`);
+      const dummyObj = this.dummyResponse[clickNumber];
+      console.log(dummyObj.c);
+    }
   }
 
 
@@ -17,7 +23,7 @@ export class ClickHandlerService {
 
   dummyResponse:any[] = [
     {a:1, b:2, c:3, d:4, e:5},
-    {aa:11, bb:22, cc:33, dd:44, ee:55},
-    {aaa:111, bbb:222, ccc:333, ddd:444, eee:555}
+    {a:6, b:7, c:8, d:9, e:10},
+    {a:11, b:12, c:13, d:14, e:15}
   ]
 }
