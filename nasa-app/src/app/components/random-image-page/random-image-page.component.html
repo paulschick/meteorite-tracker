@@ -4,14 +4,14 @@
   <app-random-image></app-random-image>
   <!-- <div class="rand--wrapper">
     <div class="rand--flex-container">
-      <div class="rand--flex-item" *ngFor="let x of astronomyImgArr">
-        <img src="{{ x.url }}" alt="{{ x.copyright }}" />
+      <div class="rand--flex-item" *ngFor="let x of [1,2,3,4,5]">
+        <img [src]="x.url" [alt]="x.copyright" />
       </div>
     </div>
-  </div> -->
-  <mat-grid-list mtObserveBreakpoints [cols]="cols">
+  </div>
+  <mat-grid-list mtObserveBreakpoints [cols]="cols"> -->
     <!-- <mat-grid-tile *ngFor="let x of astronomyImgArr">
       <img src="{{x.url}}" alt="{{x.copyright}}" />
     </mat-grid-tile> -->
-  </mat-grid-list>
+  <!-- </mat-grid-list> -->
 </div>
