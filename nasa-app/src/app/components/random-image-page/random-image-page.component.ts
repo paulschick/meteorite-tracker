@@ -46,15 +46,15 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
 
     // This code will return an array of 50 image objects
-    let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
+    // let resolvedRandomImage: IApd | NasaError = this.route.snapshot.data['resolvedRandomImage'];
 
-    if (resolvedRandomImage instanceof NasaError) {
-      console.log(`Random Image Component Error: ${resolvedRandomImage.additionalMessage}]`);
-    } else {
+    // if (resolvedRandomImage instanceof NasaError) {
+    //   console.log(`Random Image Component Error: ${resolvedRandomImage.additionalMessage}]`);
+    // } else {
       // this line pushes the response object onto the empty array
-      this.randomImageArray.push(resolvedRandomImage);
+      // this.randomImageArray.push(resolvedRandomImage);
       // this line creates a clone of that array to keep the original immutable
-      this.randomImageArrayClone = this.randomImageArray.map((x) => x);
+      // this.randomImageArrayClone = this.randomImageArray.map((x) => x);
       // console.log(this.randomImageArrayClone);
 
       // Next Steps:
@@ -65,7 +65,8 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
       // use Array.shift() on the array, or on the copy of the array.
       // or property:number = 0, then property+1
 
-    }
+    // }
+
 
 
 

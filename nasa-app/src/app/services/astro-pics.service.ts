@@ -43,13 +43,13 @@ export class AstroPicsService {
       );
   }
 
-  getRandomImages(): Observable<IApd[] | NasaError> {
-    return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.randomQuery}`)
-      .pipe(
-        take(1),
-        catchError(err => this.handleHttpError(err))
-      );
-  }
+  // getRandomImages(): Observable<IApd[] | NasaError> {
+  //   return this.http.get<IApd[]>(`${this.astroPicsUrl}${this.key}${this.randomQuery}`)
+  //     .pipe(
+  //       take(1),
+  //       catchError(err => this.handleHttpError(err))
+  //     );
+  // }
 
   // ----------------------
 

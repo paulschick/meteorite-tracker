@@ -20,7 +20,7 @@ export class RandomImageService {
     if (numberImages >= 25) {
       console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
     } else {
-      return this.http.get<IApd[]>(`${this.fullEndpoint}${numberImages}`)
+      return this.http.get<IApd[]>(`${this.fullEndpoint}${numberImages.toString()}`)
         .pipe(
           take(1),
           catchError(err => this.handleHttpError(err))
