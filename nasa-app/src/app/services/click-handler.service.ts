@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +15,6 @@ export class ClickHandlerService {
       console.log(dummyObj.c);
     }
   }
-
-
 
 
 
