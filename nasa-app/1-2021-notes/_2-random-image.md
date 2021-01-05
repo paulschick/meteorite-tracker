@@ -13,6 +13,7 @@
   - [General Project Finishing Steps](#general-project-finishing-steps)
   - [Outputting the Random Image Objects to the DOM](#outputting-the-random-image-objects-to-the-dom)
   - [Error Checking](#error-checking)
+  - [Cleanup](#cleanup)
 
 ## RandomImagePageComponent Functionality
 
@@ -118,3 +119,8 @@ This could be changed later.
 Also, I should add some loading animation for the page, like if they click before it's done loading.
 This would require state management, may need ngrx for this, so it's down the road.
 When there is loading implemented, then you should be allowed to do more than 24 images.
+
+## Cleanup
+
+Time to clean up these components.
+Main contains all of the comments, which could be helpful, push the other branch up before cleaning.
