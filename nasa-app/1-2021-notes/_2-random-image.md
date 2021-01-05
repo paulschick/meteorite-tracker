@@ -95,4 +95,7 @@ Now to bring this home (at least as functionality is concerned).
 
 - Step 1 is to get the object being logged by the service into the component  
 
-I should have the service emit this as an Observable, then the component can subscribe to it.
+I should have the service emit this as an Observable, then the component can subscribe to it.  
+
+Successfully emitted Subject from `ClickHandlerService`, and successfully subscribed to this in `RandomImagePageComponent`.
+Next this needs to be outputted to a DOM element.

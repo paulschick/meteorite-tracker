@@ -5,6 +5,9 @@ import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.se
 import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 import { IApd } from '../../models/apd.model';
 
+// ClickHandlerService Imports
+import { ClickHandlerService } from '../../services/click-handler.service';
+
 
 @Component({
   selector: 'app-random-image-page',
@@ -23,13 +26,19 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // -------------------
   private randomImageArray: IApd[] = [];
   private randomImageArrayClone: IApd[];
-
-
   // --------------------
+
+  // ClickHandlerService
+  // --------------------
+  clickSub: Subscription;
+
+
+
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
-    private matService: MaterialBreakpointsService
+    private matService: MaterialBreakpointsService,
+    private clickHandlerService: ClickHandlerService
   ) {}
 
   // Function for posting the image
@@ -46,7 +55,13 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
     // New Code Here
     // -------------------------
 
-
+    // Subscription to Subject in ClickHandlerService
+    this.clickSub = this.clickHandlerService.responseSubject
+      .pipe(distinctUntilChanged())
+      .subscribe((image) => {
+        this.randomImageArray.push(image);
+        console.log(this.randomImageArray);
+      });
 
 
 
@@ -89,7 +104,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
     // random images observable
     // -------------------
-
+    this.clickSub.unsubscribe;
     // -------------------
   }
 }
