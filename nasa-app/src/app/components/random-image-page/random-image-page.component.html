@@ -5,9 +5,24 @@
 
 
 
-  <button mat-raised-button [appClickHandler]="3" mtObserveBreakpoints>Generate Image</button>
+  <button mat-raised-button [appClickHandler]="28" mtObserveBreakpoints>Generate Image</button>
 
 
+  <!-- Implemenation with custom flex css -->
+  <!-- <div class="rand--flex-container">
+    <div class="rand--flex-item" *ngFor="let x of randomImageArray">
+      <img [src]="x.url" [alt]="x.copyright" />
+    </div>
+  </div> -->
+  <!-- Implemenation with dynamic mat-grid-list columns -->
+  <mat-grid-list mtObserveBreakpoints [cols]="cols">
+    <mat-grid-tile *ngFor="let x of randomImageArray">
+      <img [src]="x.url" [alt]="x.copyright" />
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+  <!-- <img [src]="this.randomImageArray[0].url" /> -->
 
   <!-- <div class="rand--wrapper">
     <div class="rand--flex-container">

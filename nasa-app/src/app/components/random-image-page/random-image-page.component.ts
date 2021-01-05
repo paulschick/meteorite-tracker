@@ -24,8 +24,8 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
 
   // random image properties
   // -------------------
-  private randomImageArray: IApd[] = [];
-  private randomImageArrayClone: IApd[];
+  randomImageArray: IApd[] = [];
+  randomImageArrayClone: IApd[];
   // --------------------
 
   // ClickHandlerService

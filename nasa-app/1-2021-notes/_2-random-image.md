@@ -12,6 +12,7 @@
     - [Allow for the number of random images to retrieve to be set through the template, and have a default value of 5](#allow-for-the-number-of-random-images-to-retrieve-to-be-set-through-the-template-and-have-a-default-value-of-5)
   - [General Project Finishing Steps](#general-project-finishing-steps)
   - [Outputting the Random Image Objects to the DOM](#outputting-the-random-image-objects-to-the-dom)
+  - [Error Checking](#error-checking)
 
 ## RandomImagePageComponent Functionality
 
@@ -98,4 +99,22 @@ Now to bring this home (at least as functionality is concerned).
 I should have the service emit this as an Observable, then the component can subscribe to it.  
 
 Successfully emitted Subject from `ClickHandlerService`, and successfully subscribed to this in `RandomImagePageComponent`.
-Next this needs to be outputted to a DOM element.
+Next this needs to be outputted to a DOM element.  
+
+It's now working, I just need to hook it up to the breakpoints.
+
+## Error Checking
+
+So this is working now.
+But, I put the validation in there that you can't do more than 24 random images.
+So I need to have this input in the directive too.
+So if the user enters 25 or more, it will default to 24.  
+
+Working again, added if statement to the directive:  
+If the user puts `>=25` in the template, the value defaults to 24.  
+
+This could be changed later.  
+
+Also, I should add some loading animation for the page, like if they click before it's done loading.
+This would require state management, may need ngrx for this, so it's down the road.
+When there is loading implemented, then you should be allowed to do more than 24 images.
