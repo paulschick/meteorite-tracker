@@ -12,7 +12,7 @@ import { IApd } from '../models/apd.model';
 export class RandomImageService {
   private key:string = NASA_API_KEY;
   private randomQuery:string = '&count=';
-  private fullEndpoint:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}${this.randomQuery}`;
+  public fullEndpoint:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}${this.randomQuery}`;
 
   constructor(private http: HttpClient) { }
 
