@@ -1,11 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.service';
 import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 import { IApd } from '../../models/apd.model';
-
-// ClickHandlerService Imports
 import { ClickHandlerService } from '../../services/click-handler.service';
 
 
@@ -16,7 +14,7 @@ import { ClickHandlerService } from '../../services/click-handler.service';
 })
 export class RandomImagePageComponent implements OnInit, OnDestroy {
 
-  // breakpoint stuff
+  // breakpoint
   // ------------------
   sub: Subscription;
   cols: number;
@@ -25,15 +23,11 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // random image properties
   // -------------------
   randomImageArray: IApd[] = [];
-  randomImageArrayClone: IApd[];
   // --------------------
 
   // ClickHandlerService
   // --------------------
   clickSub: Subscription;
-
-
-
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
@@ -41,19 +35,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
     private clickHandlerService: ClickHandlerService
   ) {}
 
-  // Function for posting the image
-  // --------------------------------
-
-  // postImage(imageObservable: Observable<any>) {
-
-  // }
-
-  // --------------------------------
-
   ngOnInit() {
-
-    // New Code Here
-    // -------------------------
 
     // Subscription to Subject in ClickHandlerService
     this.clickSub = this.clickHandlerService.responseSubject
@@ -63,27 +45,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
         console.log(this.randomImageArray);
       });
 
-
-
-
-
-
-
-
-    // ------------------------
-
-    // with multiple images in the &count
-    // ---------------
-
-    // this line creates a clone of that array to keep the original immutable
-    //
-    //        this.randomImageArray.push(resolvedRandomImage);
-    //         this.randomImageArrayClone = this.randomImageArray.map((x) => x);
-
-    // -----------------
-
-
-    // this is all breakpoint stuff
+    // breakpoint
     // --------------
     this.sub = this.evaluateBreakpoint.screenSize
       .pipe(distinctUntilChanged())

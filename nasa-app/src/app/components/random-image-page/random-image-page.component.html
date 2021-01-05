@@ -1,39 +1,9 @@
 <div class="rand--container">
   <h1 class="rand--header">Click to Generate Random Images from Nasa!</h1>
-  <!-- <app-random-image (postImg)="postImage($event)"></app-random-image> -->
-  <!-- <app-random-image></app-random-image> -->
-
-
-
-  <button mat-raised-button [appClickHandler]="10" mtObserveBreakpoints>Generate Image</button>
-
-
-  <!-- Implemenation with custom flex css -->
-  <!-- <div class="rand--flex-container">
-    <div class="rand--flex-item" *ngFor="let x of randomImageArray">
-      <img [src]="x.url" [alt]="x.copyright" />
-    </div>
-  </div> -->
-  <!-- Implemenation with dynamic mat-grid-list columns -->
+  <button mat-raised-button [appClickHandler]="5" mtObserveBreakpoints>Generate Image</button>
   <mat-grid-list mtObserveBreakpoints [cols]="cols">
     <mat-grid-tile *ngFor="let x of randomImageArray">
       <img [src]="x.url" [alt]="x.copyright" />
     </mat-grid-tile>
   </mat-grid-list>
-
-
-  <!-- <img [src]="this.randomImageArray[0].url" /> -->
-
-  <!-- <div class="rand--wrapper">
-    <div class="rand--flex-container">
-      <div class="rand--flex-item" *ngFor="let x of [1,2,3,4,5]">
-        <img [src]="x.url" [alt]="x.copyright" />
-      </div>
-    </div>
-  </div>
-  <mat-grid-list mtObserveBreakpoints [cols]="cols"> -->
-    <!-- <mat-grid-tile *ngFor="let x of astronomyImgArr">
-      <img src="{{x.url}}" alt="{{x.copyright}}" />
-    </mat-grid-tile> -->
-  <!-- </mat-grid-list> -->
 </div>

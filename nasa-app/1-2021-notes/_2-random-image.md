@@ -13,7 +13,8 @@
   - [General Project Finishing Steps](#general-project-finishing-steps)
   - [Outputting the Random Image Objects to the DOM](#outputting-the-random-image-objects-to-the-dom)
   - [Error Checking](#error-checking)
-  - [Cleanup](#cleanup)
+  - [Cleanup and Structuring](#cleanup-and-structuring)
+    - [Design for UX](#design-for-ux)
 
 ## RandomImagePageComponent Functionality
 
@@ -120,7 +121,18 @@ Also, I should add some loading animation for the page, like if they click befor
 This would require state management, may need ngrx for this, so it's down the road.
 When there is loading implemented, then you should be allowed to do more than 24 images.
 
-## Cleanup
+## Cleanup and Structuring
 
 Time to clean up these components.
-Main contains all of the comments, which could be helpful, push the other branch up before cleaning.
+Main contains all of the comments, which could be helpful, push the other branch up before cleaning.  
+
+A way of thinking about Angular architecture is to have a main parent component that handles all of the data, communicates with services.
+Then you would have child components that actually create the display.
+
+### Design for UX
+
+This page really needs to have a loading state implemented.
+It could be as simple as disabling the button while the array is undefined.
+That actually might be pretty easy to do.  
+
+This is definitely the next thing, and if I can figure out how to do that, I can also have an element display when the state is "loading" and go away when it is ready.
