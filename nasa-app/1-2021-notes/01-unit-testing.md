@@ -54,3 +54,27 @@ Meteorite-Detail Component uses a pipe.
 So in order to test anything with integration with the template, there needs to be a pipe mocked.  
 
 [Some answers here](https://stackoverflow.com/questions/39293258/how-to-mock-pipe-when-testing-component/45081671) might be a help.
+
+## Referencing DOM Elements
+
+I have been using `nativeElement`, which is a direct reference to the DOM element underlying the reference.
+There is another option, `debugElement`, which is similar, but more like a wrapper.
+It comes with a different set of functionality.
+This lesson does not go very in depth, just shows its use.
+
+## Injecting a Mock Service
+
+This is the next step in component testing.
+I want to test that components are making HTTP calls.
+The video is **Mocking an Injected Service** in Section 04.  
+
+He creates the mock service right in the test, and adds a spy to it.
+Seems pretty straightforward, the only problem is that I'm using route resolvers.
+My implementation will likely be quite different than just calling a service.
+I do have components using services without resolvers, particularly for checking the breakpoints and calling the click handler.
+
+## Come Back to This
+
+The next time I come back to work on the testing, I will start here.
+In fact, if I create another injectable service, or finish the services for the random image component, I should come back here.
+Those will be HTTP calls that are not resolved by a resolver.  
