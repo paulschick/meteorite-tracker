@@ -36,3 +36,14 @@ Test was written in the same manner as it was presented in the course lesson. Th
 
 Looked at the input property, and made sure that this was interpolated to the correct element, in the correct way in its template.
 I should build and run this same test for any components that are doing a function as simple as this.
+
+### Astronomy Pic Thumbnail
+
+So this is similar to APD component, except there is no route resolver.
+This just takes in an input property.
+It will be good to figure out how to check the src content of the image in the DOM, and will also need to select Material DOM elements.
+Thus, this would check for using Material.  
+
+If I want it to be independent of Material, I need to select by something other than those elements.
+There is only one image tag in the whole template, so I can just test for the image.
+This is only supposed to have one image per output, so this holds.
