@@ -9,6 +9,7 @@
   - [RandomImagePageComponent Functionality](#randomimagepagecomponent-functionality)
   - [Current State](#current-state)
     - [Next Step](#next-step)
+    - [Allow for the number of random images to retrieve to be set through the template, and have a default value of 5](#allow-for-the-number-of-random-images-to-retrieve-to-be-set-through-the-template-and-have-a-default-value-of-5)
 
 ## RandomImagePageComponent Functionality
 
@@ -61,3 +62,15 @@ The service is now able to deal with this data.
 Next, I need to replace the dummy data with the response data.
 
 - Got this wired up, the `getClick()` method is iterating through this array with each click as expected.
+- Just to test it, this works with different numbers passed into the request in the `ClickHandlerDirective`.
+  - Where should this number come from?
+  - Probably should be set in the directive... But could be passed in through the template binding with a default value
+    - This way, when used, the developer can add this right in the template
+    - Imagine if this were in an npm package, you wouldn't be working with the directive's source code, any customization would be done through the template where it is used, just like when working with Material. This is the next step.  
+
+### Allow for the number of random images to retrieve to be set through the template, and have a default value of 5
+
+- Add an `@Input()` property to the directive called `images`
+  - Make type `any` and then make it more selective once it's setup and working
+    - Set to `string|number` and passed into the method with `+this.images` so that a string would be converted to an integer
+      - Also, takes in `+this.images || 5` so it defaults to 5 if no arg is passed in.

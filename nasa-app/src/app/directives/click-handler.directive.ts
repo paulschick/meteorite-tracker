@@ -1,4 +1,4 @@
-import { Directive, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Directive, HostListener, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ClickHandlerService } from '../services/click-handler.service';
 import { RandomImageService } from '../services/random-image.service';
@@ -9,6 +9,9 @@ import { NasaError } from '../models/nasaErrors.model';
   selector: '[appClickHandler]'
 })
 export class ClickHandlerDirective implements OnInit, OnDestroy {
+
+  @Input() images:string|number;
+
   clickNumber:number;
   sub:Subscription;
   randomImageArray:IApd[];
@@ -28,8 +31,7 @@ export class ClickHandlerDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.sub = this.randomImageService.getRandomImages(5).subscribe(
-      // (data:IApd[]) => this.randomImageArray = data,
+    this.sub = this.randomImageService.getRandomImages(+this.images || 5).subscribe(
       (data:IApd[]) => this.clickHandlerService.receiveResponseObject(data),
       (err:NasaError) => console.log(`Click-Handler HTTP error: ${err}`),
       () => console.log('Click-handler request completed',this.randomImageArray)
