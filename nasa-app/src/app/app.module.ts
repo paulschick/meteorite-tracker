@@ -56,6 +56,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { ObserveBreakpointsDirective } from './directives/observe-breakpoints.directive';
 import { CacheInterceptorService } from './interceptors/cache-interceptor.service';
+import { ClickHandlerDirective } from './directives/click-handler.directive';
 
 const materialModules = [
   CdkTreeModule,
@@ -106,7 +107,8 @@ const materialModules = [
     HomePageComponent,
     RandomImageComponent,
     RandomImagePageComponent,
-    ObserveBreakpointsDirective
+    ObserveBreakpointsDirective,
+    ClickHandlerDirective
   ],
   imports: [
     HttpClientModule,

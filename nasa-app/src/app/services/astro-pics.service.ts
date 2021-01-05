@@ -13,7 +13,7 @@ export class AstroPicsService {
   private astroPicsUrl: string = 'https://api.nasa.gov/planetary/apod?api_key=';
   private key: string = NASA_API_KEY;
   private queryDate: string = '&date=';
-  private randomQuery:string = '&count=50';
+  private randomQuery:string = '&count=2';
   private myDate: Date = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
   public formattedDate: string = `${this.myDate.getFullYear()}-${
     this.myDate.getMonth() + 1
