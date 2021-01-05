@@ -10,6 +10,8 @@
   - [Current State](#current-state)
     - [Next Step](#next-step)
     - [Allow for the number of random images to retrieve to be set through the template, and have a default value of 5](#allow-for-the-number-of-random-images-to-retrieve-to-be-set-through-the-template-and-have-a-default-value-of-5)
+  - [General Project Finishing Steps](#general-project-finishing-steps)
+  - [Outputting the Random Image Objects to the DOM](#outputting-the-random-image-objects-to-the-dom)
 
 ## RandomImagePageComponent Functionality
 
@@ -75,4 +77,22 @@ Next, I need to replace the dummy data with the response data.
     - Set to `string|number` and passed into the method with `+this.images` so that a string would be converted to an integer
       - Also, takes in `+this.images || 5` so it defaults to 5 if no arg is passed in.  
 
-This is now wired upwith the `RandomImagePageComponent` template, as `[appClickHandler]="3"` and this functions as expected.
+This is now wired upwith the `RandomImagePageComponent` template, as `[appClickHandler]="3"` and this functions as expected.  
+
+## General Project Finishing Steps
+
+1. Get this functionality completed
+2. Write more unit tests
+3. Change names to improve ease of understanding, including variable names where applicable
+4. Add descriptive comments to the code
+5. Create pro-level documentation
+6. Publish a final version01 open-source to GitHub
+7. Work on deployment steps
+
+## Outputting the Random Image Objects to the DOM
+
+Now to bring this home (at least as functionality is concerned).
+
+- Step 1 is to get the object being logged by the service into the component  
+
+I should have the service emit this as an Observable, then the component can subscribe to it.
