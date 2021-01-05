@@ -6,7 +6,7 @@
     </mat-card-header>
     <mat-card-content>
       <a [routerLink]="['image', astronomyPic.date]">
-        <img mat-card-image src="{{ astronomyPic.url }}" alt="{{ astronomyPic.title }}">
+        <img mat-card-image [src]="astronomyPic.url" [alt]="astronomyPic.title">
       </a>
     </mat-card-content>
   </mat-card>
