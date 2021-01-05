@@ -15,6 +15,8 @@
   - [Error Checking](#error-checking)
   - [Cleanup and Structuring](#cleanup-and-structuring)
     - [Design for UX](#design-for-ux)
+    - [Styling](#styling)
+  - [Object Oriented Design](#object-oriented-design)
 
 ## RandomImagePageComponent Functionality
 
@@ -136,3 +138,29 @@ It could be as simple as disabling the button while the array is undefined.
 That actually might be pretty easy to do.  
 
 This is definitely the next thing, and if I can figure out how to do that, I can also have an element display when the state is "loading" and go away when it is ready.
+
+### Styling
+
+Random Image page absolutely needs a fair amount of styling too.
+Not just styling, but thinking about a little UX, it would be helpful for people stumbling on the website to know what they're looking at.
+Add more information to the application too, and definitely the documentation.  
+
+It may be a developer's project, but one way to differentiate myself is through being a talented developer *and* very strong in design.
+
+## Object Oriented Design
+
+So right now, I have some if/then areas.
+A big one is revolving around the random image functionality.
+One cannot use a number greater than 24 at this time, which was hard coded, and also, displaying images stops when the end of the array is reached.
+Additionally, there is some lag time up front while the component is instantiating the array of images.  
+
+So, on the if/then node tree, we have an if/then for if someone wants more than 24 images.
+There should be some type of interaction.  
+
+More importantly, for the user experience, there is no indication that the page is loading.
+There should be a loading component that is used in here.
+The functionality may need to come from the service that's making the request, or from something watching the property in the component that will ultimately hold the resulting array of object.  
+
+While that array is empty or undefined, loading state is true.
+While that array has length > 0, then the loading state is false.
+The array will not have a length > 0 until the entire array is filled based on the way that the current functionality is designed.
