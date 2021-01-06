@@ -14,20 +14,23 @@ import { distinctUntilChanged } from 'rxjs/operators';
 export class ApdComponent implements OnInit, OnDestroy {
   apd:IApd;
   apdUrl:string;
-  loaderSubscription:Subscription;
-  loading:boolean = true;
+  // loaderSubscription:Subscription;
+  // loading:boolean = true;
+  isImageLoading:boolean;
 
   constructor(private route: ActivatedRoute,
               private loaderService: LoaderService) {  }
 
   ngOnInit() {
 
-    this.loaderSubscription = this.loaderService.isLoading
-      .pipe(distinctUntilChanged())
-      .subscribe((isLoading) => {
-        console.log(`APD Component Loading: ${isLoading}`);
-        this.loading = isLoading;
-      });
+    this.isImageLoading = true;
+
+    // this.loaderSubscription = this.loaderService.isLoading
+    //   .pipe(distinctUntilChanged())
+    //   .subscribe((isLoading) => {
+    //     console.log(`APD Component Loading: ${isLoading}`);
+    //     this.loading = isLoading;
+    //   });
 
     let resolvedApd: IApd | NasaError = this.route.snapshot.data['resolvedApd'];
 
@@ -39,7 +42,11 @@ export class ApdComponent implements OnInit, OnDestroy {
     }
   }
 
+  hideImageLoader() {
+    this.isImageLoading = false;
+  }
+
   ngOnDestroy() {
-    this.loaderSubscription.unsubscribe;
+    // this.loaderSubscription.unsubscribe;
   }
 }
