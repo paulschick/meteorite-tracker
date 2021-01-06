@@ -28,6 +28,7 @@
     - [State -> loading: true, settimeout: false](#state---loading-true-settimeout-false)
     - [State -> loading: false, settimeout: false](#state---loading-false-settimeout-false)
   - [Loading Logic](#loading-logic)
+    - [Functional](#functional)
 
 ## RandomImagePageComponent Functionality
 
@@ -266,4 +267,10 @@ Okay, so the setTimeout is working, and the button is disabled until that timeou
 By the time the button is able to be clicked, the loading state is true, meaning that the component knows that the HTTP request is still loading.  
 
 This is exactly what I want so far.
-Now I need to have another HTML element with the svg, that uses an `ngIf` to display only when loading is true.
+Now I need to have another HTML element with the svg, that uses an `ngIf` to display only when loading is true.  
+
+### Functional
+
+So, the way that the loading spinner is styled, I don't even need to disable the button, and it works properly.
+The spinner component fills the screen, so there is no ability to click the button anyway.
+Awesome.
