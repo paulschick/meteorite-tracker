@@ -336,3 +336,10 @@ If this is the case, then I need to replace the implementation on the APD compon
 
 Okay so from that reference, this works pretty good.
 I'll keep that with rendering the random images, and I'm going to apply the same thing to the apd and see if that has a better UX.
+
+- I have updated the APD component to use the same method as `RandomImagePageComponent` template's individual image rendering
+- Useful to understand the `(load)` event on elements that can be used to handle the loading state of an individual element
+  - Could be some uses for this that are desirable over component or application-level state, like those just used here.  
+
+Final Functionality is to have the API request be sent again when the array of images has reached the end.
+I'm going to look into this.
