@@ -31,6 +31,7 @@
     - [Functional](#functional)
   - [Moving Forward with Random Image Page Component](#moving-forward-with-random-image-page-component)
     - [Loading Done, What's Next](#loading-done-whats-next)
+  - [Quick Spinner Refactor](#quick-spinner-refactor)
 
 ## RandomImagePageComponent Functionality
 
@@ -310,3 +311,12 @@ So NgRX, Redux, almost never need to be used, not with this, so I would really l
 There is probably some equivalent to React's lifecycle hooks.
 I am already using this kind of stuff in Angular, I mean that's what the lifecycle methods like `ngOnInit` and `OnChanges` do anyway.
 I'm just doing it by component-level state instead.
+
+## Quick Spinner Refactor
+
+This is an easy to load file, no need to have that on the DOM while it's hidden, I'm going to replace it with `ngIf` and see how that works.  
+
+`ngIf` works, and may even function a little bit better, I don't know, seems smoother.  
+
+Now, on the Home page, I'm not getting loading on the main image.
+This is definitely just due to the resolvers there, so I'd like to implement the same thing that I did in the random image page on this one component on the home page.
