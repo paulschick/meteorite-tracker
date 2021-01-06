@@ -21,6 +21,8 @@
     - [Here's a walkthrough Article](#heres-a-walkthrough-article)
   - [1/6/2020 Creating a Loader Service, Interceptor, and Component](#162020-creating-a-loader-service-interceptor-and-component)
     - [In Regards to Loading on the Random Image Page](#in-regards-to-loading-on-the-random-image-page)
+    - [Dirty Option](#dirty-option)
+    - [Use the Loader service directly](#use-the-loader-service-directly)
 
 ## RandomImagePageComponent Functionality
 
@@ -207,3 +209,22 @@ So what I need to happen is for that property to not iterate while that array is
 This, unfortunately, may require some refactoring.
 Unless of course, I'm able to just have the button be disabled and display the text 'loading...' while it is empty.
 I can probably use lifecycle methods in the random image page component.
+
+- Adding `@Input()` to the originally empty array is fine, now to see if it will be detected by `ngOnChanges`  
+
+### Dirty Option
+
+I can use `setTimeout()` to automatically disable the button for 2 seconds before allowing it to be pressed.
+While this is not ideal, it will put a bandaid on the problem.
+I can also display the loader svg while the button is disabled.
+
+### Use the Loader service directly
+
+The console is outputing the state in regards to loading in the console.
+I can try to get the true/false from the service, and have that property determine the disabled status/loading image on the screen.
+Basically subscribe and use `distinctUntilChanged()`  
+
+I like this option the best.
+Might as well use what is there.
+The true/false in the console does directly correspond with the images being loaded or not, so this is the move.
+Use the interceptor that's there instead of trying to mess with the source code of the directive/services that are controlling the request and passing the data with the images to the component.
