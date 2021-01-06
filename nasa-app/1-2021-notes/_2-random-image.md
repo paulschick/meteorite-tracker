@@ -17,6 +17,8 @@
     - [Design for UX](#design-for-ux)
     - [Styling](#styling)
   - [Object Oriented Design](#object-oriented-design)
+  - [Loading Solutions](#loading-solutions)
+    - [Here's a walkthrough Article](#heres-a-walkthrough-article)
 
 ## RandomImagePageComponent Functionality
 
@@ -164,3 +166,23 @@ The functionality may need to come from the service that's making the request, o
 While that array is empty or undefined, loading state is true.
 While that array has length > 0, then the loading state is false.
 The array will not have a length > 0 until the entire array is filled based on the way that the current functionality is designed.
+
+## Loading Solutions
+
+1. Loading Interceptor
+   1. Just implement this functionality for all of the areas with HTTP requests  
+
+[Here is one resource to consider](https://stackoverflow.com/questions/49385369/angular-show-spinner-for-every-http-request-with-very-less-code-changes)  
+
+I don't think that this first one is the best example.
+But, I do think that loading spinners should be a sort of a "starter kit".
+So with my dark mode project starter, really this should have a loading spinner interceptor and routing at least.  
+
+### [Here's a walkthrough Article](https://www.freakyjolly.com/http-global-loader-progress-bar-using-angular-interceptors/#.X_W1PthKiiN)
+
+- The service should broadcast `isLoading`
+  - `BehaviorSubject` observable
+- Also Loader Interceptor to keep HTTP calls stack and handle errors
+- Have `MyLoaderComponent` or equivalent function
+- **Custom loader component goes into the app component template**
+- App Module updated with Interceptor, Loader Service, Component
