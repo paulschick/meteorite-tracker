@@ -22,3 +22,8 @@ Pretty cool, this checks for a few things:
 So now that I am able to successfully test this service, I should be able to replicate this with `AstroPicsService` and `HomeService` as well, at the least.  
 
 Although there is a resolver between those services and their components, I can still test the services themselves in this same way.
+
+## AstroPicsService
+
+I've refactored this service, and now it can be tested just like the previous one.
+Difference here is that there are two GET methods in the service.
