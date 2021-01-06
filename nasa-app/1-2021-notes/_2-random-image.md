@@ -27,6 +27,7 @@
     - [State -> loading: true, settimeout: true](#state---loading-true-settimeout-true)
     - [State -> loading: true, settimeout: false](#state---loading-true-settimeout-false)
     - [State -> loading: false, settimeout: false](#state---loading-false-settimeout-false)
+  - [Loading Logic](#loading-logic)
 
 ## RandomImagePageComponent Functionality
 
@@ -253,4 +254,16 @@ All I want to do in the set timeout is to have the button be disabled, and the r
 
 ### State -> loading: false, settimeout: false
 
-- component in not-loading state, button is clickable
+- component in not-loading state, button is clickable  
+
+## Loading Logic
+
+setTimeout only needs to be one second.  
+
+[Update class with settimeout](https://stackoverflow.com/questions/42681164/angular-2-update-class-with-settimeout)  
+
+Okay, so the setTimeout is working, and the button is disabled until that timeout is complete.
+By the time the button is able to be clicked, the loading state is true, meaning that the component knows that the HTTP request is still loading.  
+
+This is exactly what I want so far.
+Now I need to have another HTML element with the svg, that uses an `ngIf` to display only when loading is true.

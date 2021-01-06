@@ -4,3 +4,6 @@ button {
 button:hover {
   background-color: $darkmode-primary-hover;
 }
+button:disabled {
+  background-color: $darkmode-primary-hover;
+}

@@ -24,13 +24,21 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // random image properties
   // -------------------
   randomImageArray: IApd[] = [];
-  loading:boolean = true;
-  loadSub:Subscription;
+
   // --------------------
 
   // ClickHandlerService
   // --------------------
   clickSub: Subscription;
+
+  // Loading Stuff
+  loading:boolean = true;
+  loadSub:Subscription;
+  btnTimeOut:boolean = true;
+
+
+
+
 
   constructor(
     private loaderService: LoaderService,
@@ -40,6 +48,10 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+
+    setTimeout(() => {
+      this.btnTimeOut = false;
+    }, 1000)
 
     this.loadSub = this.loaderService.isLoading
       .pipe(distinctUntilChanged())
