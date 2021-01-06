@@ -19,6 +19,8 @@
   - [Object Oriented Design](#object-oriented-design)
   - [Loading Solutions](#loading-solutions)
     - [Here's a walkthrough Article](#heres-a-walkthrough-article)
+  - [1/6/2020 Creating a Loader Service, Interceptor, and Component](#162020-creating-a-loader-service-interceptor-and-component)
+    - [In Regards to Loading on the Random Image Page](#in-regards-to-loading-on-the-random-image-page)
 
 ## RandomImagePageComponent Functionality
 
@@ -186,3 +188,22 @@ So with my dark mode project starter, really this should have a loading spinner 
 - Have `MyLoaderComponent` or equivalent function
 - **Custom loader component goes into the app component template**
 - App Module updated with Interceptor, Loader Service, Component
+
+## 1/6/2020 Creating a Loader Service, Interceptor, and Component
+
+[Followed this tutorial](https://www.freakyjolly.com/http-global-loader-progress-bar-using-angular-interceptors/#.X_W1PthKiiN)  
+
+And this does work, of course the loading times are so quick.  
+
+[here is where you can get loading svg files](https://loading.io/)  
+
+So by increasing the number of images request for the random image component, this should be on the screen.
+
+### In Regards to Loading on the Random Image Page
+
+Right now, if you click the button before the array is loaded, it will increase the integer associated with clicking, but it will not display any images, because the array is empty.
+So what I need to happen is for that property to not iterate while that array is empty.  
+
+This, unfortunately, may require some refactoring.
+Unless of course, I'm able to just have the button be disabled and display the text 'loading...' while it is empty.
+I can probably use lifecycle methods in the random image page component.

@@ -57,6 +57,8 @@ import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { ObserveBreakpointsDirective } from './directives/observe-breakpoints.directive';
 import { CacheInterceptorService } from './interceptors/cache-interceptor.service';
 import { ClickHandlerDirective } from './directives/click-handler.directive';
+import { MyLoaderComponent } from './components/my-loader/my-loader.component';
+import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
 
 const materialModules = [
   CdkTreeModule,
@@ -108,7 +110,8 @@ const materialModules = [
     // RandomImageComponent,
     RandomImagePageComponent,
     ObserveBreakpointsDirective,
-    ClickHandlerDirective
+    ClickHandlerDirective,
+    MyLoaderComponent
   ],
   imports: [
     HttpClientModule,
@@ -119,7 +122,8 @@ const materialModules = [
   ],
   providers: [
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
-    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }
   ],
   exports: [],
   bootstrap: [AppComponent]
