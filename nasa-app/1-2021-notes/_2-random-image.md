@@ -29,6 +29,7 @@
     - [State -> loading: false, settimeout: false](#state---loading-false-settimeout-false)
   - [Loading Logic](#loading-logic)
     - [Functional](#functional)
+  - [Moving Forward with Random Image Page Component](#moving-forward-with-random-image-page-component)
 
 ## RandomImagePageComponent Functionality
 
@@ -273,4 +274,12 @@ Now I need to have another HTML element with the svg, that uses an `ngIf` to dis
 
 So, the way that the loading spinner is styled, I don't even need to disable the button, and it works properly.
 The spinner component fills the screen, so there is no ability to click the button anyway.
-Awesome.
+Awesome.  
+
+## Moving Forward with Random Image Page Component
+
+Now that I have the working spinner, I can consider allowing requests for larger than 24 images.
+Or, I can add additional functionality, meaning, when the array reaches the end, it can just make another request instead of console logging that the array is empty.  
+
+I like this option, because I don't want that first request to take too long, and 24 images is a pretty decent load time.
+It's not so long that it's annoying, but any longer and it would start to be a problem.
