@@ -23,6 +23,10 @@
     - [In Regards to Loading on the Random Image Page](#in-regards-to-loading-on-the-random-image-page)
     - [Dirty Option](#dirty-option)
     - [Use the Loader service directly](#use-the-loader-service-directly)
+    - [State -> loading: false, settimeout: true](#state---loading-false-settimeout-true)
+    - [State -> loading: true, settimeout: true](#state---loading-true-settimeout-true)
+    - [State -> loading: true, settimeout: false](#state---loading-true-settimeout-false)
+    - [State -> loading: false, settimeout: false](#state---loading-false-settimeout-false)
 
 ## RandomImagePageComponent Functionality
 
@@ -227,4 +231,26 @@ Basically subscribe and use `distinctUntilChanged()`
 I like this option the best.
 Might as well use what is there.
 The true/false in the console does directly correspond with the images being loaded or not, so this is the move.
-Use the interceptor that's there instead of trying to mess with the source code of the directive/services that are controlling the request and passing the data with the images to the component.
+Use the interceptor that's there instead of trying to mess with the source code of the directive/services that are controlling the request and passing the data with the images to the component.  
+
+For now, I'm actually going to use a combination of the service and the dirty method.
+I am able to get the loading state from the service, and this works fine.
+But, since I'm not using a route resolver, the initial loading state is `false` when the component loads, and then it receives the information that the loading state is `true`.
+So, I can set a timeout that will sort of coincide with how long it takes to receive the information that the loading state is true.
+All I want to do in the set timeout is to have the button be disabled, and the rest  of the state will work.  
+
+### State -> loading: false, settimeout: true
+
+- button is disabled, component in not-loading state
+
+### State -> loading: true, settimeout: true
+
+- button is disabled, component in loading state
+
+### State -> loading: true, settimeout: false
+
+- component in loading state, button is disabled in this state
+
+### State -> loading: false, settimeout: false
+
+- component in not-loading state, button is clickable

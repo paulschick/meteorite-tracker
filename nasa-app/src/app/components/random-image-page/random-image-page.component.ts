@@ -5,6 +5,7 @@ import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.se
 import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 import { IApd } from '../../models/apd.model';
 import { ClickHandlerService } from '../../services/click-handler.service';
+import { LoaderService } from '../../services/loader.service';
 
 
 @Component({
@@ -23,6 +24,8 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // random image properties
   // -------------------
   randomImageArray: IApd[] = [];
+  loading:boolean = true;
+  loadSub:Subscription;
   // --------------------
 
   // ClickHandlerService
@@ -30,12 +33,20 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   clickSub: Subscription;
 
   constructor(
+    private loaderService: LoaderService,
     private evaluateBreakpoint: EvaluateBreakpointService,
     private matService: MaterialBreakpointsService,
     private clickHandlerService: ClickHandlerService
   ) {}
 
   ngOnInit() {
+
+    this.loadSub = this.loaderService.isLoading
+      .pipe(distinctUntilChanged())
+      .subscribe((isLoading) => {
+        console.log(`loading, from component: ${isLoading}`);
+        this.loading = isLoading;
+      });
 
     // Subscription to Subject in ClickHandlerService
     this.clickSub = this.clickHandlerService.responseSubject
@@ -68,5 +79,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
     // -------------------
     this.clickSub.unsubscribe;
     // -------------------
+
+    this.loadSub.unsubscribe;
   }
 }
