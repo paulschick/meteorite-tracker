@@ -3,7 +3,8 @@
   <button mat-raised-button [appClickHandler]="24" mtObserveBreakpoints>Generate Image</button>
   <mat-grid-list mtObserveBreakpoints [cols]="cols">
     <mat-grid-tile *ngFor="let x of randomImageArray">
-      <img [src]="x.url" [alt]="x.copyright" />
+      <img [ngStyle]="{visibility:isImageLoading?'hidden':''}" [src]="x.url" [alt]="x.copyright" (load)="hideImageLoader()" />
+      <img src="../../../assets/Interwind-1s-200px.svg" *ngIf="isImageLoading" />
     </mat-grid-tile>
   </mat-grid-list>
 </div>

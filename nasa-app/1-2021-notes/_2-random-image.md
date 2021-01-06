@@ -319,4 +319,20 @@ This is an easy to load file, no need to have that on the DOM while it's hidden,
 `ngIf` works, and may even function a little bit better, I don't know, seems smoother.  
 
 Now, on the Home page, I'm not getting loading on the main image.
-This is definitely just due to the resolvers there, so I'd like to implement the same thing that I did in the random image page on this one component on the home page.
+This is definitely just due to the resolvers there, so I'd like to implement the same thing that I did in the random image page on this one component on the home page.  
+
+One more place on `RandomImagePageComponent` that could use a spinner:
+on the individual random images that are displayed in the grid.  
+
+There is sometimes, not always, a lag in between pressing the button and rendering the image.
+I'm wondering if there is a way to display the spinner in that case?  
+
+I have a feeling this is more complicated than the other applications of the spinner.
+Yeah, so clicking the button and waiting for rendering does not register as loading=true, since it's not making an HTTP call.  
+
+It looks like there is a 'load' event that can be bound to images, via [this reference here](https://medium.com/@Mdmoin07/image-with-loading-indicator-angular-4275101c802c).  
+
+If this is the case, then I need to replace the implementation on the APD component with the image load event functionality, since that lag time is due to the image rendering rather than the request being made.  
+
+Okay so from that reference, this works pretty good.
+I'll keep that with rendering the random images, and I'm going to apply the same thing to the apd and see if that has a better UX.

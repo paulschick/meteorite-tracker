@@ -34,6 +34,7 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // Loading Stuff
   loading:boolean = true;
   loadSub:Subscription;
+  isImageLoading:boolean;
 
 
 
@@ -45,6 +46,8 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+
+    this.isImageLoading=true;
 
     this.loadSub = this.loaderService.isLoading
       .pipe(distinctUntilChanged())
@@ -71,6 +74,10 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
       });
     // ----------------
 
+  }
+
+  hideImageLoader() {
+    this.isImageLoading = false;
   }
 
   ngOnDestroy() {
