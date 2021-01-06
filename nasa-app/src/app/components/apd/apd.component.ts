@@ -1,36 +1,23 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
 import { ActivatedRoute } from '@angular/router';
-import { LoaderService } from '../../services/loader.service';
-import { Subscription } from 'rxjs';
-import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-apd',
   templateUrl: './apd.component.html',
   styleUrls: ['./apd.component.scss']
 })
-export class ApdComponent implements OnInit, OnDestroy {
+export class ApdComponent implements OnInit {
   apd:IApd;
   apdUrl:string;
-  // loaderSubscription:Subscription;
-  // loading:boolean = true;
   isImageLoading:boolean;
 
-  constructor(private route: ActivatedRoute,
-              private loaderService: LoaderService) {  }
+  constructor(private route: ActivatedRoute) {  }
 
   ngOnInit() {
 
     this.isImageLoading = true;
-
-    // this.loaderSubscription = this.loaderService.isLoading
-    //   .pipe(distinctUntilChanged())
-    //   .subscribe((isLoading) => {
-    //     console.log(`APD Component Loading: ${isLoading}`);
-    //     this.loading = isLoading;
-    //   });
 
     let resolvedApd: IApd | NasaError = this.route.snapshot.data['resolvedApd'];
 
@@ -44,9 +31,5 @@ export class ApdComponent implements OnInit, OnDestroy {
 
   hideImageLoader() {
     this.isImageLoading = false;
-  }
-
-  ngOnDestroy() {
-    // this.loaderSubscription.unsubscribe;
   }
 }
