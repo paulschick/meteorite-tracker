@@ -28,4 +28,5 @@ Although there is a resolver between those services and their components, I can 
 I've refactored this service, and now it can be tested just like the previous one.
 Difference here is that there are two GET methods in the service.  
 
-`getFromDateRange()` unit test built and is passing.
+`getFromDateRange()` unit test built and is passing.  
+`getDetailImage()` unit test built and passing.

@@ -106,6 +106,28 @@ describe('AstroPicsService', () => {
     request.flush(dateRangeResponse);
   });
 
+  it('should retrieve a single object from the date passed in as an argument', () => {
+    singleImageResponse = {
+      copyright: 'Paul Schick',
+      date: '2020-01-05',
+      explanation: 'test',
+      title: 'Test Image 01',
+      url: 'https://example1.com',
+    }
+
+    const dateString = '2020-01-05';
+
+    service.getDetailImage(dateString).subscribe(
+      (data: IApd) => {
+        expect(data.date).toBe(dateString);
+        expect(data).toEqual(singleImageResponse);
+      }
+    );
+    const request = httpMock.expectOne(`${service.singleImageUrl}${dateString}`);
+    expect(request.request.method).toBe('GET');
+    request.flush(singleImageResponse);
+  });
+
   // this stays at the end
   afterEach(() => {
     httpMock.verify();
