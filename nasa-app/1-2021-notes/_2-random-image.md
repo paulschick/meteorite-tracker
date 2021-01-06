@@ -30,6 +30,7 @@
   - [Loading Logic](#loading-logic)
     - [Functional](#functional)
   - [Moving Forward with Random Image Page Component](#moving-forward-with-random-image-page-component)
+    - [Loading Done, What's Next](#loading-done-whats-next)
 
 ## RandomImagePageComponent Functionality
 
@@ -283,3 +284,29 @@ Or, I can add additional functionality, meaning, when the array reaches the end,
 
 I like this option, because I don't want that first request to take too long, and 24 images is a pretty decent load time.
 It's not so long that it's annoying, but any longer and it would start to be a problem.
+
+### Loading Done, What's Next
+
+I'm super happy that this is done and was implemented fairly easily.
+The loading functionality should definitely be in my "starter kit", and functionality should be improved over time.
+With that said the interceptor, service, component should all have accompanying unit tests.  
+
+I'd say that unless more pops up, the functionality for the `RandomImagePageComponent` is complete, and it needs to be styled.
+One more state implementation that I could use is dark-mode/light-mode state, which is essentially just styling.
+This would have a toggle button, and I suppose just swap classes on every single thing.
+I am not sure what the best practice is for this, but I assume you just have to write twice the style for everything.
+The only case where you wouldn't is if you're just inverting or manipulating color values by the same amount on everything.
+This is not what I would do, I don't think think that the colors should really be the same between a light and dark mode.  
+
+Or, I could start going through either the Reactive Forms course, or the Authorization course.  
+
+Forms might be more applicable, I can have a little contact form on the website, and maybe get some ideas for another component to add to this.  
+
+Also for the more advanced courses, I definitely want to go through these again attentively and take notes/implement, even though they are more concept than direct application.  
+
+Actually, as I'm typing this I'm listening to 'Angular Architecture and Best Practices', and he is using NgRX for the loading state.  
+
+So NgRX, Redux, almost never need to be used, not with this, so I would really like to learn some best practices for smaller scale state management.
+There is probably some equivalent to React's lifecycle hooks.
+I am already using this kind of stuff in Angular, I mean that's what the lifecycle methods like `ngOnInit` and `OnChanges` do anyway.
+I'm just doing it by component-level state instead.
