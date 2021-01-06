@@ -34,9 +34,6 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   // Loading Stuff
   loading:boolean = true;
   loadSub:Subscription;
-  btnTimeOut:boolean = true;
-
-
 
 
 
@@ -48,10 +45,6 @@ export class RandomImagePageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-
-    setTimeout(() => {
-      this.btnTimeOut = false;
-    }, 1000)
 
     this.loadSub = this.loaderService.isLoading
       .pipe(distinctUntilChanged())
