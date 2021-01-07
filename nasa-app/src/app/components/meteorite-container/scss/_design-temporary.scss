@@ -3,19 +3,22 @@
 // main header wrapper
 .home--header__container {
 
-  height: 100vh;
+  height: 70vh;
+  background-color: red;
 
   // Rocket Ship as Background Image
   background-image: url(../../../../assets/img/rocket.svg);
   // background-position: right top;
   background-position: 100% 0%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-size: contain;
 }
 
+// follows the main wrapper, no margin to allow content fill
 .home--header__content-wrapper {
   border: 1px solid orange;
+
 }
 
 // wraps the h1
