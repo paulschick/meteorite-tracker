@@ -16,4 +16,7 @@ So, I should be able to slim this down to three components: meteorite-display, m
 
 All of the logic, the requests and setting the meteorite property and the filterBy property will be done in the meteorite-display component, which is the parent component.
 Also, there will be no request for the APD component.
-This will be a static image with the one that I found today, which is an awesome pic.
+This will be a static image with the one that I found today, which is an awesome pic.  
+
+Now, I will do the **Container Presentation Pattern** with all of my components.
+Additionally, it might be worth using an **Event Bus** service to communicate between the Container `MeteoriteDisplayComponent` and the Presentation component `MeteoriteDetailComponent`.  

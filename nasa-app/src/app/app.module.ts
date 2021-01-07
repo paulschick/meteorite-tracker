@@ -59,6 +59,7 @@ import { CacheInterceptorService } from './interceptors/cache-interceptor.servic
 import { ClickHandlerDirective } from './directives/click-handler.directive';
 import { MyLoaderComponent } from './components/my-loader/my-loader.component';
 import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
+import { MeteoriteContainerComponent } from './components/meteorite-container/meteorite-container.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -111,7 +112,8 @@ const materialModules = [
     RandomImagePageComponent,
     ObserveBreakpointsDirective,
     ClickHandlerDirective,
-    MyLoaderComponent
+    MyLoaderComponent,
+    MeteoriteContainerComponent
   ],
   imports: [
     HttpClientModule,
