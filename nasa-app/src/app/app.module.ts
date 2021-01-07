@@ -10,9 +10,7 @@ import { FormatMassPipe } from './pipes/format-mass.pipe';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AstronomyPicDetailComponent } from './components/astronomy-pic-detail/astronomy-pic-detail.component';
-import { AstronomyPicsListComponent } from './components/astronomy-pics-list/astronomy-pics-list.component';
 import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thumbnail/astronomy-pics-thumbnail.component';
-import { AstronomyPicsPageComponent } from './components/astronomy-pics-page/astronomy-pics-page.component';
 import { AstronomyPicDetailPageComponent } from './components/astronomy-pic-detail-page/astronomy-pic-detail-page.component';
 // import { ApdComponent } from './components/apd/apd.component';
 // import { MeteoriteDisplayComponent } from './components/meteorite-display/meteorite-display.component';
@@ -101,9 +99,7 @@ const materialModules = [
     SidenavComponent,
     ToolbarComponent,
     AstronomyPicDetailComponent,
-    AstronomyPicsListComponent,
     AstronomyPicsThumbnailComponent,
-    AstronomyPicsPageComponent,
     AstronomyPicDetailPageComponent,
     // ApdComponent,
     // MeteoriteDisplayComponent,

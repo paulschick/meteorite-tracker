@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AstronomyPicDetailPageComponent } from './components/astronomy-pic-detail-page/astronomy-pic-detail-page.component';
-import { AstronomyPicsPageComponent } from './components/astronomy-pics-page/astronomy-pics-page.component';
 // import { HomePageComponent } from './components/home-page/home-page.component';
 import { RandomImagePageComponent } from './components/random-image-page/random-image-page.component';
 // import { ApdResolverService } from './services/apd-resolver.service';
