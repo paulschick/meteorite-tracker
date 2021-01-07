@@ -74,4 +74,34 @@ One real way to make AstroPicsService loosely coupled is to delegate the specify
 All of these GET requests are literally the same thing.
 If that logic is delegated, then this service can be one single function.
 If I want to keep the date calculation out of the component, this this can be a method in the service that can be called from the component and passed back into the service.
-Or just a public property in the service that the component can access and pass as an argument as a url parameter.
+Or just a public property in the service that the component can access and pass as an argument as a url parameter.  
+
+Benefits:
+
+- One loosely coupled method to handle the generic get requests
+  - All of Astro Pics and the Random Image service into one method
+- Easier to test  
+
+Other consideration: Not exactly sure how to deal with the resolvers.
+Theoretically I should be able to have one resolver that can take in the parameters, because technically this is the service that needs to actually make the call to the service doing the http call.  
+
+For the resolver to work, it needs to be able to receive data about the api call to make for that particular route.
+Otherwise, I would have to have two methods in the service
+
+- one to take the arguments from the component
+- one to combine it and make the get request -> this would be called by the resolver service  
+
+I could also add all of the url logic into the single resolver.
+It could use if/else logic to look at the path url and pass the correct parameters into the get request.
+I don't know if it's worth saving the code.  
+
+There is a lot of logic to refactor the resolver properly if I combine the services into just one call.  
+
+## Save This for the Code Review
+
+Write the service that I would want to implement.
+This is a solution.
+Also say that refactoring the resolver was the "bottleneck" here to having a loosely-coupled http request service.
+The point being that I can explain that I don't know how to build the resolver, but I do know how to build the service that I want.
+
+- removed randomImage service and I put that in astro pics -> replaced that in the directive that it is called in

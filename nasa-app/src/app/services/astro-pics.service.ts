@@ -35,6 +35,10 @@ export class AstroPicsService {
   // Meteorites Endpoint
   meteoritesUrl:string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
 
+  // Random Images Properties
+  private randomQuery:string = '&count=';
+  public randomEndpoint:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}${this.randomQuery}`;
+
 
   constructor(private http: HttpClient) {}
 
@@ -68,6 +72,18 @@ export class AstroPicsService {
         take(1),
         catchError(err => this.handleHttpError(err))
       );
+  }
+
+  getRandomImages(numberImages:number): Observable<IApd[] | NasaError> {
+    if (numberImages >= 25) {
+      console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
+    } else {
+      return this.http.get<IApd[]>(`${this.randomEndpoint}${numberImages.toString()}`)
+        .pipe(
+          take(1),
+          catchError(err => this.handleHttpError(err))
+        );
+    }
   }
 
   // ----------------------
