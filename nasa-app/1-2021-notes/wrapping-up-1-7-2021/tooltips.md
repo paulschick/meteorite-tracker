@@ -20,4 +20,11 @@ Very simple, just do like...
     (click)="tooltip.hide()">
   Hide
 </button>
+
+<button mat-raised-button #tooltip="matTooltip"
+        matTooltip="Info about the action"
+        matTooltipPosition="right"
+        aria-tooltip="Button that displays and hides a tooltip triggered by other buttons">
+  Action
+</button>
 ```
