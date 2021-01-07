@@ -8,8 +8,6 @@ export class HttpCacheService {
 
   private requests: any = {  };
 
-  constructor() {  }
-
   put(url: string, response: HttpResponse<any>): void {
     this.requests[url] = response;
   }

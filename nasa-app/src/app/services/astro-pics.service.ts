@@ -44,6 +44,10 @@ export class AstroPicsService {
 
   // Get Request Methods
 
+  // Improvements:
+  // Class should do one thing, does 4 things
+  // These could all be consolidated into one get request which takes in url parameters from the component
+
   getFromDateRange(): Observable<IApd[] | NasaError> {
     return this.http
       .get<IApd[]>(
@@ -75,6 +79,7 @@ export class AstroPicsService {
   }
 
   getRandomImages(numberImages:number): Observable<IApd[] | NasaError> {
+    // client-side validation could be improved
     if (numberImages >= 25) {
       console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
     } else {
