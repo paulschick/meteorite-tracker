@@ -34,12 +34,6 @@
   @include center-child;
 }
 
-.display--btn {
-  margin: .5em;
-  width: 10em;
-  height: 3em;
-}
-
 .display--btn-fab {
   margin: 0.5em 1.5em 0.5em 0;
   height: 4.4em;
@@ -53,9 +47,6 @@
   .display--btn-div {
     display: flex;
     flex-direction: column;
-  }
-  .display--btn {
-    margin: .5em;
   }
   .display--btn-fab {
     margin: .5em;

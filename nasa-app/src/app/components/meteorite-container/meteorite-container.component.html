@@ -21,20 +21,6 @@
       >
         {{ toggleButton }}
       </button>
-      <!-- <button
-        mat-raised-button
-        class="display--btn"
-        (click)="filterBy = 'new'"
-      >
-        RECENT
-      </button>
-      <button
-        mat-raised-button
-        class="display--btn"
-        (click)="filterBy = 'default'"
-      >
-        ALL
-      </button> -->
       <app-toggle-filter-btn
         [filterBy]="filterBy"
         (filterClick)="filterToggled($event)"
