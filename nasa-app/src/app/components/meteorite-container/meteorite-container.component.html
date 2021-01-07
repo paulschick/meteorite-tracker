@@ -21,7 +21,7 @@
       >
         {{ toggleButton }}
       </button>
-      <button
+      <!-- <button
         mat-raised-button
         class="display--btn"
         (click)="filterBy = 'new'"
@@ -34,7 +34,7 @@
         (click)="filterBy = 'default'"
       >
         ALL
-      </button>
+      </button> -->
       <app-toggle-filter-btn
         [filterBy]="filterBy"
         (filterClick)="filterToggled($event)"

@@ -34,4 +34,28 @@ The reason is because the meteorite list and the button are in two different pla
 Putting all of the markup for the button div in the Meteorite List Component means I also have to have the toggle function there.
 This is too much state control to the child.  
 
-I just want the filter button to be in there, so I'll have a child specifically for that, and the selector will go right in the div.
+I just want the filter button to be in there, so I'll have a child specifically for that, and the selector will go right in the div.  
+
+I now have the Home page functionality set up. To finish this, I need to clean up these components and replace the home page components with this.
+It's gone from these components: home, apd, meteorite display, meteorite list, meteorite detail; down to meteorite container, meteorite list, meteorite toggle button, and meteorite detail.  
+
+So there is only two less components, but the state is all controlled through one, and it is much more clear what each of the components does.
+So I definitely feel like this is a win.
+The relationships between the components just make a lot more sense.  
+
+The relationship is now:  
+
+```bash
+--- Meteorite Container
+|
+|___ Meteorite Toggle Filter Button
+|
+|
+|___ Meteorite List
+      |
+      |
+      |___ Meteorite Detail
+```
+
+Meteorite detail just takes in the Input property of Meteorite from the list.
+It's very nice and concise, definitely a refactor.

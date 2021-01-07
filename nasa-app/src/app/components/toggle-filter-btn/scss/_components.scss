@@ -1,0 +1,7 @@
+.filter--btn-fab {
+  @include darkmode-btn-primary;
+}
+
+.filter--btn-fab:hover {
+  background-color: $darkmode-primary-hover;
+}
