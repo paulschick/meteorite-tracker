@@ -10,27 +10,27 @@
     <h2 class="display--heading">Meteorite List</h2>
   </div>
 
-  <div class="display--btns-div-wrapper">
-    <h3 class="display--btns-div-heading">Filter Meteorites</h3>
-    <div class="display--btns-div">
+  <div class="display--btn-div-wrapper">
+    <h3 class="display--btn-div-heading">Filter Meteorites</h3>
+    <div class="display--btn-div">
       <button
         mat-fab
         [class.show]="toggleButton === 'Show'"
-        class="display--btns-fab"
+        class="display--btn-fab"
         (click)="toggle()"
       >
         {{ toggleButton }}
       </button>
       <button
         mat-raised-button
-        class="display--btns"
+        class="display--btn"
         (click)="filterBy = 'new'"
       >
         RECENT
       </button>
       <button
         mat-raised-button
-        class="display--btns"
+        class="display--btn"
         (click)="filterBy = 'default'"
       >
         ALL

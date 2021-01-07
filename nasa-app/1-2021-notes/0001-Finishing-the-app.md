@@ -24,4 +24,14 @@ Additionally, it might be worth using an **Event Bus** service to communicate be
 - Added the logic from `MeteoriteDisplayComponent` and `MeteoriteListComponent` to the new `MeteoriteContainerComponent`.
 - Successfully filtering the meteorites through an Input and Output property from meteorite-container to meteorite-list and back
   - The filter button needs to be on the meteorite-list component so that it can emit the event
-  - I will do one button instead of two. It's a little bit nicer functionality to demonstrate.
+  - I will do one button instead of two. It's a little bit nicer functionality to demonstrate.  
+
+## Side-By-Side Child
+
+I need another child component on the same level as the `MeteoriteListComponent`.
+This component will have the filter button and handle that logic.
+The reason is because the meteorite list and the button are in two different places.
+Putting all of the markup for the button div in the Meteorite List Component means I also have to have the toggle function there.
+This is too much state control to the child.  
+
+I just want the filter button to be in there, so I'll have a child specifically for that, and the selector will go right in the div.

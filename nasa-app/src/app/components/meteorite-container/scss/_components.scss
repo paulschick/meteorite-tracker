@@ -1,16 +1,16 @@
-.display--btns {
+.display--btn {
   @include darkmode-btn-primary;
 }
 
-.display--btns:hover {
+.display--btn:hover {
   background-color: $darkmode-primary-hover;
 }
 
-.display--btns-fab {
+.display--btn-fab {
   @include darkmode-btn-primary;
 }
 
-.display--btns-fab:hover {
+.display--btn-fab:hover {
   background-color: $darkmode-primary-hover;
 }
 

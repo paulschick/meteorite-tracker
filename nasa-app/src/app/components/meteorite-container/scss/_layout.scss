@@ -20,44 +20,44 @@
   margin: 1em 0;
 }
 
-.display--btns-div-wrapper {
+.display--btn-div-wrapper {
   margin: 1em 6em;
   padding: 2em 0;
 }
 
-.display--btns-div-heading {
+.display--btn-div-heading {
   display: flex;
   justify-content: center;
 }
 
-.display--btns-div {
+.display--btn-div {
   @include center-child;
 }
 
-.display--btns {
+.display--btn {
   margin: .5em;
   width: 10em;
   height: 3em;
 }
 
-.display--btns-fab {
+.display--btn-fab {
   margin: 0.5em 1.5em 0.5em 0;
   height: 4.4em;
   width: 4.4em;
 }
 
 @media only screen and (max-width: 768px) {
-  .display--btns-div-wrapper {
+  .display--btn-div-wrapper {
     margin: 1em 2em 0.5em 2em;
   }
-  .display--btns-div {
+  .display--btn-div {
     display: flex;
     flex-direction: column;
   }
-  .display--btns {
+  .display--btn {
     margin: .5em;
   }
-  .display--btns-fab {
+  .display--btn-fab {
     margin: .5em;
   }
 }
