@@ -5,6 +5,7 @@ import { catchError, take } from 'rxjs/operators';
 import { NASA_API_KEY } from '../configs/nasa-config';
 import { NasaError } from '../models/nasaErrors.model';
 import { IApd } from '../models/apd.model';
+import { IMeteorite } from '../models/meteorite.model';
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +32,9 @@ export class AstroPicsService {
 
   // --------------------
 
+  // Meteorites Endpoint
+  meteoritesUrl:string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
+
 
   constructor(private http: HttpClient) {}
 
@@ -55,6 +59,14 @@ export class AstroPicsService {
       .pipe(
         take(1),
         catchError((err) => this.handleHttpError(err))
+      );
+  }
+
+  getAllMeteorites():Observable<IMeteorite[] | NasaError>{
+    return this.http.get<IMeteorite[]>(this.meteoritesUrl)
+      .pipe(
+        take(1),
+        catchError(err => this.handleHttpError(err))
       );
   }
 

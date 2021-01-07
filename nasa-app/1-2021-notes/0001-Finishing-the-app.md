@@ -66,4 +66,12 @@ It's very nice and concise, definitely a refactor.
 - meteorite display
 - homepage
 - apd resolver service
-- home service -> move the meteorite get request to astro-pics service. Rename the service
+- home service -> move the meteorite get request to astro-pics service. Rename the service  
+
+### on Services
+
+One real way to make AstroPicsService loosely coupled is to delegate the specifying of the url to the component.
+All of these GET requests are literally the same thing.
+If that logic is delegated, then this service can be one single function.
+If I want to keep the date calculation out of the component, this this can be a method in the service that can be called from the component and passed back into the service.
+Or just a public property in the service that the component can access and pass as an argument as a url parameter.
