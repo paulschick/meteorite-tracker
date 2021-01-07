@@ -60,6 +60,7 @@ import { ClickHandlerDirective } from './directives/click-handler.directive';
 import { MyLoaderComponent } from './components/my-loader/my-loader.component';
 import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
 import { MeteoriteContainerComponent } from './components/meteorite-container/meteorite-container.component';
+import { ToggleFilterBtnComponent } from './components/toggle-filter-btn/toggle-filter-btn.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -113,7 +114,8 @@ const materialModules = [
     ObserveBreakpointsDirective,
     ClickHandlerDirective,
     MyLoaderComponent,
-    MeteoriteContainerComponent
+    MeteoriteContainerComponent,
+    ToggleFilterBtnComponent
   ],
   imports: [
     HttpClientModule,

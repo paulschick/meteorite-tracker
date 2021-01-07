@@ -35,6 +35,10 @@
       >
         ALL
       </button>
+      <app-toggle-filter-btn
+        [filterBy]="filterBy"
+        (filterClick)="filterToggled($event)"
+        ></app-toggle-filter-btn>
     </div>
   </div>
 </div>
