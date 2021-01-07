@@ -20,3 +20,8 @@ This will be a static image with the one that I found today, which is an awesome
 
 Now, I will do the **Container Presentation Pattern** with all of my components.
 Additionally, it might be worth using an **Event Bus** service to communicate between the Container `MeteoriteDisplayComponent` and the Presentation component `MeteoriteDetailComponent`.  
+
+- Added the logic from `MeteoriteDisplayComponent` and `MeteoriteListComponent` to the new `MeteoriteContainerComponent`.
+- Successfully filtering the meteorites through an Input and Output property from meteorite-container to meteorite-list and back
+  - The filter button needs to be on the meteorite-list component so that it can emit the event
+  - I will do one button instead of two. It's a little bit nicer functionality to demonstrate.

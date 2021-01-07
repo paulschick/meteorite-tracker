@@ -53,5 +53,14 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
     return this.meteoriteYear >= 1950;
   }
 
+  filterToggled(filterBy:string) {
+    this.filterBy = filterBy;
+    if (this.filterBy === 'new') {
+      this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
+    } else {
+      this.visibleMeteorites = this.meteorites;
+    }
+  }
+
 
 }

@@ -1,0 +1,47 @@
+<div class="meteorite-container--wrapper">
+  <img
+    class="meteorite-container--img"
+    src="https://apod.nasa.gov/apod/image/1601/BrightBoom_JinMa_960.jpg"
+    alt="Bright Boom"
+  />
+</div>
+<div class="display--wrapper">
+  <div class="display--heading-wrapper">
+    <h2 class="display--heading">Meteorite List</h2>
+  </div>
+
+  <div class="display--btns-div-wrapper">
+    <h3 class="display--btns-div-heading">Filter Meteorites</h3>
+    <div class="display--btns-div">
+      <button
+        mat-fab
+        [class.show]="toggleButton === 'Show'"
+        class="display--btns-fab"
+        (click)="toggle()"
+      >
+        {{ toggleButton }}
+      </button>
+      <button
+        mat-raised-button
+        class="display--btns"
+        (click)="filterBy = 'new'"
+      >
+        RECENT
+      </button>
+      <button
+        mat-raised-button
+        class="display--btns"
+        (click)="filterBy = 'default'"
+      >
+        ALL
+      </button>
+    </div>
+  </div>
+</div>
+<div class="display--list__toggle" [hidden]="!show">
+  <app-meteorite-list
+    [visibleMeteorites]="visibleMeteorites"
+    [filterBy]="filterBy"
+    (filterClick)="filterToggled($event)"
+  ></app-meteorite-list>
+</div>
