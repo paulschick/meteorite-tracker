@@ -11,8 +11,6 @@ const routes: Routes = [
   { path: 'astronomy-pics/image/:date', component: AstronomyPicDetailPageComponent },
   { path: 'astronomy-pics', component: DailyImagesContainerComponent, resolve: { resolvedAstronomyPics: AstronomyPicsResolverService } },
   { path: 'random-image', component: RandomImagePageComponent },
-  // development route
-  { path: 'new-home', component: MeteoriteContainerComponent, resolve: { resolvedMeteorites: MeteoriteResolverService } },
   { path: '', component: MeteoriteContainerComponent, resolve: {
     resolvedMeteorites: MeteoriteResolverService
   }, pathMatch: 'full' },
@@ -23,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
