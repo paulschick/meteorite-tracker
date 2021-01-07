@@ -14,7 +14,7 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
 
   filterBy:string = 'default';
   show:boolean = false;
-  toggleButton;string = 'Show';
+  toggleButton:string = 'Show';
   meteorites:IMeteorite[];
   visibleMeteorites:IMeteorite[];
   meteoriteDate:Date;
