@@ -59,3 +59,11 @@ The relationship is now:
 
 Meteorite detail just takes in the Input property of Meteorite from the list.
 It's very nice and concise, definitely a refactor.
+
+### No Longer Need
+
+- apd
+- meteorite display
+- homepage
+- apd resolver service
+- home service -> move the meteorite get request to astro-pics service. Rename the service

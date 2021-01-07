@@ -1,8 +1,0 @@
-<div class="apd-wrapper">
-  <mat-card>
-    <mat-card-title><h1>Featured Image</h1></mat-card-title>
-  </mat-card>
-</div>
-<div class="apd-img-wrapper">
-  <img [ngStyle]="{visibility:isImageLoading?'hidden':''}" [src]="apdUrl" alt="Astronomy Picture of the Day" class="apd-img" (load)="hideImageLoader()" />
-</div>

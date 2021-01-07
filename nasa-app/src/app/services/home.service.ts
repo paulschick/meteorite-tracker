@@ -13,9 +13,9 @@ import { NasaError } from '../models/nasaErrors.model';
 export class HomeService {
 
   private meteoritesUrl:string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
-  private apdUrl:string = 'https://api.nasa.gov/planetary/apod?api_key=';
-  private randomQuery:string = '&count=1';
-  private key:string = NASA_API_KEY;
+  // private apdUrl:string = 'https://api.nasa.gov/planetary/apod?api_key=';
+  // private randomQuery:string = '&count=1';
+  // private key:string = NASA_API_KEY;
 
   constructor(private http: HttpClient) {  }
 
@@ -27,13 +27,13 @@ export class HomeService {
       );
   }
 
-  getApd():Observable<IApd | NasaError>{
-    return this.http.get<IApd>(`${this.apdUrl}${this.key}${this.randomQuery}`)
-      .pipe(
-        take(1),
-        catchError(err => this.handleHttpError(err))
-      );
-  }
+  // getApd():Observable<IApd | NasaError>{
+  //   return this.http.get<IApd>(`${this.apdUrl}${this.key}${this.randomQuery}`)
+  //     .pipe(
+  //       take(1),
+  //       catchError(err => this.handleHttpError(err))
+  //     );
+  // }
 
   private handleHttpError(error: HttpErrorResponse): Observable<NasaError> {
     let dataError = new NasaError();
