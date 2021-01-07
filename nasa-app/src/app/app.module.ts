@@ -61,6 +61,7 @@ import { MyLoaderComponent } from './components/my-loader/my-loader.component';
 import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
 import { MeteoriteContainerComponent } from './components/meteorite-container/meteorite-container.component';
 import { ToggleFilterBtnComponent } from './components/toggle-filter-btn/toggle-filter-btn.component';
+import { DailyImagesContainerComponent } from './components/daily-images-container/daily-images-container.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -115,7 +116,8 @@ const materialModules = [
     ClickHandlerDirective,
     MyLoaderComponent,
     MeteoriteContainerComponent,
-    ToggleFilterBtnComponent
+    ToggleFilterBtnComponent,
+    DailyImagesContainerComponent
   ],
   imports: [
     HttpClientModule,
