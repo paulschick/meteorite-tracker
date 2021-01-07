@@ -17,21 +17,24 @@
 
 // follows the main wrapper, no margin to allow content fill
 .home--header__content-wrapper {
-  border: 1px solid orange;
+  border: 1px solid transparent;
+  min-height: 100%;
 
 }
 
 // wraps the h1
 .home--header__title-wrapper {
-  border: 1px solid white;
+  // border: 1px solid white;
 
-  margin: 5rem 0 0 2rem;
+  margin: 5rem 0 0 3rem;
   height: 10vh;
+  max-width: 20rem;
 }
 
 // h1
 .home--header__title {
   color: $darkmode-font-heading;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
+  line-height: 1em;
 }
