@@ -105,3 +105,14 @@ Also say that refactoring the resolver was the "bottleneck" here to having a loo
 The point being that I can explain that I don't know how to build the resolver, but I do know how to build the service that I want.
 
 - removed randomImage service and I put that in astro pics -> replaced that in the directive that it is called in
+
+## Astronomy Pics
+
+This is the 10 prior days page.
+Definitely don't need AstronomyPicsPage. Just like this wasn't needed for the HomePage.  
+
+Order:  
+Page -> List -> Thumbnail  
+
+New Order:  
+Container -> Presentation
