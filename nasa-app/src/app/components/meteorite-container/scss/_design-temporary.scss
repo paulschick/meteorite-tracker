@@ -1,5 +1,11 @@
 // MOBILE FIRST DESIGN
 
+// Important:
+// If I do large screen first, I can actually reduce the lines of code
+// the smallest screen size is the most unique
+
+// XSmall
+
 // main header wrapper
 .home--header__container {
   height: 93vh;
@@ -159,5 +165,35 @@
   // Text Content -> Middle of the flex-column div
   .home--header__text-wrapper {
     margin: auto 20rem 10rem 20rem;
+  }
+}
+
+// -----------------------------
+
+// XLarge Screens
+
+// -----------------------------
+
+@media (min-width:1920px) {
+  // main header wrapper
+  .home--header__container {
+    background-position: 45% 15%;
+    background-size:auto;
+  }
+
+  // main header wrapper
+  .home--header__container {
+    height: 92vh;
+  }
+
+  // wraps the h1
+  .home--header__headings-wrapper {
+    margin: 7rem 0 0 25%;
+  }
+
+  // Text Content -> Middle of the flex-column div
+  .home--header__text-wrapper {
+    // margin: auto 20rem 10rem 20rem;
+    margin: auto 25% 10rem 25%;
   }
 }
