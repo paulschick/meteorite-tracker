@@ -104,3 +104,31 @@
   }
 }
 
+// -----------------------------
+
+// Medium Screens
+
+// -----------------------------
+
+@media (min-width:960px) and (max-width:1279.98px) {
+  // main header wrapper
+  .home--header__container {
+    background-position: 45% 15%;
+    background-size:auto;
+  }
+
+  // main header wrapper
+  .home--header__container {
+    height: 92vh;
+  }
+
+  // wraps the h1
+  .home--header__headings-wrapper {
+    margin: 5rem 0 0 8rem;
+  }
+
+  // Text Content -> Middle of the flex-column div
+  .home--header__text-wrapper {
+    margin: auto 6rem 10rem 6rem;
+  }
+}
