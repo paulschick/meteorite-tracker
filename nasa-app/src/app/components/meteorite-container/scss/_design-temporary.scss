@@ -2,24 +2,18 @@
 
 // main header wrapper
 .home--header__container {
-
   height: 93vh;
   background-color: $dark-01-primary-bg;
-
   // Rocket Ship as Background Image
   background-image: url(../../../../assets/img/rocket.svg);
-  // background-position: right top;
   background-position: 100% 0%;
   background-repeat: no-repeat;
-  // background-attachment: fixed;
   background-size: contain;
 }
 
 // follows the main wrapper, no margin to allow content fill
 .home--header__content-wrapper {
-  // border: 1px solid red;
   min-height: 100%;
-
   // flex all items vertically with column, align to flex start.
   display: flex;
   flex-direction: column;
@@ -28,34 +22,23 @@
 
 // wraps the h1
 .home--header__headings-wrapper {
-  // border: 1px solid white;
-
   margin: 5rem 0 0 3rem;
-  // height: 10vh;
   width: 100%;
   max-width: 20rem;
 }
 
 .home--header__subtitle-wrapper {
-  // border: 1px dotted blue;
   position: relative;
   min-height: 7.5rem;
 }
 
 .home--header__subtitle {
-  // border: 1px solid green;
-
   margin: auto;
   position: absolute;
   bottom: 0;
-
   font-size: 20px;
   text-transform: uppercase;
   color: $darkmode-accent-font;
-}
-
-.home--header__title-wrapper {
-  // border: 1px dotted orange;
 }
 
 // h1
@@ -68,14 +51,10 @@
 
 // Text Content -> Middle of the flex-column div
 .home--header__text-wrapper {
-  // border: 1px solid aqua;
-
   margin: 4rem 3rem 10rem 3rem;
 }
 
 .home--header__text {
-  // border: 1px dotted aquamarine;
-
   color: $darkmode-font-heading;
   // font-family: 'Times New Roman', Times, serif;
   font-size: 18px;
@@ -86,8 +65,6 @@
 // Button
 // Last item in the flex-column div, margin-top auto sends it to the bottom
 .home--header__down-btn-wrapper {
-  // border: 1px solid orange;
-
   margin-top: auto;
   display: flex;
   justify-content: center;
@@ -97,3 +74,33 @@
 .home--header__down-btn {
   background-color: $darkmode-accent;
 }
+
+// -----------------------------
+// Media Queries
+// -----------------------------
+
+
+// -----------------------------
+
+// Small Screens
+
+// -----------------------------
+
+@media (min-width:600px) and (max-width:959.98px) {
+
+  // main header wrapper
+  .home--header__container {
+    height: 92vh;
+  }
+
+  // wraps the h1
+  .home--header__headings-wrapper {
+    margin: 5rem 0 0 8rem;
+  }
+
+  // Text Content -> Middle of the flex-column div
+  .home--header__text-wrapper {
+    margin: auto 6rem 10rem 6rem;
+  }
+}
+

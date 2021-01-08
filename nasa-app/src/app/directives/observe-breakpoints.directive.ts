@@ -19,6 +19,7 @@ export class ObserveBreakpointsDirective {
     .subscribe((result) => {
       if (result.matches) {
         this.sendSize(result);
+        console.log(result)
       }
     });
   }
