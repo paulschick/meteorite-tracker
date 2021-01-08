@@ -1,6 +1,8 @@
 <mat-sidenav-container class="app-sidenav-container" (backdropClick)="close()">
   <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10">
-    <mat-toolbar>Meteorite Tracker</mat-toolbar>
+    <mat-toolbar>
+      <h3 class="sidenav--toolbar-heading">Navigation</h3>
+    </mat-toolbar>
     <mat-list>
       <mat-list-item class="sidenav--list-item" [routerLink]="['']"
         ><button class="sidenav--list-item-btn" mat-raised-button>
@@ -12,13 +14,13 @@
         [routerLink]="['/astronomy-pics']"
         ><button class="sidenav--list-item-btn" mat-raised-button>
           <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon>
-          Astronomy
+          Astronomy Images
         </button></mat-list-item
       >
       <mat-list-item class="sidenav--list-item" [routerLink]="['/random-image']"
         ><button class="sidenav--list-item-btn" mat-raised-button>
           <mat-icon class="sidenav--list-item-btn-icon">photo</mat-icon>
-          Random Image
+          Random Images
         </button></mat-list-item
       >
     </mat-list>
