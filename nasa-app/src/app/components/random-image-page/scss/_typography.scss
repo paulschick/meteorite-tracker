@@ -1,7 +1,13 @@
 // main header h1
 .rand--header {
-  color: $darkmode-font-heading;
+  color: $darkmode-primary;
+  font-size: 2rem;
+  font-weight: 300;
 }
 span {
   color: $darkmode-font-heading;
+}
+
+a {
+  color: $darkmode-accent;
 }

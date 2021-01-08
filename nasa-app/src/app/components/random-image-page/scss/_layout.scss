@@ -1,32 +1,39 @@
 .rand--container {
+  // border: 1px solid blue;
+
   min-height: 100vh;
 }
 
-.rand--wrapper {
+.rand--header-wrapper {
+  // border: 1px solid orange;
+
+  height: 5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.rand--flex-container {
+.rand--button-wrapper {
+  // border: 1px solid aqua;
+
+  margin: 2rem 0;
+
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
+  justify-content: center;
 }
 
-.rand--flex-item {
-  width: 25rem;
-  height: auto;
-  margin: 1em 0 0 0;
+.rand--tile-wrapper {
+  margin: 1rem 0.5 0 0.5rem;
 
   img {
-    height: auto;
-    width: 100%;
+    width: 500px;
+    height: 500px;
   }
 }
 
+
+
+// Loading Spinner Component
 .loading-spinner{
     background-color: #121212;
     position: absolute;
