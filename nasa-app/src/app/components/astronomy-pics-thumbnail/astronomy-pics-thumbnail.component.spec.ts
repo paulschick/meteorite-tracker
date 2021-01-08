@@ -18,10 +18,10 @@ describe('AstronomyPicsThumbnailComponent', () => {
       copyright: 'Paul Schick',
       date: '1/5/2021',
       explanation: 'test',
-      url: 'https://example.com'
+      url: 'https://example.com.jpg'
     };
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelector('img').src).toContain('https://example.com');
+    expect(fixture.nativeElement.querySelector('img').src).toContain('https://example.com.jpg');
   })
 })
