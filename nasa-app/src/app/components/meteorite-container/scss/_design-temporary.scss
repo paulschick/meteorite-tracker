@@ -86,7 +86,7 @@
 // Button
 // Last item in the flex-column div, margin-top auto sends it to the bottom
 .home--header__down-btn-wrapper {
-  border: 1px solid orange;
+  // border: 1px solid orange;
 
   margin-top: auto;
   display: flex;
@@ -94,6 +94,6 @@
   align-items: flex-end;
 }
 
-// .home--header__down-btn {
-
-// }
+.home--header__down-btn {
+  background-color: $darkmode-accent;
+}
