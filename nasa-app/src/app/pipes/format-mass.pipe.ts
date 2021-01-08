@@ -11,9 +11,9 @@ export class FormatMassPipe implements PipeTransform {
         return 'No Mass';
         break;
       case +value < 1000:
-        return value.toFixed(2) + 'g'
+        return value.toFixed(2) + ' g'
       case +value < 1000000:
-        return (+value/(1000)).toFixed(2) + 'Kg';
+        return (+value/(1000)).toFixed(2) + ' Kg';
         break;
       case + value >= 1000000:
         return (+value/(1000000)).toFixed(2) + ' Metric Tons';
