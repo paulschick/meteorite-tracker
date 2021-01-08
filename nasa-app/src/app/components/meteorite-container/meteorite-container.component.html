@@ -17,7 +17,9 @@
       </p>
     </div>
     <div class="home--header__down-btn-wrapper">
-      <button mat-fab class="home--header__down-btn" (click)="onClickScroll('meteoriteBtns')"><i class="material-icons">arrow_drop_down</i></button>
+      <button mat-fab class="home--header__down-btn"
+          (click)="onClickScroll('meteoriteBtns')"
+          ><i class="material-icons">arrow_drop_down</i></button>
     </div>
   </div>
 </div>
@@ -41,6 +43,8 @@
         [class.show]="toggleButton === 'Show'"
         class="display--btn-fab"
         (click)="toggle()"
+        matTooltip="show/hide meteorites"
+        aria-label="Button that hides and displays a list of meteorite landings"
       >
         {{ toggleButton }}
       </button>
