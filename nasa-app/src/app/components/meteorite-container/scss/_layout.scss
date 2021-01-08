@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 0 0 0;
 }
 
 .meteorite--img {
@@ -13,13 +12,37 @@
   max-height: 500px;
 }
 
-.display--wrapper {
-}
-
 .display--heading-wrapper {
   @include center-child;
-  padding: 3rem 0;
 }
+
+// move this
+
+
+// second fold media queries:
+
+// XSmall
+@media (max-width: 599.98px) {
+  .display--heading-wrapper {
+    padding: 3rem 0;
+  }
+  .meteorite--img-wrapper {
+  padding: 6rem 0 0 0;
+  }
+}
+
+// Small & Larger
+@media (min-width: 600px) {
+  .display--heading-wrapper {
+    padding: 2rem 0;
+  }
+  .meteorite--img-wrapper {
+  padding: 5rem 0 0 0;
+  }
+}
+
+
+// ----------------------
 
 .display--heading {
   margin: 1em 0;

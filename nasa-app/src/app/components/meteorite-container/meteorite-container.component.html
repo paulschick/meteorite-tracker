@@ -21,42 +21,40 @@
     </div>
   </div>
 </div>
-<div class="home--second-fold__wrapper">
-  <div class="meteorite--img-wrapper">
-    <img
-      class="meteorite--img"
-      src="https://apod.nasa.gov/apod/image/1601/BrightBoom_JinMa_960.jpg"
-      alt="Bright Boom"
-    />
+<div class="meteorite--img-wrapper">
+  <img
+    class="meteorite--img"
+    src="https://apod.nasa.gov/apod/image/1601/BrightBoom_JinMa_960.jpg"
+    alt="Bright Boom"
+  />
+</div>
+<div class="display--wrapper">
+  <div class="display--heading-wrapper">
+    <h2 class="display--heading">Meteorite List</h2>
   </div>
-  <div class="display--wrapper">
-    <div class="display--heading-wrapper">
-      <h2 class="display--heading">Meteorite List</h2>
-    </div>
 
-    <div class="display--btn-div-wrapper">
-      <h3 class="display--btn-div-heading">Filter Meteorites</h3>
-      <div class="display--btn-div" id="meteoriteBtns">
-        <button
-          mat-fab
-          [class.show]="toggleButton === 'Show'"
-          class="display--btn-fab"
-          (click)="toggle()"
-        >
-          {{ toggleButton }}
-        </button>
-        <app-toggle-filter-btn
-          [filterBy]="filterBy"
-          (filterClick)="filterToggled($event)"
-          ></app-toggle-filter-btn>
-      </div>
+  <div class="display--btn-div-wrapper">
+    <h3 class="display--btn-div-heading">Filter Meteorites</h3>
+    <div class="display--btn-div" id="meteoriteBtns">
+      <button
+        mat-fab
+        [class.show]="toggleButton === 'Show'"
+        class="display--btn-fab"
+        (click)="toggle()"
+      >
+        {{ toggleButton }}
+      </button>
+      <app-toggle-filter-btn
+        [filterBy]="filterBy"
+        (filterClick)="filterToggled($event)"
+        ></app-toggle-filter-btn>
     </div>
   </div>
-  <div class="display--list__toggle" [hidden]="!show">
-    <app-meteorite-list
-      [visibleMeteorites]="visibleMeteorites"
-      [filterBy]="filterBy"
-      (filterClick)="filterToggled($event)"
-    ></app-meteorite-list>
-  </div>
+</div>
+<div class="display--list__toggle" [hidden]="!show">
+  <app-meteorite-list
+    [visibleMeteorites]="visibleMeteorites"
+    [filterBy]="filterBy"
+    (filterClick)="filterToggled($event)"
+  ></app-meteorite-list>
 </div>
