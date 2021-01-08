@@ -1,7 +1,43 @@
+// First Fold
+// ---------------------
+// XSmall Screen Size
+// main header wrapper
+.home--header__subtitle {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $darkmode-accent-font;
+}
+
+// h1
+.home--header__title {
+  color: $darkmode-font-heading;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1em;
+}
+
+.home--header__text {
+  color: $darkmode-font-heading;
+  // font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.3em;
+}
+
+
+
+
 .display--heading {
   @include header-h2;
 }
 
 .display--btn-div-heading {
   @include header-h3;
+}
+
+.material-icons {
+  font-size: 24px;
 }
