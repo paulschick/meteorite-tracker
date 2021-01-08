@@ -28,3 +28,9 @@ Very simple, just do like...
   Action
 </button>
 ```
+
+## Implementation
+
+Right now, I have a few instructional tooltips.
+Next, I'm going to use tooltips on the meteorite list, this is the current replacement for a modal.
+The tooltip will be dynamic and display information about that meteorite.
