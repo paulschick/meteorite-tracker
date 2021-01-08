@@ -56,6 +56,9 @@ import { LoaderInterceptorService } from './interceptors/loader-interceptor.serv
 import { MeteoriteContainerComponent } from './components/meteorite-container/meteorite-container.component';
 import { ToggleFilterBtnComponent } from './components/toggle-filter-btn/toggle-filter-btn.component';
 import { DailyImagesContainerComponent } from './components/daily-images-container/daily-images-container.component';
+// ngx-logger
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
 
 const materialModules = [
   CdkTreeModule,
@@ -112,12 +115,14 @@ const materialModules = [
     materialModules,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LoggerModule.forRoot({level: NgxLoggerLevel.INFO})
   ],
   providers: [
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptorService, multi: true }
   ],
   exports: [],
   bootstrap: [AppComponent]
