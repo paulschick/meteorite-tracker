@@ -17,7 +17,7 @@
       </p>
     </div>
     <div class="home--header__down-btn-wrapper">
-      <button mat-fab class="home--header__down-btn"><i class="material-icons">arrow_drop_down</i></button>
+      <button mat-fab class="home--header__down-btn" (click)="onClickScroll('meteoriteBtns')"><i class="material-icons">arrow_drop_down</i></button>
     </div>
   </div>
 </div>
@@ -36,7 +36,7 @@
 
   <div class="display--btn-div-wrapper">
     <h3 class="display--btn-div-heading">Filter Meteorites</h3>
-    <div class="display--btn-div">
+    <div class="display--btn-div" id="meteoriteBtns">
       <button
         mat-fab
         [class.show]="toggleButton === 'Show'"

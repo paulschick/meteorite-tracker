@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 // models
 import { IMeteorite } from '../../models/meteorite.model';
 import { NasaError } from 'src/app/models/nasaErrors.model';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-meteorite-container',
@@ -20,7 +21,8 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
   meteoriteDate:Date;
   meteoriteYear:number;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private viewportScroller: ViewportScroller) {}
 
   ngOnInit(): void {
     let resolvedMeteorites:IMeteorite[]|NasaError = this.route.snapshot.data['resolvedMeteorites'];
@@ -62,5 +64,8 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
     }
   }
 
+  onClickScroll(elementId:string):void {
+    this.viewportScroller.scrollToAnchor(elementId);
+  }
 
 }
