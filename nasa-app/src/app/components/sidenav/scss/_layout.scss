@@ -14,7 +14,12 @@
 }
 
 .app-sidenav {
-  width: 240px;
+  padding: 0 0.5rem 0 0;
+}
+
+.sidenav--list-item {
+  display: flex;
+  justify-content: center;
 }
 
 .sidenav--list-item-btn {
