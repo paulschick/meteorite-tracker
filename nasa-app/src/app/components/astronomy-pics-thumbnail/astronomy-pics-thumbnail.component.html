@@ -6,7 +6,8 @@
     </mat-card-header>
     <mat-card-content>
       <a [routerLink]="['image', astronomyPic.date]">
-        <img mat-card-image [src]="astronomyPic.url" [alt]="astronomyPic.title">
+        <img *ngIf="astronomyPic.url.includes('.jpg')" mat-card-image [src]="astronomyPic.url" [alt]="astronomyPic.title">
+        <span *ngIf="!astronomyPic.url.includes('.jpg')">Link to Video</span>
       </a>
     </mat-card-content>
   </mat-card>

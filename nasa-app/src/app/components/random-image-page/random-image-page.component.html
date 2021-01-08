@@ -1,10 +1,17 @@
 <div class="rand--container">
-  <h1 class="rand--header">Click to Generate Random Images from Nasa!</h1>
-  <button mat-raised-button [appClickHandler]="24" mtObserveBreakpoints>Generate Image</button>
+  <div class="rand--header-wrapper">
+    <h1 class="rand--header">Random Astronomy Images</h1>
+  </div>
+  <div class="rand--button-wrapper">
+    <button mat-raised-button [appClickHandler]="24" mtObserveBreakpoints>Generate Image</button>
+  </div>
   <mat-grid-list mtObserveBreakpoints [cols]="cols">
     <mat-grid-tile *ngFor="let x of randomImageArray">
-      <img [ngStyle]="{visibility:isImageLoading?'hidden':''}" [src]="x.url" [alt]="x.copyright" (load)="hideImageLoader()" />
-      <img src="../../../assets/Interwind-1s-200px.svg" *ngIf="isImageLoading" />
+      <div class="rand--tile-wrapper">
+        <img *ngIf="x.url.includes('.jpg')" [ngStyle]="{visibility:isImageLoading?'hidden':''}" [src]="x.url" [alt]="x.copyright" (load)="hideImageLoader()" />
+        <a [href]=x.url *ngIf="!x.url.includes('.jpg')">{{x.title}}</a>
+        <img src="../../../assets/Interwind-1s-200px.svg" *ngIf="isImageLoading" />
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
