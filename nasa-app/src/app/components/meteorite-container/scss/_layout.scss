@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6rem 0 0 0;
 }
 
 .meteorite--img {
@@ -12,8 +13,12 @@
   max-height: 500px;
 }
 
+.display--wrapper {
+}
+
 .display--heading-wrapper {
   @include center-child;
+  padding: 3rem 0;
 }
 
 .display--heading {
