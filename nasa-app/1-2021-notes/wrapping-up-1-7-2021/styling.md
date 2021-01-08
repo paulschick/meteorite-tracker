@@ -40,6 +40,3 @@ Updated routing module to enable smooth scrolling:
   exports: [RouterModule]
 })
 ```
-
-This works, but the scrolling is just immediate.
-I'm going to try `ngx-scroll` and [here is a resource for that](https://stackoverflow.com/questions/46658522/how-to-smooth-scroll-to-page-anchor-in-angular-4-without-plugins-properly)
