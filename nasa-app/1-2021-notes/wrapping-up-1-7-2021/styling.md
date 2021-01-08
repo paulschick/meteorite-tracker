@@ -40,3 +40,8 @@ Updated routing module to enable smooth scrolling:
   exports: [RouterModule]
 })
 ```
+
+## Home Page -> First and Second Folds
+
+Both folds were styled such that they take up the full view height.
+when you click the scroll button, the second half of the page fills the entire screen and you do not see the purple from the first section on all screen sizes.
