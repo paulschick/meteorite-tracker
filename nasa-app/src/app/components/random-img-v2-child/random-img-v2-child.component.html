@@ -1,3 +1,10 @@
 <div *ngIf="_data">
-  <img [src]="_data[0].url" />
+  <div *ngIf="_data[0].url.includes('.jpg')">
+    <img [src]="_data[0].url" />
+  </div>
+  <div *ngIf="!_data[0].url.includes('.jpg')">
+    <h3 [ngStyle]="{
+      color: 'rgba(255,255,255,0.87)'
+    }">NASA sent something that isn't an image... try again!</h3>
+  </div>
 </div>

@@ -45,3 +45,8 @@ export class RandomImgV2Component implements OnInit, OnDestroy {
 // the problem here is that since this isn't happening in ngOnInit(), the *ngFor directive is immediately trying to render the images.
 // to get around this, I'll send the images down to the child through an Input, and it will register the event, and be able to display the images as they arrive.
 
+// ROUGH WORKING VERSION
+// Able to return image and display through the use of child component with @Input and ngOnChanges
+// I am displaying a message that says to try again when the response is not .jpg, I actually like this as it let's the user know what's good
+// Also it's clear that it's a server problem, and not a problem with the website
+// whereas when there's just the icon that displays with a bad url, that looks like a design problem, which it is.
