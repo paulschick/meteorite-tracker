@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, take } from 'rxjs/operators';
+import { Observable, Subscription, throwError } from 'rxjs';
+import { catchError, take, map } from 'rxjs/operators';
 import { NasaError } from '../../models/nasaErrors.model';
 import { IApd } from 'src/app/models/apd.model';
 
@@ -10,7 +10,11 @@ import { IApd } from 'src/app/models/apd.model';
 })
 export class RandImgService {
 
-  constructor(private http:HttpClient) { }
+  images:any[];
+
+  constructor(private http:HttpClient) {
+    this.images = [];
+   }
 
   // getReq(endpoint:string, action:any):Subscription {
   //   return this.http.get<any>(endpoint)
@@ -22,13 +26,16 @@ export class RandImgService {
   //     ).subscribe(action)
   // }
 
-  getImg(url:string):Observable<IApd | NasaError> {
+  getImg(url:string):Subscription {
     return this.http.get<IApd>(url)
       .pipe(
         take(1),
         catchError(err => this.handleHttpError(err))
-      );
+      )
+      .subscribe((images:IApd) => this.images.push(images))
   }
+
+
 
   private handleHttpError(error: HttpErrorResponse): Observable<NasaError> {
     let dataError = new NasaError();
