@@ -1,0 +1,16 @@
+<div class="rand--container">
+  <div class="rand--header-wrapper">
+    <h1 class="rand--header">Random Astronomy Images</h1>
+  </div>
+  <div class="rand--button-wrapper">
+    <button mat-raised-button [appClickHandler]="24" mtObserveBreakpoints>Generate Image</button>
+  </div>
+  <mat-grid-list mtObserveBreakpoints>
+    <mat-grid-tile *ngFor="let x of randomImageArray">
+      <div class="rand--tile-wrapper">
+        <img [src]="x.url" />
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+>
