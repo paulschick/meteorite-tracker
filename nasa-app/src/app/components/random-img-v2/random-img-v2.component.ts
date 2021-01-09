@@ -20,6 +20,11 @@ export class RandomImgV2Component implements OnInit, OnDestroy {
 
   constructor(private service:RandImgService) {}
 
+  onClick() {
+    const e:string = 'clicked';
+    this.service.receiveClick(e, this.getUrl);
+  }
+
   ngOnInit() {
   }
 
