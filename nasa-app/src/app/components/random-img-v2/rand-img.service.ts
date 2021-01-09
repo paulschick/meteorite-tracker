@@ -30,15 +30,6 @@ export class RandImgService {
       );
   }
 
-  receiveClick(event:any, url:string) {
-    if (event) {
-      console.log(`RandImgService: Event Received: ${event}`);
-      this.getImg(url).subscribe(
-        console.log
-      )
-    }
-  }
-
   private handleHttpError(error: HttpErrorResponse): Observable<NasaError> {
     let dataError = new NasaError();
     dataError.errorNumber = 100;
