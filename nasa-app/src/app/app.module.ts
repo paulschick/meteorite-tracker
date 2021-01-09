@@ -61,6 +61,7 @@ import { DailyImagesContainerComponent } from './components/daily-images-contain
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
 import { RandomImgV2Component } from './components/random-img-v2/random-img-v2.component';
+import { RandomImgV2ChildComponent } from './components/random-img-v2-child/random-img-v2-child.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -112,7 +113,8 @@ const materialModules = [
     MeteoriteContainerComponent,
     ToggleFilterBtnComponent,
     DailyImagesContainerComponent,
-    RandomImgV2Component
+    RandomImgV2Component,
+    RandomImgV2ChildComponent
   ],
   imports: [
     HttpClientModule,

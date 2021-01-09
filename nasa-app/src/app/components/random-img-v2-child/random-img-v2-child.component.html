@@ -1,0 +1,9 @@
+<mat-grid-list cols=4>
+  <div *ngIf="imageArray.length > 0">
+    <mat-grid-tile *ngFor="let x of imageArray">
+      <div class="rand--tile-wrapper">
+        <img [src]="x.url" />
+      </div>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>

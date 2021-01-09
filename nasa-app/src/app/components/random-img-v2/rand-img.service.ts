@@ -26,13 +26,12 @@ export class RandImgService {
   //     ).subscribe(action)
   // }
 
-  getImg(url:string):Subscription {
+  getImg(url:string):Observable<IApd | NasaError> {
     return this.http.get<IApd>(url)
       .pipe(
         take(1),
         catchError(err => this.handleHttpError(err))
       )
-      .subscribe((images:IApd) => this.images.push(images))
   }
 
 
@@ -46,3 +45,4 @@ export class RandImgService {
     return throwError(dataError);
   }
 }
+

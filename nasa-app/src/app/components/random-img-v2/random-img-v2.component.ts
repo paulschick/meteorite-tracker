@@ -17,13 +17,19 @@ export class RandomImgV2Component implements OnInit, OnDestroy {
   sub: Subscription;
   randomImageArray: IApd[];
 
+  imageResponse:any;
+
 
   constructor(private service:RandImgService) {}
 
   onClick() {
-    this.sub = this.service.getImg(this.getUrl);
-    this.randomImageArray = this.service.images;
-    console.log(this.randomImageArray)
+    this.sub = this.service.getImg(this.getUrl).subscribe(
+      (data:IApd) => this.imageResponse = data
+    );
+    // this.randomImageArray = this.service.images;
+    // this.imageResponse = this.service.images;
+    // console.log(this.randomImageArray)
+    console.log(this.imageResponse)
   }
 
   ngOnInit() {

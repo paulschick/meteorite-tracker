@@ -5,12 +5,5 @@
   <div class="rand--button-wrapper">
     <button mat-raised-button (click)="onClick()">Generate Image</button>
   </div>
-  <mat-grid-list cols=4>
-    <mat-grid-tile *ngFor="let x of randomImageArray">
-      <div class="rand--tile-wrapper">
-        <img [src]="x.url" />
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <app-random-img-v2-child [imageResponse]="imageResponse"></app-random-img-v2-child>
 </div>
->
