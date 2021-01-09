@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subscription, throwError } from 'rxjs';
-import { catchError, take, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, take } from 'rxjs/operators';
 import { NasaError } from '../../models/nasaErrors.model';
 import { IApd } from 'src/app/models/apd.model';
 
@@ -9,9 +9,8 @@ import { IApd } from 'src/app/models/apd.model';
   providedIn: 'root'
 })
 export class RandImgService {
-  constructor(private http:HttpClient) {
 
-   }
+  constructor(private http:HttpClient) {  }
 
   getImg(url:string):Observable<IApd | NasaError> {
     return this.http.get<IApd>(url)
@@ -20,8 +19,6 @@ export class RandImgService {
         catchError(err => this.handleHttpError(err))
       )
   }
-
-
 
   private handleHttpError(error: HttpErrorResponse): Observable<NasaError> {
     let dataError = new NasaError();
@@ -33,3 +30,9 @@ export class RandImgService {
   }
 }
 
+/*
+This needs to be consolidated into the main service
+These will all be combined into one (or two if necessary) get requests that will take in the url
+Maybe I can have an optional second arg but I don't think I"ll need to
+Maybe rename astro-pics service to something like DataService
+*/
