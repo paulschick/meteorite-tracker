@@ -9,22 +9,9 @@ import { IApd } from 'src/app/models/apd.model';
   providedIn: 'root'
 })
 export class RandImgService {
-
-  images:any[];
-
   constructor(private http:HttpClient) {
-    this.images = [];
-   }
 
-  // getReq(endpoint:string, action:any):Subscription {
-  //   return this.http.get<any>(endpoint)
-  //     .pipe(
-  //       catchError((err:any) => this.handleHttpError(err)),
-  //       map((response:any) => {
-  //         return response;
-  //       })
-  //     ).subscribe(action)
-  // }
+   }
 
   getImg(url:string):Observable<IApd | NasaError> {
     return this.http.get<IApd>(url)

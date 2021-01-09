@@ -15,21 +15,14 @@ export class RandomImgV2Component implements OnInit, OnDestroy {
   getUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&count=1`;
 
   sub: Subscription;
-  randomImageArray: IApd[];
-
-  imageResponse:any;
-
+  data:IApd;
 
   constructor(private service:RandImgService) {}
 
   onClick() {
     this.sub = this.service.getImg(this.getUrl).subscribe(
-      (data:IApd) => this.imageResponse = data
+      (data:IApd) => this.data = data
     );
-    // this.randomImageArray = this.service.images;
-    // this.imageResponse = this.service.images;
-    // console.log(this.randomImageArray)
-    console.log(this.imageResponse)
   }
 
   ngOnInit() {
