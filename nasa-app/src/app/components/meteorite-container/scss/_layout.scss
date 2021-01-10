@@ -14,7 +14,8 @@
 }
 
 .home--header__container {
-  height: 93vh;
+  height: 100vh;
+  min-height: 100vh;
   // Rocket Ship as Background Image
   background-image: url(../../../../assets/img/rocket.svg);
   background-position: 100% 0%;
@@ -24,7 +25,8 @@
 
 // follows the main wrapper, no margin to allow content fill
 .home--header__content-wrapper {
-  min-height: 100%;
+  height: 100vh;
+  min-height: 100vh;
   // flex all items vertically with column, align to flex start.
   display: flex;
   flex-direction: column;
@@ -33,9 +35,7 @@
 
 // wraps the h1
 .home--header__headings-wrapper {
-  margin: 5rem 0 0 3rem;
-  width: 100%;
-  max-width: 20rem;
+  margin: 15% 0 0 0.5rem;
 }
 
 .home--header__subtitle-wrapper {
@@ -45,16 +45,16 @@
 
 // Text Content -> Middle of the flex-column div
 .home--header__text-wrapper {
-  margin: 4rem 3rem 10rem 3rem;
+  margin: 2rem 0.5rem 3rem 0.5rem;
 }
 
 // Button
 // Last item in the flex-column div, margin-top auto sends it to the bottom
 .home--header__down-btn-wrapper {
-  margin-top: auto;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+
+
 }
 
 // ---------------------
@@ -66,17 +66,17 @@
 
   // main header wrapper
   .home--header__container {
-    height: 92vh;
+    height: 100vh;
   }
 
   // wraps the h1
   .home--header__headings-wrapper {
-    margin: 5rem 0 0 8rem;
+    margin: 25% 0 0 2rem;
   }
 
   // Text Content -> Middle of the flex-column div
   .home--header__text-wrapper {
-    margin: auto 6rem 10rem 6rem;
+    margin: 10% 3%;
   }
 }
 // ---------------------
@@ -87,23 +87,23 @@
 @media (min-width:960px) and (max-width:1279.98px) {
   // main header wrapper
   .home--header__container {
-    background-position: 45% 15%;
+    background-position: 40% 20%;
     background-size:auto;
   }
 
   // main header wrapper
   .home--header__container {
-    height: 92vh;
+    height: 100vh;
   }
 
   // wraps the h1
   .home--header__headings-wrapper {
-    margin: 5rem 0 0 8rem;
+    margin: 10% 0 0 10%;
   }
 
   // Text Content -> Middle of the flex-column div
   .home--header__text-wrapper {
-    margin: auto 6rem 10rem 6rem;
+    margin: 10%;
   }
 }
 // ---------------------
@@ -114,28 +114,23 @@
 @media (min-width:1280px) and (max-width:1919.98px) {
   // main header wrapper
   .home--header__container {
-    background-position: 45% 15%;
+    background-position: 75% 0%;
     background-size:auto;
-  }
-
-  // main header wrapper
-  .home--header__container {
-    height: 92vh;
   }
 
   // wraps the h1
   .home--header__headings-wrapper {
-    margin: 7rem 0 0 20rem;
+    margin: 5% 0 0 10%;
   }
 
   // Text Content -> Middle of the flex-column div
   .home--header__text-wrapper {
-    margin: auto 20rem 10rem 20rem;
+    margin: 0 10% 5% 10%;
   }
 }
 // ---------------------
 // ---------------------
-// Large Screens
+// XLarge Screens
 // ---------------------
 // ---------------------
 @media (min-width:1920px) {
@@ -147,18 +142,17 @@
 
   // main header wrapper
   .home--header__container {
-    height: 92vh;
+    height: 100vh;
   }
 
   // wraps the h1
   .home--header__headings-wrapper {
-    margin: 7rem 0 0 25%;
+    margin: 10% 0 0 25%;
   }
 
   // Text Content -> Middle of the flex-column div
   .home--header__text-wrapper {
-    // margin: auto 20rem 10rem 20rem;
-    margin: auto 25% 10rem 25%;
+    margin: 3% 25%;
   }
 }
 
@@ -211,7 +205,6 @@
   display: flex;
   justify-content: center;
 }
-
 .display--btn-div {
   @include center-child;
 }
