@@ -7,6 +7,7 @@ If using the same breakpoints, this should actually already be able to go out of
   - [Code Involved](#code-involved)
   - [Components](#components)
   - [Update](#update)
+  - [Styling the Grid](#styling-the-grid)
 
 ## Code Involved
 
@@ -38,3 +39,10 @@ This component will receive the column number from the parent through an Input p
 This is tested, and this is working for applying the column number.  
 
 The services and the directive will remain on the parent, as this is the only one allowed to manipulate the state (planning on adding `OnPush` to all children throughout the application)
+
+## Styling the Grid
+
+I need to do some initial styling for this.
+So the breakpoint is being applied dynamically, it is working.
+There is something with the styling on either the container or the presentation component that is preventing the images from expanding into more than just one column.
+You can tell that the grid columns are changing as you can see the breakpoint, however there is a width in there or something getting in the way.
