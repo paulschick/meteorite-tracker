@@ -13,7 +13,7 @@ export class RandImgService {
   constructor(private http:HttpClient) {  }
 
   getImg(url:string):Observable<IApd | NasaError> {
-    return this.http.get<IApd>(url)
+    return this.http.get<IApd>(url, {headers:{skip:"true"}})
       .pipe(
         take(1),
         catchError(err => this.handleHttpError(err))

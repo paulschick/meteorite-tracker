@@ -126,7 +126,7 @@ const materialModules = [
   ],
   providers: [
     { provide: ErrorHandler, useClass: NasaErrorHandlerService },
-    // { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptorService, multi: true }
   ],
