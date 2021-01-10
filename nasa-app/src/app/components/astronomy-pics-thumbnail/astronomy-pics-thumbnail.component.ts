@@ -7,6 +7,7 @@ import { IApd } from '../../models/apd.model';
   styleUrls: ['./astronomy-pics-thumbnail.component.scss']
 })
 export class AstronomyPicsThumbnailComponent {
-  @Input() astronomyPic:IApd;
+  // @Input() astronomyPic:IApd;
+  @Input() astronomyImages:IApd[];
   @Input() columns:number;
 }

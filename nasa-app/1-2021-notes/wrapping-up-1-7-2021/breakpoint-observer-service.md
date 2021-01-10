@@ -8,6 +8,7 @@ If using the same breakpoints, this should actually already be able to go out of
   - [Components](#components)
   - [Update](#update)
   - [Styling the Grid](#styling-the-grid)
+    - [Identifying the Problem](#identifying-the-problem)
 
 ## Code Involved
 
@@ -46,3 +47,9 @@ I need to do some initial styling for this.
 So the breakpoint is being applied dynamically, it is working.
 There is something with the styling on either the container or the presentation component that is preventing the images from expanding into more than just one column.
 You can tell that the grid columns are changing as you can see the breakpoint, however there is a width in there or something getting in the way.
+
+### Identifying the Problem
+
+I believe that the problem is that with the current setup, what is happening is for each item in the astro-pics array, a full `mat-grid-list` is being generated, rather than just a tile.  
+
+So really I do need the `mat-grid-list` to be on the container, or I need that to be outside of the `*ngFor`

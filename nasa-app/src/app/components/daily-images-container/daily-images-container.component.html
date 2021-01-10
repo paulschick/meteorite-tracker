@@ -3,8 +3,7 @@
 </div>
 <div class="astro--list__wrapper" mtObserveBreakpoints>
   <app-astronomy-pics-thumbnail
-  *ngFor="let AstroPic of AstroPics"
-  [astronomyPic]="AstroPic"
+  [astronomyImages]="AstroPics"
   [columns]="cols"
   ></app-astronomy-pics-thumbnail>
 </div>
