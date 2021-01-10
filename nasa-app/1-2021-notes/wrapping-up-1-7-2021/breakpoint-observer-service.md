@@ -60,4 +60,4 @@ So really I do need the `mat-grid-list` to be on the container, or I need that t
 This was correct.
 I changed the child from receiving an individual image from the container to receiving the entire array.
 With the child iterating through this, I was able to correctly implement bot the `mat-grid-list` and the `mat-grid-tile` on the child.
-It receives the column number and the array of images from the parent, and this works great.
+It receives the column number and the array of images from the parent, and this works great.4
