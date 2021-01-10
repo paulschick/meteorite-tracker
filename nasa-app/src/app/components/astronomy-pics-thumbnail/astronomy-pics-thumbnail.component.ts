@@ -8,4 +8,5 @@ import { IApd } from '../../models/apd.model';
 })
 export class AstronomyPicsThumbnailComponent {
   @Input() astronomyPic:IApd;
+  @Input() columns:number;
 }

@@ -11,6 +11,8 @@ import { NasaError } from '../../models/nasaErrors.model'
 export class DailyImagesContainerComponent implements OnInit {
   AstroPics:IApd[];
 
+  cols:number = 1;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

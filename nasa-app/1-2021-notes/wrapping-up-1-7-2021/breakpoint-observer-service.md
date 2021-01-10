@@ -6,6 +6,7 @@ If using the same breakpoints, this should actually already be able to go out of
 - [Creating a Reusable Function](#creating-a-reusable-function)
   - [Code Involved](#code-involved)
   - [Components](#components)
+  - [Update](#update)
 
 ## Code Involved
 
@@ -28,3 +29,12 @@ This should involve two components in total:
 The child won't deal with the state at all, just needs to be altered at the template-level to make it a `mat-grid-tile`.
 The container template will need to have a `mat-grid-list`, but the component will need to inject the services.
 The directive will be in the container template on the `mat-grid-list`, as this is where the columns are going to be dynamically set.
+
+## Update
+
+Okay so this has to work a bit differently than expected.
+Both the `mat-grid-list` and `mat-grid-tile` need to be in the presentation component's template.
+This component will receive the column number from the parent through an Input property.
+This is tested, and this is working for applying the column number.  
+
+The services and the directive will remain on the parent, as this is the only one allowed to manipulate the state (planning on adding `OnPush` to all children throughout the application)

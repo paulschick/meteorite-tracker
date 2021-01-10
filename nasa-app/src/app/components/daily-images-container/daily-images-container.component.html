@@ -3,7 +3,8 @@
 </div>
 <div class="astro--list__wrapper">
   <app-astronomy-pics-thumbnail
-    *ngFor="let AstroPic of AstroPics"
-    [astronomyPic]="AstroPic"
-    ></app-astronomy-pics-thumbnail>
+  *ngFor="let AstroPic of AstroPics"
+  [astronomyPic]="AstroPic"
+  [columns]="cols"
+  ></app-astronomy-pics-thumbnail>
 </div>
