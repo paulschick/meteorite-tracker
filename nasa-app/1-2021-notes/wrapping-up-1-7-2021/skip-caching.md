@@ -9,6 +9,8 @@ I am going to add a "skip" header to the request that I don't want to cache, and
 - [Skip Caching for Random Image Generation](#skip-caching-for-random-image-generation)
   - [Adding Skip Headers](#adding-skip-headers)
   - [Implementing](#implementing)
+  - [Next Step](#next-step)
+    - [UPDATE](#update)
 
 ## Adding Skip Headers
 
@@ -46,3 +48,19 @@ if(req.headers.get("skip")) {
 This work, and I'll have to keep this out of the main branch for now, as this component and service have not yet been implemented.
 Merge into `feature/random-image/astro-pics/add-section` and push for now.
 Also, merge into `feature/random-image/refactor-request` and push, as this is an important part of that request as well.
+
+## Next Step
+
+Now that this is implemented, I can move into adding the random image section into the astro-pics view.
+In order to do this, I should have a child component for the random-image view.  
+
+Now that this branch is the same as the `/refactor-request` branch, I am going to use this branch specifically to make the changes.
+Any issues with implementation that result in the need to revert, simple checkout `/refactor-request` and go from there.
+No need to branch deeper from where I'm at right now.
+
+### UPDATE
+
+I'll need to be using the breakpoint service/directives that I created.
+The 2-column grid layout is important for the astro-pics view if I am going to implement the random-image feature on this view as well.
+Reason being that too much scrolling on that page will result in the feature being missed completely in some cases.
+I can also add a button to the top fold (like on the home view) that will scroll down to the random image generator.
