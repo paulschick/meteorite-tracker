@@ -9,6 +9,7 @@ If using the same breakpoints, this should actually already be able to go out of
   - [Update](#update)
   - [Styling the Grid](#styling-the-grid)
     - [Identifying the Problem](#identifying-the-problem)
+    - [Solution Implemented](#solution-implemented)
 
 ## Code Involved
 
@@ -53,3 +54,10 @@ You can tell that the grid columns are changing as you can see the breakpoint, h
 I believe that the problem is that with the current setup, what is happening is for each item in the astro-pics array, a full `mat-grid-list` is being generated, rather than just a tile.  
 
 So really I do need the `mat-grid-list` to be on the container, or I need that to be outside of the `*ngFor`
+
+### Solution Implemented
+
+This was correct.
+I changed the child from receiving an individual image from the container to receiving the entire array.
+With the child iterating through this, I was able to correctly implement bot the `mat-grid-list` and the `mat-grid-tile` on the child.
+It receives the column number and the array of images from the parent, and this works great.
