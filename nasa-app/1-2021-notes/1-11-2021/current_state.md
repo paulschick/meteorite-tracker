@@ -4,6 +4,7 @@
   - [Current State](#current-state)
   - [Next Steps](#next-steps)
   - [Random Image -> Styling -> Media Queries](#random-image---styling---media-queries)
+  - [Consolidating random image service](#consolidating-random-image-service)
 
 ## Current State
 
@@ -33,3 +34,15 @@
 - Adjusted layout for all media queries
 - Next, typography for media queries - just font size
 - typography done
+
+## Consolidating random image service
+
+All I'm doing is moving this into the general data service.
+Then I'll change all of the imports, have it working, and go from there.
+
+- Refactor the whole service into one (or as few as possible) GET request(s)
+- Rename to data service
+- Update imports and declarations throughout the application  
+
+Then, I really want to move into making the breakpoints thing into a reusable piece of code, like a library, that would be awesome.
+Also do something with the breakpoints service that has the class, doesn't need to be an injectable.
