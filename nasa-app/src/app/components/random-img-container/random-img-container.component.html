@@ -1,0 +1,11 @@
+<div class="rand--container">
+  <div class="rand--header-wrapper">
+    <h1 class="rand--header">Random Astronomy Images</h1>
+  </div>
+  <div class="rand--button-wrapper">
+    <button mat-raised-button (click)="onClick()">Generate Image</button>
+  </div>
+  <div class="random-img-presentation--container">
+    <app-random-img-presentation [_data]="data"></app-random-img-presentation>
+  </div>
+</div>

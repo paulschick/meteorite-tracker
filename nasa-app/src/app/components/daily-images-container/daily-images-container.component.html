@@ -1,9 +1,9 @@
 <div class="astro--page__heading--wrapper">
   <h1 class="astro--page__heading">Astronomy Images</h1>
 </div>
-<div class="astro--list__wrapper">
+<div class="astro--list__wrapper" mtObserveBreakpoints>
   <app-astronomy-pics-thumbnail
-    *ngFor="let AstroPic of AstroPics"
-    [astronomyPic]="AstroPic"
-    ></app-astronomy-pics-thumbnail>
+  [astronomyImages]="AstroPics"
+  [columns]="cols"
+  ></app-astronomy-pics-thumbnail>
 </div>

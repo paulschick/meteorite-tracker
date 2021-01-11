@@ -6,7 +6,17 @@
   </div>
   <div class="detail--image__container">
     <div class="detail--image-top-wrapper">
-      <img [src]="astroDetailImage.url" [alt]="astroDetailImage.title" class="detail--image-top">
+      <img
+          [src]="astroDetailImage.url" [alt]="astroDetailImage.title" class="detail--image-top"
+          *ngIf="astroDetailImage.url.includes('.jpg')"
+          >
+      <a
+          *ngIf="!astroDetailImage.url.includes('.jpg')"
+          [href]="astroDetailImage.url"
+          target="_blank"
+          >
+        Link to Video
+      </a>
     </div>
   </div>
   <div class="detail--text-content__wrapper">

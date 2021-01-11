@@ -14,8 +14,6 @@ import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thu
 import { AstronomyPicDetailPageComponent } from './components/astronomy-pic-detail-page/astronomy-pic-detail-page.component';
 import { MeteoriteDetailComponent } from './components/meteorite-detail/meteorite-detail.component';
 import { MeteoriteListComponent } from './components/meteorite-list/meteorite-list.component';
-import { RandomImagePageComponent } from './components/random-image-page/random-image-page.component';
-
 // Material
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkTreeModule } from '@angular/cdk/tree';
@@ -60,6 +58,8 @@ import { DailyImagesContainerComponent } from './components/daily-images-contain
 // ngx-logger
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
+import { RandomImgContainer } from './components/random-img-container/random-img-container.component';
+import { RandomImagePresentationComponent } from './components/random-img-presentation/random-img-presentation.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -104,13 +104,14 @@ const materialModules = [
     AstronomyPicDetailPageComponent,
     MeteoriteDetailComponent,
     MeteoriteListComponent,
-    RandomImagePageComponent,
     ObserveBreakpointsDirective,
     ClickHandlerDirective,
     MyLoaderComponent,
     MeteoriteContainerComponent,
     ToggleFilterBtnComponent,
-    DailyImagesContainerComponent
+    DailyImagesContainerComponent,
+    RandomImgContainer,
+    RandomImagePresentationComponent
   ],
   imports: [
     HttpClientModule,

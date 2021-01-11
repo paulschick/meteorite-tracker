@@ -1,0 +1,25 @@
+.rand--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../../../../assets/img/ufo-2.svg);
+  background-position: 0% 10%;
+  background-repeat: no-repeat;
+  background-color: $dark-01-primary-bg;
+  background-size:40%;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.rand--button-wrapper {
+  margin: 0 0 5% 0;
+}
+
+.random-img-presentation--container {
+  text-align: center;
+  width: 75%;
+  height: 50%;
+  overflow: hidden;
+}

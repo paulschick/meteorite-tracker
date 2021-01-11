@@ -19,6 +19,10 @@ export class CacheInterceptorService implements HttpInterceptor {
       return next.handle(req);
     }
 
+    if(req.headers.get("skip")) {
+      return next.handle(req);
+    }
+
     // attempt to get a cached response
     const cachedResponse: HttpResponse<any> = this.cacheService.get(req.url);
 
