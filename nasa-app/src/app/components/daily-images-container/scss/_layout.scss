@@ -1,5 +1,6 @@
 .astro--page__heading--wrapper {
   @include center-child;
+  text-align: center;
 }
 
 .astro--page__heading {
