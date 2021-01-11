@@ -1,5 +1,13 @@
 # Final Cut
 
+- [Final Cut](#final-cut)
+  - [Side-By-Side Child](#side-by-side-child)
+    - [No Longer Need](#no-longer-need)
+    - [on Services](#on-services)
+  - [Save This for the Code Review](#save-this-for-the-code-review)
+  - [Astronomy Pics](#astronomy-pics)
+  - [Styling](#styling)
+
 If intersted in having a static image on the front page, [the one is awesome](https://apod.nasa.gov/apod/image/1601/BrightBoom_JinMa_960.jpg).
 It just looks really good with the color scheme of the application.
 
@@ -116,3 +124,8 @@ Page -> List -> Thumbnail
 
 New Order:  
 Container -> Presentation
+
+## Styling
+
+The last necessary thing to do is style the application.
+I should do this, write documentation, and then if I have time then I can add in more functionality.
