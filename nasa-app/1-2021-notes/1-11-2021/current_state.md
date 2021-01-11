@@ -60,10 +60,14 @@ Just like the button does, have the tooltip over the filter button change depend
 
 ## TODOS
 
-[ ] Refactor astro-pics to as few GET requests as possible
-[ ] Rename astro-pics service to DataService
-[ ] File cleanup -> all files/stylesheets
-[ ] Dynamic Tooltip on the filter btn (filtered/default state messages)
-[ ] Write tests
-[ ] Turn Material Breakpoint Service (the class with the object) into a general class
-[ ] Turn Material Breakpoint Directive/Service into reusable -> general & library
+- [x] Refactor astro-pics to as few GET requests as possible
+- [x] Rename astro-pics service to DataService
+- [ ] File cleanup -> all files/stylesheets
+- [ ] Dynamic Tooltip on the filter btn (filtered/default state messages)
+- [ ] Write tests
+- [ ] Turn Material Breakpoint Service (the class with the object) into a general class
+- [ ] Turn Material Breakpoint Directive/Service into reusable -> general & library  
+
+Finished making the new service and hooking all of the routes up to it.
+I need to go back in and clean up all of the components, resolvers, etc. that have references to astro-pics service, and remove the file.
+There is a copy of the previous version in "click-handler-code" directory.
