@@ -1,26 +1,11 @@
-.thumb--cards__wrapper {
-  @include center-child;
+img {
+  width: 250px;
+  height: 250px;
 }
 
-mat-card {
-  margin: 1.5em 3em;
-  max-width: fit-content;
-}
-
-mat-card-content {
-  max-width: 75em;
-  padding: 2em;
-}
-
-mat-card-content img {
-  max-height: 500px;
-  width: auto;
-  // max-width: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-  mat-card {
-    margin: 1em 2em;
-    max-width: fit-content;
+@media only screen and (max-width: 599.98px) {
+  img {
+    width: 300px;
+    height: 300px;
   }
 }
