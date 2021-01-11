@@ -9,7 +9,7 @@ import { RandImgService } from './rand-img.service';
   templateUrl: './random-img-container.component.html',
   styleUrls: ['./random-img-container.component.scss'],
 })
-export class RandomImgContainer implements OnInit, OnDestroy {
+export class RandomImgContainer implements OnInit {
 
   key:string = NASA_API_KEY;
   getUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&count=1`;
@@ -28,9 +28,9 @@ export class RandomImgContainer implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe;
-  }
+  // ngOnDestroy() {
+  //   this.sub.unsubscribe;
+  // }
 
 
 
