@@ -6,14 +6,14 @@ import { IApd } from 'src/app/models/apd.model';
   templateUrl: './random-img-presentation.component.html',
   styleUrls: ['./random-img-presentation.component.scss']
 })
-export class RandomImagePresentationComponent implements OnChanges {
+export class RandomImagePresentationComponent {
   @Input() _data:IApd;
 
-  _viewData() {
-    if (this._data) console.log(this._data)
-  }
+  // _viewData() {
+  //   if (this._data) console.log(this._data)
+  // }
 
-  ngOnChanges() {
-    this._viewData();
-  }
+  // ngOnChanges() {
+  //   this._viewData();
+  // }
 }
