@@ -20,7 +20,7 @@ export class DataService {
     else {
       getReq = this.http.get<any>(url);
     }
-    getReq.pipe(
+    return getReq.pipe(
       take(1),
       catchError((err) => this.handleHttpError(err))
     );
