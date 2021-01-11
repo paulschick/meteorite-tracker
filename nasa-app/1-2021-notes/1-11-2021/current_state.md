@@ -32,3 +32,4 @@
 
 - Adjusted layout for all media queries
 - Next, typography for media queries - just font size
+- typography done

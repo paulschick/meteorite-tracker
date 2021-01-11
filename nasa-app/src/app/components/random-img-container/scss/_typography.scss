@@ -3,6 +3,18 @@
   font-size: 32px;
 }
 
-/*
-Modify font sizes for each media query edited for the layout previously
-*/
+// XSmall
+@media (max-width: 599.98px) {
+  .rand--header {
+    margin: 0 5%;
+  }
+}
+
+// Small and up
+@media (min-width: 600px) {
+  .rand--header {
+    margin: 0 5%;
+    font-size: 45px;
+    line-height: 1em;
+  }
+}
