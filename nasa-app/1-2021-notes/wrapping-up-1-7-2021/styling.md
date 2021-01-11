@@ -45,3 +45,60 @@ Updated routing module to enable smooth scrolling:
 
 Both folds were styled such that they take up the full view height.
 when you click the scroll button, the second half of the page fills the entire screen and you do not see the purple from the first section on all screen sizes.
+
+### astronomy-pics-thumbnail.component.html from 03
+
+```html
+<mat-grid-list [cols]="columns"
+    rowHeight="250px">
+  <mat-grid-tile *ngFor="let astronomyPic of astronomyImages">
+    <div class="astronomy-pics__gallery">
+      <a [routerLink]="['image', astronomyPic.date]">
+        <img
+              class="astronomy-pics-img"
+              *ngIf="astronomyPic.url.includes('.jpg')"
+              [src]="astronomyPic.url"
+              [alt]="astronomyPic.title"
+            />
+      </a>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+```
+
+layout scss
+
+```scss
+.astronomy-pics__gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.astronomy-pics-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  transition: .5s;
+  width: 200px;
+}
+
+.astronomy-pics-img:hover {
+  filter: grayscale(100%);
+  transform: scale(1.1);
+}
+
+.astronomy-pics__description-wrapper {
+  width: 150px;
+}
+
+.astronomy-pics__description {
+  color: $darkmode-font-heading;
+}
+
+```
