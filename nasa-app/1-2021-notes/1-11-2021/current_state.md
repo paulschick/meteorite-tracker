@@ -5,6 +5,7 @@
   - [Next Steps](#next-steps)
   - [Random Image -> Styling -> Media Queries](#random-image---styling---media-queries)
   - [Consolidating random image service](#consolidating-random-image-service)
+  - [On Tooltips](#on-tooltips)
 
 ## Current State
 
@@ -46,3 +47,12 @@ Then I'll change all of the imports, have it working, and go from there.
 
 Then, I really want to move into making the breakpoints thing into a reusable piece of code, like a library, that would be awesome.
 Also do something with the breakpoints service that has the class, doesn't need to be an injectable.
+
+## On Tooltips
+
+So the tooltips are okay, here's one way to make them better:  
+
+Just like the button does, have the tooltip over the filter button change depending on the filter state.
+
+- When default: filter after 1950
+- When filtered: back to default filtering
