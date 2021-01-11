@@ -3,14 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
 
-// Dynamic Breakpoint Stuff
+// Dynamic Breakpoint
 import { EvaluateBreakpointService } from '../../services/evaluate-breakpoint.service';
 import { MaterialBreakpointsService } from '../../services/material-breakpoints.service';
 import { distinctUntilChanged } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-
-// This file will be moved!!!
-import { RandImgService } from '../random-img-container/rand-img.service';
 
 @Component({
   selector: 'app-daily-images-container',
@@ -27,8 +24,7 @@ export class DailyImagesContainerComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private evaluateBreakpoint: EvaluateBreakpointService,
-              private matService: MaterialBreakpointsService,
-              private randomImageService: RandImgService) { }
+              private matService: MaterialBreakpointsService) { }
 
   ngOnInit(): void {
     let resolvedAstroPics: IApd[] | NasaError = this.route.snapshot.data[

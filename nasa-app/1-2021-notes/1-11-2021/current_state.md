@@ -3,6 +3,7 @@
 - [State of the Application 1/11/2021](#state-of-the-application-1112021)
   - [Current State](#current-state)
   - [Next Steps](#next-steps)
+  - [Random Image -> Styling -> Media Queries](#random-image---styling---media-queries)
 
 ## Current State
 
@@ -20,3 +21,10 @@
   - Then, Create a single GET request function that takes in the required args from all components that use a GET request
 - Go through all files in app and make sure that all files are properly formatted (for example, that all scss is in the proper partials and not in "temporary dev files" or the main import files for a component)
 - Add tests where possible, remove unused tests or empty
+
+## Random Image -> Styling -> Media Queries
+
+- At least temporarily, apply breakpoints directive/service for working with the media queries
+- Add all layout styling
+- Add any other design stuff if desired/necessary
+- Remove breakpoints directive/service
