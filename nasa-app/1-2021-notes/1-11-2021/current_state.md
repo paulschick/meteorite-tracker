@@ -29,3 +29,6 @@
 - Add all layout styling
 - Add any other design stuff if desired/necessary
 - Remove breakpoints directive/service
+
+- Adjusted layout for all media queries
+- Next, typography for media queries - just font size

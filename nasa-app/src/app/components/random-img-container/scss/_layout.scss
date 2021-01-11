@@ -1,20 +1,25 @@
 .rand--container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   background-image: url(../../../../assets/img/ufo-2.svg);
   background-position: 0% 10%;
   background-repeat: no-repeat;
   background-color: $dark-01-primary-bg;
-  background-size:40%;
+  background-size: 40%;
   height: 100vh;
   min-height: 100vh;
 }
 
+.rand--header-wrapper {
+  text-align: center;
+  margin: 0;
+}
+
 .rand--button-wrapper {
-  margin: 0 0 5% 0;
+  margin: 0;
 }
 
 .random-img-presentation--container {
@@ -22,4 +27,80 @@
   width: 75%;
   height: 50%;
   overflow: hidden;
+}
+
+// XSmall
+@media (max-width: 599.98px) {
+  .rand--container {
+    justify-content: space-evenly;
+  }
+
+  .rand--header-wrapper {
+    margin: 45% 0 0 0;
+  }
+}
+
+// Small, Ipad Portrait/Landscape
+@media (min-width: 600px) and (max-width: 959.98px) {
+  .rand--container {
+    background-position: 0% 5%;
+    background-size: 20%;
+  }
+
+  .random-img-presentation--container {
+    width: 60%;
+    height: 70%;
+  }
+}
+
+// Medium - Desktops / Landscape Orientation
+@media (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape) {
+  .rand--container {
+    background-position: 20% 10%;
+    background-size: 20%;
+  }
+
+  .random-img-presentation--container {
+    width: 50%;
+    height: 60%;
+  }
+}
+
+// Medium - Ipad Pro / Portrait Orientation
+@media (min-width: 960px) and (max-width: 1279.98px) and (orientation: portrait) {
+  .rand--container {
+    background-position: 0% 5%;
+    background-size: 30%;
+  }
+
+  .random-img-presentation--container {
+    width: 60%;
+    height: 70%;
+  }
+}
+
+// Large Desktop Screens / Ipad Pro in Landscape Orientation
+@media (min-width: 1280px) and (max-width: 1919.98px) {
+  .rand--container {
+    background-position: 20% 10%;
+    background-size: 20%;
+  }
+
+  .random-img-presentation--container {
+    width: 30%;
+    height: 60%;
+  }
+}
+
+// XLarge Screens / Wide Monitors
+@media (min-width: 1920px) {
+  .rand--container {
+    background-position: 20% 10%;
+    background-size: 20%;
+  }
+
+  .random-img-presentation--container {
+    width: 20%;
+    height: 50%;
+  }
 }
