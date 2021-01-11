@@ -10,7 +10,7 @@ import { distinctUntilChanged } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 // This file will be moved!!!
-import { RandImgService } from '../random-img-v2/rand-img.service';
+import { RandImgService } from '../random-img-container/rand-img.service';
 
 @Component({
   selector: 'app-daily-images-container',

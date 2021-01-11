@@ -8,13 +8,13 @@ import { MeteoriteContainerComponent } from './components/meteorite-container/me
 import { DailyImagesContainerComponent } from './components/daily-images-container/daily-images-container.component';
 
 // test
-import { RandomImgV2Component } from './components/random-img-v2/random-img-v2.component';
+import { RandomImgContainer } from './components/random-img-container/random-img-container.component';
 
 const routes: Routes = [
   { path: 'astronomy-pics/image/:date', component: AstronomyPicDetailPageComponent },
   { path: 'astronomy-pics', component: DailyImagesContainerComponent, resolve: { resolvedAstronomyPics: AstronomyPicsResolverService } },
   // { path: 'random-image', component: RandomImagePageComponent },
-  { path: 'random-image', component: RandomImgV2Component },
+  { path: 'random-image', component: RandomImgContainer },
   { path: '', component: MeteoriteContainerComponent, resolve: {
     resolvedMeteorites: MeteoriteResolverService
   }, pathMatch: 'full' },

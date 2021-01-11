@@ -5,11 +5,11 @@ import { IApd } from '../../models/apd.model';
 import { RandImgService } from './rand-img.service';
 
 @Component({
-  selector: 'app-random-img-v2',
-  templateUrl: './random-img-v2.component.html',
-  styleUrls: ['./random-img-v2.component.scss'],
+  selector: 'app-random-img-container',
+  templateUrl: './random-img-container.component.html',
+  styleUrls: ['./random-img-container.component.scss'],
 })
-export class RandomImgV2Component implements OnInit, OnDestroy {
+export class RandomImgContainer implements OnInit, OnDestroy {
 
   key:string = NASA_API_KEY;
   getUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&count=1`;

@@ -2,11 +2,11 @@ import { Component, Input, OnChanges } from '@angular/core';
 import { IApd } from 'src/app/models/apd.model';
 
 @Component({
-  selector: 'app-random-img-v2-child',
-  templateUrl: './random-img-v2-child.component.html',
-  styleUrls: ['./random-img-v2-child.component.scss']
+  selector: 'app-random-img-presentation',
+  templateUrl: './random-img-presentation.component.html',
+  styleUrls: ['./random-img-presentation.component.scss']
 })
-export class RandomImgV2ChildComponent implements OnChanges {
+export class RandomImagePresentationComponent implements OnChanges {
   @Input() _data:IApd;
 
   _viewData() {
