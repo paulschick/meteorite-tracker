@@ -11,7 +11,6 @@ import { IMeteorite } from '../models/meteorite.model';
   providedIn: 'root',
 })
 export class AstroPicsService {
-
   // Arrange Endpoint Construction
 
   private key: string = NASA_API_KEY;
@@ -24,21 +23,20 @@ export class AstroPicsService {
 
   // Astronomy Image of the Day Endpoints
 
-  public todaysImageUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}`;
+  public todaysImageUrl: string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}`;
 
-  public dateRangeUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&start_date=${this.formattedDate}`;
+  public dateRangeUrl: string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&start_date=${this.formattedDate}`;
 
-  public singleImageUrl:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&date=`;
+  public singleImageUrl: string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&date=`;
 
   // --------------------
 
   // Meteorites Endpoint
-  meteoritesUrl:string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
+  meteoritesUrl: string = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
 
   // Random Images Properties
-  private randomQuery:string = '&count=';
-  public randomEndpoint:string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}${this.randomQuery}`;
-
+  private randomQuery: string = '&count=';
+  public randomEndpoint: string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}${this.randomQuery}`;
 
   constructor(private http: HttpClient) {}
 
@@ -49,46 +47,46 @@ export class AstroPicsService {
   // These could all be consolidated into one get request which takes in url parameters from the component
 
   getFromDateRange(): Observable<IApd[] | NasaError> {
-    return this.http
-      .get<IApd[]>(
-        `${this.dateRangeUrl}`
-      )
-      .pipe(
-        take(1),
-        catchError((err) => this.handleHttpError(err))
-      );
+    return this.http.get<IApd[]>(`${this.dateRangeUrl}`).pipe(
+      take(1),
+      catchError((err) => this.handleHttpError(err))
+    );
   }
 
   getDetailImage(dateString): Observable<IApd | NasaError> {
+    return this.http.get<IApd>(`${this.singleImageUrl}${dateString}`).pipe(
+      take(1),
+      catchError((err) => this.handleHttpError(err))
+    );
+  }
+
+  getAllMeteorites(): Observable<IMeteorite[] | NasaError> {
+    return this.http.get<IMeteorite[]>(this.meteoritesUrl).pipe(
+      take(1),
+      catchError((err) => this.handleHttpError(err))
+    );
+  }
+
+  // getRandomImages(numberImages:number): Observable<IApd[] | NasaError> {
+  //   // client-side validation could be improved
+  //   if (numberImages >= 25) {
+  //     console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
+  //   } else {
+  //     return this.http.get<IApd[]>(`${this.randomEndpoint}${numberImages.toString()}`)
+  //       .pipe(
+  //         take(1),
+  //         catchError(err => this.handleHttpError(err))
+  //       );
+  //   }
+  // }
+
+  getRandomImg(url: string): Observable<IApd | NasaError> {
     return this.http
-      .get<IApd>(
-        `${this.singleImageUrl}${dateString}`
-      )
+      .get<IApd>(url, { headers: { skip: 'true' } })
       .pipe(
         take(1),
         catchError((err) => this.handleHttpError(err))
       );
-  }
-
-  getAllMeteorites():Observable<IMeteorite[] | NasaError>{
-    return this.http.get<IMeteorite[]>(this.meteoritesUrl)
-      .pipe(
-        take(1),
-        catchError(err => this.handleHttpError(err))
-      );
-  }
-
-  getRandomImages(numberImages:number): Observable<IApd[] | NasaError> {
-    // client-side validation could be improved
-    if (numberImages >= 25) {
-      console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
-    } else {
-      return this.http.get<IApd[]>(`${this.randomEndpoint}${numberImages.toString()}`)
-        .pipe(
-          take(1),
-          catchError(err => this.handleHttpError(err))
-        );
-    }
   }
 
   // ----------------------

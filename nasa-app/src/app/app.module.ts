@@ -49,7 +49,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { NasaErrorHandlerService } from './services/nasa-error-handler.service';
 import { ObserveBreakpointsDirective } from './directives/observe-breakpoints.directive';
 import { CacheInterceptorService } from './interceptors/cache-interceptor.service';
-import { ClickHandlerDirective } from './directives/click-handler.directive';
+// import { ClickHandlerDirective } from './directives/click-handler.directive';
 import { MyLoaderComponent } from './components/my-loader/my-loader.component';
 import { LoaderInterceptorService } from './interceptors/loader-interceptor.service';
 import { MeteoriteContainerComponent } from './components/meteorite-container/meteorite-container.component';
@@ -105,7 +105,7 @@ const materialModules = [
     MeteoriteDetailComponent,
     MeteoriteListComponent,
     ObserveBreakpointsDirective,
-    ClickHandlerDirective,
+    // ClickHandlerDirective,
     MyLoaderComponent,
     MeteoriteContainerComponent,
     ToggleFilterBtnComponent,
