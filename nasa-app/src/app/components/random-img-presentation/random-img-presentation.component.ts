@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IApd } from 'src/app/models/apd.model';
 
 @Component({
@@ -8,12 +8,4 @@ import { IApd } from 'src/app/models/apd.model';
 })
 export class RandomImagePresentationComponent {
   @Input() _data:IApd;
-
-  // _viewData() {
-  //   if (this._data) console.log(this._data)
-  // }
-
-  // ngOnChanges() {
-  //   this._viewData();
-  // }
 }

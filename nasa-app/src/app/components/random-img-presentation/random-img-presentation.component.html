@@ -1,6 +1,6 @@
 <div *ngIf="_data">
   <div *ngIf="_data[0].url.includes('.jpg')">
-    <a>
+    <a [routerLink]="['/astronomy-pics/image', _data[0].date]">
       <img [src]="_data[0].url" />
     </a>
   </div>
