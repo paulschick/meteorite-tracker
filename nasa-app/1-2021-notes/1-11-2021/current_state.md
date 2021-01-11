@@ -6,6 +6,7 @@
   - [Random Image -> Styling -> Media Queries](#random-image---styling---media-queries)
   - [Consolidating random image service](#consolidating-random-image-service)
   - [On Tooltips](#on-tooltips)
+  - [TODOS](#todos)
 
 ## Current State
 
@@ -17,10 +18,10 @@
 
 ## Next Steps
 
-- Style the Random Image generation view
-- Move the random image service out of that folder.
-  - For now, put this in the astro-pics service file
-  - Then, Create a single GET request function that takes in the required args from all components that use a GET request
+- Style the Random Image generation view (done)
+- Move the random image service out of that folder. (done)
+  - For now, put this in the astro-pics service file (done)
+  - Then, Create a single GET request function that takes in the required args from all components that use a GET request ~~
 - Go through all files in app and make sure that all files are properly formatted (for example, that all scss is in the proper partials and not in "temporary dev files" or the main import files for a component)
 - Add tests where possible, remove unused tests or empty
 
@@ -56,3 +57,13 @@ Just like the button does, have the tooltip over the filter button change depend
 
 - When default: filter after 1950
 - When filtered: back to default filtering
+
+## TODOS
+
+[ ] Refactor astro-pics to as few GET requests as possible
+[ ] Rename astro-pics service to DataService
+[ ] File cleanup -> all files/stylesheets
+[ ] Dynamic Tooltip on the filter btn (filtered/default state messages)
+[ ] Write tests
+[ ] Turn Material Breakpoint Service (the class with the object) into a general class
+[ ] Turn Material Breakpoint Directive/Service into reusable -> general & library
