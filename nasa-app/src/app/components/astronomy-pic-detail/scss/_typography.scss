@@ -15,3 +15,8 @@
   @include normal-text;
   color: $darkmode-font-body;
 }
+
+a {
+  color: $darkmode-font-heading;
+  font-size: 18px;
+}
