@@ -1,3 +1,5 @@
+/*
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -42,6 +44,10 @@ export class AstroPicsService {
 
   // Get Request Methods
 
+  // Improvements:
+  // Class should do one thing, does 4 things
+  // These could all be consolidated into one get request which takes in url parameters from the component
+
   getFromDateRange(): Observable<IApd[] | NasaError> {
     return this.http.get<IApd[]>(`${this.dateRangeUrl}`).pipe(
       take(1),
@@ -63,6 +69,19 @@ export class AstroPicsService {
     );
   }
 
+  // getRandomImages(numberImages:number): Observable<IApd[] | NasaError> {
+  //   // client-side validation could be improved
+  //   if (numberImages >= 25) {
+  //     console.log(`Please reduce the number of images. ${numberImages} will result in long page loads`)
+  //   } else {
+  //     return this.http.get<IApd[]>(`${this.randomEndpoint}${numberImages.toString()}`)
+  //       .pipe(
+  //         take(1),
+  //         catchError(err => this.handleHttpError(err))
+  //       );
+  //   }
+  // }
+
   getRandomImg(url: string): Observable<IApd | NasaError> {
     return this.http
       .get<IApd>(url, { headers: { skip: 'true' } })
@@ -71,6 +90,8 @@ export class AstroPicsService {
         catchError((err) => this.handleHttpError(err))
       );
   }
+
+  // ----------------------
 
   // -------------------------------------
   // Error Handling for all requests
@@ -85,7 +106,4 @@ export class AstroPicsService {
   }
 }
 
-/*
-TODOS:
-- Consolidate into one or as few GET requests as possible taking in url as param and optional param if can be done.
 */
