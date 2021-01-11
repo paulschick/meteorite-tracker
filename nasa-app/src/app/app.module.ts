@@ -14,8 +14,6 @@ import { AstronomyPicsThumbnailComponent } from './components/astronomy-pics-thu
 import { AstronomyPicDetailPageComponent } from './components/astronomy-pic-detail-page/astronomy-pic-detail-page.component';
 import { MeteoriteDetailComponent } from './components/meteorite-detail/meteorite-detail.component';
 import { MeteoriteListComponent } from './components/meteorite-list/meteorite-list.component';
-import { RandomImagePageComponent } from './components/random-image-page/random-image-page.component';
-
 // Material
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkTreeModule } from '@angular/cdk/tree';
@@ -106,7 +104,6 @@ const materialModules = [
     AstronomyPicDetailPageComponent,
     MeteoriteDetailComponent,
     MeteoriteListComponent,
-    RandomImagePageComponent,
     ObserveBreakpointsDirective,
     ClickHandlerDirective,
     MyLoaderComponent,
