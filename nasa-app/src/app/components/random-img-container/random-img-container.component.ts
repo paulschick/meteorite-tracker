@@ -3,7 +3,8 @@ import { Subscription } from 'rxjs';
 import { NASA_API_KEY } from '../../configs/nasa-config';
 import { IApd } from '../../models/apd.model';
 // import { RandImgService } from './rand-img.service';
-import { AstroPicsService } from '../../services/astro-pics.service';
+// import { AstroPicsService } from '../../services/astro-pics.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-random-img-container',
@@ -19,10 +20,10 @@ export class RandomImgContainer implements OnInit {
   data:IApd;
 
   // constructor(private service:RandImgService) {}
-  constructor(private service:AstroPicsService) {}
+  constructor(private dataService:DataService) {}
 
   onClick() {
-    this.sub = this.service.getRandomImg(this.getUrl).subscribe(
+    this.sub = this.dataService.getRequest(this.getUrl, true).subscribe(
       (data:IApd) => this.data = data
     );
   }
