@@ -1,3 +1,15 @@
 .rand--container {
+  border: 1px solid blue;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../../../../assets/img/ufo-2.svg);
+  background-repeat: no-repeat;
+  background-color: $dark-01-primary-bg;
+  background-size: contain;
+  height: 100vh;
   min-height: 100vh;
 }
