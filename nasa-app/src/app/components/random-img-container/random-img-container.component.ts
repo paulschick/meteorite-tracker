@@ -1,9 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NASA_API_KEY } from '../../configs/nasa-config';
 import { IApd } from '../../models/apd.model';
 import { RandImgService } from './rand-img.service';
-
 
 @Component({
   selector: 'app-random-img-container',

@@ -25,6 +25,7 @@
 ## Random Image -> Styling -> Media Queries
 
 - At least temporarily, apply breakpoints directive/service for working with the media queries
+  - All that is necessary is to add the directive to an element in the view.
 - Add all layout styling
 - Add any other design stuff if desired/necessary
 - Remove breakpoints directive/service
