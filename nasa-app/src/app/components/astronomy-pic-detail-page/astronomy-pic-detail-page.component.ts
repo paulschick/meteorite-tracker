@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import { AstroPicsService } from '../../services/astro-pics.service';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
 import { NASA_API_KEY } from '../../configs/nasa-config';

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NASA_API_KEY } from '../../configs/nasa-config';
-import { IApd } from '../../models/apd.model';
-// import { RandImgService } from './rand-img.service';
-// import { AstroPicsService } from '../../services/astro-pics.service';
+import { IApd } from '../../models/apd.model';;
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -19,7 +17,6 @@ export class RandomImgContainer implements OnInit {
   sub: Subscription;
   data:IApd;
 
-  // constructor(private service:RandImgService) {}
   constructor(private dataService:DataService) {}
 
   onClick() {
