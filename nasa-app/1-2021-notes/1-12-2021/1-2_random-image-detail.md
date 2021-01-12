@@ -21,4 +21,18 @@ This is the case for the current iteration and for the new iteration.
 `paramMap` works when there is a parameter in the url.
 For example, I can use `paramMap.get('date')` in the current implementation, because the url is built as `/astro-pics/image/:date`.
 I'll need to use something else to see if the url contains a certain string.
-I can probably convert the url to a string and do a comparison.
+I can probably convert the url to a string and do a comparison.  
+
+This solution works as an example:
+
+```ts
+this.urlGetTest = this.route.url.pipe(
+  map(segments => segments.join(''))
+);
+this.sub = this.urlGetTest.subscribe(
+  data => this.currentRoute = data
+);
+console.log(this.currentRoute);
+```
+
+Next, I need to create the new route, which will load this component.

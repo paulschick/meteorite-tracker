@@ -5,13 +5,23 @@ import { NasaError } from '../../models/nasaErrors.model';
 import { NASA_API_KEY } from '../../configs/nasa-config';
 import { DataService } from '../../services/data.service';
 
+// test
+import { map } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
+import { OnDestroy } from '@angular/core';
+
 @Component({
   selector: 'app-astronomy-pic-detail-page',
   templateUrl: './astronomy-pic-detail-page.component.html'
 })
-export class AstronomyPicDetailPageComponent implements OnInit {
+export class AstronomyPicDetailPageComponent implements OnInit, OnDestroy {
   key:string = NASA_API_KEY;
   detailImages: IApd[] = [];
+
+  // test
+  urlGetTest:Observable<string>;
+  sub:Subscription;
+  currentRoute:string;
 
   constructor(private dataService:DataService,
               private route: ActivatedRoute) {  }
@@ -26,6 +36,23 @@ export class AstronomyPicDetailPageComponent implements OnInit {
       (err: NasaError) => console.log(err),
       () => console.log('finished retrieving single Astronomy Picture from Nasa')
     );
+
+    this.urlGetTest = this.route.url.pipe(
+      map(segments => segments.join(''))
+    );
+    this.sub = this.urlGetTest.subscribe(
+      data => this.currentRoute = data
+    );
+    console.log(this.currentRoute);
+
+    /*
+      this returns a string with no spaces
+      it returns 'astronomy-picsimage2021-01-02', for example
+    */
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe;
   }
 
 }
