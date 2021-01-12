@@ -13,7 +13,7 @@ import { NASA_API_KEY } from '../configs/nasa-config';
 })
 export class AstronomyPicsResolverService implements Resolve<IApd[] | NasaError> {
   private key: string = NASA_API_KEY;
-  private tenDaysPrior: Date = new Date(Date.now() - 9 * 24 * 60 * 60 * 1000);
+  private tenDaysPrior: Date = new Date(Date.now() - 11 * 24 * 60 * 60 * 1000);
   public formattedDate: string = `${this.tenDaysPrior.getFullYear()}-${
     this.tenDaysPrior.getMonth() + 1
   }-${this.tenDaysPrior.getDate()}`;
