@@ -18,15 +18,8 @@ export class ToggleFilterBtnComponent {
   }
 
   sortMeteoritesMassDesc() {
-    if (this.sort === 'default') {
-      this.sort = 'massDesc';
-      this.sortMeteoritesClick.emit(this.sort);
-    } else {
-      this.sort = 'default';
-      this.sortMeteoritesClick.emit(this.sort);
-    }
-
-    return (this.sort === 'default' ? 'massDesc' : 'default')
+    this.sort = this.sort === 'default' ? 'massDesc' : 'default';
+    this.sortMeteoritesClick.emit(this.sort);
   }
 
 }

@@ -14,6 +14,7 @@ import { ViewportScroller } from '@angular/common';
 export class MeteoriteContainerComponent implements OnInit, OnChanges {
 
   filterBy:string = 'default';
+  sort:string = 'default';
   show:boolean = false;
   toggleButton:string = 'Show';
   meteorites:IMeteorite[];
@@ -55,12 +56,24 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
     return this.meteoriteYear >= 1950;
   }
 
-  filterToggled(filterBy:string) {
+  filterToggled(filterBy:string):void {
     this.filterBy = filterBy;
     if (this.filterBy === 'new') {
       this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
-    } else {
+    }
+    else {
       this.visibleMeteorites = this.meteorites;
+    }
+  }
+
+  sortMeteorites(sort:string):void {
+    this.sort = sort;
+    if (this.sort === 'massDesc') {
+      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => +b.mass - +a.mass)
+    } else {
+      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => {
+        return (a.name > b.name ? 1 : a.name === b.name ? 0 : -1)
+      });
     }
   }
 

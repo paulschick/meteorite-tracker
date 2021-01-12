@@ -49,7 +49,9 @@
       </button>
       <app-toggle-filter-btn
         [filterBy]="filterBy"
+        [sort]="sort"
         (filterClick)="filterToggled($event)"
+        (sortMeteoritesClick)="sortMeteorites($event)"
         ></app-toggle-filter-btn>
     </div>
   </div>
