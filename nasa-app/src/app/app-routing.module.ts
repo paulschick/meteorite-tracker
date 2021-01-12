@@ -8,9 +8,10 @@ import { DailyImagesContainerComponent } from './components/daily-images-contain
 import { RandomImgContainer } from './components/random-img-container/random-img-container.component';
 
 const routes: Routes = [
-  { path: 'astronomy-pics/image/:date', component: AstronomyPicDetailPageComponent },
-  { path: 'astronomy-pics', component: DailyImagesContainerComponent, resolve: { resolvedAstronomyPics: AstronomyPicsResolverService } },
   { path: 'random-image', component: RandomImgContainer },
+  { path: 'random-image/image/:date', component: AstronomyPicDetailPageComponent },
+  { path: 'astronomy-pics', component: DailyImagesContainerComponent, resolve: { resolvedAstronomyPics: AstronomyPicsResolverService } },
+  { path: 'astronomy-pics/image/:date', component: AstronomyPicDetailPageComponent },
   { path: '', component: MeteoriteContainerComponent, resolve: {
     resolvedMeteorites: MeteoriteResolverService
   }, pathMatch: 'full' },

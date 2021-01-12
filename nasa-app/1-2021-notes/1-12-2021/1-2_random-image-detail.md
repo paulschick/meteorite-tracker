@@ -36,3 +36,5 @@ console.log(this.currentRoute);
 ```
 
 Next, I need to create the new route, which will load this component.
+
+- New route added and functional, next to check the url to see which page it is one
