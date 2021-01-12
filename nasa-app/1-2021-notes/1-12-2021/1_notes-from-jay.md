@@ -12,8 +12,3 @@ We went through the project for a few hours. I got some great notes on what to i
 - [ ] Back button from random image detail should go back to random image view
 
 ## Progress
-
-### Filter Meteorites Heading Removal
-
-- `MeteoriteContainerComponent` has the headings
-- Removed the heading, changed text of main meteorite heading, removed corresponding styling
