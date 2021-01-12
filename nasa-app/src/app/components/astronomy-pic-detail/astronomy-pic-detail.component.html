@@ -1,6 +1,6 @@
 <div class="detail--wrapper">
   <div class="detail--back-btn-wrapper">
-    <button mat-fab class="detail--back-btn" [routerLink]="['/astronomy-pics']">
+    <button mat-fab class="detail--back-btn" [routerLink]="routedFromRandom === true?['/random-image']:['/astronomy-pics']">
       <mat-icon>arrow_back_ios_new</mat-icon>
     </button>
   </div>
