@@ -38,3 +38,41 @@ console.log(this.currentRoute);
 Next, I need to create the new route, which will load this component.
 
 - New route added and functional, next to check the url to see which page it is one
+
+## Building the Dynamic Button
+
+These changes will have to happen in two components:
+
+- `AstronomyPicDetailPageComponent`
+- `AstronomyPicDetailComponent`  
+
+Both the parent and child are involved.
+The parent should pass in the url information and the child should take this as an Input property.
+Based on the Input property, the button will route to different views.  
+
+Here is how the difference in these url strings look:  
+
+From astro-pics: astronomy-picsimage2021-01-02  
+From random image: random-imageimage2009-06-09  
+
+if contains random-image, `this.currentRoute.includes('random-image) then do something`.  
+
+Returning a boolean -> true if from random image page, else false.  
+Here is the class for AstronomyPicDetailComponent with the logic:
+
+```ts
+export class AstronomyPicDetailComponent implements OnInit {
+
+  @Input() astroDetailImage:IApd;
+  @Input() currentRoute:string;
+  routedFromRandom:boolean;
+
+  ngOnInit() {
+    this.routedFromRandom = (this.currentRoute.includes('random-image') ? true : false);
+    console.log(this.currentRoute);
+    console.log(this.routedFromRandom);
+    // This will return true if routed from the random image view and false if it came from the astro-pics gallery
+
+  }
+}
+```

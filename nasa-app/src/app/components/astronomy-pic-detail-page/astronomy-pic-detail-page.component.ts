@@ -43,7 +43,7 @@ export class AstronomyPicDetailPageComponent implements OnInit, OnDestroy {
     this.sub = this.urlGetTest.subscribe(
       data => this.currentRoute = data
     );
-    console.log(this.currentRoute);
+    // console.log(this.currentRoute);
 
     /*
       this returns a string with no spaces
