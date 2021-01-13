@@ -7,12 +7,6 @@ describe('FormatMassPipe', () => {
     expect(pipe.transform('5000')).toEqual('5.00 Kg');
   })
 
-  it('should display 5.00 kg if mass is 5000', () => {
-    let pipe = new FormatMassPipe();
-
-    expect(pipe.transform(5000)).toEqual('5.00 Kg');
-  })
-
   it('should display 0 if mass is 0', () => {
     let pipe = new FormatMassPipe();
 
@@ -37,22 +31,10 @@ describe('FormatMassPipe', () => {
     expect(pipe.transform('2020/12/23')).toEqual('No Mass');
   })
 
-  it('should display 500.00 g if mass is 500', () => {
-    let pipe = new FormatMassPipe();
-
-    expect(pipe.transform(500)).toEqual('500.00 g');
-  })
-
   it('should display 0.12 g if mass is 0.12', () => {
     let pipe = new FormatMassPipe();
 
     expect(pipe.transform(0.12)).toEqual('0.12 g');
-  })
-
-  it('should display 1.00 Metric Tons if mass is 1000000', () => {
-    let pipe = new FormatMassPipe();
-
-    expect(pipe.transform(1000000)).toEqual('1.00 Metric Tons');
   })
 
   it('should display 2.34 Metric Tons if mass is 2340000', () => {
