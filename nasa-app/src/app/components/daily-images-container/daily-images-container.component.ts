@@ -10,6 +10,9 @@ import { MaterialBreakpointsService } from '../../services/material-breakpoints.
 import { distinctUntilChanged } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
+// With nasa-endpoints.ts
+import { ENDPOINT } from '../../utils/nasa-endpoints';
+
 @Component({
   selector: 'app-daily-images-container',
   templateUrl: './daily-images-container.component.html',
@@ -23,17 +26,30 @@ export class DailyImagesContainerComponent
   private breakpointSub: Subscription;
   private dataSub: Subscription;
 
+  // nasa-endpoints
+  private _endpoint:ENDPOINT;
+  private DATE_RANGE:string;
+
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
     private matService: MaterialBreakpointsService,
     private dataService: DataService
   ) {
     super();
+    this._endpoint = new ENDPOINT();
+    this.DATE_RANGE = this._endpoint.DATE_RANGE;
   }
 
   ngOnInit(): void {
+
+    // nasa-endpoints
+
+
+
+    console.log(this.DATE_RANGE)
     this.dataSub = this.dataService
-      .getRequest(this.dateRangeUrl, false)
+      // .getRequest(this.dateRangeUrl, false)
+      .getRequest(this.DATE_RANGE, false)
       .subscribe(
         (image: IApd[]) => {
           this.AstroPics = image;

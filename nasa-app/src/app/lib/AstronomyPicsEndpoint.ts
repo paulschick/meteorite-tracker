@@ -5,7 +5,9 @@ export class AstronomyPicsEndpoint {
   private key: string;
   private twelveDaysPrior: Date;
   private formattedDate: string;
-  protected dateRangeUrl: string;
+  dateRangeUrl: string;
+  randomImageUrl: string;
+  meteoritesUrl: string;
 
   constructor() {
     this.key = NASA_API_KEY;
@@ -14,12 +16,11 @@ export class AstronomyPicsEndpoint {
       this.twelveDaysPrior.getMonth() + 1
     }-${this.twelveDaysPrior.getDate()}`;
     this.dateRangeUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&start_date=${this.formattedDate}`;
+    this.randomImageUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&count=1`;
+    this.meteoritesUrl = 'https://data.nasa.gov/resource/gh4g-9sfh.json'
+
   }
 }
 
-/*
-TODO: How can I make this dynamic? Support meteorites, astro-pics, random image
-BUT, it should not just all be hard-coded.
-For example, if I want a date range, I should be able to pass in the number of days ago, and it can return that date.
-This is a separate class too.
-*/
+
+// just do a class that gets the date range, and then export each url as a var.
