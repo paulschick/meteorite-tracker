@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
-import { AstronomyPicsEndpoint } from '../../lib/AstronomyPicsEndpoint';
+// import { AstronomyPicsEndpoint } from '../../lib/AstronomyPicsEndpoint';
 import { DataService } from '../../services/data.service';
 
 // Dynamic Breakpoint
@@ -19,7 +19,6 @@ import { ENDPOINT } from '../../utils/nasa-endpoints';
   styleUrls: ['./daily-images-container.component.scss'],
 })
 export class DailyImagesContainerComponent
-  extends AstronomyPicsEndpoint
   implements OnInit, OnDestroy {
   public AstroPics: IApd[];
   public cols: number;
@@ -35,7 +34,6 @@ export class DailyImagesContainerComponent
     private matService: MaterialBreakpointsService,
     private dataService: DataService
   ) {
-    super();
     this._endpoint = new ENDPOINT();
     this.DATE_RANGE = this._endpoint.DATE_RANGE;
   }
