@@ -8,6 +8,9 @@ import { ViewportScroller } from '@angular/common';
 
 // TODO: *******
 import { FilterService } from '../../services/filter.service';
+//! this will be moved
+import { FILTER_EVEN } from '../../services/filter.service';
+import { Filter } from '../../types/Functions';
 
 @Component({
   selector: 'app-meteorite-container',
@@ -25,24 +28,29 @@ export class MeteoriteContainerComponent implements OnInit {
   private meteoriteDate:Date;
   private meteoriteYear:number;
 
+  //! non DI service instantiation
+  filterService:FilterService;
+  numberArr:number[];
+  _FILTER_EVEN:Filter;
+
+  // constructor(private route: ActivatedRoute,
+  //             private viewportScroller: ViewportScroller,
+  //             private filterService: FilterService) {}
   constructor(private route: ActivatedRoute,
-              private viewportScroller: ViewportScroller,
-              private filterService: FilterService) {}
+              private viewportScroller: ViewportScroller) {
+
+                //* non DI service instantiation
+                this.numberArr = [1,2,3,4,5,22,10,12,110,134];
+                this._FILTER_EVEN = FILTER_EVEN;
+                this.filterService = new FilterService(this.numberArr, this._FILTER_EVEN);
+              }
 
   ngOnInit(): void {
 
     // TODO: ** Filter Service Testing Environment
-    let numberArr = [1,2,3,4,5,22,10,12,110,134];
+    // let numberArr = [1,2,3,4,5,22,10,12,110,134];
+    console.log(this.filterService.filteredArray);
 
-    /*
-    BOTH OF THESE WORK
-    Just don't call() the function
-
-    numberArr = numberArr.filter(this.filterService.evenFilter);
-    console.log(numberArr);
-    numberArr = this.filterService.filterIsEven(numberArr, this.filterService.evenFilter);
-    console.log(numberArr)
-    */
 
     // TODO: ------------------------------------
 
