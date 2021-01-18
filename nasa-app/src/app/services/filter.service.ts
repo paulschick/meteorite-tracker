@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IMeteorite } from '../models/meteorite.model';
 import { Filter } from '../types/Functions';
 
 export const FILTER_EVEN: Filter = x => x % 2 == 0;
@@ -11,8 +12,9 @@ export const FILTER_EVEN: Filter = x => x % 2 == 0;
 export class FilterService {
   // evenFilter: Filter;
 
-  private _unfilteredArray:number[]|object[];
-  filteredArray:number[]|object[];
+  private _unfilteredArray:number[]|IMeteorite[];
+  // filteredArray:number[]|IMeteorite[];
+  filteredArray:any[];
   // constructor() {
   //   this.evenFilter = (num) => {
   //     return num % 2 == 0;
@@ -24,7 +26,7 @@ export class FilterService {
   // }
 
   // constructor(x:number[]|object[], func:Filter) {
-  constructor(x:number[]|object[]) {
+  constructor(x:number[]|IMeteorite[]) {
     // if (x.length > 0 && typeof(x[0]) === 'number') {
     //   this._unfilteredArray = x;
     //   this.filteredArray = this._unfilteredArray.filter(func);
@@ -42,6 +44,10 @@ export class FilterService {
   // If not number arr, must be object arr
   isNumArr(arr: number[] | object[]): arr is number[] {
     return (arr as number[]) && typeof(arr[0]) === 'number';
+  }
+
+  isMeteorite(arr:number[]|IMeteorite[]): arr is IMeteorite[] {
+    return (arr as IMeteorite[])[0].year !== undefined;
   }
 
 

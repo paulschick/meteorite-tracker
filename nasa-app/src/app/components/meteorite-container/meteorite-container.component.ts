@@ -45,7 +45,7 @@ export class MeteoriteContainerComponent implements OnInit {
                 this.objArr = [{one:1},{two:2},{hello:'goodbye'}];
                 this._FILTER_EVEN = FILTER_EVEN;
                 // this.filterService = new FilterService(this.numberArr, this._FILTER_EVEN);
-                this.filterService = new FilterService(this.objArr);
+                this.filterService = new FilterService(this.numberArr);
               }
 
   ngOnInit(): void {
@@ -65,6 +65,9 @@ export class MeteoriteContainerComponent implements OnInit {
     } else {
       this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
       this.visibleMeteorites = this.meteorites.slice(0);
+
+      //! check isMeteorite method for conditional type checking
+      console.log('result of isMeteorite: '+this.filterService.isMeteorite(this.visibleMeteorites))
     }
   }
 
