@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
 import { AstronomyPicsEndpoint } from '../../lib/AstronomyPicsEndpoint';
@@ -19,12 +18,10 @@ import { Subscription } from 'rxjs';
 export class DailyImagesContainerComponent
   extends AstronomyPicsEndpoint
   implements OnInit, OnDestroy {
-  AstroPics: IApd[];
-
-  // cols:number = 1;
-  cols: number;
-  breakpointSub: Subscription;
-  dataSub: Subscription;
+  public AstroPics: IApd[];
+  public cols: number;
+  private breakpointSub: Subscription;
+  private dataSub: Subscription;
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
@@ -35,7 +32,6 @@ export class DailyImagesContainerComponent
   }
 
   ngOnInit(): void {
-    console.log(this.dateRangeUrl);
     this.dataSub = this.dataService
       .getRequest(this.dateRangeUrl, false)
       .subscribe(
@@ -44,19 +40,6 @@ export class DailyImagesContainerComponent
         },
         (err: NasaError) => console.log(err)
       );
-
-    // let resolvedAstroPics: IApd[] | NasaError = this.route.snapshot.data[
-    //   'resolvedAstronomyPics'
-    // ];
-
-    // if (resolvedAstroPics instanceof NasaError) {
-    //   console.log(
-    //     `Astronomy Pics List component error: ${resolvedAstroPics.additionalMessage}`
-    //   );
-    // } else {
-    //   this.AstroPics = resolvedAstroPics;
-    //   console.log('Successfully retrieved Astronomy Images from Nasa API');
-    // }
 
     // Breakpoint Evaluator
     this.breakpointSub = this.evaluateBreakpoint.screenSize

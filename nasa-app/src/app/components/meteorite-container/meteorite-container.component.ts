@@ -17,10 +17,10 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
   sort:string = 'default';
   show:boolean = false;
   toggleButton:string = 'Show';
-  meteorites:IMeteorite[];
+  private meteorites:IMeteorite[];
   visibleMeteorites:IMeteorite[];
-  meteoriteDate:Date;
-  meteoriteYear:number;
+  private meteoriteDate:Date;
+  private meteoriteYear:number;
 
   constructor(private route: ActivatedRoute,
               private viewportScroller: ViewportScroller) {}
