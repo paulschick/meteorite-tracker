@@ -34,9 +34,6 @@ export class MeteoriteContainerComponent implements OnInit {
   objArr:object[];
   _FILTER_EVEN:Filter;
 
-  // constructor(private route: ActivatedRoute,
-  //             private viewportScroller: ViewportScroller,
-  //             private filterService: FilterService) {}
   constructor(private route: ActivatedRoute,
               private viewportScroller: ViewportScroller) {
 
@@ -44,14 +41,12 @@ export class MeteoriteContainerComponent implements OnInit {
                 this.numberArr = [1,2,3,4,5,22,10,12,110,134];
                 this.objArr = [{one:1},{two:2},{hello:'goodbye'}];
                 this._FILTER_EVEN = FILTER_EVEN;
-                // this.filterService = new FilterService(this.numberArr, this._FILTER_EVEN);
                 this.filterService = new FilterService(this.numberArr);
               }
 
   ngOnInit(): void {
 
     // TODO: ** Filter Service Testing Environment
-    // let numberArr = [1,2,3,4,5,22,10,12,110,134];
     console.log(this.filterService.filteredArray);
 
 
@@ -65,9 +60,6 @@ export class MeteoriteContainerComponent implements OnInit {
     } else {
       this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
       this.visibleMeteorites = this.meteorites.slice(0);
-
-      //! check isMeteorite method for conditional type checking
-      console.log('result of isMeteorite: '+this.filterService.isMeteorite(this.visibleMeteorites))
     }
   }
 
@@ -109,50 +101,3 @@ export class MeteoriteContainerComponent implements OnInit {
   }
 
 }
-
-/*
-
-                                TODO:
-  - Separate logic into external services
-  - Create interfaces
-
-  Services:
-
-  - filter-service
-  - sort-service
-
-  Interfaces:
-
-  - returned data from services? We'll see.
-
-
-
-  todo HOW FILTERING IS WORKING
-
-  1. takes response from server with JSON, immediately filters for mass over 25000 (have this as an adjustable paramater)
-  2. makes copy of that array and uses that for display and mutation
-  3. on OnChanges based on filterBy, calls filter on visibleMeteorites, and calls another function filterNew(e)
-
-
-  filterNew:
-  - gets date from meteorite object as string
-  - converts to date
-  - formates the date in another line of code
-  - filters by meteorites over 1950
-  todo: filterby year should be a dynamic prop
-
-  sortMeteorites:
-  - checks value of sort argument
-  - if equals massDesc, calls .sort on the array and sorts in descending order
-  - else, sorts by alphabetical
-  todo: I don't mind the logic here, keep as is or just add sort mass Ascending option as default or another option
-
-  todo: meteoriteDate and meteoriteYear should not be properties on this Component. They should be gone with the service, but otherwise they should be constants in the function scope only.
-
-
-
-
-  Possible Values:
-  filterBy: default || new
-  sort: default || massDesc
-*/

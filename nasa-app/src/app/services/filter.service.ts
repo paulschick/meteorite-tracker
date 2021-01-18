@@ -33,8 +33,8 @@ export class FilterService {
     // }
     if (this.isNumArr(x)) {
       this.filteredArray = [1,2,3,4]
-    } else {
-      this.filteredArray = [{one:1},{two:2}]
+    } else if (this.isMeteoriteArr(x)) {
+      this.filteredArray = x.filter(y => y.year !== null)
     }
 
   }
@@ -46,10 +46,9 @@ export class FilterService {
     return (arr as number[]) && typeof(arr[0]) === 'number';
   }
 
-  isMeteorite(arr:number[]|IMeteorite[]): arr is IMeteorite[] {
+  isMeteoriteArr(arr:number[]|IMeteorite[]): arr is IMeteorite[] {
     return (arr as IMeteorite[])[0].year !== undefined;
   }
-
 
 }
 
@@ -72,6 +71,7 @@ IF I have a base filter service, I should be able to add functionality through e
 So maybe define a class with different filter functions that can be used, and just passed into the filter service.
 
 
-
+! Filter by mass, filter by year, filter by numbers general, filter by something on IApd -> would need to do conditional types.
+! This is pretty advanced, but there's a way to implement this.
 
 */
