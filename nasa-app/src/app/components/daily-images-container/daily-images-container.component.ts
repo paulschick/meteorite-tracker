@@ -72,6 +72,9 @@ export class DailyImagesContainerComponent
       12,
       null
     );
+    // this.nasaEndpointConstructor = new NasaEndpointConstructor(
+    //   'astronomy-pics',
+    //   this.exampleCreateQueries.startQueryObj);
     // this._endpoint = this.nasaEndpointConstructor.endpoint;
     this._endpoint = this.nasaEndpointConstructor._newEndpoint;
   }

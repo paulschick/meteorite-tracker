@@ -76,11 +76,11 @@ export class NasaEndpointConstructor extends BaseQuery {
   // TODO: create interface for queryParams
   constructor(private endpointCategory:string, @Optional() private queryParams:any,
 
-            protected _isMeteorite:boolean,
-            protected _isRangeOfDays:boolean,
-            protected _isRandomImage:boolean,
-            protected _days:number|null,
-            protected _count:number|null) {
+            protected _isMeteorite:boolean=false,
+            protected _isRangeOfDays:boolean=false,
+            protected _isRandomImage:boolean=false,
+            protected _days:number|null=null,
+            protected _count:number|null=null) {
 
 
     super(_isMeteorite, _isRangeOfDays, _isRandomImage, _days, _count);
