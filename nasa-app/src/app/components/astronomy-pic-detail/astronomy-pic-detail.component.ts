@@ -15,9 +15,5 @@ export class AstronomyPicDetailComponent implements OnInit {
 
   ngOnInit() {
     this.routedFromRandom = (this.currentRoute.includes('random-image') ? true : false);
-    console.log(this.currentRoute);
-    console.log(this.routedFromRandom);
-    // This will return true if routed from the random image view and false if it came from the astro-pics gallery
-
   }
 }
