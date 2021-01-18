@@ -6,6 +6,9 @@ import { IMeteorite } from '../../models/meteorite.model';
 import { NasaError } from 'src/app/models/nasaErrors.model';
 import { ViewportScroller } from '@angular/common';
 
+// TODO: *******
+import { FilterService } from '../../services/filter.service';
+
 @Component({
   selector: 'app-meteorite-container',
   templateUrl: './meteorite-container.component.html',
@@ -23,9 +26,27 @@ export class MeteoriteContainerComponent implements OnInit {
   private meteoriteYear:number;
 
   constructor(private route: ActivatedRoute,
-              private viewportScroller: ViewportScroller) {}
+              private viewportScroller: ViewportScroller,
+              private filterService: FilterService) {}
 
   ngOnInit(): void {
+
+    // TODO: ** Filter Service Testing Environment
+    let numberArr = [1,2,3,4,5,22,10,12,110,134];
+
+    /*
+    BOTH OF THESE WORK
+    Just don't call() the function
+
+    numberArr = numberArr.filter(this.filterService.evenFilter);
+    console.log(numberArr);
+    numberArr = this.filterService.filterIsEven(numberArr, this.filterService.evenFilter);
+    console.log(numberArr)
+    */
+
+    // TODO: ------------------------------------
+
+
     let resolvedMeteorites:IMeteorite[]|NasaError = this.route.snapshot.data['resolvedMeteorites'];
 
     if (resolvedMeteorites instanceof NasaError) {
