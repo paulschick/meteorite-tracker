@@ -17,9 +17,7 @@ import { OnDestroy } from '@angular/core';
 export class AstronomyPicDetailPageComponent implements OnInit, OnDestroy {
   key:string = NASA_API_KEY;
   detailImages: IApd[] = [];
-
-  // test
-  urlGetTest:Observable<string>;
+  urlObservable:Observable<string>;
   sub:Subscription;
   currentRoute:string;
 
@@ -37,18 +35,12 @@ export class AstronomyPicDetailPageComponent implements OnInit, OnDestroy {
       () => console.log('finished retrieving single Astronomy Picture from Nasa')
     );
 
-    this.urlGetTest = this.route.url.pipe(
+    this.urlObservable = this.route.url.pipe(
       map(segments => segments.join(''))
     );
-    this.sub = this.urlGetTest.subscribe(
+    this.sub = this.urlObservable.subscribe(
       data => this.currentRoute = data
     );
-    // console.log(this.currentRoute);
-
-    /*
-      this returns a string with no spaces
-      it returns 'astronomy-picsimage2021-01-02', for example
-    */
   }
 
   ngOnDestroy() {

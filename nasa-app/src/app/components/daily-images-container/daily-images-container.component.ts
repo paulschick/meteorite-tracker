@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IApd } from '../../models/apd.model';
 import { NasaError } from '../../models/nasaErrors.model';
-// import { AstronomyPicsEndpoint } from '../../lib/AstronomyPicsEndpoint';
 import { DataService } from '../../services/data.service';
 
 // Dynamic Breakpoint
@@ -22,12 +21,11 @@ export class DailyImagesContainerComponent
   implements OnInit, OnDestroy {
   public AstroPics: IApd[];
   public cols: number;
-  private breakpointSub: Subscription;
-  private dataSub: Subscription;
+  private breakpointSub: Subscription; private dataSub: Subscription;
 
   // nasa-endpoints
   private _endpoint:ENDPOINT;
-  private DATE_RANGE:string;
+  private DATE_RANGE_ENDPOINT:string;
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
@@ -35,19 +33,13 @@ export class DailyImagesContainerComponent
     private dataService: DataService
   ) {
     this._endpoint = new ENDPOINT();
-    this.DATE_RANGE = this._endpoint.DATE_RANGE;
+    this.DATE_RANGE_ENDPOINT= this._endpoint.DATE_RANGE;
   }
 
   ngOnInit(): void {
 
-    // nasa-endpoints
-
-
-
-    console.log(this.DATE_RANGE)
     this.dataSub = this.dataService
-      // .getRequest(this.dateRangeUrl, false)
-      .getRequest(this.DATE_RANGE, false)
+      .getRequest(this.DATE_RANGE_ENDPOINT, false)
       .subscribe(
         (image: IApd[]) => {
           this.AstroPics = image;
