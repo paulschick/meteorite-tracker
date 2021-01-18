@@ -16,24 +16,26 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./daily-images-container.component.scss'],
 })
 export class DailyImagesContainerComponent
-  extends AstronomyPicsEndpoint
   implements OnInit, OnDestroy {
   public AstroPics: IApd[];
   public cols: number;
   private breakpointSub: Subscription;
   private dataSub: Subscription;
+  private astronomyPicsEndpoint:AstronomyPicsEndpoint
 
   constructor(
     private evaluateBreakpoint: EvaluateBreakpointService,
     private matService: MaterialBreakpointsService,
     private dataService: DataService
   ) {
-    super();
+    this.astronomyPicsEndpoint = new AstronomyPicsEndpoint(12);
   }
 
   ngOnInit(): void {
+
     this.dataSub = this.dataService
-      .getRequest(this.dateRangeUrl, false)
+      // .getRequest(this.dateRangeUrl, false)
+      .getRequest(this.astronomyPicsEndpoint.nasaEndpoint, false)
       .subscribe(
         (image: IApd[]) => {
           this.AstroPics = image;

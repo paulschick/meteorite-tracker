@@ -17,8 +17,6 @@ export class GetDateRange {
     this.year = this._daysPriorTimestamp.getFullYear();
     this.month = this._daysPriorTimestamp.getMonth() + 1;
     this.day = this._daysPriorTimestamp.getDate();
-    this.formattedDate = `
-      ${this.year}-${this.month}-${this.day}
-    `;
+    this.formattedDate = `${this.year}-${this.month}-${this.day}`;
   }
 }
