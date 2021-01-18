@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
 import { IMeteorite } from '../models/meteorite.model';
 import { getYear } from '../utils/convert-to-year';
-
-// export type filterObjects = [object[], string, boolean, number];
-export interface IFilterObjectsByNum {
-  objects: object[]|IMeteorite[];
-  //* the object property to filter by
-  property: string;
-  //* if true, returns items greater than or equal to the comparison
-  isGreater: boolean;
-  comparison: number;
-}
+import { IFilterObject } from '../models/filter-object';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
+
   protected isIMeteorite(arr:object[]|IMeteorite[]): arr is IMeteorite[] {
     return (arr as IMeteorite[])[0].year !== undefined;
   }
-  filterObjects = (arg:IFilterObjectsByNum):object[]|IMeteorite[] => {
+
+  filterObjects = (arg:IFilterObject):object[]|IMeteorite[] => {
     const objArray:object[]|IMeteorite[] = arg.objects;
 
     if (this.isIMeteorite(objArray) === true) {

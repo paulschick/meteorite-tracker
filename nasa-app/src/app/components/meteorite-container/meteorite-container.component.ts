@@ -6,9 +6,8 @@ import { IMeteorite } from '../../models/meteorite.model';
 import { NasaError } from 'src/app/models/nasaErrors.model';
 import { ViewportScroller } from '@angular/common';
 import { getYear } from '../../utils/convert-to-year';
-
-
-import { FilterService, IFilterObjectsByNum } from '../../services/filter.service';
+import { FilterService } from '../../services/filter.service';
+import { IFilterObject } from '../../models/filter-object';
 
 @Component({
   selector: 'app-meteorite-container',
