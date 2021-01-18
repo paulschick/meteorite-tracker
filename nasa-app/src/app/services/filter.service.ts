@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { IMeteorite } from '../models/meteorite.model';
-import { Filter } from '../types/Functions';
+import { Filter, FilterByNumber } from '../types/Functions';
+import { getYear } from '../utils/convert-to-year';
 
 export const FILTER_EVEN: Filter = x => x % 2 == 0;
-
+// export const FILTER_YEAR_NEW: FilterByNumber = (x,y) => getYear(x.year) >= y;
+// export const FILTER_YEAR_NEW: FilterByNumber = function (x,y) {
+//   return getYear(x.year) >= y;
+// }
 
 
 @Injectable({
@@ -12,13 +16,22 @@ export const FILTER_EVEN: Filter = x => x % 2 == 0;
 export class FilterService {
   private _unfilteredArray:number[]|IMeteorite[];
   filteredArray:any[];
-  constructor(x:number[]|IMeteorite[]) {
+
+  filteredMeteorites:IMeteorite[];
+  filteredMeteorites2:IMeteorite[];
+  constructor(x:number[]|IMeteorite[],y:any) {
     if (this.isNumArr(x)) {
       this.filteredArray = [1,2,3,4]
     } else if (this.isMeteoriteArr(x)) {
       this.filteredArray = x.filter(y => y.year !== null)
     }
 
+    this.filterMeteoritesByYear(x as IMeteorite[],y);
+
+  }
+
+  filterMeteoritesByYear(arr:IMeteorite[],year:number) {
+    this.filteredMeteorites = arr.filter(x => getYear(x.year) >= year);
   }
 
   //* Return true if type is number array

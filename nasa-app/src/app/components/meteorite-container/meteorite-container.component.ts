@@ -5,12 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IMeteorite } from '../../models/meteorite.model';
 import { NasaError } from 'src/app/models/nasaErrors.model';
 import { ViewportScroller } from '@angular/common';
-
-// TODO: *******
-import { FilterService } from '../../services/filter.service';
-//! this will be moved
-import { FILTER_EVEN } from '../../services/filter.service';
-import { Filter } from '../../types/Functions';
+import { getYear } from '../../utils/convert-to-year';
 
 @Component({
   selector: 'app-meteorite-container',
@@ -28,31 +23,10 @@ export class MeteoriteContainerComponent implements OnInit {
   private meteoriteDate:Date;
   private meteoriteYear:number;
 
-  //! non DI service instantiation
-  filterService:FilterService;
-  numberArr:number[];
-  objArr:object[];
-  _FILTER_EVEN:Filter;
-
   constructor(private route: ActivatedRoute,
-              private viewportScroller: ViewportScroller) {
-
-                //* non DI service instantiation
-                this.numberArr = [1,2,3,4,5,22,10,12,110,134];
-                this.objArr = [{one:1},{two:2},{hello:'goodbye'}];
-                this._FILTER_EVEN = FILTER_EVEN;
-                this.filterService = new FilterService(this.numberArr);
-              }
+              private viewportScroller: ViewportScroller) {}
 
   ngOnInit(): void {
-
-    // TODO: ** Filter Service Testing Environment
-    console.log(this.filterService.filteredArray);
-
-
-    // TODO: ------------------------------------
-
-
     let resolvedMeteorites:IMeteorite[]|NasaError = this.route.snapshot.data['resolvedMeteorites'];
 
     if (resolvedMeteorites instanceof NasaError) {
@@ -69,16 +43,10 @@ export class MeteoriteContainerComponent implements OnInit {
     else this.toggleButton = 'Show';
   }
 
-  filterNew(e):boolean {
-    this.meteoriteDate = new Date(e.year);
-    this.meteoriteYear = this.meteoriteDate.getFullYear();
-    return this.meteoriteYear >= 1950;
-  }
-
   filterToggled(filterBy:string):void {
     this.filterBy = filterBy;
     if (this.filterBy === 'new') {
-      this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
+      this.visibleMeteorites = this.visibleMeteorites.filter(e => getYear(e.year) >= 1950)
     }
     else {
       this.visibleMeteorites = this.meteorites;
