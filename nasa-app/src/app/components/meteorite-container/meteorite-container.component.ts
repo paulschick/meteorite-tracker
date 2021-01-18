@@ -7,6 +7,9 @@ import { NasaError } from 'src/app/models/nasaErrors.model';
 import { ViewportScroller } from '@angular/common';
 import { getYear } from '../../utils/convert-to-year';
 
+
+import { FilterService, IFilterObjectsByNum } from '../../services/filter.service';
+
 @Component({
   selector: 'app-meteorite-container',
   templateUrl: './meteorite-container.component.html',
@@ -24,7 +27,8 @@ export class MeteoriteContainerComponent implements OnInit {
   private meteoriteYear:number;
 
   constructor(private route: ActivatedRoute,
-              private viewportScroller: ViewportScroller) {}
+              private viewportScroller: ViewportScroller,
+              private filter: FilterService) {}
 
   ngOnInit(): void {
     let resolvedMeteorites:IMeteorite[]|NasaError = this.route.snapshot.data['resolvedMeteorites'];
@@ -34,6 +38,24 @@ export class MeteoriteContainerComponent implements OnInit {
     } else {
       this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
       this.visibleMeteorites = this.meteorites.slice(0);
+
+
+      /*
+      TODO: implement the below code to replace the filter function
+      * filtering functional, now dynamically choose filtering methods
+      const filterObjects:IFilterObjectsByNum = {
+        objects: this.meteorites,
+        property: 'mass',
+        isGreater: true,
+        comparison: 50000
+      };
+
+      const checkFilter = this.filter.filterObjects(filterObjects);
+
+      console.log(checkFilter);
+      */
+
+
     }
   }
 
