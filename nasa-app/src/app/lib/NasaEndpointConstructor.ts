@@ -2,6 +2,9 @@ import { Optional } from '@angular/core';
 import { NASA_API_KEY } from '../configs/nasa-config';
 import { GetDateRange } from './GetDateRange';
 
+
+// Added to models
+// TODO remove from here
 export interface INasaQueryObject {
   start_date: string;
   api_key: string;
@@ -10,12 +13,16 @@ export interface INasaQueryObject {
   astronomy_pics: string;
 }
 
-export interface INasaEnpointConstructor {
+// Added to models
+// TODO remove from here
+export interface INasaEndpointConstructor {
   baseUrl:string;
   queries:INasaQueryObject;
 }
 
-export const NasaEndpointObject:INasaEnpointConstructor = {
+// Added to utils/NasaEndpointObject
+// TODO remove from here
+export const NasaEndpointObject:INasaEndpointConstructor = {
   baseUrl: `https://api.nasa.gov`,
   queries: {
     start_date: '&start_date=',
@@ -39,6 +46,8 @@ export class ExampleCreateQueries {
     this.startDateQuery = this.getDateRange.formattedDate;
     this.countQuery = 1;
 
+    // todo startQueryObj is passed into NasaEndpointConstructor
+    // What if NasaEndpointConstructor just extends this??
     this.startQueryObj = {
       start_date: true,
       start_date_value: this.startDateQuery,
