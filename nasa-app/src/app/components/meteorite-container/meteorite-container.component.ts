@@ -46,7 +46,7 @@ export class MeteoriteContainerComponent implements OnInit {
   filterToggled(filterBy:string):void {
     this.filterBy = filterBy;
     if (this.filterBy === 'new') {
-      this.visibleMeteorites = this.visibleMeteorites.filter(e => getYear(e.year) >= 1950)
+      this.visibleMeteorites = this.visibleMeteorites.filter(e => getYear(e['year']) >= 1950)
     }
     else {
       this.visibleMeteorites = this.meteorites;
