@@ -16,12 +16,12 @@ export interface INasaEnpointConstructor {
 }
 
 export const NasaEndpointObject:INasaEnpointConstructor = {
-  baseUrl: `https://data.nasa.gov`,
+  baseUrl: `https://api.nasa.gov`,
   queries: {
     start_date: '&start_date=',
     api_key: `?api_key=${NASA_API_KEY}`,
     image_count: '&count=',
-    meteorites: '/resource/gh4g-9sfh.json',
+    meteorites: 'http://data.nasa.gov/resource/gh4g-9sfh.json',
     astronomy_pics: '/planetary/apod'
   }
 }
@@ -62,12 +62,12 @@ export class NasaEndpointConstructor {
 
     // TODO: refactor to switch statement
     this._queryParams = queryParams;
-    if (this._queryParams.start_date === true) {
+    if (endpointCategory === 'astronomy-pics' && this._queryParams.start_date === true) {
       this.endpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.astronomy_pics + NasaEndpointObject.queries.api_key + NasaEndpointObject.queries.start_date + this._queryParams.start_date_value;
-    } else if (this._queryParams.image_count === true) {
+    } else if (endpointCategory === 'astronomy-pics' && this._queryParams.image_count === true) {
       this.endpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.astronomy_pics + NasaEndpointObject.queries.api_key + NasaEndpointObject.queries.image_count + this._queryParams.image_count_value;
-    } else if (this._queryParams.meteorites === true) {
-      this.endpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.meteorites;
+    } else if (endpointCategory === 'meteorites' && this._queryParams.meteorites === true) {
+      this.endpoint = NasaEndpointObject.queries.meteorites;
     } else {
       this.endpoint = NasaEndpointObject.baseUrl;
     }
