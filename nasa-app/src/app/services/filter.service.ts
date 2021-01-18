@@ -31,6 +31,20 @@ export class FilterService {
   }
 
 }
+/*
+      TODO: Steps Moving Forward:
+      ? 1. create util for converting IMeteorite year property into what it needs to be for filtering
+      ? 2. create custom tuple type for the input data to this service [ string, string, object[] ]
+                  -> takes in descending/ascending, property, and array of the objects to filter.
+      ? 3. start adding the functionality
+
+
+
+
+*/
+
+
+
 
 /*
 
@@ -80,7 +94,41 @@ export class FilterService {
     [02, 'descending', {...}, {...}, {...}], -> //? this is filtered by year descending
   ]
 
+  ?? What does this function need in order to do that?
+  Well if it is always returning this data structure here, then it just needs the original array.
+  For a reusable service, or a library, you would need to tell it what object properties to filter by, and what filtered arrays you want back
+  the same really is true for filtering, and even better would be to tell it if you want the data to be filtered or sorted.
+
+  ! Here's a more realistic idea of the tuple type:
 
 
+  ? type FilteredMeteorites: [string, IMeteorite[]];
+  ? let filtered: FilteredMeteorites[] = [
+    ['mass-descending',[{...},{...},{...},...]],
+    ['mass-ascending',[{...},{...},{...},...]],
+  ];
 
+  and that feels a lot simpler too.
+  An array with a string and another array.
+  The tougher part is getting to the data that you need from inside of this data structure.
+
+  Why is this good?
+  It can definitely be immutable.
+  I'm always returning copies as the filtered data, the original never changes.
+  A problem though is that it's simply overkill with what I'm using.
+  I could still use a tuple to return the one piece of data.
+  Or, the instance of the service could receive a tuple that contains a string for the type of filter, contains the variable to index the object by, and contains an array of objects to filter.
+
+  Yes, this filter will be reusable but only for objects.
+
+  ? type filterThis = [string, string, object[]];
+  ? constructor(private unfilteredData:filterThis) {}
+
+  ? pass in: ['descending', 'year', [{},{},{}]]];
+  tuple[1] is used to access the object property in the array like this:
+  assume you're getting the year property from the first object in the array:
+
+  let myTuple = ['descending', 'year', [{},{}]];
+  let property = myTuple[1];       -> 'year'
+  myTuple[2][0][property] = .....          -> should give you the year property of the first object
 */
