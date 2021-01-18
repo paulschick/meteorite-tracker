@@ -15,6 +15,25 @@ TRING THE NASAENDPOINTCONSTRUCTOR
 need imports from there , using the this.startQueryObj to build the url in class instance
 */
 
+/*
+        TODO: Fully implement NasaEndpointConstructor
+        todo - implement this constructor in the two other components that use the endpoints
+        todo - create a home for the interface
+        todo - create an interface for the query objects
+        todo - create classes for each query obj, or implement at component-level
+                todo - implementing component level could allow for dynamic url construction, especially if attached to an event in the template
+                todo - a user could enter a number into a form as well as random images or daily images, and return that number of either on the page.
+
+        KEEP THESE:
+
+        - GetDateRange
+        - NasaEndpointConstructor -> all interfaces and exported constants/class in this file
+
+        PHASE OUT:
+
+        - AstronomyPicsEndpoint.ts
+*/
+
 import { ExampleCreateQueries, NasaEndpointConstructor } from '../../lib/NasaEndpointConstructor';
 
 @Component({

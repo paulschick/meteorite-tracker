@@ -76,32 +76,12 @@ export class NasaEndpointConstructor {
 }
 
 /*
+What's great about something like this is the ability to introduce dynamic numbers of images.
+Could have a function in the component that allows the number of images to be set.
+Yes there are other ways to implement, but, there could be an option to see any of the (currently) 3 options on one page with the press of a button.
+You could type in 20 to see images from the last 20 days.
+So having the url constructor and date range constructor like this, it's easy to introduce new things.
 
-        TODO: Guidelines for url construction:
-        - if astronomy_pics === true, then it needs api key
-        - if meteorites === true, then it just needs base + meteorites
-        - if astronomy_pics && image_count === true, then base + astronomy_pics + key + image_count
-        - if astronomy_pics && start_date === true, then base + astronomy_pics + key + start_date
-
-
-        So minimum dependencies:
-
-          - meteorites or astronomy_pics
-          - optional object of values for the queries ->
-                - if astronomy_pics, need to get optionally start_date or image_count
-                      - default is today's single image
-                      - key will be imported to this class here.
-
-*/
-
-
-
-/*
-TODO: Dynamically produce endpoints for NASA api
-- three are used
-- if possible, allow for more to be added without large additions to the code
-
-Daily Images full current url: https://api.nasa.gov/planetary/apod?api_key=${this.key}&start_date=${this.getDateRange.formattedDate}
-Random image url: https://api.nasa.gov/planetary/apod?api_key=${this.key}&count=1
-meteorites url: https://data.nasa.gov/resource/gh4g-9sfh.json
+The only issue is the NasaEndpointConstructor is still pretty coupled to the different implementations.
+But, query options are unique to the way someone builds an API, so at a certain point it has to be tightly linked to that impmlementation.
 */
