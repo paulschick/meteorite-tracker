@@ -34,7 +34,6 @@ export class DailyImagesContainerComponent
   ngOnInit(): void {
 
     this.dataSub = this.dataService
-      // .getRequest(this.dateRangeUrl, false)
       .getRequest(this.astronomyPicsEndpoint.nasaEndpoint, false)
       .subscribe(
         (image: IApd[]) => {
