@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // models
@@ -11,7 +11,7 @@ import { ViewportScroller } from '@angular/common';
   templateUrl: './meteorite-container.component.html',
   styleUrls: ['./meteorite-container.component.scss']
 })
-export class MeteoriteContainerComponent implements OnInit, OnChanges {
+export class MeteoriteContainerComponent implements OnInit {
 
   filterBy:string = 'default';
   sort:string = 'default';
@@ -33,14 +33,6 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
     } else {
       this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
       this.visibleMeteorites = this.meteorites.slice(0);
-    }
-  }
-
-  ngOnChanges():void {
-    if (this.filterBy === 'new') {
-      this.visibleMeteorites = this.visibleMeteorites.filter(e => this.filterNew(e))
-    } else {
-      this.visibleMeteorites = this.meteorites;
     }
   }
 
@@ -82,3 +74,50 @@ export class MeteoriteContainerComponent implements OnInit, OnChanges {
   }
 
 }
+
+/*
+
+                                TODO:
+  - Separate logic into external services
+  - Create interfaces
+
+  Services:
+
+  - filter-service
+  - sort-service
+
+  Interfaces:
+
+  - returned data from services? We'll see.
+
+
+
+  todo HOW FILTERING IS WORKING
+
+  1. takes response from server with JSON, immediately filters for mass over 25000 (have this as an adjustable paramater)
+  2. makes copy of that array and uses that for display and mutation
+  3. on OnChanges based on filterBy, calls filter on visibleMeteorites, and calls another function filterNew(e)
+
+
+  filterNew:
+  - gets date from meteorite object as string
+  - converts to date
+  - formates the date in another line of code
+  - filters by meteorites over 1950
+  todo: filterby year should be a dynamic prop
+
+  sortMeteorites:
+  - checks value of sort argument
+  - if equals massDesc, calls .sort on the array and sorts in descending order
+  - else, sorts by alphabetical
+  todo: I don't mind the logic here, keep as is or just add sort mass Ascending option as default or another option
+
+  todo: meteoriteDate and meteoriteYear should not be properties on this Component. They should be gone with the service, but otherwise they should be constants in the function scope only.
+
+
+
+
+  Possible Values:
+  filterBy: default || new
+  sort: default || massDesc
+*/
