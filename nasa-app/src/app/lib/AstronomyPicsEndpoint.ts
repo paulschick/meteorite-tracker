@@ -16,3 +16,10 @@ export class AstronomyPicsEndpoint {
     this.dateRangeUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&start_date=${this.formattedDate}`;
   }
 }
+
+/*
+TODO: How can I make this dynamic? Support meteorites, astro-pics, random image
+BUT, it should not just all be hard-coded.
+For example, if I want a date range, I should be able to pass in the number of days ago, and it can return that date.
+This is a separate class too.
+*/
