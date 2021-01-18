@@ -65,9 +65,15 @@ export class DailyImagesContainerComponent
     this.exampleCreateQueries = new ExampleCreateQueries();
     this.nasaEndpointConstructor = new NasaEndpointConstructor(
       'astronomy-pics',
-      this.exampleCreateQueries.startQueryObj
+      this.exampleCreateQueries.startQueryObj,
+      false,
+      true,
+      false,
+      12,
+      null
     );
-    this._endpoint = this.nasaEndpointConstructor.endpoint;
+    // this._endpoint = this.nasaEndpointConstructor.endpoint;
+    this._endpoint = this.nasaEndpointConstructor._newEndpoint;
   }
 
   ngOnInit(): void {

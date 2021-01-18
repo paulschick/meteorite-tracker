@@ -2,6 +2,10 @@ import { Optional } from '@angular/core';
 import { NASA_API_KEY } from '../configs/nasa-config';
 import { GetDateRange } from './GetDateRange';
 
+// todo new stuff -> should replace all here
+import { BaseQuery } from './BaseQuery';
+import { NasaEndpointObject } from '../utils/NasaEndpointObject';
+
 
 // Added to models
 // TODO remove from here
@@ -21,17 +25,17 @@ export interface INasaEndpointConstructor {
 }
 
 // Added to utils/NasaEndpointObject
-// TODO remove from here
-export const NasaEndpointObject:INasaEndpointConstructor = {
-  baseUrl: `https://api.nasa.gov`,
-  queries: {
-    start_date: '&start_date=',
-    api_key: `?api_key=${NASA_API_KEY}`,
-    image_count: '&count=',
-    meteorites: 'http://data.nasa.gov/resource/gh4g-9sfh.json',
-    astronomy_pics: '/planetary/apod'
-  }
-}
+// // TODO remove from here
+// export const NasaEndpointObject:INasaEndpointConstructor = {
+//   baseUrl: `https://api.nasa.gov`,
+//   queries: {
+//     start_date: '&start_date=',
+//     api_key: `?api_key=${NASA_API_KEY}`,
+//     image_count: '&count=',
+//     meteorites: 'http://data.nasa.gov/resource/gh4g-9sfh.json',
+//     astronomy_pics: '/planetary/apod'
+//   }
+// }
 
 export class ExampleCreateQueries {
   private getDateRange:GetDateRange;
@@ -61,13 +65,45 @@ export class ExampleCreateQueries {
 }
 
 
-export class NasaEndpointConstructor {
+export class NasaEndpointConstructor extends BaseQuery {
 
   private _queryParams:any;
   endpoint:string;
 
+  private _newQueryParams:any;
+  _newEndpoint:string;
+
   // TODO: create interface for queryParams
-  constructor(private endpointCategory:string, @Optional() private queryParams:any) {
+  constructor(private endpointCategory:string, @Optional() private queryParams:any,
+
+            protected _isMeteorite:boolean,
+            protected _isRangeOfDays:boolean,
+            protected _isRandomImage:boolean,
+            protected _days:number|null,
+            protected _count:number|null) {
+
+
+    super(_isMeteorite, _isRangeOfDays, _isRandomImage, _days, _count);
+
+    // from base class, constructed with protected dependencies
+    this._newQueryParams = this.queryDecisionsObject;
+    switch(true) {
+      case this._newQueryParams.start_date === true: {
+        this._newEndpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.astronomy_pics + NasaEndpointObject.queries.api_key + NasaEndpointObject.queries.start_date + this._newQueryParams.start_date_value;
+      }
+      break;
+      case this._newQueryParams.image_count === true: {
+        this._newEndpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.astronomy_pics + NasaEndpointObject.queries.api_key + NasaEndpointObject.queries.image_count + this._newQueryParams.image_count_value;
+      }
+      break;
+      case this._newQueryParams.meteorites === true: {
+        this._newEndpoint = NasaEndpointObject.queries.meteorites;
+      }
+      break;
+      default:
+        this._newEndpoint = NasaEndpointObject.baseUrl + NasaEndpointObject.queries.astronomy_pics + NasaEndpointObject.queries.api_key;
+    }
+
 
     // TODO: refactor to switch statement
     this._queryParams = queryParams;
