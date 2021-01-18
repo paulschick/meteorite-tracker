@@ -31,6 +31,7 @@ export class MeteoriteContainerComponent implements OnInit {
   //! non DI service instantiation
   filterService:FilterService;
   numberArr:number[];
+  objArr:object[];
   _FILTER_EVEN:Filter;
 
   // constructor(private route: ActivatedRoute,
@@ -41,8 +42,10 @@ export class MeteoriteContainerComponent implements OnInit {
 
                 //* non DI service instantiation
                 this.numberArr = [1,2,3,4,5,22,10,12,110,134];
+                this.objArr = [{one:1},{two:2},{hello:'goodbye'}];
                 this._FILTER_EVEN = FILTER_EVEN;
-                this.filterService = new FilterService(this.numberArr, this._FILTER_EVEN);
+                // this.filterService = new FilterService(this.numberArr, this._FILTER_EVEN);
+                this.filterService = new FilterService(this.objArr);
               }
 
   ngOnInit(): void {

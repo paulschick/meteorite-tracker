@@ -11,7 +11,7 @@ export const FILTER_EVEN: Filter = x => x % 2 == 0;
 export class FilterService {
   // evenFilter: Filter;
 
-  private _unfilteredArray:any[];
+  private _unfilteredArray:number[]|object[];
   filteredArray:number[]|object[];
   // constructor() {
   //   this.evenFilter = (num) => {
@@ -23,12 +23,28 @@ export class FilterService {
   //   return arr.filter(func);
   // }
 
-  constructor(x:any[], func:Filter) {
-    if (x.length > 0 && typeof(x[0]) === 'number') {
-      this._unfilteredArray = x;
-      this.filteredArray = this._unfilteredArray.filter(func);
+  // constructor(x:number[]|object[], func:Filter) {
+  constructor(x:number[]|object[]) {
+    // if (x.length > 0 && typeof(x[0]) === 'number') {
+    //   this._unfilteredArray = x;
+    //   this.filteredArray = this._unfilteredArray.filter(func);
+    // }
+    if (this.isNumArr(x)) {
+      this.filteredArray = [1,2,3,4]
+    } else {
+      this.filteredArray = [{one:1},{two:2}]
     }
+
   }
+
+
+  //* Return true if type is number array, and length is not 0
+  // If not number arr, must be object arr
+  isNumArr(arr: number[] | object[]): arr is number[] {
+    return (arr as number[]) && typeof(arr[0]) === 'number';
+  }
+
+
 }
 
 /*
