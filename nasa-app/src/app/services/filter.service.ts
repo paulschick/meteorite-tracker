@@ -10,27 +10,9 @@ export const FILTER_EVEN: Filter = x => x % 2 == 0;
   providedIn: 'root',
 })
 export class FilterService {
-  // evenFilter: Filter;
-
   private _unfilteredArray:number[]|IMeteorite[];
-  // filteredArray:number[]|IMeteorite[];
   filteredArray:any[];
-  // constructor() {
-  //   this.evenFilter = (num) => {
-  //     return num % 2 == 0;
-  //   };
-  // }
-
-  // filterIsEven(arr: number[], func: Filter) {
-  //   return arr.filter(func);
-  // }
-
-  // constructor(x:number[]|object[], func:Filter) {
   constructor(x:number[]|IMeteorite[]) {
-    // if (x.length > 0 && typeof(x[0]) === 'number') {
-    //   this._unfilteredArray = x;
-    //   this.filteredArray = this._unfilteredArray.filter(func);
-    // }
     if (this.isNumArr(x)) {
       this.filteredArray = [1,2,3,4]
     } else if (this.isMeteoriteArr(x)) {
@@ -39,9 +21,7 @@ export class FilterService {
 
   }
 
-
-  //* Return true if type is number array, and length is not 0
-  // If not number arr, must be object arr
+  //* Return true if type is number array
   isNumArr(arr: number[] | object[]): arr is number[] {
     return (arr as number[]) && typeof(arr[0]) === 'number';
   }
@@ -53,25 +33,54 @@ export class FilterService {
 }
 
 /*
-    * BOTH OF THESE WORK
-    ! Just don't call() the function
 
-    @param numberArr = numberArr.filter(this.filterService.evenFilter);
-    console.log(numberArr);
-    numberArr = this.filterService.filterIsEven(numberArr, this.filterService.evenFilter);
-    console.log(numberArr)
-    */
+  TODO: Moving Forward -> Applying Conditional types with Type Guards, using custom types, and creating a reusable filter function
+
+  * 1. Have a list of isType functions that can be used
+  So, I have the reusable filter function, it takes in the array, it takes in a function -> most reusable, but least useful because the component needs to define the array and the function anyway, so this isn't saving any code there.
+  * 2. Allow it to take in multiple arrays, check the type, and filter depending on the type and some other parameter that tells it how to filter.
+  What would this return?
+  The number of returned variables is limited by how many properties I define
+  Unless I emit a Subject/Observable, this would be odd.
+  What would the Observable output? A continuously filtering array? Or an array of filtered arrays? What about an object of tuples where the key describes the filtered array and the value is the filtered array?
+
+  ! Array of tuples of filtered arrrays
+
+  return:CustomTupleType = [
+    [filteredByMassDesc, [{...},{...},{...},{...}]],
+    [filteredByMassAsc, [{...},{...},{...},{...}]],
+    [filteredAlphabeticallyAsc, [{...},{...},{...},{...}]],
+    [filteredAlphabeticallyDesc, [{...},{...},{...},{...}]],
+  ];
+
+  !! Or just Tuples!
+
+  a tuple can specify, like, the first two indexes [0,1] and these are the key-value pair.
+  The rest of the tuple cn be a normal array so check it out...
+
+  ? Example of a tuple containing meteorites filtered by mass Ascending
+
+  * let meteoritesMassAsc: [ number, string ] = [1, 'meteorites-ascending', {...},{...},{...}]
+  So you would use this by passing in the array to a function.
+  It looks at index 0 and index 1 to identify the array.
+  Then it takes a slice starting at index 2, and that's your filtered meteorite array.
+  This is pretty cool.
+
+  So the service can take my original meteorite array, and it can filter it multiple ways.
+  Then, it will return a tuple of tuples.
+  For example, sorting mass ascending and descending:
+
+  ! 01 -> meteorite mass
+  ! 02 -> meteorite year
+  ? type filterTuple = [ number, string ];
+  ? let filteredMeteorites: filterTuple[] = [
+    [01, 'ascending', {...}, {...}, {...}],  -> //? this is filtered by mass ascending
+    [01, 'descending', {...}, {...}, {...}], -> //? this is filtered by mass descending
+    [02, 'ascending', {...}, {...}, {...}],  -> //? this is filtered by year ascending
+    [02, 'descending', {...}, {...}, {...}], -> //? this is filtered by year descending
+  ]
 
 
-/*
-TODO: What do I need this to do truly? -> working with objects primarily, make this able to accept more arguments
 
-
-IF I have a base filter service, I should be able to add functionality through external classes
-So maybe define a class with different filter functions that can be used, and just passed into the filter service.
-
-
-! Filter by mass, filter by year, filter by numbers general, filter by something on IApd -> would need to do conditional types.
-! This is pretty advanced, but there's a way to implement this.
 
 */
