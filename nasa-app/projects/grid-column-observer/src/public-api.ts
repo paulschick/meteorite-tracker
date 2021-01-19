@@ -4,4 +4,5 @@
 
 export * from './lib/grid-column-observer.service';
 export * from './lib/grid-column-observer.component';
+export * from './lib/grid-column-observer.directive';
 export * from './lib/grid-column-observer.module';
