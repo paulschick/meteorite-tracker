@@ -6,6 +6,12 @@ export interface ITempInterface {
 }
 
 //^ Class is tested and passing for all sort functions with temporary interface
+
+/*
+  TODO: Create interface, run unit tests again, apply to component
+*/
+
+
 @Injectable({
   providedIn: 'root'
 })

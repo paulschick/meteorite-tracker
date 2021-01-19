@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 
 import { FilterService } from './filter.service';
 import { IMeteorite } from '../models/meteorite.model';
-import { ExpectedConditions } from 'protractor';
 
 describe('FilterService', () => {
   let service: FilterService;

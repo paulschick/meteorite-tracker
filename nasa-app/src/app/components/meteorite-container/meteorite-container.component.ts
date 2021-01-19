@@ -75,6 +75,21 @@ export class MeteoriteContainerComponent implements OnInit {
 
   //todo Replace with sort.service.ts (tested).
   //& Sorting here should be in relation to the filtered arrays -> so unsort, filtered, re-sorted
+  /*
+
+  ! Original Sorting Function here -> replace with SortService, as IMeteorite[], need interface!
+
+  sortMeteorites(sort:string):void {
+    this.sort = sort;
+    if (this.sort === 'massDesc') {
+      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => +b.mass - +a.mass)
+    } else {
+      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => {
+        return (a.name > b.name ? 1 : a.name === b.name ? 0 : -1)
+      });
+    }
+  }
+  */
   sortMeteorites(sort:string):void {
     this.sort = sort;
     if (this.sort === 'massDesc') {
