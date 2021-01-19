@@ -22,6 +22,7 @@ export class MeteoriteContainerComponent implements OnInit {
   private _filterObject: IFilterObject;
   private _filtered: object[] | IMeteorite[];
   private _sorted: object[] | IMeteorite[];
+
   constructor(
     private route: ActivatedRoute,
     private viewportScroller: ViewportScroller,

@@ -21,8 +21,9 @@ export class GridColumnObserverDirective {
     ])
     .subscribe((result) => {
       if (result.matches) {
-        this.sendSize(result);
-        console.log(result)
+        const matchingQuery:string = Object.keys(result.breakpoints).find(key => result.breakpoints[key] === true);
+        const breakpoint:string = Object.keys(Breakpoints).find(key => Breakpoints[key] === matchingQuery);
+        console.log(breakpoint);
       }
     });
 
