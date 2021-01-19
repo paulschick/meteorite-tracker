@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 // TODO: Add @angular/cdk/layout to peer dependencies
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-//* import { Service } -> evaluate breakpoints service;
+import { GridColumnObserverService } from './grid-column-observer.service';
 
 @Directive({
   selector: '[libGridColumnObserver]'
@@ -9,47 +9,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class GridColumnObserverDirective {
 
   //^ add breakpoints service to injected dependencies in constructor
-  constructor(breakpointObserver: BreakpointObserver) {
-    breakpointObserver.observe([
-      Breakpoints.XLarge,
-      Breakpoints.Large,
-      Breakpoints.Medium,
-      Breakpoints.Small,
-      Breakpoints.XSmall
-    ])
-    .subscribe((result) => {
-      if (result.matches) {
-        //? From service method: { or equivalent method }
-        //* this.sendSize(result);
-        console.log(result)
-      }
-    });
-  }
-
-  sendSize(result:any) {
-
-    const matchingQuery = Object.keys(result.breakpoints).find(key => result.breakpoints[key] === true);
-
-    const breakpoint = Object.keys(Breakpoints).find(key => Breakpoints[key] === matchingQuery);
-
-    //? From service method
-    //* this.evaluateBreakpoint.setSize(breakpoint);
-  }
-
-}
-
-/*
-
-import { Directive } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { EvaluateBreakpointService } from '../services/evaluate-breakpoint.service';
-
-@Directive({
-  selector: '[mtObserveBreakpoints]'
-})
-export class ObserveBreakpointsDirective {
-
-  constructor(breakpointObserver: BreakpointObserver, private evaluateBreakpoint: EvaluateBreakpointService) {
+  constructor(breakpointObserver: BreakpointObserver,
+              private gridColumnObserverService: GridColumnObserverService) {
 
     breakpointObserver.observe([
       Breakpoints.XLarge,
@@ -64,6 +25,7 @@ export class ObserveBreakpointsDirective {
         console.log(result)
       }
     });
+
   }
 
   sendSize(result:any) {
@@ -72,12 +34,7 @@ export class ObserveBreakpointsDirective {
 
     const breakpoint = Object.keys(Breakpoints).find(key => Breakpoints[key] === matchingQuery);
 
-    this.evaluateBreakpoint.setSize(breakpoint);
+    this.gridColumnObserverService.setSize(breakpoint);
   }
 
 }
-
-
-
-
-*/
