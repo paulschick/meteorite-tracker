@@ -124,6 +124,46 @@
           }
         }
       }
+    },
+    "grid-column-observer": {
+      "projectType": "library",
+      "root": "projects/grid-column-observer",
+      "sourceRoot": "projects/grid-column-observer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/grid-column-observer/tsconfig.lib.json",
+            "project": "projects/grid-column-observer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/grid-column-observer/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/grid-column-observer/src/test.ts",
+            "tsConfig": "projects/grid-column-observer/tsconfig.spec.json",
+            "karmaConfig": "projects/grid-column-observer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/grid-column-observer/tsconfig.lib.json",
+              "projects/grid-column-observer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nasa-app"
