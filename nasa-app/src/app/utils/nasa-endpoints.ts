@@ -1,4 +1,9 @@
-import { GetDateRange } from '../lib/GetDateRange';
+/*
+! Change GetDateRange import to same as current convert-to-year
+? Change that filename first
+*/
+// import { GetDateRange } from '../lib/GetDateRange';
+import { GetDateRange } from '../utils/date-methods';
 import { NASA_API_KEY } from '../configs/nasa-config';
 
 export class ENDPOINT extends GetDateRange {

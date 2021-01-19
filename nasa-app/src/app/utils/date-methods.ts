@@ -1,6 +1,12 @@
 /*
-TODO: Move to utils
+TODO: Create single date manipulation util
+? Isolates the year from a date string
 */
+export const getYear = (dateString:string) => {
+  const date = new Date(dateString);
+  return date.getFullYear();
+}
+
 export class GetDateRange {
   private _daysAgo: number;
   private _daysPriorTimestamp: Date;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IMeteorite } from '../models/meteorite.model';
-import { getYear } from '../utils/convert-to-year';
+import { getYear } from '../utils/date-methods';
 import { IFilterObject } from '../models/filter-object';
 
 @Injectable({
