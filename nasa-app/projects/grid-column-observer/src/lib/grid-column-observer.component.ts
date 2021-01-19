@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-grid-column-observer',
   template: `
     <p>
-      grid-column-observer works!
+      grid-column-observer works! Here is a change!!!
     </p>
   `,
   styles: [
