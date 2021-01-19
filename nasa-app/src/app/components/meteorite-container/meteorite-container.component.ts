@@ -9,10 +9,12 @@ import { FilterService } from '../../services/filter.service';
 import { IFilterObject } from '../../models/filter-object';
 
 /*
-TODO Integration Testing
-! I need to do integration testing with this and the sorting function
-^ The filtering/sorting logic within the component is wonky to me, and caused problems in a later commit with integrated sort service
+/////TODO Integration Testing
+/////! I need to do integration testing with this and the sorting function
+/////^ The filtering/sorting logic within the component is wonky to me, and caused problems in a later commit with integrated sort service
+* SortService Implementation Successful
 */
+import { SortService } from '../../services/sort.service';
 
 
 @Component({
@@ -32,9 +34,12 @@ export class MeteoriteContainerComponent implements OnInit {
   private _filterObject:IFilterObject;
   private _filtered:object[]|IMeteorite[];
 
+  private _sorted:object[]|IMeteorite[];
+
   constructor(private route: ActivatedRoute,
               private viewportScroller: ViewportScroller,
-              private filter: FilterService) {}
+              private filter: FilterService,
+              private sortService: SortService) {}
 
   ngOnInit(): void {
 
@@ -73,12 +78,13 @@ export class MeteoriteContainerComponent implements OnInit {
     }
   }
 
-  //todo Replace with sort.service.ts (tested).
-  //& Sorting here should be in relation to the filtered arrays -> so unsort, filtered, re-sorted
+  /////todo Replace with sort.service.ts (tested).
+  /////& Sorting here should be in relation to the filtered arrays -> so unsort, filtered, re-sorted
   /*
 
-  ! Original Sorting Function here -> replace with SortService, as IMeteorite[], need interface!
+  /////! Original Sorting Function here -> replace with SortService, as IMeteorite[], need interface!
 
+  ! Remove depracated sorting code
   sortMeteorites(sort:string):void {
     this.sort = sort;
     if (this.sort === 'massDesc') {
@@ -93,11 +99,21 @@ export class MeteoriteContainerComponent implements OnInit {
   sortMeteorites(sort:string):void {
     this.sort = sort;
     if (this.sort === 'massDesc') {
-      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => +b.mass - +a.mass)
+      // this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => +b.mass - +a.mass)
+
+      //& Sorting Functionality Attempt 001 - massDesc
+
+      this._sorted = this.sortService.sortPropDesc(this.visibleMeteorites, 'mass');
+      this.visibleMeteorites = this._sorted as IMeteorite[];
     } else {
-      this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => {
-        return (a.name > b.name ? 1 : a.name === b.name ? 0 : -1)
-      });
+      // this.visibleMeteorites = this.visibleMeteorites.sort((a,b) => {
+      //   return (a.name > b.name ? 1 : a.name === b.name ? 0 : -1)
+      // });
+
+      //& Sorting name descending Attempt 001
+
+      this._sorted = this.sortService.sortStringPropsDesc(this.visibleMeteorites, 'name');
+      this.visibleMeteorites = this._sorted as IMeteorite[];
     }
   }
 
