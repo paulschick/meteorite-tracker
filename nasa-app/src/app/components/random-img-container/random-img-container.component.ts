@@ -1,3 +1,6 @@
+/*
+TODO: Send endpoint to utils endpoint file > api key in component is depracated
+*/
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NASA_API_KEY } from '../../configs/nasa-config';

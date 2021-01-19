@@ -1,3 +1,6 @@
+/*
+TODO: Move to utils
+*/
 export class GetDateRange {
   private _daysAgo: number;
   private _daysPriorTimestamp: Date;

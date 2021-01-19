@@ -1,9 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
-/*
-TODO: Replace ITempInterface with robust interface
-todo  Test with object constructor -> sorting func should determine which to execute based on obj properties.
-*/
 import { SortService } from './sort.service';
 import { IMeteorite } from '../models/meteorite.model';
 
