@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
+//TODO Create new interface
 export interface ITempInterface {
   prop:string;
 }
 
+//^ Class is tested and passing for all sort functions with temporary interface
 @Injectable({
   providedIn: 'root'
 })

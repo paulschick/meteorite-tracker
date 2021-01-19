@@ -8,7 +8,8 @@ import { IFilterObject } from '../models/filter-object';
 })
 export class FilterService {
 
-  protected isIMeteorite(arr:object[]|IMeteorite[]): arr is IMeteorite[] {
+  //^ isIMeteorite passes true/false test
+  public isIMeteorite(arr:object[]|IMeteorite[]): arr is IMeteorite[] {
     return (arr as IMeteorite[])[0].year !== undefined;
   }
 

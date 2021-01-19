@@ -1,24 +1,28 @@
 import { TestBed } from '@angular/core/testing';
 
+/*
+TODO: Replace ITempInterface with robust interface
+todo  Test with object constructor -> sorting func should determine which to execute based on obj properties.
+*/
 import { SortService, ITempInterface } from './sort.service';
 
 describe('SortService', () => {
   let service: SortService;
-  let myArray:ITempInterface[] = [
-    { prop:'1' },
-    { prop:'2' },
-    { prop:'4' },
-    { prop:'8' },
-    { prop:'9' },
+  let myArray: ITempInterface[] = [
+    { prop: '1' },
+    { prop: '2' },
+    { prop: '4' },
+    { prop: '8' },
+    { prop: '9' },
   ];
-  let myStringArray:ITempInterface[] = [
-    { prop:'a' },
-    { prop:'e' },
-    { prop:'r' },
-    { prop:'z' },
-    { prop:'b' },
+  let myStringArray: ITempInterface[] = [
+    { prop: 'a' },
+    { prop: 'e' },
+    { prop: 'r' },
+    { prop: 'z' },
+    { prop: 'b' },
   ];
-  let prop:string = 'prop';
+  let prop: string = 'prop';
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -30,47 +34,39 @@ describe('SortService', () => {
   });
 
   it('should sort by object property of numbers descending', () => {
-    expect(service.sortPropDesc(myArray,prop)).toEqual(
-      [
-        { prop:'9' },
-        { prop:'8' },
-        { prop:'4' },
-        { prop:'2' },
-        { prop:'1' },
-      ]
-    )
-  })
+    expect(service.sortPropDesc(myArray, prop)).toEqual([
+      { prop: '9' },
+      { prop: '8' },
+      { prop: '4' },
+      { prop: '2' },
+      { prop: '1' },
+    ]);
+  });
   it('should sort by object property of numbers ascending', () => {
-    expect(service.sortPropAsc(myArray,prop)).toEqual(
-      [
-        { prop:'1' },
-        { prop:'2' },
-        { prop:'4' },
-        { prop:'8' },
-        { prop:'9' },
-      ]
-    )
-  })
+    expect(service.sortPropAsc(myArray, prop)).toEqual([
+      { prop: '1' },
+      { prop: '2' },
+      { prop: '4' },
+      { prop: '8' },
+      { prop: '9' },
+    ]);
+  });
   it('should sort by object property of strings descending', () => {
-    expect(service.sortStringPropsDesc(myStringArray,prop)).toEqual(
-      [
-        { prop:'z' },
-        { prop:'r' },
-        { prop:'e' },
-        { prop:'b' },
-        { prop:'a' },
-      ]
-    )
-  })
+    expect(service.sortStringPropsDesc(myStringArray, prop)).toEqual([
+      { prop: 'z' },
+      { prop: 'r' },
+      { prop: 'e' },
+      { prop: 'b' },
+      { prop: 'a' },
+    ]);
+  });
   it('should sort by object property of strings descending', () => {
-    expect(service.sortStringPropsAsc(myStringArray,prop)).toEqual(
-      [
-        { prop:'a' },
-        { prop:'b' },
-        { prop:'e' },
-        { prop:'r' },
-        { prop:'z' },
-      ]
-    )
-  })
+    expect(service.sortStringPropsAsc(myStringArray, prop)).toEqual([
+      { prop: 'a' },
+      { prop: 'b' },
+      { prop: 'e' },
+      { prop: 'r' },
+      { prop: 'z' },
+    ]);
+  });
 });

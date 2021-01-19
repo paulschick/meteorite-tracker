@@ -8,6 +8,13 @@ import { ViewportScroller } from '@angular/common';
 import { FilterService } from '../../services/filter.service';
 import { IFilterObject } from '../../models/filter-object';
 
+/*
+TODO Integration Testing
+! I need to do integration testing with this and the sorting function
+^ The filtering/sorting logic within the component is wonky to me, and caused problems in a later commit with integrated sort service
+*/
+
+
 @Component({
   selector: 'app-meteorite-container',
   templateUrl: './meteorite-container.component.html',
@@ -66,6 +73,8 @@ export class MeteoriteContainerComponent implements OnInit {
     }
   }
 
+  //todo Replace with sort.service.ts (tested).
+  //& Sorting here should be in relation to the filtered arrays -> so unsort, filtered, re-sorted
   sortMeteorites(sort:string):void {
     this.sort = sort;
     if (this.sort === 'massDesc') {
