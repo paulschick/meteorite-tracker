@@ -59,6 +59,8 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
 import { RandomImgContainer } from './components/random-img-container/random-img-container.component';
 import { RandomImagePresentationComponent } from './components/random-img-presentation/random-img-presentation.component';
+//^ Library Module Import
+import { GridColumnObserverModule } from 'projects/grid-column-observer/src/public-api';
 
 const materialModules = [
   CdkTreeModule,
@@ -117,6 +119,8 @@ const materialModules = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    //! Library Testing
+    GridColumnObserverModule,
     LoggerModule.forRoot({level: NgxLoggerLevel.INFO})
   ],
   providers: [
