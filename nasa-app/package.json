@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test-library": "ng test grid-column-observer --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
