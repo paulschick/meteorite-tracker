@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { IMeteorite } from '../../models/meteorite.model';
 import { NasaError } from 'src/app/models/nasaErrors.model';
 import { ViewportScroller } from '@angular/common';
-import { getYear } from '../../utils/convert-to-year';
 import { FilterService } from '../../services/filter.service';
 import { IFilterObject } from '../../models/filter-object';
 
@@ -22,39 +21,32 @@ export class MeteoriteContainerComponent implements OnInit {
   toggleButton:string = 'Show';
   private meteorites:IMeteorite[];
   visibleMeteorites:IMeteorite[];
-  private meteoriteDate:Date;
-  private meteoriteYear:number;
+
+  private _filterObject:IFilterObject;
+  private _filtered:object[]|IMeteorite[];
 
   constructor(private route: ActivatedRoute,
               private viewportScroller: ViewportScroller,
               private filter: FilterService) {}
 
   ngOnInit(): void {
+
     let resolvedMeteorites:IMeteorite[]|NasaError = this.route.snapshot.data['resolvedMeteorites'];
 
     if (resolvedMeteorites instanceof NasaError) {
       console.log(`Meteorite Container component error: ${resolvedMeteorites.additionalMessage}, ${resolvedMeteorites.message}`);
     } else {
-      this.meteorites = resolvedMeteorites.filter(e => +e.mass > 25000);
+      this.meteorites = resolvedMeteorites.filter(e => +e.mass > 2500);
       this.visibleMeteorites = this.meteorites.slice(0);
 
-
-      /*
-      TODO: implement the below code to replace the filter function
-      * filtering functional, now dynamically choose filtering methods
-      const filterObjects:IFilterObjectsByNum = {
-        objects: this.meteorites,
-        property: 'mass',
+      this._filterObject = {
+        objects: this.visibleMeteorites,
+        property: 'year',
         isGreater: true,
-        comparison: 50000
-      };
+        comparison: 1950
+      }
 
-      const checkFilter = this.filter.filterObjects(filterObjects);
-
-      console.log(checkFilter);
-      */
-
-
+      this._filtered = this.filter.filterObjects(this._filterObject);
     }
   }
 
@@ -67,7 +59,7 @@ export class MeteoriteContainerComponent implements OnInit {
   filterToggled(filterBy:string):void {
     this.filterBy = filterBy;
     if (this.filterBy === 'new') {
-      this.visibleMeteorites = this.visibleMeteorites.filter(e => getYear(e['year']) >= 1950)
+      this.visibleMeteorites = this._filtered as IMeteorite[];
     }
     else {
       this.visibleMeteorites = this.meteorites;
