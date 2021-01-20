@@ -2,14 +2,10 @@ import { getYear, GetDateRange } from './date-methods';
 
 describe('date-methods', () => {
 
-  //& should be type number
-  // let getYear: any;
   let getDateRange: GetDateRange;
   let dateString: string;
 
-  beforeEach(() => {
-
-  });
+  beforeEach(() => {});
 
   it('should return the correct year', () => {
     dateString = '1880-01-01T00:00:00.000';
