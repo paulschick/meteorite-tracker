@@ -164,6 +164,46 @@
           }
         }
       }
+    },
+    "event-bus": {
+      "projectType": "library",
+      "root": "projects/event-bus",
+      "sourceRoot": "projects/event-bus/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/event-bus/tsconfig.lib.json",
+            "project": "projects/event-bus/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/event-bus/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/event-bus/src/test.ts",
+            "tsConfig": "projects/event-bus/tsconfig.spec.json",
+            "karmaConfig": "projects/event-bus/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/event-bus/tsconfig.lib.json",
+              "projects/event-bus/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nasa-app"

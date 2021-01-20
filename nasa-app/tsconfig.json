@@ -19,6 +19,10 @@
       "grid-column-observer": [
         "dist/grid-column-observer/grid-column-observer",
         "dist/grid-column-observer"
+      ],
+      "event-bus": [
+        "dist/event-bus/event-bus",
+        "dist/event-bus"
       ]
     }
   }
