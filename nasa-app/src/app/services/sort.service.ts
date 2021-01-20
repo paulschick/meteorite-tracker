@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 
+export type Record<K extends keyof any, T> = {
+  [P in K]: T;
+}
+
 @Injectable({
   providedIn: 'root'
 })

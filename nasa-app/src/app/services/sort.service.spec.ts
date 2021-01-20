@@ -1,22 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { SortService } from './sort.service';
+import { SortService, Record } from './sort.service';
 import { IMeteorite } from '../models/meteorite.model';
 
 describe('SortService', () => {
 
-  interface IProp {
-    prop: string;
-  }
-
   let service: SortService;
-  let myArray: IProp[] = [
+  let myArray: Record<string, string>[] = [
     { prop: '1' },
     { prop: '2' },
     { prop: '4' },
     { prop: '8' },
     { prop: '9' },
   ];
-  let myStringArray: IProp[] = [
+  let myStringArray: Record<string, string>[] = [
     { prop: 'a' },
     { prop: 'e' },
     { prop: 'r' },
@@ -37,7 +33,8 @@ describe('SortService', () => {
       geolocation: { latitude: '50.775', longitude: '6.08333' },
     },
   ]
-  let finalArray:IProp[];
+  let finalArray:Record<string, string>[];
+  let key: string = 'prop';
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -49,7 +46,7 @@ describe('SortService', () => {
   });
 
   it('should sort by object property of numbers descending', () => {
-    expect(service.sortPropDesc(myArray, 'prop')).toEqual([
+    expect(service.sortPropDesc(myArray, key)).toEqual([
       { prop: '9' },
       { prop: '8' },
       { prop: '4' },
@@ -58,7 +55,7 @@ describe('SortService', () => {
     ]);
   });
   it('should sort by object property of numbers ascending', () => {
-    expect(service.sortPropAsc(myArray, 'prop')).toEqual([
+    expect(service.sortPropAsc(myArray, key)).toEqual([
       { prop: '1' },
       { prop: '2' },
       { prop: '4' },
@@ -67,7 +64,7 @@ describe('SortService', () => {
     ]);
   });
   it('should sort by object property of strings descending', () => {
-    expect(service.sortStringPropsDesc(myStringArray, 'prop')).toEqual([
+    expect(service.sortStringPropsDesc(myStringArray, key)).toEqual([
       { prop: 'z' },
       { prop: 'r' },
       { prop: 'e' },
@@ -76,7 +73,7 @@ describe('SortService', () => {
     ]);
   });
   it('should sort by object property of strings descending', () => {
-    expect(service.sortStringPropsAsc(myStringArray, 'prop')).toEqual([
+    expect(service.sortStringPropsAsc(myStringArray, key)).toEqual([
       { prop: 'a' },
       { prop: 'b' },
       { prop: 'e' },
@@ -85,7 +82,7 @@ describe('SortService', () => {
     ]);
   });
   it('should have the type of object', () => {
-    finalArray = service.sortStringPropsDesc(myStringArray, 'prop');
+    finalArray = service.sortStringPropsDesc(myStringArray, key);
     const checkType = typeof(finalArray[0]);
 
     expect(checkType).toEqual('object');
