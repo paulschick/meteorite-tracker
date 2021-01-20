@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { EvaluateBreakpointService } from '../services/evaluate-breakpoint.service';
 
 @Directive({
@@ -24,11 +24,11 @@ export class ObserveBreakpointsDirective {
     });
   }
 
-  sendSize(result:any) {
+  sendSize(result:BreakpointState) {
 
-    const matchingQuery = Object.keys(result.breakpoints).find(key => result.breakpoints[key] === true);
+    const matchingQuery: string = Object.keys(result.breakpoints).find(key => result.breakpoints[key] === true);
 
-    const breakpoint = Object.keys(Breakpoints).find(key => Breakpoints[key] === matchingQuery);
+    const breakpoint: string = Object.keys(Breakpoints).find(key => Breakpoints[key] === matchingQuery);
 
     this.evaluateBreakpoint.setSize(breakpoint);
   }
