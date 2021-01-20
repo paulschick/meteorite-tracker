@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoaderService } from '../../services/loader.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { LoaderService } from '../../services/loader.service';
   templateUrl: './my-loader.component.html',
   styleUrls: ['./my-loader.component.scss']
 })
-export class MyLoaderComponent implements OnInit {
+export class MyLoaderComponent {
 
   loading:boolean;
 
@@ -16,8 +16,4 @@ export class MyLoaderComponent implements OnInit {
       this.loading = v;
     });
    }
-
-  ngOnInit(): void {
-  }
-
 }

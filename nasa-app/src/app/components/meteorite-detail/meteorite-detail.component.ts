@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IMeteorite } from 'src/app/models/meteorite.model';
 
 @Component({
   selector: 'app-meteorite-detail',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./meteorite-detail.component.scss']
 })
 export class MeteoriteDetailComponent {
-  @Input() meteorite:any
+  @Input() meteorite: IMeteorite;
 }

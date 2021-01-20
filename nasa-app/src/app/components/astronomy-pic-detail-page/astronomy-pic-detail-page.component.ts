@@ -26,8 +26,8 @@ export class AstronomyPicDetailPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    const imageDate = this.route.snapshot.paramMap.get('date')
-    const detailImageUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&date=${imageDate}`;
+    const imageDate: string = this.route.snapshot.paramMap.get('date')
+    const detailImageUrl: string = `https://api.nasa.gov/planetary/apod?api_key=${this.key}&date=${imageDate}`;
 
     this.dataService.getRequest(detailImageUrl, false).subscribe(
       (data: IApd) => (this.detailImages.push(data)),
