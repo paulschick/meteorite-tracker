@@ -28,6 +28,7 @@ describe('DataService', () => {
   });
 
   it('should retrieve objects from the url with a GET request', () => {
+
     response = [
       {
         copyright: 'Paul Schick',
@@ -35,27 +36,36 @@ describe('DataService', () => {
         explanation: 'test',
         title: 'Test Image 01',
         url: 'https://example1.com',
-      }
+      },
     ];
 
-    service.getRequest(url,false)
-      .subscribe(
-        (data: IApd[]) => {
-          expect(data.length).toBe(1);
-          expect(data).toEqual(response);
-        }
-      );
+    service.getRequest(url, false).subscribe((data: IApd[]) => {
+      expect(data.length).toBe(1);
+      expect(data).toEqual(response);
+    });
     const request = httpMock.expectOne(url);
     expect(request.request.method).toBe('GET');
     request.flush(response);
   });
 
-  it('should make a GET request to the correct url', () => {
+  it('should add a skip header', () => {
 
-  });
+    response = [
+      {
+        copyright: 'Paul Schick',
+        date: '2020-01-05',
+        explanation: 'test',
+        title: 'Test Image 01',
+        url: 'https://example1.com',
+      },
+    ];
 
-  it('should add skip headers if shouldSkip is true', () => {
+    service.getRequest(url, true).subscribe((data: IApd[]) => {
+      expect(data).toBeTruthy();
+    });
 
+    const request = httpMock.expectOne(url);
+    expect(request.request.headers.has('skip')).toEqual(true);
   });
 
   afterEach(() => {

@@ -58,3 +58,25 @@
 //     httpMock.verify();
 //   });
 // });
+
+/*
+
+^ Check if correct headers were added to HTTP request
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
