@@ -11,6 +11,9 @@ export class EventBusService {
 
   constructor() { }
 
+  /*
+    ^ Component in application subscribes to this event, receives screen size initially, on resize, and any other event
+  */
   on(event: Events, action: any): Subscription {
     return this.subject
       .pipe(
@@ -34,8 +37,18 @@ export class EmitEvent {
   constructor(public name: any, public value?: any) {}
 }
 
+/*
+* Could allow for app-level event emittance to update the state of non-connected components
+* Could replace child components by emitting filter and sorting events to the container component, rather than as an @Output property from a child
+*/
 export enum Events {
-  ScreenResize
+  ScreenLoaded,
+  ScreenResize,
+  FilterMass,
+  FilterYear,
+  SortMass,
+  SortName,
+  SortYear,
 }
 
 /*
